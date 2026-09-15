@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "495482254547",
+    "project_id": "transport-2147",
+    "storage_bucket": "transport-2147.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495482254547:android:baa2169256314ffa1b9026",
+        "android_client_info": {
+          "package_name": "rpt.games.transport2147"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI4tz88-ACNr25VnRsYqtsAGEdAs5TO_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

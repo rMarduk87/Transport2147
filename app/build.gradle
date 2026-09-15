@@ -1,5 +1,12 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.devtools.ksp'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -15,6 +22,12 @@ android {
         versionCode 1
         versionName "1.0"
 
+        ksp {
+            arg("room.schemaLocation", "$projectDir/schemas".toString())
+            arg("room.incremental", "true")
+            arg("room.expandProjection", "true")
+        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -29,6 +42,21 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+    packaging {
+        resources {
+            excludes += ['META-INF/DEPENDENCIES', 'META-INF/LICENSE', 'META-INF/LICENSE.txt', 'META-INF/license.txt', 'META-INF/NOTICE', 'META-INF/NOTICE.txt', 'META-INF/notice.txt', 'META-INF/ASL2.0']
+        }
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
 }
 
 dependencies {
@@ -38,4 +66,44 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.androidx.espresso.core
     androidTestImplementation libs.androidx.junit
+    //AndroidX
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.preference.ktx
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.gridlayout
+    implementation libs.flexbox
+    //Misc
+    implementation libs.material
+    implementation libs.jsr305
+    implementation libs.androidx.activity.ktx
+    implementation libs.kotlin.reflect
+    //Lottie
+    implementation libs.lottie
+    implementation libs.timber
+    //Firebase
+    implementation(libs.firebase.analytics.ktx) // Replace with the latest version
+    //Crashlytics
+    implementation(libs.firebase.crashlytics) // Example version
+    //Lifecycle
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.common.java8
+    //Room
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation libs.androidx.room.ktx
+    implementation libs.androidx.core
+    implementation libs.androidx.work.runtime.ktx
+    implementation libs.navigation.fragment.ktx
+    ksp("androidx.room:room-compiler:$room_version")
+    //FastAdapter
+    implementation libs.fastadapter
+    implementation libs.fastadapter.extensions.binding
+    implementation libs.fastadapter.extensions.expandable
+    implementation libs.fastadapter.extensions.utils
+    //Balloon
+    implementation(libs.balloon)
+    //App Base
+    implementation libs.rptbase
 }
