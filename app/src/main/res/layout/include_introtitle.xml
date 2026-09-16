@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpt.games.transport2147.utils.view.text.RPTextView
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:textSize="@dimen/dlg_titleTextSize"
+    android:textStyle="bold"
+    android:textColor="@color/dialog_title"
+    android:gravity="center_horizontal"
+    android:id="@+id/dialog_title"
+    android:background="@drawable/dlg_title_bottom_line"
+    android:paddingTop="@dimen/dlg_titlePaddingTop"
+    android:paddingBottom="@dimen/dlg_titlePaddingBottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dlg_titleMarginBottom"
+    android:text="@string/txt_Actual"
+    android:paddingStart="@dimen/dlg_titlePaddingLeft"
+    android:paddingEnd="@dimen/dlg_titlePaddingRight"
+    custom:font="@string/fnt_FontCore"/>

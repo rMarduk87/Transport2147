@@ -18,7 +18,7 @@ class BookVersionModel(
     @ColumnInfo(name = "version")
     val version: Int,
     @ColumnInfo(name = "language")
-    val language: String,
+    val language: String?,
 ) : DbModel() {
 
     init {

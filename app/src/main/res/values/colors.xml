@@ -7,4 +7,27 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="terminal_green">#FF00FF00</color>
+    <color name="terminal_background">#FF000000</color>
+    <color name="apptheme_color">#6a231b</color>
+    <color name="apptheme_color_highlight">#996a231b</color>
+    <color name="background">#ddd3c9</color>
+    <color name="background_bottom">#d0bcb3</color>
+    <color name="background_bottom_dream">#aaaaff</color>
+    <color name="background_top">#ddd3c9</color>
+    <color name="background_top_dream">#ccccee</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="dialog_title">#6a231b</color>
+    <color name="divider">#000000</color>
+    <color name="dlg_button_text">#ddd3c9</color>
+    <color name="element_background">#336a231b</color>
+    <color name="element_border">#6a231b</color>
+    <color name="element_border_disabled">#666a231b</color>
+    <color name="gradient_end">#9e6862</color>
+    <color name="gradient_end_disabled">#669e6862</color>
+    <color name="navigator_tabStripBackground">#000000</color>
+    <color name="paragraph_link">#6a231b</color>
+    <color name="paragraph_text">#444444</color>
+    <color name="sheet_koBackground">#ffcccc</color>
+    <color name="sheet_okBackground">#eeeeee</color>
 </resources>

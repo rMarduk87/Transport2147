@@ -20,4 +20,7 @@ object SharedPreferencesManager {
         get() = sharedPreferences.getBoolean(AppUtils.SHOW_INTRO, true)
         set(value) = sharedPreferences.edit { putBoolean(AppUtils.SHOW_INTRO, value) }
 
+    var fontSize: Int
+        get() = sharedPreferences.getInt(AppUtils.FONT_SIZE, 0)
+        set(value) = sharedPreferences.edit { putInt(AppUtils.FONT_SIZE, value) }
 }

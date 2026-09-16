@@ -1,22 +1,32 @@
 package rpt.games.transport2147.utils.view.hacking
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.ClickableText
+import androidx.compose.material3.Text
 import androidx.compose.runtime.*
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.unit.dp
+import rpt.games.transport2147.R
 
 @Composable
 fun StationTerminalScreen(game: TerminalHackingGame, screenTokens: List<TerminalToken>) {
 
     // Stati per aggiornare la UI quando cambiano
     var usedHacks by remember { mutableStateOf(setOf<Int>()) }
-    var outputMessage by remember { mutableStateOf("INSERIRE PASSWORD...") }
+    val initialPrompt = stringResource(R.string.terminal_prompt)
+    var outputMessage by remember { mutableStateOf(initialPrompt) }
 
     // I classici colori del Pip-Boy
-    val terminalGreen = Color(0xFF00FF00)
+    val terminalGreen = colorResource(R.color.terminal_green)
     val styleBase = SpanStyle(color = terminalGreen, fontFamily = FontFamily.Monospace)
     val styleDim = SpanStyle(color = terminalGreen.copy(alpha = 0.5f), fontFamily = FontFamily.Monospace)
+
+    val hackFoundText = stringResource(R.string.terminal_hack_found)
 
     // 1. Costruiamo il testo formattato
     val annotatedString = buildAnnotatedString {
@@ -61,7 +71,7 @@ fun StationTerminalScreen(game: TerminalHackingGame, screenTokens: List<Terminal
     }
 
     // 2. Disegniamo lo schermo e gestiamo i click
-    Column(modifier = Modifier.fillMaxSize().background(Color.Black).padding(16.dp)) {
+    Column(modifier = Modifier.fillMaxSize().background(colorResource(R.color.terminal_background)).padding(16.dp)) {
 
         // Log del terminale (Es: "Accesso Negato (2/7)")
         Text(
@@ -72,7 +82,7 @@ fun StationTerminalScreen(game: TerminalHackingGame, screenTokens: List<Terminal
         )
 
         Text(
-            text = "Tentativi rimanenti: ${"█ ".repeat(game.attemptsLeft)}",
+            text = stringResource(R.string.terminal_attempts_left) + "█ ".repeat(game.attemptsLeft),
             color = terminalGreen,
             fontFamily = FontFamily.Monospace,
             modifier = Modifier.padding(bottom = 16.dp)
@@ -95,7 +105,7 @@ fun StationTerminalScreen(game: TerminalHackingGame, screenTokens: List<Terminal
                     .firstOrNull()?.let { annotation ->
                         val hackId = annotation.item.toInt()
                         usedHacks = usedHacks + hackId // Aggiungiamo l'ID ai trucchi usati
-                        outputMessage = "> TRUCCO TROVATO\n" + game.applyBracketHack()
+                        outputMessage = "> $hackFoundText\n" + game.applyBracketHack()
                     }
             }
         )

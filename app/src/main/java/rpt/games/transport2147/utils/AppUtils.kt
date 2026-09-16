@@ -1,14 +1,38 @@
 package rpt.games.transport2147.utils
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.view.View
+import rpt.games.transport2147.R
 import rpt.games.transport2147.TransportApplication
+import rpt.games.transport2147.utils.managers.SharedPreferencesManager
 import rpt.games.transport2147.utils.view.hacking.TerminalHackingGame
 import rpt.games.transport2147.utils.view.hacking.TerminalToken
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
 
 class AppUtils {
 
     companion object{
+
+        var _fontDimension: Int = 2130968660
+        var _fontDimensionIndex: Int = 2
+        var _fontDimensionMaxIndex: Int = 12
+        var _fontDimensionMinIndex: Int = 0
         const val USERS_SHARED_PREF : String = "user_pref"
         const val SHOW_INTRO : String = "showIntro"
+        const val FONT_SIZE : String = "fontSize"
+        var FONT_NAME : String = ""
+
+
+        fun setCoreFont(context: Context?, str: String?) {
+            if (str != null) {
+                FONT_NAME = str
+            }
+        }
 
 
 
@@ -44,6 +68,74 @@ class AppUtils {
                 maxAttempts = 4,
                 context = TransportApplication.instance
             )
+        }
+
+        fun execSingleRegex(str: String?, str2: String?): String? {
+            val matcher: Matcher = Pattern.compile(str2).matcher(str)
+            return if (matcher.find()) matcher.group() else ""
+        }
+
+        fun execSingleRegex(str: String?, str2: String?, i: Int): String? {
+            val matcher: Matcher = Pattern.compile(str2).matcher(str)
+            return if (matcher.find()) matcher.group(i) else ""
+        }
+
+        fun execMultiMatchRegularExpression(
+            str: String,
+            str2: String,
+            str3: String
+        ): MutableMap<String, String> {
+            val matcher =
+                Pattern.compile("<$str\\s+.*?$str2\\s*=\"(.*?)\"\\s*.*?>.*?</$str>")
+                    .matcher(str3)
+            val map: HashMap<String, String> = HashMap<String, String>()
+            while (matcher.find()) {
+                map[matcher.group(1)] = matcher.group()
+            }
+            return map
+        }
+
+        fun changeFontSize(context: Context?, view: View) {
+            if (view.id == R.id.incFontChgr_btnFontIncrease) {
+                if (_fontDimensionIndex == _fontDimensionMaxIndex) {
+                    return
+                } else {
+                    _fontDimensionIndex++
+                }
+            } else if (_fontDimensionIndex == _fontDimensionMinIndex) {
+                return
+            } else {
+                _fontDimensionIndex--
+            }
+            calculateFontSize(context)
+            SharedPreferencesManager.fontSize = _fontDimensionIndex
+        }
+
+        fun changeFontSize(context: Context?, i: Int) {
+            _fontDimensionIndex = i
+            calculateFontSize(context)
+        }
+
+        private fun calculateFontSize(context: Context?) {
+            val typedArrayObtainTypedArray =
+                context!!.resources.obtainTypedArray(R.array.font_points)
+            _fontDimension = typedArrayObtainTypedArray.getResourceId(_fontDimensionIndex,
+                0)
+            typedArrayObtainTypedArray.recycle()
+        }
+
+        @SuppressLint("SimpleDateFormat")
+        fun getTimestamp(): String {
+            return SimpleDateFormat("yyyyMMdd_hhmmss").format(Date())
+        }
+
+        @SuppressLint("NewApi")
+        fun generateViewId(): Int {
+            return View.generateViewId()
+        }
+
+        fun execReplace(str: String, str2: String, str3: String): String {
+            return Pattern.compile(str2).matcher(str).replaceAll(str3)
         }
     }
 

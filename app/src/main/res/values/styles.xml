@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppBaseTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    </style>
+    <style name="AppTheme" parent="@style/AppBaseTheme">
+        <item name="android:buttonStyle">@style/ButtonAppTheme</item>
+        <item name="android:imageButtonStyle">@style/ImageButtonAppTheme</item>
+        <item name="android:textColorHighlight">@color/apptheme_color_highlight</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/apptheme_btn_radio_holo_light</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/apptheme_btn_check_holo_light</item>
+        <item name="android:textSelectHandleLeft">@drawable/apptheme_text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/apptheme_text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/apptheme_text_select_handle_middle</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowButtonLight</item>
+        <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
+    </style>
+    <style name="ButtonAppTheme" parent="@android:style/Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/apptheme_btn_default_holo_light</item>
+    </style>
+    <style name="FullscreenActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+    <style name="FullscreenTheme" parent="@android:style/Theme.Holo">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+    <style name="ImageButtonAppTheme" parent="@android:style/Widget.Holo.Light.ImageButton">
+        <item name="android:background">@drawable/apptheme_btn_default_holo_light</item>
+    </style>
+    <style name="NavigatorActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/ab_solid_example</item>
+        <item name="android:backgroundSplit">@drawable/bkg_chapter_bar</item>
+    </style>
+    <style name="NavigatorTheme" parent="@style/AppBaseTheme">
+        <item name="android:buttonStyle">@style/ButtonAppTheme</item>
+        <item name="android:imageButtonStyle">@style/ImageButtonAppTheme</item>
+        <item name="android:textColorHighlight">@color/apptheme_color_highlight</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/apptheme_btn_radio_holo_light</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/apptheme_btn_check_holo_light</item>
+        <item name="android:textSelectHandleLeft">@drawable/apptheme_text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/apptheme_text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/apptheme_text_select_handle_middle</item>
+        <item name="android:actionBarStyle">@style/NavigatorActionBar</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowButton</item>
+        <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
+    </style>
+    <style name="OverflowButton" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/ico_action_dots</item>
+    </style>
+    <style name="OverflowButtonLight" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/ico_action_dots_light</item>
+    </style>
+    <style name="actMain" parent="">
+    </style>
+    <style name="actMain.image" parent="@style/actMain">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/actMain_title_marginTop</item>
+        <item name="android:layout_marginBottom">@dimen/actMain_title_marginBottom</item>
+        <item name="android:src">@drawable/main_filler</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">@dimen/actMain_item_widht</item>
+    </style>
+    <style name="actMain.image.title" parent="@style/actMain.image">
+        <item name="android:src">@drawable/main_title</item>
+        <item name="android:maxWidth">@dimen/actMain_title_maxWidht</item>
+    </style>
+    <style name="actMain.item" parent="@style/actMain">
+        <item name="android:textSize">@dimen/actMain_item_textSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dlg_button_text</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/actMain_item_PaddingLeft</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/actMain_item_marginBottom</item>
+        <item name="android:height">@dimen/actMain_item_height</item>
+        <item name="android:width">@dimen/actMain_item_widht</item>
+        <item name="android:onClick">onClickMainActivity</item>
+        <item name="font">@string/fnt_FontTitle</item>
+    </style>
+    <style name="actMain.layout" parent="@style/actMain">
+    </style>
+    <style name="actMain.layout.inner" parent="@style/actMain.layout">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">2</item>
+    </style>
+    <style name="actMain.layout.middle" parent="@style/actMain.layout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">@dimen/actMain_layout_paddingHorizontal</item>
+        <item name="android:paddingTop">@dimen/actMain_layout_paddingVertical</item>
+        <item name="android:paddingRight">@dimen/actMain_layout_paddingHorizontal</item>
+        <item name="android:paddingBottom">@dimen/actMain_layout_paddingVertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="actMain.layout.outer" parent="@style/actMain.layout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bkg_chapter_body</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="actMain.layout.profile" parent="@style/actMain.layout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">@dimen/actMain_profile_layoutWidth</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/actMain_item_marginBottom</item>
+    </style>
+    <style name="actMain.navigation" parent="@style/actMain">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/actMain_item_PaddingLeft</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/actMain_item_marginBottom</item>
+        <item name="android:height">@dimen/actMain_item_height</item>
+        <item name="android:width">@dimen/actMain_item_widht</item>
+        <item name="android:onClick">onClickMainActivity</item>
+    </style>
+    <style name="actMain.text" parent="@style/actMain">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="font">@string/fnt_FontTitle</item>
+    </style>
+    <style name="actMain.text.profile" parent="@style/actMain.text">
+        <item name="android:textSize">@dimen/actMain_profile_textSize</item>
+        <item name="android:layout_marginRight">@dimen/actMain_profile_marginRight</item>
+        <item name="android:text">@string/txt_LoadedProfile</item>
+    </style>
+    <style name="actMain.text.profile.red" parent="@style/actMain.text.profile">
+        <item name="android:textColor">@color/dialog_title</item>
+        <item name="android:text">@string/txt_placeholder</item>
+    </style>
+    <style name="actMain.text.version" parent="@style/actMain.text">
+        <item name="android:textSize">@dimen/actMain_version_textSize</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:maxWidth">@dimen/actMain_item_widht</item>
+        <item name="android:text">@string/txt_none</item>
+    </style>
+    <style name="actTutorial" parent="">
+    </style>
+    <style name="actTutorial.dot" parent="@style/actTutorial">
+        <item name="android:paddingLeft">@dimen/actTutorial_dot_marginLateral</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingRight">@dimen/actTutorial_dot_marginLateral</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ico_tutorial_pager</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">@dimen/actTutorial_dot_size</item>
+        <item name="android:maxHeight">@dimen/actTutorial_dot_size</item>
+        <item name="android:onClick">onPageSelected</item>
+    </style>
+    <style name="actTutorial.image" parent="@style/actTutorial">
+        <item name="android:background">@color/divider</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+    <style name="actTutorial.layout" parent="@style/actTutorial">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="actTutorial.layout.dot" parent="@style/actTutorial.layout">
+        <item name="android:gravity">center_horizontal|bottom</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingBottom">@dimen/actTutorial_dotLayout_paddingBottom</item>
+    </style>
+    <style name="actTutorial.layout.frame" parent="@style/actTutorial.layout">
+        <item name="android:background">@color/divider</item>
+        <item name="android:fillViewport">true</item>
+    </style>
+    <style name="dlg" parent="">
+    </style>
+    <style name="dlg.button" parent="@style/dlg">
+        <item name="android:textSize">@dimen/dlg_buttonTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dlg_button_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/btn_dialog</item>
+        <item name="android:paddingLeft">@dimen/dlg_buttonPaddingLeft</item>
+        <item name="android:paddingTop">@dimen/dlg_buttonPaddingTop</item>
+        <item name="android:paddingRight">@dimen/dlg_buttonPaddingRight</item>
+        <item name="android:paddingBottom">@dimen/dlg_buttonPaddingBottom</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/dlg_buttonMarginLeft</item>
+        <item name="android:layout_marginRight">@dimen/dlg_buttonMarginRight</item>
+        <item name="android:layout_marginBottom">@dimen/dlg_buttonMarginBottom</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="dlg.editText" parent="@style/dlg">
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/dlg_sectionPaddingBottom</item>
+        <item name="android:inputType">textNoSuggestions</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="dlg.editText.inline" parent="@style/dlg.editText">
+        <item name="android:width">@dimen/dlg_editTextWidth</item>
+    </style>
+    <style name="dlg.editText.number" parent="@style/dlg.editText">
+        <item name="android:inputType">number</item>
+    </style>
+    <style name="dlg.innerLayout" parent="@style/dlg">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="dlg.innerLayout.horizontal" parent="@style/dlg.innerLayout">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="dlg.innerLayout.margin" parent="@style/dlg.innerLayout">
+        <item name="android:layout_marginBottom">@dimen/dlg_sectionPaddingBottom</item>
+    </style>
+    <style name="dlg.innerLayout.margin.list" parent="@style/dlg.innerLayout.margin">
+        <item name="android:background">@drawable/bg_sheet_text_red</item>
+    </style>
+    <style name="dlg.innerLayout.padding" parent="@style/dlg.innerLayout">
+        <item name="android:padding">@dimen/dlg_padding</item>
+    </style>
+    <style name="dlg.innerLayout.scrolling" parent="@style/dlg.innerLayout">
+        <item name="android:scrollbars">vertical</item>
+    </style>
+    <style name="dlg.innerLayout.scrolling.margin" parent="@style/dlg.innerLayout.scrolling">
+        <item name="android:layout_marginBottom">@dimen/dlg_sectionPaddingBottom</item>
+    </style>
+    <style name="dlg.innerLayout.scrolling.padding" parent="@style/dlg.innerLayout.scrolling">
+        <item name="android:padding">@dimen/dlg_padding</item>
+    </style>
+    <style name="dlg.mainLayout" parent="@style/dlg">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bkg_dialog</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="dlg.radioButton" parent="@style/dlg">
+        <item name="android:textSize">@dimen/dlg_dialogTextSize</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="dlg.radioGroup" parent="@style/dlg">
+        <item name="android:paddingLeft">@dimen/dlg_radiogroupLeftPadding</item>
+        <item name="android:paddingRight">@dimen/dlg_radiogroupRightPadding</item>
+        <item name="android:paddingBottom">@dimen/dlg_radiogroupBottomPadding</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="dlg.radioGroupHorizontal" parent="@style/dlg">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="dlg.scrollLayout" parent="@style/dlg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="dlg.sectionTitleText" parent="@style/dlg">
+        <item name="android:textSize">@dimen/dlg_sectionTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/txt_placeholder</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="dlg.subtitleText" parent="@style/dlg">
+        <item name="android:textSize">@dimen/dlg_subtitleTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:paddingLeft">@dimen/dlg_subtitlePaddingLeft</item>
+        <item name="android:paddingTop">@dimen/dlg_subtitlePaddingTop</item>
+        <item name="android:paddingRight">@dimen/dlg_subtitlePaddingRight</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/txt_placeholder</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="dlg.text" parent="@style/dlg">
+        <item name="android:textSize">@dimen/dlg_textTextSize</item>
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:paddingLeft">@dimen/dlg_textPaddingLeft</item>
+        <item name="android:paddingRight">@dimen/dlg_textPaddingRight</item>
+        <item name="android:paddingBottom">@dimen/dlg_textPaddingBottom</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/txt_placeholder</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="dlg.text.center" parent="@style/dlg.text">
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+    <style name="dlg.valueAmount" parent="@style/dlg">
+        <item name="android:textSize">@dimen/dlgChangeBaseValue_textValueSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_sheet_text</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:text">@string/txt_Placeholder</item>
+        <item name="android:width">@dimen/dlgChangeBaseValue_box_width</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="dlg.valueButton" parent="@style/dlg">
+        <item name="android:padding">@dimen/dlgChangeBaseValue_buttonPadding</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">@dimen/dlgChangeBaseValue_buttonWidhtHeight</item>
+        <item name="android:maxHeight">@dimen/dlgChangeBaseValue_buttonWidhtHeight</item>
+        <item name="android:contentDescription">@string/txt_PlusMinus</item>
+    </style>
+    <style name="dlg.valueButton.base" parent="@style/dlg.valueButton">
+        <item name="android:layout_marginLeft">@dimen/dlgChangeBaseValue_buttonMargin</item>
+        <item name="android:layout_marginRight">@dimen/dlgChangeBaseValue_buttonMargin</item>
+    </style>
+    <style name="dlg.valueButton.base.minus" parent="@style/dlg.valueButton.base">
+        <item name="android:src">@drawable/ico_button_minus</item>
+    </style>
+    <style name="dlg.valueButton.base.plus" parent="@style/dlg.valueButton.base">
+        <item name="android:src">@drawable/ico_button_plus</item>
+    </style>
+    <style name="dlg.valueButton.minus" parent="@style/dlg.valueButton">
+        <item name="android:src">@drawable/ico_button_minus</item>
+    </style>
+    <style name="dlg.valueButton.plus" parent="@style/dlg.valueButton">
+        <item name="android:src">@drawable/ico_button_plus</item>
+    </style>
+    <style name="dlg.valueButtonLayout" parent="@style/dlg">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="dlg.valueDescription" parent="@style/dlg">
+        <item name="android:textSize">@dimen/dlgChangeBaseValue_textSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:width">@dimen/dlgChangeBaseValue_desc_width</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="dlg.valuelayout" parent="@style/dlg">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/sheet_okBackground</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="dlg.valuelayout.margin" parent="@style/dlg.valuelayout">
+        <item name="android:layout_marginRight">@dimen/dlgChangeAbility_box_marginRight</item>
+    </style>
+    <style name="dlg.valuelayoutHorizontal" parent="@style/dlg">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/dlg_sectionPaddingBottom</item>
+    </style>
+    <style name="dlg.valuelayoutHorizontal.left" parent="@style/dlg.valuelayoutHorizontal">
+        <item name="android:layout_gravity">left</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+    <style name="dlgZoom_btnClose" parent="">
+        <item name="android:layout_gravity">right</item>
+        <item name="android:paddingLeft">@dimen/incFontSizeChanger_paddingLeft</item>
+        <item name="android:paddingTop">@dimen/incFontSizeChanger_paddingTop</item>
+        <item name="android:paddingRight">@dimen/incFontSizeChanger_paddingRight</item>
+        <item name="android:paddingBottom">@dimen/incFontSizeChanger_paddingBottom</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">@dimen/incFontSizeChanger_buttonSize</item>
+        <item name="android:maxHeight">@dimen/incFontSizeChanger_buttonSize</item>
+        <item name="android:onClick">onCloseImage</item>
+    </style>
+    <style name="frgCombat" parent="">
+    </style>
+    <style name="frgCombat.button" parent="@style/frgCombat">
+    </style>
+    <style name="frgCombat.button.plusminus" parent="@style/frgCombat.button">
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">@dimen/frgCombat_buttonPlusMinus_WidhtHeight</item>
+        <item name="android:maxHeight">@dimen/frgCombat_buttonPlusMinus_WidhtHeight</item>
+        <item name="android:onClick">onClickCombatView</item>
+        <item name="android:contentDescription">@string/txt_PlusMinus</item>
+    </style>
+    <style name="frgCombat.button.plusminus.minus" parent="@style/frgCombat.button.plusminus">
+        <item name="android:src">@drawable/ico_button_minus</item>
+    </style>
+    <style name="frgCombat.button.plusminus.minus.grey" parent="@style/frgCombat.button.plusminus.minus">
+        <item name="android:src">@drawable/ico_button_minus_grey</item>
+    </style>
+    <style name="frgCombat.button.plusminus.plus" parent="@style/frgCombat.button.plusminus">
+        <item name="android:src">@drawable/ico_button_plus</item>
+    </style>
+    <style name="frgCombat.button.plusminus.plus.grey" parent="@style/frgCombat.button.plusminus.plus">
+        <item name="android:src">@drawable/ico_button_plus_grey</item>
+    </style>
+    <style name="frgCombat.button.tutorial" parent="@style/frgCombat.button">
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ico_combat_tutorial</item>
+        <item name="android:scaleType">fitEnd</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">@dimen/frgCombat_buttonPlusMinus_WidhtHeight</item>
+        <item name="android:maxHeight">@dimen/frgCombat_buttonPlusMinus_WidhtHeight</item>
+        <item name="android:onClick">onClickCombatView</item>
+        <item name="android:contentDescription">@string/txt_PlusMinus</item>
+    </style>
+    <style name="frgCombat.divider" parent="@style/frgCombat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/frgCombat_divider_marginHorizontal</item>
+        <item name="android:layout_marginTop">@dimen/frgCombat_divider_marginVertical</item>
+        <item name="android:layout_marginRight">@dimen/frgCombat_divider_marginHorizontal</item>
+        <item name="android:layout_marginBottom">@dimen/frgCombat_divider_marginVertical</item>
+        <item name="android:src">@drawable/horizontal_divider</item>
+    </style>
+    <style name="frgCombat.layout" parent="@style/frgCombat">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="frgCombat.layout.horizontal" parent="@style/frgCombat.layout">
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="frgCombat.layout.horizontal.margin" parent="@style/frgCombat.layout.horizontal">
+        <item name="android:layout_marginBottom">@dimen/frgCombat_section_marginBottom</item>
+    </style>
+    <style name="frgCombat.layout.outer" parent="@style/frgCombat.layout">
+        <item name="android:background">@drawable/bkg_chapter_body</item>
+        <item name="android:padding">@dimen/frgCombat_layoutPadding</item>
+    </style>
+    <style name="frgCombat.scroll" parent="@style/frgCombat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="frgCombat.text" parent="@style/frgCombat">
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="frgCombat.text.abilityName" parent="@style/frgCombat.text">
+        <item name="android:textSize">@dimen/frgCombat_ability_textSize</item>
+        <item name="android:layout_width">@dimen/global_sizeNone</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="frgCombat.text.abilityName.fighter" parent="@style/frgCombat.text.abilityName">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/txt_placeholder</item>
+    </style>
+    <style name="frgCombat.text.abilityName.fighter.damage" parent="@style/frgCombat.text.abilityName.fighter">
+        <item name="android:clickable">true</item>
+        <item name="android:text">@string/button_assignDamage</item>
+        <item name="android:onClick">onClickCombatView</item>
+    </style>
+    <style name="frgCombat.text.abilityValue" parent="@style/frgCombat.text">
+        <item name="android:textSize">@dimen/frgCombat_ability_textSize</item>
+        <item name="android:background">@drawable/bg_sheet_text_variable</item>
+        <item name="android:paddingLeft">@dimen/frgCombat_ability_paddingLeft</item>
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:paddingRight">@dimen/frgCombat_ability_paddingRight</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/frgCombat_ability_marginLateral</item>
+        <item name="android:layout_marginRight">@dimen/frgCombat_ability_marginLateral</item>
+        <item name="android:text">@string/txt_Placeholder</item>
+    </style>
+    <style name="frgCombat.text.abilityValue.large" parent="@style/frgCombat.text.abilityValue">
+        <item name="android:width">@dimen/frgCombat_turn_width</item>
+    </style>
+    <style name="frgCombat.text.end" parent="@style/frgCombat.text">
+        <item name="android:textSize">@dimen/frgCombat_ability_textSize</item>
+        <item name="android:paddingLeft">@dimen/frgCombat_ability_paddingLeft</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/frgCombat_ability_marginLateral</item>
+        <item name="android:layout_marginRight">@dimen/frgCombat_ability_marginLateral</item>
+        <item name="android:text">@string/button_endCombat</item>
+        <item name="android:drawableLeft">@drawable/ico_combat_backtosheet</item>
+        <item name="android:onClick">onClickCombatView</item>
+    </style>
+    <style name="frgCombat.text.inactive" parent="@style/frgCombat.text">
+        <item name="android:textSize">@dimen/frgCombat_inactive_textSize</item>
+        <item name="android:background">@drawable/bkg_fight</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:text">@string/txt_FightInactive</item>
+    </style>
+    <style name="frgCombat.text.note" parent="@style/frgCombat.text">
+        <item name="android:textSize">@dimen/frgCombat_ability_textSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/frgCombat_section_marginBottom</item>
+        <item name="android:text">@string/txt_placeholder</item>
+    </style>
+    <style name="frgCombat.text.title" parent="@style/frgCombat.text">
+        <item name="android:textSize">@dimen/frgCombat_lblSheet_textSize</item>
+        <item name="android:paddingTop">@dimen/frgCombat_title_paddingTop</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/frgCombat_section_marginBottom</item>
+        <item name="android:text">@string/txt_Combat</item>
+    </style>
+    <style name="frgCombat.text.turn" parent="@style/frgCombat.text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/frgCombat_ability_marginLateral</item>
+    </style>
+    <style name="frgRemote" parent="">
+    </style>
+    <style name="frgRemote.button" parent="@style/frgRemote">
+        <item name="android:textSize">@dimen/dlg_buttonTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dlg_button_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/btn_dialog</item>
+        <item name="android:paddingLeft">@dimen/dlg_buttonPaddingLeft</item>
+        <item name="android:paddingTop">@dimen/dlg_buttonPaddingTop</item>
+        <item name="android:paddingRight">@dimen/dlg_buttonPaddingRight</item>
+        <item name="android:paddingBottom">@dimen/dlg_buttonPaddingBottom</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/dlg_buttonMarginLeft</item>
+        <item name="android:layout_marginTop">@dimen/dlg_buttonMarginBottom</item>
+        <item name="android:layout_marginRight">@dimen/dlg_buttonMarginRight</item>
+        <item name="android:layout_marginBottom">@dimen/dlg_buttonMarginBottom</item>
+        <item name="android:onClick">onClick</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="frgRemote.layout" parent="@style/frgRemote">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="frgRemote.layout.inner" parent="@style/frgRemote.layout">
+        <item name="android:padding">@dimen/frgRemote_layoutPadding</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+    <style name="frgRemote.layout.main" parent="@style/frgRemote.layout">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bkg_chapter_body</item>
+    </style>
+    <style name="frgRemote.scroll" parent="@style/frgRemote">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="frgRemote.text" parent="@style/frgRemote">
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="frgRemote.text.field" parent="@style/frgRemote.text">
+        <item name="android:textSize">@dimen/frgRemote_text_textSize</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_marginBottom">@dimen/frgRemote_field_marginBottom</item>
+    </style>
+    <style name="frgRemote.text.field.bold" parent="@style/frgRemote.text.field">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/frgRemote_field_marginTop</item>
+    </style>
+    <style name="frgRemote.text.field.description" parent="@style/frgRemote.text.field">
+        <item name="android:textSize">@dimen/frgRemote_text_textSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">left</item>
+    </style>
+    <style name="frgRemote.text.field.password" parent="@style/frgRemote.text.field">
+    </style>
+    <style name="frgRemote.text.header" parent="@style/frgRemote.text">
+        <item name="android:textSize">@dimen/frgRemote_lblHeader_textSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">@dimen/frgRemote_lblHeader_paddingTop</item>
+        <item name="android:layout_marginBottom">@dimen/frgRemote_section_marginBottom</item>
+    </style>
+    <style name="frgSheet" parent="">
+    </style>
+    <style name="frgSheet.description" parent="@style/frgSheet">
+        <item name="android:textSize">@dimen/frgSheet_text_textSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:paddingRight">@dimen/cmpListElementItem_icon_padding</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="frgSheet.layout" parent="@style/frgSheet">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="frgSheet.layout.horizontal" parent="@style/frgSheet.layout">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="frgSheet.layout.horizontal.margin" parent="@style/frgSheet.layout.horizontal">
+        <item name="android:layout_marginBottom">@dimen/frgSheet_section_marginBottom</item>
+    </style>
+    <style name="frgSheet.layout.listElement" parent="@style/frgSheet.layout">
+        <item name="android:background">@drawable/bg_sheet_line</item>
+        <item name="android:paddingLeft">@dimen/cmpListElementTalent_layout_paddingLeft</item>
+        <item name="android:paddingRight">@dimen/cmpListElementTalent_layout_paddingRight</item>
+    </style>
+    <style name="frgSheet.layout.listElement.horizontal" parent="@style/frgSheet.layout.listElement">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="frgSheet.layout.listElement.horizontal.addElement" parent="@style/frgSheet.layout.listElement.horizontal">
+        <item name="android:background">@drawable/empty</item>
+    </style>
+    <style name="frgSheet.layout.main" parent="@style/frgSheet.layout">
+        <item name="android:background">@drawable/bkg_chapter_body</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="frgSheet.layout.scroll" parent="@style/frgSheet.layout">
+        <item name="android:padding">@dimen/frgSheet_layoutPadding</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+    <style name="frgSheet.list" parent="@style/frgSheet">
+    </style>
+    <style name="frgSheet.list.icon" parent="@style/frgSheet.list">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:padding">@dimen/cmpListElementProfile_icon_padding</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">@dimen/cmpListElementItem_icon_sizeMax</item>
+        <item name="android:maxHeight">@dimen/cmpListElementItem_icon_sizeMax</item>
+    </style>
+    <style name="frgSheet.list.icon.small" parent="@style/frgSheet.list.icon">
+        <item name="android:maxWidth">@dimen/cmpListElementItem_iconSmall_sizeMax</item>
+        <item name="android:maxHeight">@dimen/cmpListElementItem_iconSmall_sizeMax</item>
+    </style>
+    <style name="frgSheet.text" parent="@style/frgSheet">
+        <item name="android:textColor">@color/paragraph_text</item>
+    </style>
+    <style name="frgSheet.text.header" parent="@style/frgSheet.text">
+        <item name="android:textSize">@dimen/frgSheet_lblHeader_textSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">@dimen/frgSheet_lblHeader_paddingTop</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/frgSheet_section_marginBottom</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="frgSheet.text.header.flanked" parent="@style/frgSheet.text.header">
+        <item name="android:paddingLeft">@dimen/frgSheet_lblSheet_paddingLeft</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="frgSheet.text.listElement" parent="@style/frgSheet.text">
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="frgSheet.text.listElement.description" parent="@style/frgSheet.text.listElement">
+        <item name="android:textSize">@dimen/cmpListElementItem_txtSmall_textSize</item>
+        <item name="android:paddingLeft">@dimen/cmpListElementItem_txtElement_paddingLeft</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">2</item>
+    </style>
+    <style name="frgSheet.text.listElement.page" parent="@style/frgSheet.text.listElement">
+        <item name="android:textSize">@dimen/cmpListElementItem_txtSmall_textSize</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="frgSheet.text.listElement.quantity" parent="@style/frgSheet.text.listElement">
+        <item name="android:textSize">@dimen/cmpListElementItem_txtElement_textSize</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/cmpListElementItem_txtQuantity_marginRight</item>
+    </style>
+    <style name="frgSheet.text.listElement.text" parent="@style/frgSheet.text.listElement">
+        <item name="android:textSize">@dimen/cmpListElementItem_txtElement_textSize</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">2</item>
+    </style>
+    <style name="frgSheet.timeBar" parent="@style/frgSheet">
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/frgSheet_btnTime_marginRight</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxHeight">@dimen/frgSheet_btnTime_maxHeight</item>
+        <item name="android:onClick">onClickSheetView</item>
+        <item name="android:contentDescription">@string/txt_PlusMinus</item>
+    </style>
+    <style name="frgSheetItemList" parent="">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bg_sheet_text_red</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/frgSheet_section_marginBottom</item>
+    </style>
+    <style name="frgSheetItemListTitle" parent="">
+        <item name="android:textSize">@dimen/frgSheet_subTitle_textSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">@dimen/frgSheet_subTitle_paddingTop</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/frgSheet_section_marginBottom</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="frgSheetMultiValueInnerLayout" parent="">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bg_sheet_text_red</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="frgSheetMultiValueInnerLayout.Margin" parent="@style/frgSheetMultiValueInnerLayout">
+        <item name="android:layout_marginRight">@dimen/frgSheet_ability_marginRight</item>
+    </style>
+    <style name="frgSheetMultiValueOuterLayout" parent="">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/frgSheet_section_marginBottom</item>
+    </style>
+    <style name="frgSheetText" parent="">
+        <item name="android:textSize">@dimen/frgSheet_text_textSize</item>
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:background">@drawable/bg_sheet_text_red</item>
+        <item name="android:paddingLeft">@dimen/frgSheet_text_paddingLeft</item>
+        <item name="android:paddingRight">@dimen/frgSheet_text_paddingRight</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/frgSheet_text_marginLeft</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:onClick">onClickSheetView</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="frgSheetValueLayout" parent="">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bg_sheet_text_red</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/frgSheet_section_marginBottom</item>
+    </style>
+    <style name="frgSheetValueNumber" parent="">
+        <item name="android:textSize">@dimen/frgSheet_abilityValue_textSize</item>
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:width">@dimen/frgSheet_abilityLarge_Width</item>
+        <item name="android:onClick">onClickSheetView</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="frgSheetValueNumber.Small" parent="@style/frgSheetValueNumber">
+        <item name="android:width">@dimen/frgSheet_ability_Width</item>
+    </style>
+    <style name="frgSheetValueTitle" parent="">
+        <item name="android:textSize">@dimen/frgSheet_ability_textSize</item>
+        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="font">@string/fnt_FontCore</item>
+    </style>
+    <style name="incFontSizeChanger" parent="">
+        <item name="android:paddingLeft">@dimen/incFontSizeChanger_paddingLeft</item>
+        <item name="android:paddingTop">@dimen/incFontSizeChanger_paddingTop</item>
+        <item name="android:paddingRight">@dimen/incFontSizeChanger_paddingRight</item>
+        <item name="android:paddingBottom">@dimen/incFontSizeChanger_paddingBottom</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxWidth">@dimen/incFontSizeChanger_buttonSize</item>
+        <item name="android:maxHeight">@dimen/incFontSizeChanger_buttonSize</item>
+        <item name="android:onClick">onChangeFontSize</item>
+        <item name="android:contentDescription">@string/cmp_BtnFontIncrease</item>
+    </style>
+    <style name="incFontSizeChanger.filler" parent="@style/incFontSizeChanger">
+        <item name="android:clickable">false</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="incFontSizeChanger.history" parent="@style/incFontSizeChanger">
+        <item name="android:visibility">invisible</item>
+        <item name="android:onClick">onToggleHistory</item>
+    </style>
+    <style name="incFontSizeChanger.justification" parent="@style/incFontSizeChanger">
+        <item name="android:visibility">invisible</item>
+        <item name="android:onClick">onSwitchJustification</item>
+    </style>
+</resources>

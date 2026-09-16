@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpt.games.transport2147.utils.view.radiobutton.RPRadioButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cmpListElementProfileTemplate_rdbTemplate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/txt_placeholder"
+    custom:font="@string/fnt_FontCore"/>

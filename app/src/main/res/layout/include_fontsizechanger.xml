@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:id="@+id/frgChapter_layFont"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:contentDescription="@string/img"
+        android:id="@+id/incFontChgr_btnFontIncrease"
+        android:src="@drawable/ico_chapter_font_larger"
+        style="@style/incFontSizeChanger"/>
+    <ImageView
+        android:contentDescription="@string/img"
+        android:id="@+id/incFontChgr_btnFontDecrease"
+        android:src="@drawable/ico_chapter_font_smaller"
+        style="@style/incFontSizeChanger"/>
+    <ImageView
+        android:contentDescription="@string/img"
+        android:id="@+id/incFontChgr_btnSwitchJustification"
+        android:src="@drawable/ico_chapter_justifier"
+        style="@style/incFontSizeChanger.justification"/>
+    <ImageView
+        android:contentDescription="@string/img"
+        android:id="@+id/incFontChgr_btnEmpty"
+        android:src="@drawable/empty"
+        style="@style/incFontSizeChanger.filler"/>
+    <ImageView
+        android:contentDescription="@string/img"
+        android:id="@+id/incFontChgr_btnHistoryToggle"
+        android:src="@drawable/ico_action_historytrack"
+        style="@style/incFontSizeChanger.history"/>
+</LinearLayout>

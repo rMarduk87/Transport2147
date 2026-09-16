@@ -10,7 +10,7 @@ import java.io.Serializable
 
 @Keep
 data class Chapter(
-    val id: Int,
+    val id: String,
     val chapter: String
 ) : AppModel(), Serializable {
 

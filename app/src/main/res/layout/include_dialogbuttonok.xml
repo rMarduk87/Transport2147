@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpt.games.transport2147.utils.view.text.RPTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_buttonOk"
+    android:text="@string/ok"
+    style="@style/dlg.button"/>

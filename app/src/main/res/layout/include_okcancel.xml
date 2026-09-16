@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/dlg.innerLayout.horizontal">
+    <include layout="@layout/include_dialogbuttonok"/>
+    <include layout="@layout/include_dialogbuttoncancel"/>
+</LinearLayout>

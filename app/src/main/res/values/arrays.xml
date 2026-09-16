@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="font_dimension">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </array>
+    <array name="font_points">
+        <item>@dimen/font_dimen0</item>
+        <item>@dimen/font_dimen1</item>
+        <item>@dimen/font_dimen2</item>
+        <item>@dimen/font_dimen3</item>
+        <item>@dimen/font_dimen4</item>
+        <item>@dimen/font_dimen5</item>
+        <item>@dimen/font_dimen6</item>
+        <item>@dimen/font_dimen7</item>
+        <item>@dimen/font_dimen8</item>
+        <item>@dimen/font_dimen9</item>
+        <item>@dimen/font_dimen10</item>
+        <item>@dimen/font_dimen11</item>
+        <item>@dimen/font_dimen12</item>
+    </array>
+</resources>

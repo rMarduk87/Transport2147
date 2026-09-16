@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_nav_graph.xml">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/introFragment">
+
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="rpt.games.transport2147.ui.intro.IntroFragment"
+        tools:layout="@layout/fragment_intro"
+        android:label="IntroFragment">
+
+        <action
+            android:id="@+id/action_introFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="rpt.games.transport2147.ui.mainmenu.MainMenuFragment"
+        tools:layout="@layout/fragment_main_menu"
+        android:label="MainMenuFragment">
+    </fragment>
 
 </navigation>

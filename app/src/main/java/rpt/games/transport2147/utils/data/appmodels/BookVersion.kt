@@ -5,14 +5,13 @@ import rpt.games.transport2147.utils.data.AppModel
 import rpt.games.transport2147.utils.data.DbModel
 import rpt.games.transport2147.utils.data.database.mappers.addMapper
 import rpt.games.transport2147.utils.data.database.mappers.book.BookVersionToBookVersionModel
-import rpt.games.transport2147.utils.data.database.mappers.chapters.ChapterToChaptersModel
 import rpt.games.transport2147.utils.data.database.models.BookVersionModel
 import java.io.Serializable
 
 @Keep
 data class BookVersion(
     val id: Int,
-    val language: String,
+    val language: String?,
     val version: Int
 ) : AppModel(), Serializable {
 

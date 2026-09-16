@@ -49,7 +49,7 @@ class TerminalHackingGame(
         if (likeness == targetWord.length) {
             isGameOver = true
             isGameWon = true
-            return "ACCESSO CONSENTITO"
+            return context.getString(R.string.terminal_access_granted)
         }
 
         // Se sbagliamo, togliamo un tentativo
@@ -58,11 +58,11 @@ class TerminalHackingGame(
         // Condizione di Sconfitta
         if (attemptsLeft <= 0) {
             isGameOver = true
-            return "ACCESSO NEGATO. Blocco di sicurezza attivato."
+            return context.getString(R.string.terminal_access_denied_lockout)
         }
 
         // Tentativo fallito ma gioco ancora aperto
-        return "Accesso Negato ($likeness/${targetWord.length} corretti)"
+        return context.getString(R.string.terminal_access_denied_likeness, likeness, targetWord.length)
     }
 
     /**
@@ -71,7 +71,7 @@ class TerminalHackingGame(
      */
     fun applyBracketHack(): String {
         if (isGameOver) {
-            return "ERRORE: Terminale bloccato."
+            return context.getString(R.string.errore_terminale_bloccato)
         }
 
         // 20% di probabilità di ripristinare i tentativi, 80% di rimuovere una parola falsa
@@ -79,7 +79,7 @@ class TerminalHackingGame(
 
         return if (isReset) {
             attemptsLeft = maxAttempts
-            "TENTATIVI RIPRISTINATI."
+            context.getString(R.string.terminal_hacks_reset)
         } else {
             removeRandomDud()
         }
@@ -93,14 +93,14 @@ class TerminalHackingGame(
         val availableDuds = words.filter { it != targetWord && !removedDuds.contains(it) }
 
         if (availableDuds.isEmpty()) {
-            return "ERRORE: Nessuna parola falsa rimanente."
+            return context.getString(R.string.terminal_hacks_no_duds)
         }
 
         // Ne scegliamo una a caso e la aggiungiamo alla lista di quelle rimosse
         val dudToRemove = availableDuds.random()
         removedDuds.add(dudToRemove)
 
-        return "DUD RIMOSSO."
+        return context.getString(R.string.terminal_hacks_dud_removed)
     }
 
     /**
