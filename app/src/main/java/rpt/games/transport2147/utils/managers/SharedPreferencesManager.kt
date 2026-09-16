@@ -23,4 +23,8 @@ object SharedPreferencesManager {
     var fontSize: Int
         get() = sharedPreferences.getInt(AppUtils.FONT_SIZE, 0)
         set(value) = sharedPreferences.edit { putInt(AppUtils.FONT_SIZE, value) }
+
+    var textJustification: Boolean
+        get() = sharedPreferences.getBoolean(AppUtils.TEXT_JUSTIFICATION, true)
+        set(value) = sharedPreferences.edit { putBoolean(AppUtils.TEXT_JUSTIFICATION, value) }
 }

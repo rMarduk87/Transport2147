@@ -32,7 +32,7 @@ object XmlUtility {
         return null
     }
 
-    fun getFirstSubNode(element: Element, str: String?): Element? {
+    fun getFirstSubNode(element: Element?, str: String?): Element? {
         return try {
             element.getElementsByTagName(str).item(0) as Element?
         } catch (e: Exception) {

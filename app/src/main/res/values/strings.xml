@@ -35,4 +35,5 @@
     <string name="txt_FightInactive">Combattimento non attivo: fai click su un nemico per attivare questa pagina</string>
     <string name="txt_Combat">COMBAT</string>
     <string name="cmp_BtnFontIncrease">IngrandisciFont</string>
+    <string name="dummy">...</string>
 </resources>

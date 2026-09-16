@@ -1,6 +1,6 @@
 package rpt.games.transport2147.utils
 
-object GamesConstants {
+object GameConstants {
     const val ABILITY_OPERATION_ADD: String = "add"
     const val ABILITY_OPERATION_SUBTRACT: String = "subtract"
     const val ABILITY_TYPE_CRAFT: String = "craft"

@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import rpt.games.transport2147.utils.managers.FontManager
 
 
-class RPTextView : androidx.appcompat.widget.AppCompatTextView {
+open class RPTextView : androidx.appcompat.widget.AppCompatTextView {
     constructor(context: Context?) : super(context!!)
 
     constructor(context: Context?, attributeSet: AttributeSet?) : super(context!!,

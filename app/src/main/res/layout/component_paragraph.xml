@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpt.games.transport2147.utils.view.text.RPTextView2
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:textColor="@color/paragraph_text"
+    android:id="@+id/cmpParagraph_txtText"
+    android:paddingBottom="@dimen/cmpParagraph_textPaddingBottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/dummy"
+    custom:font="@string/fnt_FontCore"
+    custom:textJustified="false"/>

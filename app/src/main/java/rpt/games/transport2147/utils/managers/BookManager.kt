@@ -4,7 +4,7 @@ import rpt.com.base.log.e
 import rpt.games.transport2147.R
 import rpt.games.transport2147.TransportApplication
 import rpt.games.transport2147.utils.AppUtils
-import rpt.games.transport2147.utils.GamesConstants
+import rpt.games.transport2147.utils.GameConstants
 import rpt.games.transport2147.utils.data.appmodels.BookVersion
 import rpt.games.transport2147.utils.data.database.models.*
 import rpt.games.transport2147.utils.file.FileUtility
@@ -19,9 +19,9 @@ class BookManager {
             val strLoadBook: String? = loadBook()
             val bookVersion = BookVersion(1,
                 AppUtils.execSingleRegex(strLoadBook,
-                    GamesConstants.REGEX_FIND_BOOK_LANGUAGE, 1),
+                    GameConstants.REGEX_FIND_BOOK_LANGUAGE, 1),
                 AppUtils.execSingleRegex(strLoadBook,
-                    GamesConstants.REGEX_FIND_BOOK_VERSION, 1)?.toInt() ?: 0
+                    GameConstants.REGEX_FIND_BOOK_VERSION, 1)?.toInt() ?: 0
             )
             if (dbBookVersion == null ||
                 dbBookVersion.language != bookVersion.language ||
@@ -50,14 +50,14 @@ class BookManager {
             bookVersion: BookVersion
         ) {
             populateTable("chapters", strLoadBook!!, "chapter", "name")
-            populateTable("enemy", strLoadBook, GamesConstants.XML_NODE_ENEMY,
+            populateTable("enemy", strLoadBook, GameConstants.XML_NODE_ENEMY,
                 "id")
-            populateTable("objects", strLoadBook, GamesConstants.XML_NODE_OBJECT,
+            populateTable("objects", strLoadBook, GameConstants.XML_NODE_OBJECT,
                 "id")
-            populateTable("talents", strLoadBook, GamesConstants.XML_NODE_TALENT,
+            populateTable("talents", strLoadBook, GameConstants.XML_NODE_TALENT,
                 "id")
             populateTable("sheet-templates", strLoadBook, "sheet", "id")
-            populateTable("dictionary", strLoadBook, GamesConstants.XML_NODE_ENTRY,
+            populateTable("dictionary", strLoadBook, GameConstants.XML_NODE_ENTRY,
                 "id")
             RepositoryManager.bookRepository.insertBookVersion(bookVersion)
         }

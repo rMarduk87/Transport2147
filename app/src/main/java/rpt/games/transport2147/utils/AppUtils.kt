@@ -25,6 +25,7 @@ class AppUtils {
         const val USERS_SHARED_PREF : String = "user_pref"
         const val SHOW_INTRO : String = "showIntro"
         const val FONT_SIZE : String = "fontSize"
+        const val TEXT_JUSTIFICATION : String = "text_justification"
         var FONT_NAME : String = ""
 
 

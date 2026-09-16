@@ -2,7 +2,6 @@ package rpt.games.transport2147.utils.managers
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +16,7 @@ import org.w3c.dom.Element
 import rpt.com.base.log.e
 import rpt.games.transport2147.R
 import rpt.games.transport2147.utils.AppUtils
-import rpt.games.transport2147.utils.GamesConstants
+import rpt.games.transport2147.utils.GameConstants
 import rpt.games.transport2147.utils.view.chapter.ChapterFormatter
 import rpt.games.transport2147.utils.xml.XmlUtility
 
@@ -37,7 +36,7 @@ class DialogManager {
                 ChapterFormatter().formatChapter(
                     scrollView.findViewById<View?>(R.id.dlgFastStart_layContent) as LinearLayout?,
                     context,
-                    GamesConstants.BOOK_CHAPTER_FASTSTART
+                    GameConstants.BOOK_CHAPTER_FASTSTART
                 )
                 val radioGroup =
                     scrollView.findViewById<View?>(R.id.dlgFastStart_rdgTemplates) as RadioGroup
@@ -96,7 +95,7 @@ class DialogManager {
                         ChapterFormatter().formatChapter(
                             linearLayout,
                             context,
-                            GamesConstants.BOOK_CHAPTER_FASTSTART
+                            GameConstants.BOOK_CHAPTER_FASTSTART
                         )
                     } catch (e: Exception) {
                         e.message?.let { e(Throwable(e), it) }
@@ -139,8 +138,8 @@ class DialogManager {
                 val rootElement: Element? = XmlUtility.getRootElement(templates[i])
                 val zEqualsIgnoreCase: Boolean = XmlUtility.getElementAttribute(
                     rootElement,
-                    GamesConstants.XML_NODE_TEMPLATES_SHEET_ATTR_FASTSTART
-                )?.equals(GamesConstants.STRING_YES, ignoreCase = true) ?: false
+                    GameConstants.XML_NODE_TEMPLATES_SHEET_ATTR_FASTSTART
+                )?.equals(GameConstants.STRING_YES, ignoreCase = true) ?: false
                 if (!z || zEqualsIgnoreCase) {
                     val radioButton = layoutInflater.inflate(
                         R.layout.component_listelementprofiletemplate,
@@ -214,5 +213,9 @@ class DialogManager {
                 textView.setOnClickListener { alertDialog.dismiss() }
             }
         }
+
+        fun showGlossaryEntry(context: Context, attribute: String) {}
+        fun historyJump(context: android.content.Context, string: String, i: Int) {}
+        fun takeMultiObject(context: Context, m4clone: Any) {}
     }
 }

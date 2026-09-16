@@ -1,5 +1,6 @@
 package rpt.games.transport2147.utils.data.appmodels
 
+import android.content.Context
 import androidx.annotation.Keep
 import rpt.games.transport2147.utils.data.AppModel
 import rpt.games.transport2147.utils.data.DbModel
@@ -10,8 +11,8 @@ import java.io.Serializable
 
 @Keep
 data class Enemy(
-    val id: String,
-    val enemy: String
+    val id: Context?,
+    val enemy: String?
 ) : AppModel(), Serializable {
 
     init {
