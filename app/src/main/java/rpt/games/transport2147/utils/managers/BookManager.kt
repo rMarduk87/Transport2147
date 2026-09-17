@@ -6,6 +6,7 @@ import rpt.games.transport2147.TransportApplication
 import rpt.games.transport2147.utils.AppUtils
 import rpt.games.transport2147.utils.GameConstants
 import rpt.games.transport2147.utils.data.appmodels.BookVersion
+import rpt.games.transport2147.utils.data.appmodels.Profile
 import rpt.games.transport2147.utils.data.database.models.*
 import rpt.games.transport2147.utils.file.FileUtility
 
@@ -107,6 +108,41 @@ class BookManager {
             return RepositoryManager.bookRepository.getChapter(str) ?: ""
         }
 
+        @Throws(Exception::class)
+        fun getEnemy(str: String?): String {
+            return getXmlElement("enemies", "id", "enemy", str)
+        }
 
+        private fun getXmlElement(
+            tableName: String?,
+            queryColumn: String?,
+            resultColumn: String?,
+            value: String?
+        ): String {
+            if (value == null) return ""
+            
+            return when (tableName) {
+                "enemies" -> RepositoryManager.bookRepository.getEnemy(value)
+                "objects" -> RepositoryManager.bookRepository.getObject(value)
+                "talents" -> RepositoryManager.bookRepository.getTalent(value)
+                "dictionary" -> RepositoryManager.bookRepository.getDictionaryEntry(value)
+                "chapters" -> RepositoryManager.bookRepository.getChapter(value)
+                "sheet-templates" -> RepositoryManager.bookRepository.getSheetTemplate(value)
+                else -> null
+            } ?: ""
+        }
+
+        fun getMostRecentProfile() : Profile {
+            return RepositoryManager.bookRepository.getMostRecentProfile()
+        }
+
+        fun getTalents(): ArrayList<String?> {
+            val talents = RepositoryManager.bookRepository.getAllTalents()
+            return ArrayList(talents)
+        }
+        fun getObject(str: String?): String {
+            return getXmlElement("objects", "id", "item",
+                str)
+        }
     }
 }

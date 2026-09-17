@@ -2,10 +2,10 @@ package rpt.games.transport2147.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.DisplayMetrics
 import android.view.View
-import rpt.games.transport2147.R
+import android.view.WindowManager
 import rpt.games.transport2147.TransportApplication
-import rpt.games.transport2147.utils.managers.SharedPreferencesManager
 import rpt.games.transport2147.utils.view.hacking.TerminalHackingGame
 import rpt.games.transport2147.utils.view.hacking.TerminalToken
 import java.text.SimpleDateFormat
@@ -26,16 +26,9 @@ class AppUtils {
         const val SHOW_INTRO : String = "showIntro"
         const val FONT_SIZE : String = "fontSize"
         const val TEXT_JUSTIFICATION : String = "text_justification"
+        const val CORE_FONT_NAME : String = "core_font_name"
+        const val LANGUAGE : String = "language"
         var FONT_NAME : String = ""
-
-
-        fun setCoreFont(context: Context?, str: String?) {
-            if (str != null) {
-                FONT_NAME = str
-            }
-        }
-
-
 
         fun calculateLikeness(guess: String, target: String): Int {
             if (guess.length != target.length) return 0
@@ -96,35 +89,6 @@ class AppUtils {
             return map
         }
 
-        fun changeFontSize(context: Context?, view: View) {
-            if (view.id == R.id.incFontChgr_btnFontIncrease) {
-                if (_fontDimensionIndex == _fontDimensionMaxIndex) {
-                    return
-                } else {
-                    _fontDimensionIndex++
-                }
-            } else if (_fontDimensionIndex == _fontDimensionMinIndex) {
-                return
-            } else {
-                _fontDimensionIndex--
-            }
-            calculateFontSize(context)
-            SharedPreferencesManager.fontSize = _fontDimensionIndex
-        }
-
-        fun changeFontSize(context: Context?, i: Int) {
-            _fontDimensionIndex = i
-            calculateFontSize(context)
-        }
-
-        private fun calculateFontSize(context: Context?) {
-            val typedArrayObtainTypedArray =
-                context!!.resources.obtainTypedArray(R.array.font_points)
-            _fontDimension = typedArrayObtainTypedArray.getResourceId(_fontDimensionIndex,
-                0)
-            typedArrayObtainTypedArray.recycle()
-        }
-
         @SuppressLint("SimpleDateFormat")
         fun getTimestamp(): String {
             return SimpleDateFormat("yyyyMMdd_hhmmss").format(Date())
@@ -138,6 +102,36 @@ class AppUtils {
         fun execReplace(str: String, str2: String, str3: String): String {
             return Pattern.compile(str2).matcher(str).replaceAll(str3)
         }
+
+        fun getDisplayMetrics(context: Context): DisplayMetrics {
+            val defaultDisplay =
+                (context.getSystemService("window") as WindowManager).defaultDisplay
+            val displayMetrics = DisplayMetrics()
+            defaultDisplay.getMetrics(displayMetrics)
+            return displayMetrics
+        }
+
+        fun extendedTrim(str: String): String {
+            var cCharAt: Char
+            var length = str.length - 1
+            var i = 0
+            while (i < str.length && ((str[i].also {
+                    cCharAt = it
+                }) == ' ' || cCharAt == '\n' || cCharAt == '\r' || cCharAt == '\t')) {
+                i++
+            }
+            if (i == str.length) {
+                return ""
+            }
+            while (true) {
+                val cCharAt2 = str[length]
+                if (cCharAt2 != ' ' && cCharAt2 != '\n' && cCharAt2 != '\r' && cCharAt2 != '\t') {
+                    return str.substring(i, length + 1)
+                }
+                length--
+            }
+        }
+
     }
 
     fun generateTrickBracket(): String {

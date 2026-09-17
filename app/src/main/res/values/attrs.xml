@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="customFont" format="string" /> <!-- Modificato qui -->
+    <attr name="textJustified" format="boolean" />
+
     <declare-styleable name="CustomFont">
         <attr name="fontName" format="string" />
+    </declare-styleable>
+    <declare-styleable name="CustomJustification">
+        <attr name="textJustified" />
+    </declare-styleable>
+    <declare-styleable name="RPTextView">
+        <attr name="customFont" /> <!-- Modificato qui -->
+        <attr name="textJustified" />
+    </declare-styleable>
+    <declare-styleable name="RPTextView2">
+        <attr name="customFont" /> <!-- Modificato qui -->
+        <attr name="textJustified" />
     </declare-styleable>
 </resources>

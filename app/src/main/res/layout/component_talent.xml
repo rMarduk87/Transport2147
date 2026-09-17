@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_sheet_line"
+    android:paddingLeft="@dimen/dlgTalent_talentPadding"
+    android:paddingRight="@dimen/dlgTalent_talentPadding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <CheckBox
+        android:layout_gravity="center_vertical"
+        android:id="@+id/cmpTalent_ckbUsed"
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+        <rpt.games.transport2147.utils.view.text.RPTextView
+            android:textColor="@color/paragraph_text"
+            android:id="@+id/cmpTalent_txtBasedOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_placeholder"
+            custom:font="@string/fnt_FontCore"/>
+        <rpt.games.transport2147.utils.view.text.RPTextView
+            android:textStyle="bold"
+            android:textColor="@color/paragraph_text"
+            android:id="@+id/cmpTalent_txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_placeholder"
+            custom:font="@string/fnt_FontCore"/>
+        <rpt.games.transport2147.utils.view.text.RPTextView
+            android:textColor="@color/paragraph_text"
+            android:id="@+id/cmpTalent_txtDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_placeholder"
+            custom:font="@string/fnt_FontCore"/>
+    </LinearLayout>
+</LinearLayout>

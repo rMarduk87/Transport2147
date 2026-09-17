@@ -18,6 +18,7 @@ import rpt.games.transport2147.R
 import rpt.games.transport2147.utils.AppUtils
 import rpt.games.transport2147.utils.GameConstants
 import rpt.games.transport2147.utils.view.chapter.ChapterFormatter
+import rpt.games.transport2147.utils.view.game.GameLogic
 import rpt.games.transport2147.utils.xml.XmlUtility
 
 
@@ -87,7 +88,7 @@ class DialogManager {
                     })
                 val onClickListener: View.OnClickListener = View.OnClickListener { view ->
 
-                    AppUtils.changeFontSize(context, view,)
+                    GameLogic.changeFontSize(context, view,)
                     val linearLayout: LinearLayout =
                         alertDialogCreate.findViewById(R.id.dlgFastStart_layContent)
                     linearLayout.removeAllViews()
@@ -217,5 +218,7 @@ class DialogManager {
         fun showGlossaryEntry(context: Context, attribute: String) {}
         fun historyJump(context: android.content.Context, string: String, i: Int) {}
         fun takeMultiObject(context: Context, m4clone: Any) {}
+        fun showWarningOnChangeSheetValue(dialogCondbackpackoverloaded: Int) {}
+        fun showGenericDialog(context: android.content.Context, string: String, string2: String) {}
     }
 }

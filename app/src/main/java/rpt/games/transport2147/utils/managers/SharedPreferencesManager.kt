@@ -27,4 +27,12 @@ object SharedPreferencesManager {
     var textJustification: Boolean
         get() = sharedPreferences.getBoolean(AppUtils.TEXT_JUSTIFICATION, true)
         set(value) = sharedPreferences.edit { putBoolean(AppUtils.TEXT_JUSTIFICATION, value) }
+
+    var coreFontName: String?
+        get() = sharedPreferences.getString(AppUtils.CORE_FONT_NAME, "")
+        set(value) = sharedPreferences.edit { putString(AppUtils.CORE_FONT_NAME, value) }
+
+    var language: String?
+        get() = sharedPreferences.getString(AppUtils.LANGUAGE, "")
+        set(value) = sharedPreferences.edit { putString(AppUtils.LANGUAGE, value) }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cmpTableRow_rowRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include
+        android:id="@+id/cmpTableRow_txtCell1"
+        android:layout_width="@dimen/global_sizeNone"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        layout="@layout/component_paragraph"/>
+</TableRow>

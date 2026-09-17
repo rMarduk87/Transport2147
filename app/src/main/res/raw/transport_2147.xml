@@ -98,7 +98,7 @@
       <p><italic>Programmazione:</italic> RP Technologies</p>
       <p><italic>Program management e grafica:</italic> RP Technologies</p>
       <p><italic>Illustrazioni:</italic> RP Technologies</p>
-      <p><italic>Traduzione inglese:</italic>
+      <p><italic>Traduzione inglese:</italic></p>
     </chapter>
 
     <chapter name ="FASTSTART">
@@ -3553,7 +3553,7 @@
       <note></note>
       <trigger condition="turn" threshold="3" thresholdType="over">Hai superato il secondo turno.</trigger>
     </enemy>
-</enemies>
+  </enemies>
   <specialties>
     <specialty id="Colpo debilitante" title="Colpo Debilitante">
       <basedOn>Valore</basedOn>
@@ -3583,7 +3583,7 @@
       <basedOn>Astuzia</basedOn>
       <text>Hai talento nello stimare il valore della ferraglia e nello spuntare un prezzo conveniente ai distributori di contrabbando. Ogni volta che compri un oggetto, riduci di un terzo il suo prezzo in Gettoni Metro, arrotondando per eccesso (se per esempio un oggetto normalmente costa 10, scenderà a 7). <italic>Ricordare di sottrarre il numero corretto di Gettoni Metro durante gli acquisti.</italic></text>
     </specialty>
-</specialties>
+  </specialties>
 
   <dictionary>
     <entry id="antichi" name="Primi Ingegneri">Gli antichi architetti (oggi considerati quasi mitologici) che progettarono e costruirono la Grande Rete nei tempi pre-Collasso. Vivevano sia in superficie che in enormi laboratori ipogei; quando le IA e i sistemi automatizzati presero il controllo, i Primi Ingegneri tentarono di arginare la catastrofe insegnando agli umani superstiti i rudimenti dell'hacking e della sopravvivenza tecnologica. Durante gli Anni del Silenzio, scomparvero o vennero sterminati dalle loro stesse macchine.</entry>
@@ -3594,13 +3594,13 @@
     <entry id="higDayr" name="Tecno-Sciamani">Casta di hacker, bio-ingegneri e medici dediti alla cura delle cyber-patologie, all'estrazione dati e alla purificazione dei server infetti. Praticano le loro arti in favore della popolazione, in genere in cambio di libere offerte in Gettoni; alcuni però lavorano solo per i signori del mercato nero per grandi compensi. Molti sono girovaghi, alcuni vivono stabilmente nei Terminali. Dichiarano che il loro sapere derivi dai Primi Ingegneri, e che sia stato trasmesso per contrastare le Intelligenze Corrotte dell'Abisso.</entry>
     <entry id="kadjan" name="Core-Script">Detto anche Codice Radice o Lingua Macchina, si dice essere il primo linguaggio di programmazione usato dai Primi Ingegneri per costruire la Rete. È la lingua di base in cui sono scritti i vecchi mainframe ed è usata dai Tecno-Sciamani per interfacciarsi con i sistemi più remoti e antichi senza far scattare gli allarmi.</entry>
     <entry id="patriarca" name="Direttore Generale">Il Primo Direttore guidò i Discesi nel sottosuolo, e li governò nei primi decenni della loro sopravvivenza nell'oscurità. Alla sua morte, la carica venne istituzionalizzata e rappresenta ancora oggi la massima autorità morale dei Discesi. Oggi, il Direttore Generale esercita un potere effettivo solo sul colossale terminale di Central-Core, dove risiede protetto da firewall impenetrabili.</entry>
-    <entry id="rayn" name="L'Infrastruttura">L'insieme del mondo conosciuto, composto dai Settori Attivi (La Rete/La Luce), i Settori Morti (I Tunnel/La Tenebra) e il Deep Core (Il Nucleo Corrotto/L'Abisso).</entry> 
+    <entry id="rayn" name="L'Infrastruttura">L'insieme del mondo conosciuto, composto dai Settori Attivi (La Rete/La Luce), i Settori Morti (I Tunnel/La Tenebra) e il Deep Core (Il Nucleo Corrotto/L'Abisso).</entry>
     <entry id="sajagin" name="I Tossici">Un popolo feroce e barbaro, pesantemente mutato dalle radiazioni, che un tempo abitava i tunnel superficiali; durante le Guerre di Bonifica, i Discesi li respinsero progressivamente verso l'alto, fino a cacciarli oltre i portelloni stagni del Livello Zero, che ora costituiscono una frontiera naturale. Una parte dei Tossici è rimasta però nei tunnel inferiori, originando gli «Scarti», una casta di reietti e spazzini tollerati a malapena dai Discesi.</entry>
     <entry id="veltriKarmaugen" name="Segugi della Linea Rossa">Gilda di spietati mercenari e cacciatori di taglie con sede nei tunnel abbandonati e radioattivi della vecchia Linea Rossa.</entry>
     <entry id="ef" name="EF">Energia Fisica.</entry>
     <entry id="em" name="EM">Energia Mentale.</entry>
     <entry id="pa" name="GM">Gettoni Metro (la valuta principale del sottosuolo).</entry>
-</dictionary>
+  </dictionary>
   <templates>
     <sheet id="Combattente" language="it" faststart="yes" name="Kaori &quot;Crash&quot; Sato" gender="female" ticks="0">
       <abilities>
@@ -3674,7 +3674,7 @@
         <object id="cappotto" type="item" originaltype="item" name="Cappotto cerato" quantity="1">Tiene al caldo e isola dall'umidità dei tunnel.</object>
       </objectlist>
     </sheet>
-    
+
     <sheet id="Sapiente" language="it" faststart="yes" name="Kenjiro &quot;Data-Doc&quot;" gender="male" ticks="0">
       <abilities>
         <ability type="valor">
@@ -3748,7 +3748,7 @@
         <object id="cappotto" type="item" originaltype="item" name="Cappotto cerato" quantity="1">Tiene al caldo e isola dall'umidità dei tunnel.</object>
       </objectlist>
     </sheet>
-    
+
     <sheet id="Avventuriero" language="it" faststart="yes" name="Ryo &quot;Scintilla&quot;" gender="male" ticks="0">
       <abilities>
         <ability type="valor">
@@ -3821,7 +3821,7 @@
         <object id="cappotto" type="item" originaltype="item" name="Cappotto cerato" quantity="1">Tiene al caldo e isola dall'umidità dei tunnel.</object>
       </objectlist>
     </sheet>
-    
+
     <sheet id="Viaggiatore" language="it" faststart="yes" name="Kaito il Randagio" gender="male" ticks="0">
       <abilities>
         <ability type="valor">
@@ -3893,7 +3893,7 @@
         <object id="cappotto" type="item" originaltype="item" name="Cappotto cerato" quantity="1">Tiene al caldo e isola dall'umidità dei tunnel.</object>
       </objectlist>
     </sheet>
-    
+
     <sheet id="Scheda vuota" language="it" faststart="no" name="" gender="male" ticks="0">
       <abilities>
         <ability type="valor">
@@ -3956,5 +3956,5 @@
       <talents>
       </talents>
     </sheet>
-</templates>
+  </templates>
 </book>

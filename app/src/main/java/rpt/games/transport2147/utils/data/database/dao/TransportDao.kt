@@ -41,6 +41,21 @@ interface TransportDao {
     @Query("SELECT chapter FROM chapters WHERE id = :id")
     fun getChapterById(id: String): String?
 
+    @Query("SELECT enemy FROM enemies WHERE id = :id")
+    fun getEnemyById(id: String): String?
+
+    @Query("SELECT item FROM objects WHERE id = :id")
+    fun getObjectById(id: String): String?
+
+    @Query("SELECT talent FROM talents WHERE id = :id")
+    fun getTalentById(id: String): String?
+
+    @Query("SELECT entry FROM dictionary WHERE id = :id")
+    fun getDictionaryEntryById(id: String): String?
+
+    @Query("SELECT sheet_template FROM sheet_templates WHERE id = :id")
+    fun getSheetTemplateById(id: String): String?
+
     @Query("SELECT sheet_template FROM sheet_templates")
     fun getAllTemplates(): List<String>
 
@@ -64,4 +79,10 @@ interface TransportDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertDictionaryEntry(dictionaryModel: DictionaryModel)
+
+    @Query("SELECT * FROM profiles ORDER BY id DESC LIMIT 1")
+    fun getMostRecentProfile() : ProfilesModel
+
+    @Query("SELECT talent FROM talents")
+    fun getAllTalents(): List<String>
 }

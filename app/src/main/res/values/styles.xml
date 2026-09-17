@@ -80,7 +80,7 @@
         <item name="android:height">@dimen/actMain_item_height</item>
         <item name="android:width">@dimen/actMain_item_widht</item>
         <item name="android:onClick">onClickMainActivity</item>
-        <item name="font">@string/fnt_FontTitle</item>
+        <item name="customFont">@string/fnt_FontTitle</item>
     </style>
     <style name="actMain.layout" parent="@style/actMain">
     </style>
@@ -128,7 +128,7 @@
         <item name="android:textColor">@color/paragraph_text</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="font">@string/fnt_FontTitle</item>
+        <item name="customFont">@string/fnt_FontTitle</item>
     </style>
     <style name="actMain.text.profile" parent="@style/actMain.text">
         <item name="android:textSize">@dimen/actMain_profile_textSize</item>
@@ -203,7 +203,7 @@
         <item name="android:layout_marginLeft">@dimen/dlg_buttonMarginLeft</item>
         <item name="android:layout_marginRight">@dimen/dlg_buttonMarginRight</item>
         <item name="android:layout_marginBottom">@dimen/dlg_buttonMarginBottom</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="dlg.editText" parent="@style/dlg">
         <item name="android:textColor">@color/paragraph_text</item>
@@ -211,7 +211,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">@dimen/dlg_sectionPaddingBottom</item>
         <item name="android:inputType">textNoSuggestions</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="dlg.editText.inline" parent="@style/dlg.editText">
         <item name="android:width">@dimen/dlg_editTextWidth</item>
@@ -256,7 +256,7 @@
         <item name="android:textSize">@dimen/dlg_dialogTextSize</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="dlg.radioGroup" parent="@style/dlg">
         <item name="android:paddingLeft">@dimen/dlg_radiogroupLeftPadding</item>
@@ -283,7 +283,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:text">@string/txt_placeholder</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="dlg.subtitleText" parent="@style/dlg">
         <item name="android:textSize">@dimen/dlg_subtitleTextSize</item>
@@ -295,7 +295,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:text">@string/txt_placeholder</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="dlg.text" parent="@style/dlg">
         <item name="android:textSize">@dimen/dlg_textTextSize</item>
@@ -306,7 +306,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:text">@string/txt_placeholder</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="dlg.text.center" parent="@style/dlg.text">
         <item name="android:gravity">center_horizontal</item>
@@ -321,7 +321,7 @@
         <item name="android:layout_marginTop">3dp</item>
         <item name="android:text">@string/txt_Placeholder</item>
         <item name="android:width">@dimen/dlgChangeBaseValue_box_width</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="dlg.valueButton" parent="@style/dlg">
         <item name="android:padding">@dimen/dlgChangeBaseValue_buttonPadding</item>
@@ -363,7 +363,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:width">@dimen/dlgChangeBaseValue_desc_width</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="dlg.valuelayout" parent="@style/dlg">
         <item name="android:orientation">vertical</item>
@@ -472,7 +472,7 @@
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_gravity">center</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="frgCombat.text.abilityName" parent="@style/frgCombat.text">
         <item name="android:textSize">@dimen/frgCombat_ability_textSize</item>
@@ -568,7 +568,7 @@
         <item name="android:layout_marginRight">@dimen/dlg_buttonMarginRight</item>
         <item name="android:layout_marginBottom">@dimen/dlg_buttonMarginBottom</item>
         <item name="android:onClick">onClick</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="frgRemote.layout" parent="@style/frgRemote">
         <item name="android:orientation">vertical</item>
@@ -591,7 +591,7 @@
         <item name="android:textColor">@color/paragraph_text</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="frgRemote.text.field" parent="@style/frgRemote.text">
         <item name="android:textSize">@dimen/frgRemote_text_textSize</item>
@@ -627,7 +627,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="frgSheet.layout" parent="@style/frgSheet">
         <item name="android:orientation">vertical</item>
@@ -687,7 +687,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">@dimen/frgSheet_section_marginBottom</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="frgSheet.text.header.flanked" parent="@style/frgSheet.text.header">
         <item name="android:paddingLeft">@dimen/frgSheet_lblSheet_paddingLeft</item>
@@ -695,7 +695,7 @@
         <item name="android:layout_weight">1</item>
     </style>
     <style name="frgSheet.text.listElement" parent="@style/frgSheet.text">
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="frgSheet.text.listElement.description" parent="@style/frgSheet.text.listElement">
         <item name="android:textSize">@dimen/cmpListElementItem_txtSmall_textSize</item>
@@ -753,7 +753,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">@dimen/frgSheet_section_marginBottom</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="frgSheetMultiValueInnerLayout" parent="">
         <item name="android:orientation">vertical</item>
@@ -783,7 +783,7 @@
         <item name="android:layout_marginLeft">@dimen/frgSheet_text_marginLeft</item>
         <item name="android:layout_weight">3</item>
         <item name="android:onClick">onClickSheetView</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="frgSheetValueLayout" parent="">
         <item name="android:layout_gravity">center</item>
@@ -802,7 +802,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:width">@dimen/frgSheet_abilityLarge_Width</item>
         <item name="android:onClick">onClickSheetView</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="frgSheetValueNumber.Small" parent="@style/frgSheetValueNumber">
         <item name="android:width">@dimen/frgSheet_ability_Width</item>
@@ -813,7 +813,7 @@
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="font">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="incFontSizeChanger" parent="">
         <item name="android:paddingLeft">@dimen/incFontSizeChanger_paddingLeft</item>

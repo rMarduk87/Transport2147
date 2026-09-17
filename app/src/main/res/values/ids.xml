@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="frgSheet_layArmor" type="id" />
+    <item name="frgSheet_layCodes" type="id" />
+    <item name="frgSheet_layFood" type="id" />
+    <item name="frgSheet_layMoney" type="id" />
+    <item name="frgSheet_layItems" type="id" />
+    <item name="frgSheet_layNotes" type="id" />
+    <item name="frgSheet_layWeapons" type="id" />
+</resources>

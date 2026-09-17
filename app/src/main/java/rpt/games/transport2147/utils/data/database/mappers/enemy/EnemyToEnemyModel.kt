@@ -8,9 +8,13 @@ class EnemyToEnemyModel : ModelMapper<Enemy, EnemyModel> {
     override val destination: Class<EnemyModel> = EnemyModel::class.java
 
     override fun map(source: Enemy): EnemyModel {
-        return EnemyModel(
-            id = source.id,
-            enemy = source.enemy
-        )
+        return source.id?.let {
+            source.enemy?.let { enemy ->
+                EnemyModel(
+                    id = it,
+                    enemy = enemy
+                )
+            }
+        }!!
     }
 }

@@ -11,7 +11,7 @@ import java.io.Serializable
 
 @Keep
 data class Enemy(
-    val id: Context?,
+    val id: String?,
     val enemy: String?
 ) : AppModel(), Serializable {
 

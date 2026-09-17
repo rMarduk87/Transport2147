@@ -221,7 +221,6 @@ class RPTextView2 : RPTextView {
         var i: Int = 0
         var i2: Int = 0
         var i3: Int = 0
-        var z: Boolean
         var i4: Int = 0
         var desiredWidth: Float
         var c: Char
@@ -312,7 +311,6 @@ class RPTextView2 : RPTextView {
                         if (f3 <= SCALE_MAX) {
                             var i10 = 0
                             while (true) {
-                                z = true
                                 if (i10 < i9) {
                                     textViewEx2._justifySpans!!.get(iArr2[i10])
                                         .updateProportion(f3)
@@ -358,7 +356,7 @@ class RPTextView2 : RPTextView {
                                     var f5 = f4
                                     i5 = i7
                                     val fPow =
-                                        (if (c3 == z) -1.0f else 1.0f) * (0.5.pow(i11.toDouble())
+                                        (if (c3.code == STATUS_WIDTH_LARGER) -1.0f else 1.0f) * (0.5.pow(i11.toDouble())
                                             .toFloat())
                                     var i12 = 0
                                     while (true) {
@@ -410,7 +408,6 @@ class RPTextView2 : RPTextView {
                                             i7 = i5
                                             iArr2 = iArr
                                             textViewEx2 = this
-                                            z = true
                                         }
                                     }
                                 }
