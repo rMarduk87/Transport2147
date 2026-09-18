@@ -11,7 +11,7 @@ import java.io.Serializable
 @Keep
 data class Profile(
     val id: String,
-    val name: String,
+    var name: String,
     val sheet: String,
     val history: String,
     val used: String

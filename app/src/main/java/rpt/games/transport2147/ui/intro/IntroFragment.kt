@@ -1,10 +1,12 @@
 package rpt.games.transport2147.ui.intro
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import rpt.com.base.BaseFragment
 import rpt.com.base.navigation.safeNavController
 import rpt.com.base.navigation.safeNavigate
+import rpt.games.transport2147.MainMenuActivity
 import rpt.games.transport2147.R
 import rpt.games.transport2147.databinding.FragmentIntroBinding
 import rpt.games.transport2147.utils.managers.DialogManager
@@ -19,9 +21,9 @@ class IntroFragment : BaseFragment<FragmentIntroBinding>(
             SharedPreferencesManager.showIntro = false
         }
         else{
-            safeNavController(R.id.main_activity_nav_host_fragment)?.
-            safeNavigate(IntroFragmentDirections.
-            actionIntroFragmentToMainMenuFragment())
+            val intent = Intent(requireContext(), MainMenuActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
         loadIntro()
     }

@@ -85,4 +85,10 @@ interface TransportDao {
 
     @Query("SELECT talent FROM talents")
     fun getAllTalents(): List<String>
+
+    @Query("DELETE FROM profiles WHERE id = :id")
+    fun deleteProfile(id: String)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertNewProfile(profile: ProfilesModel)
 }

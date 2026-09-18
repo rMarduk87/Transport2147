@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/dlg.mainLayout">
+    <include layout="@layout/include_dialogtitle"/>
+    <rpt.games.transport2147.utils.view.text.RPTextView
+        android:id="@+id/dlgCombatNotes_txtNote"
+        style="@style/dlg.text"/>
+    <include layout="@layout/include_dialogbuttonok"/>
+</LinearLayout>

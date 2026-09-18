@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/dlg.mainLayout">
+    <include layout="@layout/include_dialogtitle"/>
+    <ScrollView style="@style/dlg.scrollLayout">
+        <LinearLayout style="@style/dlg.innerLayout.padding">
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/dlgProfiles_lblName"
+                android:text="@string/dialog_lblProfileName"
+                style="@style/dlg.subtitleText"/>
+            <rpt.games.transport2147.utils.view.edit.RPEditText
+                android:id="@+id/dlgProfiles_txtName"
+                style="@style/dlg.editText"/>
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/dlgProfiles_lblTemplate"
+                android:text="@string/dialog_lblProfileTemplate"
+                style="@style/dlg.subtitleText"/>
+            <RadioGroup
+                android:id="@+id/dlgProfiles_rdgTemplates"
+                style="@style/dlg.radioGroup"/>
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/dlgProfiles_btnAddProfile"
+                android:text="@string/dialog_lblProfileAdd"
+                style="@style/dlg.button"/>
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/dlgProfiles_lblProfiles"
+                android:text="@string/dialog_lblProfileList"
+                style="@style/dlg.sectionTitleText"/>
+            <LinearLayout
+                android:id="@+id/dlgProfiles_layProfiles"
+                style="@style/dlg.innerLayout.margin.list"
+                android:orientation="horizontal" />
+            <include layout="@layout/include_dialogbuttonok"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

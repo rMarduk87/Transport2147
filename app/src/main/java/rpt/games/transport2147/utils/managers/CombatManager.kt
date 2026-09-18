@@ -46,7 +46,7 @@ object CombatManager {
             _playerME = playerSheet.getAbility(AbilityTypeEnum.MENTAL_ENERGY)!!
                 .getBaseValue(BaseValueModeEnum.ACTUAL)!!.value
             _round = 1
-            GameLogic.Navigator.changePagerPage(2)
+            GameLogic.Navigator!!.changePagerPage(2)
             GameLogic.Enemy = enemy
             initCombat(true)
             _needValueNotTrasferredAlert = true
@@ -57,7 +57,7 @@ object CombatManager {
 
     fun checkForExitAlert(context: Context?) {
         if (_needValueNotTrasferredAlert) {
-            DialogManager.showCombatExitAlert(context)
+            DialogManager.showCombatExitAlert(context!!)
             _needValueNotTrasferredAlert = false
         }
     }
@@ -90,7 +90,7 @@ object CombatManager {
     }
 
     private fun toggleActivation(z: Boolean) {
-        val activity_Navigator: NavigatorActivity = GameLogic.Navigator
+        val activity_Navigator: NavigatorActivity? = GameLogic.Navigator
         activity_Navigator.findViewById(R.id.frgCombat_layCombat).setVisibility(if (z) 0 else 8)
         activity_Navigator.findViewById(R.id.frgCombat_lblInactive).setVisibility(if (z) 8 else 0)
     }
@@ -153,7 +153,7 @@ object CombatManager {
     }
 
     fun highlightBackground(i: Int, i2: Int) {
-        val textView = GameLogic.Navigator.findViewById(i) as TextView
+        val textView: TextView = GameLogic.Navigator!!.findViewById(i)
         textView.background.level = 2
         Handler().postDelayed({ textView.background.level = 1 }, i2.toLong())
     }
@@ -162,9 +162,9 @@ object CombatManager {
         try {
             val enemy: Enemy = GameLogic.Enemy ?: return
             when (view.id) {
-                R.id.frgCombat_btnAddEnemyCraft -> enemy.setCraft(enemy.getCraft() + 1)
-                R.id.frgCombat_btnAddEnemyDamage -> enemy.setDamage(enemy.getDamage() + 1)
-                R.id.frgCombat_btnAddEnemyME -> enemy.setMentalEnergy(enemy.getMentalEnergy() + 1)
+                R.id.frgCombat_btnAddEnemyCraft -> enemy.craft += 1
+                R.id.frgCombat_btnAddEnemyDamage -> enemy.damage += 1
+                R.id.frgCombat_btnAddEnemyME -> enemy.mentalEnergy += 1
                 R.id.frgCombat_btnAddEnemyPE -> {
                     val phisicalEnergy: Int = enemy.phisicalEnergy
                     enemy.phisicalEnergy += 1
@@ -204,9 +204,9 @@ object CombatManager {
                 }
 
                 R.id.frgCombat_btnDamageEnemy -> {
-                    val iMax = Math.max(_playerDamage - enemy.getProtection(), 0)
+                    val iMax = (_playerDamage - enemy.protection).coerceAtLeast(0)
                     val phisicalEnergy2: Int = enemy.phisicalEnergy
-                    enemy.setPhisicalEnergy(Math.max(enemy.phisicalEnergy - iMax, 0))
+                    enemy.setPhisicalEnergy((enemy.phisicalEnergy - iMax).coerceAtLeast(0))
                     highlightBackground(R.id.frgCombat_txtEnemyPE, 2000)
                     damageToast(iMax, enemy.name)
                     checkTrigger(
@@ -215,35 +215,35 @@ object CombatManager {
                         phisicalEnergy2,
                         enemy.phisicalEnergy
                     )
-                    if (enemy.phisicalEnergy === 0) {
+                    if (enemy.phisicalEnergy == 0) {
                         DialogManager.showCombatTriggerWarning(
                             GameLogic.Navigator,
-                            GameLogic.Navigator.getString(R.string.dialog_enemyIsDead)
+                            GameLogic.Navigator!!.getString(R.string.dialog_enemyIsDead)
                         )
                     }
                 }
 
                 R.id.frgCombat_btnDamagePlayer -> {
-                    val iMax2 = Math.max(enemy.getDamage() - _playerProtection, 0)
+                    val iMax2 = (enemy.damage - _playerProtection).coerceAtLeast(0)
                     val i3 = _playerPE
                     _playerPE = max(_playerPE - iMax2, 0)
                     highlightBackground(R.id.frgCombat_txtPlayerPE, 2000)
-                    damageToast(iMax2, GameLogic.PlayerSheet.name)
+                    damageToast(iMax2, GameLogic.PlayerSheet!!.name)
                     checkTrigger(enemy, Enemy.Condition.PLAYER_EF, i3, _playerPE)
                     if (_playerPE == 0) {
                         DialogManager.showCombatTriggerWarning(
                             GameLogic.Navigator,
-                            GameLogic.Navigator.getString(R.string.dialog_characterIsDeadByEF)
+                            GameLogic.Navigator!!.getString(R.string.dialog_characterIsDeadByEF)
                         )
                     }
                 }
 
-                R.id.frgCombat_btnSubtractEnemyCraft -> enemy.setCraft(enemy.getCraft() - 1)
-                R.id.frgCombat_btnSubtractEnemyDamage -> enemy.setDamage(enemy.getDamage() - 1)
-                R.id.frgCombat_btnSubtractEnemyME -> enemy.setMentalEnergy(enemy.getMentalEnergy() - 1)
+                R.id.frgCombat_btnSubtractEnemyCraft -> enemy.craft -= 1
+                R.id.frgCombat_btnSubtractEnemyDamage -> enemy.damage -= 1
+                R.id.frgCombat_btnSubtractEnemyME -> enemy.mentalEnergy -= 1
                 R.id.frgCombat_btnSubtractEnemyPE -> {
                     val phisicalEnergy3: Int = enemy.phisicalEnergy
-                    enemy.setPhisicalEnergy(enemy.phisicalEnergy - 1)
+                    enemy.phisicalEnergy -= 1
                     checkTrigger(
                         enemy,
                         Enemy.Condition.ENEMY_EF,

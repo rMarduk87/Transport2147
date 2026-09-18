@@ -1,10 +1,12 @@
 package rpt.games.transport2147.utils.managers
 
+import android.database.Cursor
 import rpt.com.base.log.e
 import rpt.games.transport2147.R
 import rpt.games.transport2147.TransportApplication
 import rpt.games.transport2147.utils.AppUtils
 import rpt.games.transport2147.utils.GameConstants
+import rpt.games.transport2147.utils.GameGameConstants
 import rpt.games.transport2147.utils.data.appmodels.BookVersion
 import rpt.games.transport2147.utils.data.appmodels.Profile
 import rpt.games.transport2147.utils.data.database.models.*
@@ -20,9 +22,9 @@ class BookManager {
             val strLoadBook: String? = loadBook()
             val bookVersion = BookVersion(1,
                 AppUtils.execSingleRegex(strLoadBook,
-                    GameConstants.REGEX_FIND_BOOK_LANGUAGE, 1),
+                    GameGameConstants.REGEX_FIND_BOOK_LANGUAGE, 1),
                 AppUtils.execSingleRegex(strLoadBook,
-                    GameConstants.REGEX_FIND_BOOK_VERSION, 1)?.toInt() ?: 0
+                    GameGameConstants.REGEX_FIND_BOOK_VERSION, 1)?.toInt() ?: 0
             )
             if (dbBookVersion == null ||
                 dbBookVersion.language != bookVersion.language ||
@@ -51,14 +53,14 @@ class BookManager {
             bookVersion: BookVersion
         ) {
             populateTable("chapters", strLoadBook!!, "chapter", "name")
-            populateTable("enemy", strLoadBook, GameConstants.XML_NODE_ENEMY,
+            populateTable("enemy", strLoadBook, GameGameConstants.XML_NODE_ENEMY,
                 "id")
-            populateTable("objects", strLoadBook, GameConstants.XML_NODE_OBJECT,
+            populateTable("objects", strLoadBook, GameGameConstants.XML_NODE_OBJECT,
                 "id")
-            populateTable("talents", strLoadBook, GameConstants.XML_NODE_TALENT,
+            populateTable("talents", strLoadBook, GameGameConstants.XML_NODE_TALENT,
                 "id")
             populateTable("sheet-templates", strLoadBook, "sheet", "id")
-            populateTable("dictionary", strLoadBook, GameConstants.XML_NODE_ENTRY,
+            populateTable("dictionary", strLoadBook, GameGameConstants.XML_NODE_ENTRY,
                 "id")
             RepositoryManager.bookRepository.insertBookVersion(bookVersion)
         }
@@ -148,6 +150,85 @@ class BookManager {
         fun getDictionaryEntry(str: String?): String {
             return getXmlElement("dictionary", "id",
                 "entry", str)
+        }
+
+        fun deleteProfile(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile) {
+            val profileApp = Profile(profile.id!!, profile.name!!,
+                profile.sheetData!!, profile.historyData!!, profile.lastUsed!!)
+            RepositoryManager.bookRepository.deleteProfile(profileApp.id)
+        }
+
+        fun addProfile(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile): Boolean {
+            val profileApp = Profile(profile.id!!, profile.name!!,
+                profile.sheetData!!, profile.historyData!!, profile.lastUsed!!)
+            RepositoryManager.bookRepository.insertNewProfile(profileApp.toDBModel())
+            return true
+        }
+
+        fun updateProfileHistory(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile): Boolean {
+            return updateProfile(profile.id, profile.historyData!!, "history",
+                "VARCHAR", profile.lastUsed)
+        }
+
+        private fun updateProfile(
+            str: String?,
+            str2: String,
+            str3: String?,
+            str4: String?,
+            str5: String?
+        ): Boolean {
+            this._db.execSQL(
+                sqlUpdateRows(
+                    Table_Profiles.table_Name,
+                    arrayOf<String?>(str3, Table_Profiles.column_LastUsed),
+                    arrayOf<String?>(str4, "VARCHAR"),
+                    arrayOf<String?>(str2.replace("'".toRegex(), "''"), str5),
+                    arrayOf<String>("ID"),
+                    arrayOf<String>("VARCHAR"),
+                    arrayOf<String?>(str)
+                )
+            )
+            return true
+        }
+
+        fun updateProfileSheet(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile): Boolean {
+            return updateProfile(
+                profile.id,
+                profile.sheetData!!,
+                "sheet",
+                "VARCHAR",
+                profile.lastUsed
+            )
+        }
+        fun getProfiles(): ArrayList<rpt.games.transport2147.utils.data.appmodels.complex.Profile?> {
+            val cursorQuery: Cursor = this._db.query(
+                Table_Profiles.table_Name,
+                Table_Profiles.table_Columns,
+                null,
+                null,
+                null,
+                null,
+                "NAME ASC"
+            )
+            val arrayList = ArrayList<Profile?>()
+            while (cursorQuery.moveToNext()) {
+                arrayList.add(
+                    Profile.getProfile(
+                        cursorQuery.getString(cursorQuery.getColumnIndex("ID")),
+                        cursorQuery.getString(cursorQuery.getColumnIndex(Table_Profiles.column_Name)),
+                        cursorQuery.getString(cursorQuery.getColumnIndex(Table_Profiles.column_LastUsed)),
+                        cursorQuery.getString(cursorQuery.getColumnIndex(Table_Profiles.column_Sheet)),
+                        cursorQuery.getString(cursorQuery.getColumnIndex(Table_Profiles.column_History))
+                    )
+                )
+            }
+            cursorQuery.close()
+            return arrayList
+        }
+
+        @Throws(Exception::class)
+        fun getChapterSummary(str: String?): String? {
+            return AppUtils.execSingleRegex(getChapter(str), GameConstants.REGEX_FIND_CHAPTER_SUMMARY)
         }
     }
 }

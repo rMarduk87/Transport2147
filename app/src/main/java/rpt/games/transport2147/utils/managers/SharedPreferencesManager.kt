@@ -35,4 +35,10 @@ object SharedPreferencesManager {
     var language: String?
         get() = sharedPreferences.getString(AppUtils.LANGUAGE, "")
         set(value) = sharedPreferences.edit { putString(AppUtils.LANGUAGE, value) }
+
+    var initialPopUpShow: String?
+        get() = sharedPreferences.getString(AppUtils.INITIAL_POPUP_SHOW, "")
+        set(value) = sharedPreferences.edit { putString(AppUtils.INITIAL_POPUP_SHOW, value) }
+
+
 }

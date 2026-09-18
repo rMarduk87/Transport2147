@@ -2608,7 +2608,7 @@
       <p>«Che cosa posso fare?» chiedi, con una nota di disperazione che avresti preferito non far trapelare.</p>
       <p>La Lama Bruna si ferma. «Non lo so. Ti ci vorrebbe l’aiuto di un grandissimo <glossary id="higDayr">Iatromante</glossary>, o di un potentissimo stregone Goeta, di quelli che si trovano nella città del <glossary id="patriarca">Patriarca</glossary>, Emraia. O forse potrebbe togliere il Marchio proprio chi officiò il vassallaggio di Namer Nizwa.»</p>
       <p>«Chi è stato? Voi lo sapete?» chiedi.</p>
-      <p>«Sì. La Megera di Nohr-Druatt.» L’uomo si volta e se ne va, diretto verso Sorgand e i suoi compagni.</p>
+      <p>«Sì. Transport1533 di Nohr-Druatt.» L’uomo si volta e se ne va, diretto verso Sorgand e i suoi compagni.</p>
       <p>Dovrai riflettere a lungo su quanto hai sentito, ma ora il tuo animo ti spinge verso qualcosa di più urgente: vedere Noder.</p>
       <p>Vai al <link>584</link>.</p>
     </chapter>
@@ -2909,7 +2909,7 @@
       <p>«Sapete chi può aiutarmi?» lo incalzi, esasperat[o|a].</p>
       <p>L’uomo si ferma e scrolla le spalle. «Forse un grande Iatromante, o un potente stregone Goeta, di quelli che vivono nella città del <glossary id="patriarca">Patriarca</glossary>, Emraia», comincia a risponderti, per poi tacere per qualche istante. «O forse chi ha officiato il vassallaggio di Namer Nizwa, apponendogli di fatto il Marchio.»</p>
       <p>«E chi sarebbe stato? Voi lo sapete?»</p>
-      <p>«Sì. Fu la Megera di Nohr-Druatt.»</p>
+      <p>«Sì. Fu Transport1533 di Nohr-Druatt.»</p>
       <p>L’uomo si volta e se ne va, accodandosi al confratello e ai Veltri che stanno scortando Molwarum Istwe e il suo sgherro a Sorgand.</p>
       <p>Avrai molto tempo per riflettere sulle parole dello Iatromante, e anche su quelle della Lama Bruna, ma ora a premerti è un’altra cosa: vedere Noder, in qualunque stato sia.</p>
       <p>Vai al <link>584</link>.</p>
@@ -3349,10 +3349,10 @@
       <title>600</title>
       <summary>Congratulazioni!</summary>
       <p>Dopo un breve vagabondare ti ritrovi ai piedi di una scala; sali e sei al pian terreno del torrione, da cui esci, salutat[o|a] dalla fresca brezza della sera.</p>
-      <p>Per un istante ascolti il silenzio che copre la Kethra e, mentre ti incammini, desideros[o|a] di immergerti di nuovo nei più familiari rumori della foresta, dentro di te cresce e si fortifica la tua convinzione: tornerai, e quando tornerai Noder non si rifiuterà di uscire con te all’aria della sera. Che sia tra i palazzi di Emraia, o al cospetto della Megera di Nohr-Druatt, troverai un modo per spezzare l’Evet-Nuitha, il Marchio del Vassallaggio, e richiamare così Noder alla Luce.</p>
+      <p>Per un istante ascolti il silenzio che copre la Kethra e, mentre ti incammini, desideros[o|a] di immergerti di nuovo nei più familiari rumori della foresta, dentro di te cresce e si fortifica la tua convinzione: tornerai, e quando tornerai Noder non si rifiuterà di uscire con te all’aria della sera. Che sia tra i palazzi di Emraia, o al cospetto delTransport1533 di Nohr-Druatt, troverai un modo per spezzare l’Evet-Nuitha, il Marchio del Vassallaggio, e richiamare così Noder alla Luce.</p>
       <p></p>
-      <p>Abbiamo pubblicato il secondo episodio della saga: «Fra Tenebra e Abisso»: La Megera. Se desideri proseguire nella lettura, aggiungi <xp amount="4">4 punti di Esperienza</xp> e <abilitychange ability="fate" quantity="1" operation="add">1 di Fato</abilitychange>.</p>
-      <p>Se ti è piaciuto «Il Marchio», valuta se fare una donazione, condividere la app con i tuoi amici e seguirci attraverso la nostra pagina Facebook. Per farlo, vai alla seconda pagina del <jump type="activity" target="main2">menu principale</jump>; da lì potrai anche esportare su Cloud le schede dei tuoi personaggi, così li potrai usare per giocare al secondo episodio, che trovi <jump type="playstore" target="it.tenebraeabisso.tenebra2">qui</jump>.</p>
+      <p>Abbiamo pubblicato il secondo episodio della saga: «Fra Tenebra e Abisso»: Transport1533. Se desideri proseguire nella lettura, aggiungi <xp amount="4">4 punti di Esperienza</xp> e <abilitychange ability="fate" quantity="1" operation="add">1 di Fato</abilitychange>.</p>
+      <p>Se ti è piaciuto «Il Marchio», valuta se fare una donazione, condividere la app con i tuoi amici e seguirci attraverso la nostra pagina Facebook. Per farlo, vai alla seconda pagina del <jump type="activity" target="main2">menu principale</jump>; da lì potrai anche esportare su Cloud le schede dei tuoi personaggi, così li potrai usare per giocare al secondo episodio, che trovi <jump type="playstore" target="rpt.games.transport1533">qui</jump>.</p>
     </chapter>
 
   </chapters>

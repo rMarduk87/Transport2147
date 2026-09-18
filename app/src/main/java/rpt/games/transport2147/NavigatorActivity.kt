@@ -18,7 +18,9 @@ import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener
 import rpt.com.base.log.e
 import rpt.games.transport2147.databinding.ActivityNavigatorBinding
+import rpt.games.transport2147.utils.AppUtils
 import rpt.games.transport2147.utils.GameConstants
+import rpt.games.transport2147.utils.LocaleHelper
 import rpt.games.transport2147.utils.data.appmodels.complex.History
 import rpt.games.transport2147.utils.data.appmodels.complex.History.addVisitedChapter
 import rpt.games.transport2147.utils.data.appmodels.complex.History.lastChapter
@@ -26,6 +28,7 @@ import rpt.games.transport2147.utils.data.appmodels.complex.History.requestedCha
 import rpt.games.transport2147.utils.data.appmodels.complex.History.size
 import rpt.games.transport2147.utils.managers.ActionMenuManager
 import rpt.games.transport2147.utils.managers.CombatManager
+import rpt.games.transport2147.utils.managers.DiceRollerManager
 import rpt.games.transport2147.utils.managers.ProfileManager
 import rpt.games.transport2147.utils.managers.SharedPreferencesManager
 import rpt.games.transport2147.utils.managers.SheetManager
@@ -42,12 +45,12 @@ class NavigatorActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTitle(R.string.title_activityNavigator);
-        GameLogic.checkForAppRecovery(this, true);
+        setTitle(R.string.title_activityNavigator)
+        GameLogic.checkForAppRecovery(this, true)
         binding = ActivityNavigatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
         GameLogic.Navigator = this
-        this.mSectionsPagerAdapter = SectionsPagerAdapter(getFragmentManager())
+        this.mSectionsPagerAdapter = SectionsPagerAdapter(fragmentManager)
         this.mViewPager = findViewById<View?>(R.id.actNavigator_pgrNavigator) as ViewPager?
         this.mViewPager.setAdapter(this.mSectionsPagerAdapter)
         val slidingTabLayoutImg =
@@ -86,7 +89,7 @@ class NavigatorActivity : AppCompatActivity() {
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayShowTitleEnabled(true)
         actionBar.setDisplayUseLogoEnabled(true)
-        UiUtil.makeActionOverflowMenuShown(this)
+        AppUtils.makeActionOverflowMenuShown(this)
     }
 
     fun updateActionBar(i: Int) {
@@ -95,18 +98,17 @@ class NavigatorActivity : AppCompatActivity() {
                 return
             }
             val z =
-                if (i != 0 || requestedChapter == GameConstants.BOOK_CHAPTER_RULES || 
-                    requestedChapter == GameConstants.BOOK_CHAPTER_RULES1 || requestedChapter == 
-                    GameConstants.BOOK_CHAPTER_RULES2) false else true
+                !(i != 0 || requestedChapter == GameConstants.BOOK_CHAPTER_RULES ||
+                        requestedChapter == GameConstants.BOOK_CHAPTER_RULES1 || requestedChapter ==
+                        GameConstants.BOOK_CHAPTER_RULES2)
             for (menuItem in arrayOf<MenuItem>(
                 this.itemPreviousChapter,
                 this.itemGoToChapter,
                 this.itemHistory,
                 this.itemEnableHistory
             )) {
-                menuItem.setEnabled(z)
-                menuItem.getIcon()!!
-                    .setAlpha(if (z) 255 else TransportMediator.KEYCODE_MEDIA_RECORD)
+                menuItem.isEnabled = z
+                menuItem.icon!!.alpha = if (z) 255 else TransportMediator.KEYCODE_MEDIA_RECORD
             }
             ActionMenuManager.updateHistoryMenu(this.itemEnableHistory)
         } catch (e: Exception) {
@@ -116,20 +118,20 @@ class NavigatorActivity : AppCompatActivity() {
     
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         try {
-            getMenuInflater().inflate(R.menu.menu_navigator, menu)
+            menuInflater.inflate(R.menu.menu_navigator, menu)
             this.itemPreviousChapter = menu.findItem(R.id.mnuNavigator_itmPreviousChapter)
             this.itemGoToChapter = menu.findItem(R.id.mnuNavigator_itmGoChapter)
             this.itemHistory = menu.findItem(R.id.mnuNavigator_itmHistory)
             this.itemEnableHistory = menu.findItem(R.id.mnuNavigator_itmEnableDisableHistory)
             if (GameLogic.DiceRoller1 == null) {
                 GameLogic.DiceRoller1 =
-                    DiceRollerMgr(menu.findItem(R.id.mnuNavigator_itmDiceRoller1), 1)
+                    DiceRollerManager(menu.findItem(R.id.mnuNavigator_itmDiceRoller1), 1)
             } else {
                 GameLogic.DiceRoller1.setMenuItem(menu.findItem(R.id.mnuNavigator_itmDiceRoller1))
             }
             if (GameLogic.DiceRoller2 == null) {
                 GameLogic.DiceRoller2 =
-                    DiceRollerMgr(menu.findItem(R.id.mnuNavigator_itmDiceRoller2), 2)
+                    DiceRollerManager(menu.findItem(R.id.mnuNavigator_itmDiceRoller2), 2)
             } else {
                 GameLogic.DiceRoller2.setMenuItem(menu.findItem(R.id.mnuNavigator_itmDiceRoller2))
             }
@@ -167,7 +169,6 @@ class NavigatorActivity : AppCompatActivity() {
         }
     }
 
-    // android.app.Activity, android.view.ContextThemeWrapper, android.content.ContextWrapper
     override fun attachBaseContext(context: Context?) {
         super.attachBaseContext(LocaleHelper.onAttach(context))
     }
@@ -276,8 +277,7 @@ class NavigatorActivity : AppCompatActivity() {
     }
     
     class SheetFragment : Fragment() {
-        // android.app.Fragment
-        public override fun onCreateView(
+        override fun onCreateView(
             layoutInflater: LayoutInflater,
             viewGroup: ViewGroup?,
             bundle: Bundle?
@@ -285,8 +285,7 @@ class NavigatorActivity : AppCompatActivity() {
             return layoutInflater.inflate(R.layout.fragment_sheet, viewGroup, false)
         }
 
-        // android.app.Fragment
-        public override fun onStart() {
+        override fun onStart() {
             try {
                 super.onStart()
                 SheetManager.initSheet()
@@ -295,8 +294,7 @@ class NavigatorActivity : AppCompatActivity() {
             }
         }
 
-        // android.app.Fragment
-        public override fun onPause() {
+        override fun onPause() {
             ProfileManager.saveProfileSheet(GameLogic.Navigator, GameLogic.Profile)
             super.onPause()
         }
@@ -310,8 +308,8 @@ class NavigatorActivity : AppCompatActivity() {
 
 
     class CombatFragment : Fragment() {
-        // android.app.Fragment
-        public override fun onCreateView(
+
+        override fun onCreateView(
             layoutInflater: LayoutInflater,
             viewGroup: ViewGroup?,
             bundle: Bundle?
@@ -319,8 +317,7 @@ class NavigatorActivity : AppCompatActivity() {
             return layoutInflater.inflate(R.layout.fragment_combat, viewGroup, false)
         }
 
-        // android.app.Fragment
-        public override fun onStart() {
+        override fun onStart() {
             try {
                 super.onStart()
                 CombatManager.initCombat(false)
@@ -339,8 +336,8 @@ class NavigatorActivity : AppCompatActivity() {
     class ChapterFragment : Fragment() {
         var _renderedChapter: String = ""
 
-        // android.app.Fragment
-        public override fun onCreateView(
+
+        override fun onCreateView(
             layoutInflater: LayoutInflater,
             viewGroup: ViewGroup?,
             bundle: Bundle?
@@ -351,18 +348,20 @@ class NavigatorActivity : AppCompatActivity() {
             GameLogic.iconToggleHistory =
                 viewInflate.findViewById<View?>(R.id.incFontChgr_btnHistoryToggle) as ImageView?
             val requestedChapter = requestedChapter
-            GameLogic.iconToggleHistory.setVisibility(if (requestedChapter == GameConstants.BOOK_CHAPTER_RULES || requestedChapter == GameConstants.BOOK_CHAPTER_RULES1 || requestedChapter == GameConstants.BOOK_CHAPTER_RULES2) 4 else 0)
+            GameLogic.iconToggleHistory!!.visibility = if (requestedChapter ==
+                GameConstants.BOOK_CHAPTER_RULES || requestedChapter ==
+                GameConstants.BOOK_CHAPTER_RULES1 || requestedChapter ==
+                GameConstants.BOOK_CHAPTER_RULES2) View.INVISIBLE else View.VISIBLE
             GameLogic.iconToggleJustification =
                 viewInflate.findViewById<View?>(R.id.incFontChgr_btnSwitchJustification) as ImageView?
-            GameLogic.iconToggleJustification.setVisibility(0)
-            GameLogic.iconToggleJustification.getDrawable()
-                .setLevel(if (SharedPreferencesManager.getTextJustification()) 2 else 1)
+            GameLogic.iconToggleJustification!!.visibility = View.VISIBLE
+            GameLogic.iconToggleJustification!!.drawable.level =
+                if (SharedPreferencesManager.textJustification) 2 else 1
             ActionMenuManager.updateHistoryIcon()
             return viewInflate
         }
 
-        // android.app.Fragment
-        public override fun onStart() {
+        override fun onStart() {
             try {
                 super.onStart()
                 loadChapter()
@@ -372,14 +371,12 @@ class NavigatorActivity : AppCompatActivity() {
             }
         }
 
-        // android.app.Fragment
-        public override fun onStop() {
+        override fun onStop() {
             this._renderedChapter = ""
             super.onStop()
         }
 
-        // android.app.Fragment
-        public override fun onDestroyView() {
+        override fun onDestroyView() {
             super.onDestroyView()
             GameLogic.ChapterFragment = null
         }
@@ -389,37 +386,37 @@ class NavigatorActivity : AppCompatActivity() {
             try {
                 val requestedChapter: String = requestedChapter!!
                 if (z || this._renderedChapter != requestedChapter) {
-                    val linearLayout =
-                        getActivity().findViewById(R.id.frgChapter_layContent) as LinearLayout
+                    val linearLayout: LinearLayout =
+                        requireActivity().findViewById(R.id.frgChapter_layContent)
                     linearLayout.removeAllViews()
                     val chapterFormatter = ChapterFormatter()
                     val boolValueOf = chapterFormatter.formatChapter(
                         linearLayout,
-                        getActivity(),
+                        requireActivity(),
                         requestedChapter
                     )
-                    val scrollView =
-                        getActivity().findViewById(R.id.frgChapter_scvScroll) as ScrollView
+                    val scrollView: ScrollView =
+                        requireActivity().findViewById(R.id.frgChapter_scvScroll)
                     if (boolValueOf) {
                         scrollView.setBackgroundResource(R.drawable.bkg_chapter_body_dream)
                     } else {
                         scrollView.setBackgroundResource(R.drawable.bkg_chapter_body)
                     }
-                    if ((requestedChapter != GameConstants.BOOK_CHAPTER_RULES) && (requestedChapter != GameConstants.BOOK_CHAPTER_RULES1) && (requestedChapter != GameConstants.BOOK_CHAPTER_RULES2)) {
-                        val scrollView2 =
-                            getActivity().findViewById(R.id.frgChapter_scvScroll) as ScrollView
-                        scrollView2.post(object : Runnable {
-                            // from class: it.tenebraeabisso.tenebra1.NavigatorActivity.ChapterFragment.1
-                            // java.lang.Runnable
-                            override fun run() {
-                                scrollView2.fullScroll(33)
-                            }
-                        })
+                    if ((requestedChapter != GameConstants.BOOK_CHAPTER_RULES) &&
+                        (requestedChapter != GameConstants.BOOK_CHAPTER_RULES1) &&
+                        (requestedChapter != GameConstants.BOOK_CHAPTER_RULES2)) {
+                        val scrollView2: ScrollView =
+                            requireActivity().findViewById(R.id.frgChapter_scvScroll)
+                        scrollView2.post { scrollView2.fullScroll(33) }
                         scrollView2.fullScroll(33)
                     }
-                    if ((requestedChapter != GameConstants.BOOK_CHAPTER_INTRO) && (requestedChapter != GameConstants.BOOK_CHAPTER_RULES) && (requestedChapter != GameConstants.BOOK_CHAPTER_RULES1) && (requestedChapter != GameConstants.BOOK_CHAPTER_RULES2) && (size == 0 || lastChapter!!.chapter != requestedChapter)) {
+                    if ((requestedChapter != GameConstants.BOOK_CHAPTER_INTRO) &&
+                        (requestedChapter != GameConstants.BOOK_CHAPTER_RULES) &&
+                        (requestedChapter != GameConstants.BOOK_CHAPTER_RULES1) &&
+                        (requestedChapter != GameConstants.BOOK_CHAPTER_RULES2) &&
+                        (size == 0 || lastChapter!!.chapter != requestedChapter)) {
                         addVisitedChapter(requestedChapter, chapterFormatter.lastSummary)
-                        ProfileManager.saveProfileHistory(getActivity(), GameLogic.Profile)
+                        ProfileManager.saveProfileHistory(requireActivity(), GameLogic.Profile)
                     }
                     GameLogic.CleanTakenObjectList()
                     this._renderedChapter = requestedChapter

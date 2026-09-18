@@ -1,12 +1,11 @@
 package rpt.games.transport2147.utils.view.chapter
 
 import android.content.Context
+import android.content.Intent
 import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
-import android.text.style.StyleSpan
-import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,25 +16,27 @@ import android.widget.TableRow
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
 import org.w3c.dom.Element
 import org.w3c.dom.Text
 import rpt.com.base.log.e
-import rpt.com.base.navigation.safeNavController
-import rpt.com.base.navigation.safeNavigate
-import rpt.games.transport2147.R
-import rpt.games.transport2147.ui.history.HistoryFragmentDirections
-import rpt.games.transport2147.ui.navigator.NavigatorFragmentDirections
+import rpt.games.transport2147.ImageZoomActivity
+import rpt.games.transport2147.MainActivity2
+import rpt.games.transport2147.MainMenuActivity
 import rpt.games.transport2147.utils.AppUtils
 import rpt.games.transport2147.utils.GameConstants
-import rpt.games.transport2147.utils.data.appmodels.complex.Enemy
 import rpt.games.transport2147.utils.data.appmodels.complex.History
 import rpt.games.transport2147.utils.data.appmodels.complex.HistoryElement
-import rpt.games.transport2147.utils.data.appmodels.complex.PlayerObject
 import rpt.games.transport2147.utils.data.enums.GenderEnum
+import rpt.games.transport2147.utils.managers.BookManager
+import rpt.games.transport2147.utils.view.game.GameLogic
+import rpt.games.transport2147.utils.xml.XmlUtility
+import java.io.IOException
+import kotlin.math.min
+import rpt.games.transport2147.R
+import rpt.games.transport2147.utils.data.appmodels.complex.Enemy
+import rpt.games.transport2147.utils.data.appmodels.complex.PlayerObject
 import rpt.games.transport2147.utils.data.enums.ObjectTypeEnum
 import rpt.games.transport2147.utils.managers.ActionMenuManager
-import rpt.games.transport2147.utils.managers.BookManager
 import rpt.games.transport2147.utils.managers.CombatManager
 import rpt.games.transport2147.utils.managers.DialogManager
 import rpt.games.transport2147.utils.managers.ImageManager
@@ -43,28 +44,24 @@ import rpt.games.transport2147.utils.managers.SharedPreferencesManager
 import rpt.games.transport2147.utils.managers.SheetManager
 import rpt.games.transport2147.utils.managers.SocialManager
 import rpt.games.transport2147.utils.managers.ToastManager
-import rpt.games.transport2147.utils.view.game.GameLogic
 import rpt.games.transport2147.utils.view.string.NeutralClickableSpan
 import rpt.games.transport2147.utils.view.string.RPSpannableString
 import rpt.games.transport2147.utils.view.text.RPTextView2
-import rpt.games.transport2147.utils.xml.XmlUtility
-import java.io.IOException
 import java.util.Locale
-import kotlin.math.min
-
 
 class ChapterFormatter {
     var lastSummary: String? = null
 
     @Throws(Exception::class)
-    fun formatChapter(linearLayout: LinearLayout?, context: Context, str: String?): Boolean {
+    fun formatChapter(linearLayout: LinearLayout, context: Context, str: String?): Boolean {
         try {
             val strExecReplace: String = AppUtils.execReplace(
                 BookManager.getChapter(str),
                 GameConstants.REGEX_GENDER_SEARCH,
-                if (GameLogic.PlayerSheet == null || GameLogic.PlayerSheet!!.gender === 
-                    GenderEnum.MALE) GameConstants.REGEX_GENDER_REPLACE_MALE else
-                        GameConstants.REGEX_GENDER_REPLACE_FEMALE
+                if (GameLogic.PlayerSheet == null || 
+                    GameLogic.PlayerSheet!!.gender == GenderEnum.MALE) 
+                    GameConstants.REGEX_GENDER_REPLACE_MALE 
+                else GameConstants.REGEX_GENDER_REPLACE_FEMALE
             )
             val rootElement: Element? = XmlUtility.getRootElement(strExecReplace)
             var attribute = rootElement!!.getAttribute(GameConstants.XML_NODE_CHAPTER_ATTR_DREAM)
@@ -82,13 +79,14 @@ class ChapterFormatter {
     }
 
     @Throws(Exception::class)
-    fun formatHistory(linearLayout: LinearLayout?, context: Context) {
+    fun formatHistory(linearLayout: LinearLayout, context: Context) {
         try {
             val stringBuffer = StringBuffer()
-            for ((i, i2) in (0..<History.size).withIndex()) {
+            var i = 0
+            for (i2 in 0..<History.size) {
                 val historyElement: HistoryElement? = History.visitedChapters[i2]
                 if (historyElement!!.tracked) {
-                    val map: HashMap<String, String> = HashMap<String, String>()
+                    val map: HashMap<String,String> = HashMap<String,String>()
                     map[GameConstants.XML_NODE_HLINK_ATTR_SEQUENCE] = i.toString()
                     stringBuffer.append(
                         XmlUtility.formatNode(
@@ -98,17 +96,19 @@ class ChapterFormatter {
                         ) + " " + historyElement.summary + "\r\n"
                     )
                 }
+                i++
             }
             val str: String = XmlUtility.formatNode(
                 "title",
                 context.getString(R.string.history_Title),
                 null
             ) + XmlUtility.formatNode(GameConstants.XML_NODE_P, stringBuffer.toString(), null)
-            HashMap<Any?, Any?>()["name"] = context.getString(R.string.txt_History)
+            HashMap<String,String>()["name"] = context.getString(R.string.txt_History)
             createChapter(
                 linearLayout,
                 context,
-                XmlUtility.getRootElement(XmlUtility.formatNode("chapter", str, null))!!
+                XmlUtility.getRootElement(
+                    XmlUtility.formatNode("chapter", str, null))!!
             )
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
@@ -135,7 +135,7 @@ class ChapterFormatter {
     }
     
     @Throws(Exception::class, IOException::class)
-    private fun createChapter(linearLayout: LinearLayout?, context: Context, element: Element) {
+    private fun createChapter(linearLayout: LinearLayout, context: Context, element: Element) {
         var view: View?
         var z: Boolean
         var _list: View?
@@ -154,34 +154,40 @@ class ChapterFormatter {
                         view = view2
                         z = false
                     }
+
                     "p" -> {
                         simpleNode = format_P(element2, context)
                         view = view2
                         z = false
                     }
+
                     "list" -> {
                         _list = format_LIST(element2, context)
                         view = _list
                         z = true
                         z2 = false
                     }
+
                     "enemyref" -> {
                         _list = format_ENEMYREF(element2, context)
                         view = _list
                         z = true
                         z2 = false
                     }
+
                     "image" -> {
                         _list = format_IMAGE(element2, context)
                         view = _list
                         z = true
                         z2 = false
                     }
+
                     "summary" -> {
                         view = view2
                         z = false
                         z2 = false
                     }
+
                     else -> {
                         view = view2
                         z = false
@@ -192,13 +198,13 @@ class ChapterFormatter {
                     val textView: TextView = getTextView(context)
                     textView.setText(simpleNode, TextView.BufferType.SPANNABLE)
                     textView.gravity = simpleNode!!.gravity
-                    if (simpleNode.gravity == 8388611 && textJustification && (textView is RPTextView2)) {
+                    if (simpleNode!!.gravity == 8388611 && textJustification && (textView is RPTextView2)) {
                         (textView as RPTextView2).justification = textJustification
                     }
-                    linearLayout?.addView(textView)
+                    linearLayout.addView(textView)
                 }
                 if (z) {
-                    linearLayout?.addView(view)
+                    linearLayout.addView(view)
                 }
                 view2 = view
             }
@@ -207,39 +213,52 @@ class ChapterFormatter {
     
     @Throws(Exception::class)
     private fun parseInnerTag(element: Element, context: Context): RPSpannableString {
-        return when (element.tagName.lowercase(Locale.getDefault())) {
-            "bold", "italic", "quote" -> formatSimpleNode(element, context)
-            "link" -> format_LINK(element, context)
-            "hlink" -> format_HLINK(element, context)
-            "smallcaps" -> format_SMALLCAPS(element, context)
-            "objectref" -> format_OBJECTREF(element, context)
-            "sidepiece" -> format_SIDEPIECE(element, context)
-            "glossary" -> format_GLOSSARY(element, context)
-            "br" -> format_BR(element, context)
-            "xp" -> format_XP(element, context)
-            "abilitychange" -> format_ABILITYCHANGE(element, context)
-            "jump" -> format_JUMP(element, context)
-            else -> RPSpannableString("")
+        when (element.tagName.lowercase(Locale.getDefault())) {
+            "bold", "italic", "quote" -> return formatSimpleNode(element, context)
+            "link" -> return format_LINK(element, context)
+            "hlink" -> return format_HLINK(element, context)
+            "smallcaps" -> return format_SMALLCAPS(element, context)
+            "objectref" -> return format_OBJECTREF(element, context)
+            "sidepiece" -> return format_SIDEPIECE(element, context)
+            "glossary" -> return format_GLOSSARY(element, context)
+            "br" -> return format_BR(element, context)
+            "xp" -> return format_XP(element, context)
+            "abilitychange" -> return format_ABILITYCHANGE(element, context)
+            "jump" -> return format_JUMP(element, context)
+            else -> return RPSpannableString("")
         }
     }
     
     @Throws(Exception::class)
     private fun loopInnerElements(element: Element, context: Context): RPSpannableString {
+        var z: Boolean = false
         val childNodes = element.childNodes
-        var spannableString2: CharSequence = ""
+        var spannableString: RPSpannableString? = null
+        var spannableString2: RPSpannableString = RPSpannableString("")
         for (i in 0..<childNodes.length) {
             val nodeItem = childNodes.item(i)
-            val toAppend: CharSequence = if (nodeItem is Element) {
-                parseInnerTag(nodeItem, context)
-            } else if (nodeItem is Text) {
-                nodeItem.nodeValue ?: ""
+            if (nodeItem is Element) {
+                spannableString = parseInnerTag(nodeItem, context)
             } else {
-                ""
+                if (nodeItem is Text) {
+                    val nodeValue = nodeItem.nodeValue
+                    z = nodeValue != ""
+                    spannableString = RPSpannableString(nodeValue)
+                }
+                if (z) {
+                    spannableString2 =
+                        RPSpannableString(TextUtils.concat(spannableString2,
+                            spannableString))
+                }
             }
-            spannableString2 = TextUtils.concat(spannableString2, toAppend)
+            z = true
+            if (z) {
+                spannableString2 =
+                    RPSpannableString(TextUtils.concat(spannableString2,
+                        spannableString))
+            }
         }
-        return spannableString2 as? RPSpannableString ?: RPSpannableString(
-            spannableString2)
+        return spannableString2
     }
 
     @Throws(Exception::class)
@@ -265,10 +284,13 @@ class ChapterFormatter {
         )
         if (z) {
             imageView.setOnClickListener {
-                GameLogic.navigator?.safeNavController(R.id.main_activity_nav_host_fragment)?.
-                safeNavigate(HistoryFragmentDirections.actionHistoryFragmentToImageZoomFragment(
+                val intent: Intent = Intent(context, 
+                    ImageZoomActivity::class.java as Class<*>)
+                intent.putExtra(
+                    GameConstants.IMAGE_ZOOM_SOURCE,
                     java.lang.String.format(GameConstants.IMAGE_ZOOM, elementAttribute)
-                ))
+                )
+                context.startActivity(intent)
             }
         }
         return imageView
@@ -316,11 +338,10 @@ class ChapterFormatter {
             loopInnerElements(element, context)
         val attribute = element.getAttribute("id")
         val span: RPSpannableString =
-            formatSpan(
-                spannableStringLoopInnerElements, GameConstants.XML_NODE_GLOSSARY,
-                context = context
-            )
+            formatSpan(spannableStringLoopInnerElements, 
+                GameConstants.XML_NODE_GLOSSARY)
         span.setSpan(object : NeutralClickableSpan() {
+
             override fun onClick(p0: View) {
                 DialogManager.showGlossaryEntry(context, attribute)
             }
@@ -334,23 +355,22 @@ class ChapterFormatter {
             loopInnerElements(element, context)
         try {
             val enemy: Enemy = Enemy(context, XmlUtility.getElementAttribute(element, "id"))
-            var spannableString: RPSpannableString = RPSpannableString("")
+            var RPSpannableString: RPSpannableString = RPSpannableString("")
             if (enemy.noteNode != null) {
-                spannableString =
-                    RPSpannableString(loopInnerElements(enemy.noteNode!!,
-                        context))
+                RPSpannableString =
+                    RPSpannableString(loopInnerElements(enemy.noteNode!!, context))
             }
-            val spannableString2: RPSpannableString = spannableString
+            val spannableString2: RPSpannableString = RPSpannableString
             if (spannableStringLoopInnerElements.toString() == "") {
                 spannableStringLoopInnerElements = RPSpannableString(enemy.name)
             }
             val span: RPSpannableString = formatSpan(
-                applySmallCapsFormatting(spannableStringLoopInnerElements, context),
-                GameConstants.XML_NODE_ENEMYREF,
-                context = context
+                applySmallCapsFormatting(spannableStringLoopInnerElements),
+                GameConstants.XML_NODE_ENEMYREF
             )
             span.setSpan(object : NeutralClickableSpan() {
-                override fun onClick(p0: View) {
+
+                public override fun onClick(p0: View) {
                     CombatManager.activateEnemy(context, enemy)
                     ToastManager.showGenericToast(
                         context,
@@ -359,8 +379,8 @@ class ChapterFormatter {
                 }
             }, 0, span.length, 0)
             val table: TableLayout = getTable(context)
-            table.addView(setTableRow(context, false, span,
-                null, false))
+            table.addView(setTableRow(context, false, 
+                span, null, false))
             table.addView(
                 setTableRow(
                     context,
@@ -419,7 +439,7 @@ class ChapterFormatter {
                 )
             )
             if (spannableString2.toString() != "") {
-                table.addView(setTableRow(context, false, 
+                table.addView(setTableRow(context, false,
                     spannableString2, null, true))
             }
             table.addView(
@@ -427,18 +447,16 @@ class ChapterFormatter {
                     context,
                     false,
                     formatSpan(
-                        RPSpannableString(
-                            context.getString(R.string.enemyref_addNote)),
-                        GameConstants.XML_NODE_COMBATNOTES,
-                        context = context
+                        RPSpannableString(context.getString(
+                            R.string.enemyref_addNote)),
+                        GameConstants.XML_NODE_COMBATNOTES
                     ),
                     null,
                     false
                 )
             )
-            table.addView(setTableRow(context, false, 
-                RPSpannableString(""), null, 
-                false))
+            table.addView(setTableRow(context, false, RPSpannableString(
+                ""), null, false))
             return table
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
@@ -469,8 +487,7 @@ class ChapterFormatter {
         }
         textView.movementMethod = LinkMovementMethod.getInstance()
         textView.setText(spannableString, TextView.BufferType.SPANNABLE)
-        textView.setTextSize(2, context.resources.getDimension(
-            GameLogic._fontDimension))
+        textView.setTextSize(2, context.resources.getDimension(GameLogic._fontDimension))
         if (spannableString2 != null) {
             val textView2: TextView =
                 tableRow.findViewById<View?>(R.id.cmpTableRow_txtCell2) as TextView
@@ -495,10 +512,9 @@ class ChapterFormatter {
             string = spannableStringLoopInnerElements.toString()
         }
         val span: RPSpannableString =
-            formatSpan(spannableStringLoopInnerElements, GameConstants.XML_NODE_LINK,
-                context = context)
+            formatSpan(spannableStringLoopInnerElements, GameConstants.XML_NODE_LINK)
         span.setSpan(object : NeutralClickableSpan() {
-            override fun onClick(p0: View) {
+             override fun onClick(p0: View) {
                 ActionMenuManager.actionLoadChapter(context, string)
             }
         }, 0, span.length, 0)
@@ -516,8 +532,8 @@ class ChapterFormatter {
             string = spannableStringLoopInnerElements.toString()
         }
         val span: RPSpannableString =
-            formatSpan(spannableStringLoopInnerElements, GameConstants.XML_NODE_HLINK,
-                context = context)
+            formatSpan(spannableStringLoopInnerElements,
+                GameConstants.XML_NODE_HLINK)
         val i =
             XmlUtility.getElementAttribute(element,
                 GameConstants.XML_NODE_HLINK_ATTR_SEQUENCE)!!.toInt()
@@ -536,8 +552,8 @@ class ChapterFormatter {
         val attribute = element.getAttribute("type")
         val attribute2 = element.getAttribute(GameConstants.XML_NODE_JUMP_ATTR_TARGET)
         val span: RPSpannableString =
-            formatSpan(spannableStringLoopInnerElements, GameConstants.XML_NODE_JUMP,
-                context = context)
+            formatSpan(spannableStringLoopInnerElements,
+                GameConstants.XML_NODE_JUMP)
         span.setSpan(object : NeutralClickableSpan() {
             override fun onClick(p0: View) {
                 if (attribute.equals(
@@ -545,18 +561,22 @@ class ChapterFormatter {
                         ignoreCase = true
                     ) && attribute2.equals(GameConstants.JUMP_TARGET_MAIN, ignoreCase = true)
                 ) {
-                    GameLogic.navigator?.safeNavController(R.id.main_activity_nav_host_fragment)?.
-                    safeNavigate(NavigatorFragmentDirections
-                        .actionNavigatorFragmentToMainMenuFragment())
+                    context.startActivity(
+                        Intent(
+                            context,
+                            MainMenuActivity::class.java as Class<*>
+                        )
+                    )
+                    GameLogic.Navigator!!.finish()
                 }
                 if (attribute.equals(
                         GameConstants.JUMP_TYPE_ACTIVITY,
                         ignoreCase = true
                     ) && attribute2.equals(GameConstants.JUMP_TARGET_MAIN2, ignoreCase = true)
                 ) {
-                    GameLogic.navigator?.safeNavController(R.id.main_activity_nav_host_fragment)?.
-                    safeNavigate(NavigatorFragmentDirections
-                        .actionNavigatorFragmentToMainMenuTwoFragment())
+                    context.startActivity(Intent(context, 
+                        MainActivity2::class.java as Class<*>))
+                    GameLogic.Navigator!!.finish()
                 }
                 if (attribute.equals(GameConstants.JUMP_TYPE_PLAYSTORE, ignoreCase = true)) {
                     SocialManager.openGooglePlay(context, attribute2)
@@ -583,23 +603,23 @@ class ChapterFormatter {
             ignoreCase = true
         )
         val playerObject: PlayerObject =
-            PlayerObject(elementAttribute,
-                elementAttribute2.toInt(), History.requestedChapter)
-        if (playerObject.originalType === ObjectTypeEnum.ARMOR ||
-            playerObject.originalType === ObjectTypeEnum.WEAPON) {
+            PlayerObject(elementAttribute, elementAttribute2.toInt(), 
+                History.requestedChapter)
+        if (playerObject.originalType === ObjectTypeEnum.ARMOR || playerObject.originalType
+            === ObjectTypeEnum.WEAPON) {
             playerObject.type = ObjectTypeEnum.ITEM
         }
         if (spannableStringLoopInnerElements.toString() == "") {
             spannableStringLoopInnerElements = RPSpannableString(playerObject.name)
         }
         span = if (playerObject.type === ObjectTypeEnum.CODE) {
-            formatSpan(spannableStringLoopInnerElements, GameConstants.XML_NODE_OBJECTREF_CODE,
-                context = context)
+            formatSpan(spannableStringLoopInnerElements, 
+                GameConstants.XML_NODE_OBJECTREF_CODE)
         } else {
-            formatSpan(spannableStringLoopInnerElements, GameConstants.XML_NODE_OBJECTREF,
-                context = context)
+            formatSpan(spannableStringLoopInnerElements, GameConstants.XML_NODE_OBJECTREF)
         }
         span.setSpan(object : NeutralClickableSpan() {
+
             override fun onClick(p0: View) {
                 if (!GameLogic.isObjectTaken(playerObject)) {
                     SheetManager.addObject(playerObject)
@@ -607,8 +627,7 @@ class ChapterFormatter {
                     ToastManager.showGenericToast(
                         context,
                         context.getString(
-                            if (boolValueOf) R.string.toast_msgGotObjectWithPrice else
-                                R.string.toast_msgGotObject,
+                            if (boolValueOf) R.string.toast_msgGotObjectWithPrice else R.string.toast_msgGotObject,
                             Integer.valueOf(playerObject.quantity),
                             playerObject.name
                         )
@@ -640,20 +659,18 @@ class ChapterFormatter {
 
     @Throws(Exception::class)
     private fun formatSimpleNode(element: Element, context: Context): RPSpannableString {
-        return formatSpan(loopInnerElements(element, context), element.nodeName,
-            context = context)
+        return formatSpan(loopInnerElements(element, context), element.nodeName)
     }
 
     @Throws(Exception::class)
     private fun format_SIDEPIECE(element: Element, context: Context): RPSpannableString {
         val span: RPSpannableString =
-            formatSpan(loopInnerElements(element, context),
-                GameConstants.XML_NODE_SIDEPIECE,
-                context = context)
+            formatSpan(loopInnerElements(element, context), GameConstants.XML_NODE_SIDEPIECE)
         span.setSpan(object : NeutralClickableSpan() {
+
             override fun onClick(p0: View) {
-                Toast.makeText(context, context.getString(R.string.toast_msgTickAdded),
-                    Toast.LENGTH_LONG).show()
+                Toast.makeText(context, context.getString(
+                    R.string.toast_msgTickAdded), 1).show()
                 SheetManager.addTime(context)
             }
         }, 0, span.length, 0)
@@ -663,15 +680,13 @@ class ChapterFormatter {
     @Throws(Exception::class)
     private fun format_ABILITYCHANGE(element: Element, context: Context): RPSpannableString {
         val span: RPSpannableString =
-            formatSpan(loopInnerElements(element, context),
-                GameConstants.XML_NODE_ABILITYCHANGE,
-                context = context)
+            formatSpan(loopInnerElements(element, context), GameConstants.XML_NODE_ABILITYCHANGE)
         val elementAttribute: String? = XmlUtility.getElementAttribute(element, "ability")
         val i = XmlUtility.getElementAttribute(element, "quantity")!!.toInt()
         val elementAttribute2: String? =
-            XmlUtility.getElementAttribute(element,
-                GameConstants.XML_NODE_ABILITYCHANGE_ATTR_OPERATION)
+            XmlUtility.getElementAttribute(element, GameConstants.XML_NODE_ABILITYCHANGE_ATTR_OPERATION)
         span.setSpan(object : NeutralClickableSpan() {
+
             override fun onClick(p0: View) {
                 ToastManager.showGenericToast(
                     context,
@@ -686,12 +701,9 @@ class ChapterFormatter {
     @Throws(Exception::class)
     private fun format_XP(element: Element, context: Context): RPSpannableString {
         val span: RPSpannableString =
-            formatSpan(loopInnerElements(element, context), 
-                GameConstants.XML_NODE_EXPERIENCE,
-                context = context)
+            formatSpan(loopInnerElements(element, context), GameConstants.XML_NODE_EXPERIENCE)
         var elementAttribute: String? =
-            XmlUtility.getElementAttribute(element, 
-                GameConstants.XML_NODE_EXPERIENCE_ATTR_AMOUNT)
+            XmlUtility.getElementAttribute(element, GameConstants.XML_NODE_EXPERIENCE_ATTR_AMOUNT)
         if (elementAttribute == null) {
             elementAttribute = "1"
         }
@@ -710,12 +722,12 @@ class ChapterFormatter {
 
     @Throws(Exception::class)
     private fun format_SMALLCAPS(element: Element, context: Context): RPSpannableString {
-        return applySmallCapsFormatting(loopInnerElements(element, context), context)
+        return applySmallCapsFormatting(loopInnerElements(element, context))
     }
 
-    private fun applySmallCapsFormatting(spannableString: RPSpannableString, context: Context): RPSpannableString {
-        val string: String = context.getString(R.string.lowCaseChars)
-        val string2: String = context.getString(R.string.uppCaseChars)
+    private fun applySmallCapsFormatting(spannableString: RPSpannableString): RPSpannableString {
+        val string: String = GameLogic.Navigator!!.getString(R.string.lowCaseChars)
+        val string2: String = GameLogic.Navigator!!.getString(R.string.uppCaseChars)
         if (spannableString.toString() == "") {
             return spannableString
         }
@@ -742,8 +754,7 @@ class ChapterFormatter {
             }
         }
         iArr2[i] = charArray.size
-        val spannableString2: RPSpannableString = RPSpannableString(
-            String(charArray))
+        val spannableString2: RPSpannableString = RPSpannableString(String(charArray))
         for (i3 in spans.indices) {
             spannableString2.setSpan(
                 spans[i3],
@@ -755,15 +766,14 @@ class ChapterFormatter {
         spannableString2.setSpan(RelativeSizeSpan(1.1f), 0,
             spannableString.length, 0)
         for (i4 in 0..<min(iArr.size, iArr2.size)) {
-            spannableString2.setSpan(RelativeSizeSpan(0.9f), iArr[i4],
-                iArr2[i4], 34)
+            spannableString2.setSpan(RelativeSizeSpan(0.9f),
+                iArr[i4], iArr2[i4], 34)
         }
         return spannableString2
     }
-
-    private fun formatSpan(spannableString: RPSpannableString, str: String, context: Context):
-            RPSpannableString {
-        val arrayList = ArrayList<Any>()
+    
+    private fun formatSpan(spannableString: RPSpannableString, str: String): RPSpannableString {
+        val arrayList: ArrayList<*> = ArrayList<Any?>()
         when (str) {
             "bold" -> arrayList.add(StyleSpan(1))
             "hlink", "jump", "link" -> {
@@ -771,7 +781,7 @@ class ChapterFormatter {
                 arrayList.add(StyleSpan(1))
                 arrayList.add(
                     ForegroundColorSpan(
-                        context.resources.getColor(R.color.paragraph_link)
+                        GameLogic.AppContext!!.getResources().getColor(R.color.paragraph_link)
                     )
                 )
             }
@@ -790,7 +800,7 @@ class ChapterFormatter {
             "title" -> {
                 arrayList.add(RelativeSizeSpan(1.5f))
                 arrayList.add(StyleSpan(1))
-                spannableString.gravity = 1
+                RPSpannableString.setGravity(1)
             }
             "objectref_code", "enemyref", "objectref", "abilitychange" -> {
                 arrayList.add(UnderlineSpan())
@@ -799,8 +809,7 @@ class ChapterFormatter {
             }
         }
         for (i in arrayList.indices) {
-            spannableString.setSpan(arrayList[i], 0, spannableString.length,
-                0)
+            spannableString.setSpan(arrayList[i], 0, spannableString.length, 0)
         }
         return spannableString
     }

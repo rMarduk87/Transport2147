@@ -79,4 +79,12 @@ class BookRepository(
     fun getAllTalents(): List<String> {
         return bookDao.getAllTalents()
     }
+
+    fun deleteProfile(id: String) {
+        bookDao.deleteProfile(id)
+    }
+
+    fun insertNewProfile(profile: ProfilesModel) {
+        bookDao.insertNewProfile(profile)
+    }
 }

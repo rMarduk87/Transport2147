@@ -28,6 +28,7 @@ class AppUtils {
         const val TEXT_JUSTIFICATION : String = "text_justification"
         const val CORE_FONT_NAME : String = "core_font_name"
         const val LANGUAGE : String = "language"
+        const val INITIAL_POPUP_SHOW : String = "initial_popup_show"
         var FONT_NAME : String = ""
 
         fun calculateLikeness(guess: String, target: String): Int {

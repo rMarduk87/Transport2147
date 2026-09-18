@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import rpt.com.base.log.e
 import rpt.games.transport2147.databinding.ActivityHistoryBinding
+import rpt.games.transport2147.utils.LocaleHelper
 import rpt.games.transport2147.utils.data.appmodels.complex.History
 import rpt.games.transport2147.utils.data.appmodels.complex.History.historyEnabled
 import rpt.games.transport2147.utils.managers.ToastManager
@@ -25,10 +26,9 @@ class HistoryActivity : AppCompatActivity() {
         GameLogic.History = this;
         binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        actionBar!!.setDisplayHomeAsUpEnabled(true);
     }
 
-    // android.app.Activity
     override fun onDestroy() {
         try {
             GameLogic.History = null
@@ -38,23 +38,23 @@ class HistoryActivity : AppCompatActivity() {
         }
     }
 
-    // android.app.Activity
     override fun onResume() {
         try {
             super.onResume()
             loadHistory()
             if (historyEnabled) {
                 historyEnabled = false
-                ToastManager.showGenericToast(this, getString(R.string.toast_historyDisabled))
+                ToastManager.showGenericToast(this, getString(
+                    R.string.toast_historyDisabled))
             }
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
         }
     }
 
-    // android.app.Activity, android.view.ContextThemeWrapper, android.content.ContextWrapper
+
     override fun attachBaseContext(context: Context?) {
-        super.attachBaseContext(LocaleHelper.onAttach(context))
+        super.attachBaseContext(LocaleHelper.onAttach(context!!))
     }
 
     fun onChangeFontSize(view: View?) {

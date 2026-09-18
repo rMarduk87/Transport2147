@@ -9,7 +9,7 @@ import rpt.games.transport2147.HistoryActivity
 import rpt.games.transport2147.MainMenuActivity
 import rpt.games.transport2147.NavigatorActivity
 import rpt.games.transport2147.R
-import rpt.games.transport2147.utils.data.appmodels.Profile
+import rpt.games.transport2147.utils.data.appmodels.complex.Profile
 import rpt.games.transport2147.utils.data.appmodels.complex.Enemy
 import rpt.games.transport2147.utils.data.appmodels.complex.PlayerObject
 import rpt.games.transport2147.utils.managers.BookManager

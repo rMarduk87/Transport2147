@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/frgSheet.layout.listElement.horizontal">
+    <rpt.games.transport2147.utils.view.text.RPTextView
+        android:id="@+id/cmpListElementProfile_txtProfile"
+        android:text="@string/txt_placeholder"
+        style="@style/frgSheet.text.listElement.text"/>
+    <ImageView
+        android:contentDescription="@string/img"
+        android:id="@+id/cmpListElementProfile_btnRename"
+        android:src="@drawable/ico_profiles_rename"
+        style="@style/frgSheet.list.icon"/>
+    <ImageView
+        android:contentDescription="@string/img"
+        android:id="@+id/cmpListElementProfile_btnDelete"
+        android:src="@drawable/ico_sheet_trash"
+        style="@style/frgSheet.list.icon"/>
+</LinearLayout>
