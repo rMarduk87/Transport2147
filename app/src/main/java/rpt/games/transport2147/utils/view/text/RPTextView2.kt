@@ -110,9 +110,11 @@ class RPTextView2 : RPTextView {
             }
         }
 
-    var text: CharSequence? = null
-        get() = if (this._justify == null || !this._justify!! ||
-            this._originalText == null) super.getText() else this._originalText
+    override fun getText(): CharSequence {
+        val current = super.getText()
+        return if (this._justify == null || !this._justify!! ||
+            this._originalText == null) current else this._originalText!!
+    }
 
 
     protected override fun onTextChanged(charSequence: CharSequence?, i: Int, i2: Int, i3: Int) {
@@ -182,7 +184,6 @@ class RPTextView2 : RPTextView {
         text = spannableStringBuilder
     }
 
-    // android.widget.TextView, android.view.View
     protected override fun onMeasure(i: Int, i2: Int) {
         var size: Int = 0
         super.onMeasure(i, i2)
@@ -214,7 +215,6 @@ class RPTextView2 : RPTextView {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:20:0x005b  */
     private fun justifyText() {
         var f: Float
         var lineVisibleEnd: Int = 0
@@ -223,11 +223,11 @@ class RPTextView2 : RPTextView {
         var i3: Int = 0
         var i4: Int = 0
         var desiredWidth: Float
-        var c: Char
+        var c: Char = STATUS_WIDTH_NOTHING.toChar()
         var i5: Int = 0
         var iArr: IntArray
         var desiredWidth2: Float
-        var c2: Char
+        var c2: Char = STATUS_WIDTH_NOTHING.toChar()
         var justifySpan: JustifySpan? = null
         var textViewEx2 = this
         var iArr2 = IntArray(64)

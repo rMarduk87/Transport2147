@@ -82,7 +82,7 @@ class ChapterFormatter {
     }
 
     @Throws(Exception::class)
-    fun formatHistory(linearLayout: LinearLayout, context: Context) {
+    fun formatHistory(linearLayout: LinearLayout?, context: Context) {
         try {
             val stringBuffer = StringBuffer()
             for ((i, i2) in (0..<History.size).withIndex()) {
@@ -135,7 +135,7 @@ class ChapterFormatter {
     }
     
     @Throws(Exception::class, IOException::class)
-    private fun createChapter(linearLayout: LinearLayout, context: Context, element: Element) {
+    private fun createChapter(linearLayout: LinearLayout?, context: Context, element: Element) {
         var view: View?
         var z: Boolean
         var _list: View?
@@ -195,10 +195,10 @@ class ChapterFormatter {
                     if (simpleNode.gravity == 8388611 && textJustification && (textView is RPTextView2)) {
                         (textView as RPTextView2).justification = textJustification
                     }
-                    linearLayout.addView(textView)
+                    linearLayout?.addView(textView)
                 }
                 if (z) {
-                    linearLayout.addView(view)
+                    linearLayout?.addView(view)
                 }
                 view2 = view
             }
@@ -225,32 +225,21 @@ class ChapterFormatter {
     
     @Throws(Exception::class)
     private fun loopInnerElements(element: Element, context: Context): RPSpannableString {
-        var z: Boolean = false
         val childNodes = element.childNodes
-        var spannableString: RPSpannableString? = null
-        var spannableString2: RPSpannableString = RPSpannableString("")
+        var spannableString2: CharSequence = ""
         for (i in 0..<childNodes.length) {
             val nodeItem = childNodes.item(i)
-            if (nodeItem is Element) {
-                spannableString = parseInnerTag(nodeItem, context)
+            val toAppend: CharSequence = if (nodeItem is Element) {
+                parseInnerTag(nodeItem, context)
+            } else if (nodeItem is Text) {
+                nodeItem.nodeValue ?: ""
             } else {
-                if (nodeItem is Text) {
-                    val nodeValue = nodeItem.nodeValue
-                    z = nodeValue != ""
-                    spannableString = RPSpannableString(nodeValue)
-                }
-                if (z) {
-                    spannableString2 =
-                        RPSpannableString(TextUtils.concat(spannableString2, spannableString))
-                }
+                ""
             }
-            z = true
-            if (z) {
-                spannableString2 =
-                    RPSpannableString(TextUtils.concat(spannableString2, spannableString))
-            }
+            spannableString2 = TextUtils.concat(spannableString2, toAppend)
         }
-        return spannableString2
+        return spannableString2 as? RPSpannableString ?: RPSpannableString(
+            spannableString2)
     }
 
     @Throws(Exception::class)
@@ -276,7 +265,7 @@ class ChapterFormatter {
         )
         if (z) {
             imageView.setOnClickListener {
-                safeNavController(R.id.main_activity_nav_host_fragment)?.
+                GameLogic.navigator?.safeNavController(R.id.main_activity_nav_host_fragment)?.
                 safeNavigate(HistoryFragmentDirections.actionHistoryFragmentToImageZoomFragment(
                     java.lang.String.format(GameConstants.IMAGE_ZOOM, elementAttribute)
                 ))
@@ -356,7 +345,7 @@ class ChapterFormatter {
                 spannableStringLoopInnerElements = RPSpannableString(enemy.name)
             }
             val span: RPSpannableString = formatSpan(
-                applySmallCapsFormatting(spannableStringLoopInnerElements),
+                applySmallCapsFormatting(spannableStringLoopInnerElements, context),
                 GameConstants.XML_NODE_ENEMYREF,
                 context = context
             )
@@ -556,7 +545,7 @@ class ChapterFormatter {
                         ignoreCase = true
                     ) && attribute2.equals(GameConstants.JUMP_TARGET_MAIN, ignoreCase = true)
                 ) {
-                    safeNavController(R.id.main_activity_nav_host_fragment)?.
+                    GameLogic.navigator?.safeNavController(R.id.main_activity_nav_host_fragment)?.
                     safeNavigate(NavigatorFragmentDirections
                         .actionNavigatorFragmentToMainMenuFragment())
                 }
@@ -565,7 +554,7 @@ class ChapterFormatter {
                         ignoreCase = true
                     ) && attribute2.equals(GameConstants.JUMP_TARGET_MAIN2, ignoreCase = true)
                 ) {
-                    safeNavController(R.id.main_activity_nav_host_fragment)?.
+                    GameLogic.navigator?.safeNavController(R.id.main_activity_nav_host_fragment)?.
                     safeNavigate(NavigatorFragmentDirections
                         .actionNavigatorFragmentToMainMenuTwoFragment())
                 }
@@ -721,12 +710,12 @@ class ChapterFormatter {
 
     @Throws(Exception::class)
     private fun format_SMALLCAPS(element: Element, context: Context): RPSpannableString {
-        return applySmallCapsFormatting(loopInnerElements(element, context))
+        return applySmallCapsFormatting(loopInnerElements(element, context), context)
     }
 
-    private fun applySmallCapsFormatting(spannableString: RPSpannableString): RPSpannableString {
-        val string: String = GameLogic.navigator!!.getString(R.string.lowCaseChars)
-        val string2: String = GameLogic.navigator!!.getString(R.string.uppCaseChars)
+    private fun applySmallCapsFormatting(spannableString: RPSpannableString, context: Context): RPSpannableString {
+        val string: String = context.getString(R.string.lowCaseChars)
+        val string2: String = context.getString(R.string.uppCaseChars)
         if (spannableString.toString() == "") {
             return spannableString
         }
@@ -774,7 +763,7 @@ class ChapterFormatter {
 
     private fun formatSpan(spannableString: RPSpannableString, str: String, context: Context):
             RPSpannableString {
-        val arrayList: ArrayList<*> = ArrayList<Any?>()
+        val arrayList = ArrayList<Any>()
         when (str) {
             "bold" -> arrayList.add(StyleSpan(1))
             "hlink", "jump", "link" -> {

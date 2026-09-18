@@ -89,4 +89,19 @@
     <string name="toast_msgExperienceAdded">Guadagnato %d di esperienza</string>
     <string name="lowCaseChars">abcdefghijklmnopqrstuvwxyzàèéìòù</string>
     <string name="uppCaseChars">ABCDEFGHIJKLMNOPQRSTUVWXYZÀÈÉÌÒÙ</string>
+    <string name="dialog_dictionaryEntryTitle">Glossario</string>
+    <string name="dialog_buttonOk">Ok</string>
+    <string name="dialog_jumpChapter">Vai al paragrafo</string>
+    <string name="dialog_jumpChapterTrack">Vai al paragrafo e riabilita traccia paragrafi</string>
+    <string name="dialog_trimHistory">Elimina i paragrafi da qua in avanti</string>
+    <string name="dialog_backToHistory">Torna ai paragrafi visitati</string>
+    <string name="dialog_historyOptionTitle">Scegli un\'opzione</string>
+    <string name="dialog_trimHistoryTitle">Elimina i paragrafi visitati</string>
+    <string name="dialog_trimHistoryMsg">Vuoi cancellare i paragrafi visitati dopo il %s?</string>
+    <string name="dialog_buttonCancel">Cancel</string>
+    <string name="txt_Yes">Yes</string>
+    <string name="txt_No">No</string>
+    <string name="dialog_multiObjects">Hai già preso quest\'oggetto una volta.\\nVuoi prenderlo di nuovo?</string>
+    <string name="dialog_lblItemQuantity">Quantità</string>
+    <string name="dialog_alert">Attenzione!</string>
 </resources>

@@ -1,5 +1,10 @@
 package rpt.games.transport2147.utils.data.appmodels.complex
 
+import android.R
+import android.widget.LinearLayout
+import rpt.games.transport2147.utils.view.chapter.ChapterFormatter
+
+
 object History {
     private var _historyEnabled = true
     private var _requestedChapter: String? = null

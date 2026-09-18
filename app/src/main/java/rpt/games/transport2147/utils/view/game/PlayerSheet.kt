@@ -19,6 +19,7 @@ import rpt.games.transport2147.utils.xml.XmlUtility.getElementAttribute
 import rpt.games.transport2147.utils.xml.XmlUtility.getFirstSubNode
 import rpt.games.transport2147.utils.xml.XmlUtility.getRootElement
 import rpt.games.transport2147.utils.GameConstants
+import rpt.games.transport2147.utils.managers.BookManager
 import java.util.EnumMap
 
 
@@ -63,7 +64,6 @@ class PlayerSheet {
 
     constructor(context: Context, element: Element) {
         val z: Boolean
-        var `object`: String?
         this.name = ""
         this._abilities = arrayMapOf()
         this.talents = null
@@ -127,9 +127,9 @@ class PlayerSheet {
                 val elementsByTagName3 = element3.getElementsByTagName(GameConstants.XML_NODE_OBJECT)
                 for (i3 in 0..<elementsByTagName3.length) {
                     val playerObject = PlayerObject(elementsByTagName3.item(i3) as Element?)
-                    if (z
-                    ) {
-                        val playerObject2 = PlayerObject(getRootElement(`object`))
+                    if (z) {
+                        val objXml = BookManager.getObject(playerObject.id)
+                        val playerObject2 = PlayerObject(getRootElement(objXml))
                         playerObject.setName(playerObject2.name, false)
                         playerObject.setDescription(playerObject2.description, false)
                     }

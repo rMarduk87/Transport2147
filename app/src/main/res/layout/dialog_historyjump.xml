@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/dlg.mainLayout">
+    <include layout="@layout/include_dialogtitle"/>
+    <RadioGroup
+        android:id="@+id/dlgHistoryJump_rdgOptions"
+        style="@style/dlg.radioGroup">
+        <rpt.games.transport2147.utils.view.radiobutton.RPRadioButton
+            android:id="@+id/dlgHistoryJump_opt1"
+            android:text="@string/dialog_jumpChapter"
+            style="@style/dlg.radioButton"/>
+        <rpt.games.transport2147.utils.view.radiobutton.RPRadioButton
+            android:id="@+id/dlgHistoryJump_opt2"
+            android:text="@string/dialog_jumpChapterTrack"
+            style="@style/dlg.radioButton"/>
+        <rpt.games.transport2147.utils.view.radiobutton.RPRadioButton
+            android:id="@+id/dlgHistoryJump_opt3"
+            android:text="@string/dialog_trimHistory"
+            style="@style/dlg.radioButton"/>
+        <rpt.games.transport2147.utils.view.radiobutton.RPRadioButton
+            android:id="@+id/dlgHistoryJump_opt4"
+            android:text="@string/dialog_backToHistory"
+            style="@style/dlg.radioButton"/>
+    </RadioGroup>
+</LinearLayout>

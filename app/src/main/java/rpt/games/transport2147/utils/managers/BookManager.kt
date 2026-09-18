@@ -144,5 +144,10 @@ class BookManager {
             return getXmlElement("objects", "id", "item",
                 str)
         }
+
+        fun getDictionaryEntry(str: String?): String {
+            return getXmlElement("dictionary", "id",
+                "entry", str)
+        }
     }
 }

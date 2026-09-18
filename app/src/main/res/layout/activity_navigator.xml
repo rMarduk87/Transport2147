@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <rpt.games.transport2147.utils.view.tab.SlidingTabLayoutImg
+        android:id="@+id/actNavigator_tbsTabs"
+        android:background="@drawable/tab_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/actNavigator_pgrNavigator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

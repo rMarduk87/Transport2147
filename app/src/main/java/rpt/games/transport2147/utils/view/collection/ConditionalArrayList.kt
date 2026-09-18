@@ -42,6 +42,7 @@ class ConditionalArrayList<E>(
                         .getBaseValue(BaseValueModeEnum.ACTUAL)!!.value * 2
                 ) {
                     DialogManager.showWarningOnChangeSheetValue(
+                        this._context,
                         R.string.dialog_condBackpackOverloaded
                     )
                 }
@@ -52,8 +53,8 @@ class ConditionalArrayList<E>(
         return zAdd
     }
     
-    override fun remove(obj: Any?): Boolean {
-        super.remove(obj)
+    override fun remove(element: E?): Boolean {
+        super.remove(element)
         if (!this._checkConditions) {
             return true
         }

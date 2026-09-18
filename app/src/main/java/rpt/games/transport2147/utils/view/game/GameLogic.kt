@@ -5,29 +5,31 @@ import android.content.Context
 import android.view.View
 import android.widget.ImageView
 import rpt.com.base.log.e
+import rpt.games.transport2147.HistoryActivity
+import rpt.games.transport2147.MainMenuActivity
+import rpt.games.transport2147.NavigatorActivity
+import rpt.games.transport2147.R
 import rpt.games.transport2147.utils.data.appmodels.Profile
 import rpt.games.transport2147.utils.data.appmodels.complex.Enemy
-import rpt.games.transport2147.utils.data.appmodels.complex.History
 import rpt.games.transport2147.utils.data.appmodels.complex.PlayerObject
-import rpt.games.transport2147.R
-import rpt.games.transport2147.ui.navigator.NavigatorFragment
 import rpt.games.transport2147.utils.managers.BookManager
+import rpt.games.transport2147.utils.managers.DiceRollerManager
 import rpt.games.transport2147.utils.managers.ProfileManager
 import rpt.games.transport2147.utils.managers.SharedPreferencesManager
 
+
 object GameLogic {
     var AppContext: Context? = null
-    //var ChapterFragment: Activity_Navigator.ChapterFragment? = null
-    //var DiceRoller1: DiceRollerMgr? = null
-    //var DiceRoller2: DiceRollerMgr? = null
+    var ChapterFragment: NavigatorActivity.ChapterFragment? = null
+    var DiceRoller1: DiceRollerManager? = null
+    var DiceRoller2: DiceRollerManager? = null
     var Enemy: Enemy? = null
-    //var History: Activity_History? = null
-    //var MainMenu: Activity_MainMenu? = null
-    var navigator: NavigatorFragment? = null
+    var History: HistoryActivity? = null
+    var MainMenu: MainMenuActivity? = null
+    var Navigator: NavigatorActivity? = null
     var PlayerSheet: PlayerSheet? = null
     var Profile: Profile? = null
     private var _TookObjects: HashMap<PlayerObject?, PlayerObject?>? = null
-
     var _fontDimension: Int = 2130968660
     var _fontDimensionIndex: Int = 2
     var _fontDimensionMaxIndex: Int = 12
@@ -52,16 +54,16 @@ object GameLogic {
     }
 
     fun checkForAppRecovery(activity: Activity, z: Boolean) {
-        var mostRecentProfile: Profile? = null
+        val mostRecentProfile: Profile? = null
         try {
-            if (History.requestedChapter == null || Profile == null) {
+            if (History.getRequestedChapter() == null || Profile == null) {
                 initApp(activity.getApplicationContext())
-                if (!z || (BookManager.getMostRecentProfile()
+                if (!z || BookManager.getMostRecentProfile()
                         .also { mostRecentProfile = it }) == null
                 ) {
                     return
                 }
-                ProfileManager.loadProfile(activity, mostRecentProfile)
+                ProfileManager.loadProfile(activity, mostRecentProfile!!)
             }
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }

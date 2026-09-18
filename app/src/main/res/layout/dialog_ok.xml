@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/dlg.mainLayout">
+    <include layout="@layout/include_dialogtitle"/>
+    <ScrollView style="@style/frgRemote.scroll">
+        <LinearLayout style="@style/dlg.innerLayout.padding">
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/dlgOk_message"
+                style="@style/dlg.text"/>
+            <include layout="@layout/include_dialogbuttonok"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

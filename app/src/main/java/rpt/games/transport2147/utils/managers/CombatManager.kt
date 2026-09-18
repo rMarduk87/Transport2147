@@ -1,9 +1,331 @@
 package rpt.games.transport2147.utils.managers
 
 import android.content.Context
+import android.content.Intent
+import android.os.Handler
+import android.view.View
+import android.widget.TextView
+import rpt.com.base.log.e
+import rpt.games.transport2147.NavigatorActivity
+import rpt.games.transport2147.utils.data.appmodels.complex.BaseValue
+import rpt.games.transport2147.utils.data.appmodels.complex.Enemy
+import rpt.games.transport2147.utils.data.enums.AbilityTypeEnum
+import rpt.games.transport2147.utils.data.enums.BaseValueModeEnum
+import rpt.games.transport2147.utils.view.game.GameLogic
+import rpt.games.transport2147.utils.view.game.PlayerSheet
+import kotlin.math.max
+import kotlin.math.min
+import rpt.games.transport2147.R
 
-class CombatManager {
-    companion object {
-        fun activateEnemy(context: Context, enemy: rpt.games.transport2147.utils.data.appmodels.complex.Enemy) {}
+
+object CombatManager {
+    private const val MAXVAL = 99
+    private const val MINVAL = 0
+    private var _needValueNotTrasferredAlert = false
+    private var _playerCraft = 0
+    private var _playerDamage = 0
+    private var _playerME = 0
+    private var _playerPE = 0
+    private var _playerProtection = 0
+    private var _playerValor = 0
+    private var _round = 0
+
+    fun activateEnemy(context: Context, enemy: Enemy?) {
+        try {
+            val playerSheet: PlayerSheet? = GameLogic.PlayerSheet
+            _playerValor = playerSheet!!.getAbility(AbilityTypeEnum.VALOR)!!
+                .getBaseValue(BaseValueModeEnum.ACTUAL)!!.value
+            _playerCraft = playerSheet.getAbility(AbilityTypeEnum.CRAFT)!!
+                .getBaseValue(BaseValueModeEnum.ACTUAL)!!.value
+            _playerDamage = playerSheet.getAbility(AbilityTypeEnum.DAMAGE)!!
+                .getBaseValue(BaseValueModeEnum.ACTUAL)!!.value
+            _playerProtection = playerSheet.getAbility(AbilityTypeEnum.PROTECTION)!!
+                .getBaseValue(BaseValueModeEnum.ACTUAL)!!.value
+            _playerPE = playerSheet.getAbility(AbilityTypeEnum.PHYSICAL_ENERGY)!!
+                .getBaseValue(BaseValueModeEnum.ACTUAL)!!.value
+            _playerME = playerSheet.getAbility(AbilityTypeEnum.MENTAL_ENERGY)!!
+                .getBaseValue(BaseValueModeEnum.ACTUAL)!!.value
+            _round = 1
+            GameLogic.Navigator.changePagerPage(2)
+            GameLogic.Enemy = enemy
+            initCombat(true)
+            _needValueNotTrasferredAlert = true
+        } catch (e: Exception) {
+            e.message?.let { e(Throwable(e),it) }
+        }
+    }
+
+    fun checkForExitAlert(context: Context?) {
+        if (_needValueNotTrasferredAlert) {
+            DialogManager.showCombatExitAlert(context)
+            _needValueNotTrasferredAlert = false
+        }
+    }
+
+    fun terminateCombat() {
+        try {
+            GameLogic.Enemy = null
+            val playerSheet: PlayerSheet? = GameLogic.PlayerSheet
+            val baseValue: BaseValue = playerSheet!!.getAbility(AbilityTypeEnum.MENTAL_ENERGY)!!
+                .getBaseValue(BaseValueModeEnum.ACTUAL)!!
+            for (value in baseValue.value..<_playerME) {
+                baseValue.add()
+            }
+            for (value2 in baseValue.value downTo _playerME + 1) {
+                baseValue.subtract()
+            }
+            val baseValue2: BaseValue = playerSheet.getAbility(AbilityTypeEnum.PHYSICAL_ENERGY)!!
+                .getBaseValue(BaseValueModeEnum.ACTUAL)!!
+            for (value3 in baseValue2.value..<_playerPE) {
+                baseValue2.add()
+            }
+            for (value4 in baseValue2.value downTo _playerPE + 1) {
+                baseValue2.subtract()
+            }
+            _needValueNotTrasferredAlert = false
+            GameLogic.Navigator.changePagerPage(1)
+        } catch (e: Exception) {
+            e.message?.let { e(Throwable(e),it) }
+        }
+    }
+
+    private fun toggleActivation(z: Boolean) {
+        val activity_Navigator: NavigatorActivity = GameLogic.Navigator
+        activity_Navigator.findViewById(R.id.frgCombat_layCombat).setVisibility(if (z) 0 else 8)
+        activity_Navigator.findViewById(R.id.frgCombat_lblInactive).setVisibility(if (z) 8 else 0)
+    }
+
+    private fun getNormalizedValue(i: Int): Int {
+        return max(min(i, MAXVAL), 0)
+    }
+
+    fun initCombat(bool: Boolean) {
+        val activity_Navigator: NavigatorActivity = GameLogic.Navigator
+        val playerSheet: PlayerSheet? = GameLogic.PlayerSheet
+        val enemy: Enemy? = GameLogic.Enemy
+        try {
+            toggleActivation(enemy != null)
+            if (enemy == null) {
+                return
+            }
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtRound)!!).text = _round.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_btnDamageEnemy)!!).text =
+                activity_Navigator.getString(
+                    R.string.button_assignDamage,
+                    arrayOf<Any?>(enemy.name)
+                )
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_btnDamagePlayer)!!).text =
+                activity_Navigator.getString(
+                    R.string.button_assignDamage,
+                    arrayOf<Any?>(playerSheet!!.name)
+                )
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtEnemyName)!!).text = enemy.name
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtEnemyValor)!!).text = enemy.valor.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtEnemyCraft)!!).text = enemy.craft.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtEnemyME)!!).text = enemy.mentalEnergy.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtEnemyPE)!!).text = enemy.phisicalEnergy.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtEnemyProtection)!!).text =
+                enemy.protection.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtEnemyDamage)!!).text =
+                enemy.damage.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtNotes)!!).text = enemy.note
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtPlayerName)!!).text =
+                playerSheet.name
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtPlayerValor)!!).text =
+                _playerValor.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtPlayerCraft)!!).text =
+                _playerCraft.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtPlayerDamage)!!).text =
+                _playerDamage.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtPlayerProtection)!!).text =
+                _playerProtection.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtPlayerPE)!!).text =
+                _playerPE.toString()
+            (activity_Navigator.findViewById<TextView>(R.id.frgCombat_txtPlayerME)!!).text =
+                _playerME.toString()
+            if (!bool || enemy.note.equals("")) {
+                return
+            }
+            DialogManager.showCombatNotes(activity_Navigator)
+        } catch (e: Exception) {
+            e.message?.let { e(Throwable(e),it) }
+        }
+    }
+
+    fun highlightBackground(i: Int, i2: Int) {
+        val textView = GameLogic.Navigator.findViewById(i) as TextView
+        textView.background.level = 2
+        Handler().postDelayed({ textView.background.level = 1 }, i2.toLong())
+    }
+
+    fun OnClickView(view: View) {
+        try {
+            val enemy: Enemy = GameLogic.Enemy ?: return
+            when (view.id) {
+                R.id.frgCombat_btnAddEnemyCraft -> enemy.setCraft(enemy.getCraft() + 1)
+                R.id.frgCombat_btnAddEnemyDamage -> enemy.setDamage(enemy.getDamage() + 1)
+                R.id.frgCombat_btnAddEnemyME -> enemy.setMentalEnergy(enemy.getMentalEnergy() + 1)
+                R.id.frgCombat_btnAddEnemyPE -> {
+                    val phisicalEnergy: Int = enemy.phisicalEnergy
+                    enemy.phisicalEnergy += 1
+                    checkTrigger(
+                        enemy,
+                        Enemy.Condition.ENEMY_EF,
+                        phisicalEnergy,
+                        enemy.phisicalEnergy
+                    )
+                }
+
+                R.id.frgCombat_btnAddEnemyProtection -> enemy.protection += 1
+                R.id.frgCombat_btnAddEnemyValor -> enemy.valor += 1
+                R.id.frgCombat_btnAddPlayerCraft -> _playerCraft =
+                    getNormalizedValue(_playerCraft + 1)
+
+                R.id.frgCombat_btnAddPlayerDamage -> _playerDamage =
+                    getNormalizedValue(_playerDamage + 1)
+
+                R.id.frgCombat_btnAddPlayerME -> _playerME = getNormalizedValue(_playerME + 1)
+                R.id.frgCombat_btnAddPlayerPE -> {
+                    val i = _playerPE
+                    _playerPE = getNormalizedValue(_playerPE + 1)
+                    checkTrigger(enemy, Enemy.Condition.PLAYER_EF, i, _playerPE)
+                }
+
+                R.id.frgCombat_btnAddPlayerProtection -> _playerProtection =
+                    getNormalizedValue(_playerProtection + 1)
+
+                R.id.frgCombat_btnAddPlayerValor -> _playerValor =
+                    getNormalizedValue(_playerValor + 1)
+
+                R.id.frgCombat_btnAddRound -> {
+                    val i2 = _round
+                    _round = getNormalizedValue(_round + 1)
+                    checkTrigger(enemy, Enemy.Condition.TURN, i2, _round)
+                }
+
+                R.id.frgCombat_btnDamageEnemy -> {
+                    val iMax = Math.max(_playerDamage - enemy.getProtection(), 0)
+                    val phisicalEnergy2: Int = enemy.phisicalEnergy
+                    enemy.setPhisicalEnergy(Math.max(enemy.phisicalEnergy - iMax, 0))
+                    highlightBackground(R.id.frgCombat_txtEnemyPE, 2000)
+                    damageToast(iMax, enemy.name)
+                    checkTrigger(
+                        enemy,
+                        Enemy.Condition.ENEMY_EF,
+                        phisicalEnergy2,
+                        enemy.phisicalEnergy
+                    )
+                    if (enemy.phisicalEnergy === 0) {
+                        DialogManager.showCombatTriggerWarning(
+                            GameLogic.Navigator,
+                            GameLogic.Navigator.getString(R.string.dialog_enemyIsDead)
+                        )
+                    }
+                }
+
+                R.id.frgCombat_btnDamagePlayer -> {
+                    val iMax2 = Math.max(enemy.getDamage() - _playerProtection, 0)
+                    val i3 = _playerPE
+                    _playerPE = max(_playerPE - iMax2, 0)
+                    highlightBackground(R.id.frgCombat_txtPlayerPE, 2000)
+                    damageToast(iMax2, GameLogic.PlayerSheet.name)
+                    checkTrigger(enemy, Enemy.Condition.PLAYER_EF, i3, _playerPE)
+                    if (_playerPE == 0) {
+                        DialogManager.showCombatTriggerWarning(
+                            GameLogic.Navigator,
+                            GameLogic.Navigator.getString(R.string.dialog_characterIsDeadByEF)
+                        )
+                    }
+                }
+
+                R.id.frgCombat_btnSubtractEnemyCraft -> enemy.setCraft(enemy.getCraft() - 1)
+                R.id.frgCombat_btnSubtractEnemyDamage -> enemy.setDamage(enemy.getDamage() - 1)
+                R.id.frgCombat_btnSubtractEnemyME -> enemy.setMentalEnergy(enemy.getMentalEnergy() - 1)
+                R.id.frgCombat_btnSubtractEnemyPE -> {
+                    val phisicalEnergy3: Int = enemy.phisicalEnergy
+                    enemy.setPhisicalEnergy(enemy.phisicalEnergy - 1)
+                    checkTrigger(
+                        enemy,
+                        Enemy.Condition.ENEMY_EF,
+                        phisicalEnergy3,
+                        enemy.phisicalEnergy
+                    )
+                }
+
+                R.id.frgCombat_btnSubtractEnemyProtection -> enemy.setProtection(enemy.getProtection() - 1)
+                R.id.frgCombat_btnSubtractEnemyValor -> enemy.setValor(enemy.getValor() - 1)
+                R.id.frgCombat_btnSubtractPlayerCraft -> _playerCraft =
+                    getNormalizedValue(_playerCraft - 1)
+
+                R.id.frgCombat_btnSubtractPlayerDamage -> _playerDamage =
+                    getNormalizedValue(_playerDamage - 1)
+
+                R.id.frgCombat_btnSubtractPlayerME -> _playerME = getNormalizedValue(_playerME - 1)
+                R.id.frgCombat_btnSubtractPlayerPE -> {
+                    val i4 = _playerPE
+                    _playerPE = getNormalizedValue(_playerPE - 1)
+                    checkTrigger(enemy, Enemy.Condition.PLAYER_EF, i4, _playerPE)
+                }
+
+                R.id.frgCombat_btnSubtractPlayerProtection -> _playerProtection =
+                    getNormalizedValue(_playerProtection - 1)
+
+                R.id.frgCombat_btnSubtractPlayerValor -> _playerValor =
+                    getNormalizedValue(_playerValor - 1)
+
+                R.id.frgCombat_btnSubtractRound -> {
+                    val i5 = _round
+                    _round = getNormalizedValue(_round - 1)
+                    checkTrigger(enemy, Enemy.Condition.TURN, i5, _round)
+                }
+
+                R.id.frgCombat_btnTerminate -> terminateCombat()
+                R.id.frgCombat_btnTutorial -> {
+                    val intent =
+                        Intent(GameLogic.Navigator, Activity_Tutorial::class.java as Class<*>)
+                    intent.putExtra(Constants.TUTORIAL_HOME, Constants.TUTORIAL_HOME_COMBAT)
+                    GameLogic.Navigator.startActivity(intent)
+                    return
+                }
+            }
+            initCombat(false)
+        } catch (e: Exception) {
+            e.message?.let { e(Throwable(e),it) }
+        }
+    }
+
+    fun checkTrigger(enemy: Enemy, condition: Enemy.Condition, i: Int, i2: Int) {
+        val triggers: ArrayList<Enemy.Trigger> = enemy.getTriggers()
+        for (i3 in triggers.indices) {
+            val trigger = triggers.get(i3)
+            if (trigger.getCondition().value
+                    .equals(condition.value) && !trigger.getActivated()
+                    .booleanValue() && ((trigger.getOverThreshold()
+                    .booleanValue() && i < trigger.getThreshold() && i2 >= trigger.getThreshold()) || (!trigger.getOverThreshold()
+                    .booleanValue() && i > trigger.getThreshold() && i2 <= trigger.getThreshold()))
+            ) {
+                trigger.setActivated(true)
+                DialogManager.showCombatTriggerWarning(GameLogic.Navigator, trigger.getNote())
+            }
+        }
+    }
+
+    fun damageToast(i: Int, str: String?) {
+        val string: String?
+        if (i == 1) {
+            string = GameLogic.Navigator.getString(
+                R.string.toast_assignDamageSingle,
+                arrayOf<Any?>(str, i)
+            )
+        } else if (i > 1) {
+            string = GameLogic.Navigator.getString(
+                R.string.toast_assignDamage,
+                arrayOf<Any?>(str, i)
+            )
+        } else {
+            string =
+                GameLogic.Navigator.getString(R.string.toast_absorbDamage, arrayOf<Any?>(str))
+        }
+        ToastMgr.showGenericToast(GameLogic.Navigator, string)
     }
 }
