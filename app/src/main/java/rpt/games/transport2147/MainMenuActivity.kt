@@ -3,17 +3,17 @@ package rpt.games.transport2147
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Process
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import rpt.com.base.log.e
 import rpt.games.transport2147.databinding.ActivityMainMenuBinding
 import rpt.games.transport2147.utils.AppUtils
 import rpt.games.transport2147.utils.GameConstants
 import rpt.games.transport2147.utils.LocaleHelper
-import rpt.games.transport2147.utils.data.appmodels.Profile
+import rpt.games.transport2147.utils.data.appmodels.complex.Profile
 import rpt.games.transport2147.utils.data.appmodels.complex.History.lastChapter
 import rpt.games.transport2147.utils.data.appmodels.complex.History.requestedChapter
 import rpt.games.transport2147.utils.data.appmodels.complex.History.size
@@ -33,16 +33,20 @@ class MainMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTitle(R.string.title_activityMain)
         GameLogic.checkForAppRecovery(this, false)
-        GameLogic.MainMenu = this
+        GameLogic.mainMenu = this
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        (findViewById<View?>(R.id.actMain_txtVersion) as TextView).text = getString(
-            R.string.info_appVersion,
-            arrayOf<Any?>(AppUtils.getAppVersion(this),
-                getString(R.string.param_buildVariant))
-        )
+        val versione = getString(R.string.info_appVersion)
+        binding.actMainTxtVersion.text = buildString {
+            append(versione)
+            append(" ")
+            append(AppUtils.getAppVersion(this@MainMenuActivity))
+            append(" ")
+            append(getString(R.string.param_buildVariant))
+        }
+
         val mostRecentProfile: Profile = BookManager.getMostRecentProfile()
-        ProfileManager.loadProfile(this, mostRecentProfile)
+        ProfileManager.loadProfile(this@MainMenuActivity, mostRecentProfile)
         if (SharedPreferencesManager.language
                 .equals(getString(R.string.language_codeIT)) &&
             !SharedPreferencesManager.initialPopUpShow
@@ -51,23 +55,22 @@ class MainMenuActivity : AppCompatActivity() {
             SharedPreferencesManager.initialPopUpShow =
                 getString(R.string.transport1533islive)
             DialogManager.showGenericOkCancelDialog(
-                this,
+                this@MainMenuActivity,
                 getString(R.string.dialog_alert),
                 getString(R.string.dialog_Transport1533IsLive),
                 getString(R.string.dialog_noThanks),
                 null,
-                getString(R.string.dialog_goToTransport1533),
-                object : View.OnClickListener {
-                    override fun onClick(view: View?) {
-                        SocialManager.openGooglePlay(
-                            this,
-                            this@MainMenuActivity.getString(
-                                R.string.appid_transport1533)
-                        )
-                    }
-                })
+                getString(R.string.dialog_goToTransport1533)
+            ) {
+                SocialManager.openGooglePlay(
+                    this@MainMenuActivity,
+                    this@MainMenuActivity.getString(
+                        R.string.appid_transport1533
+                    )
+                )
+            }
         }
-        AppUtils.makeActionOverflowMenuShown(this)
+        AppUtils.makeActionOverflowMenuShown(this@MainMenuActivity)
     }
     
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -86,30 +89,23 @@ class MainMenuActivity : AppCompatActivity() {
                 R.id.mnuMainMenu_itmCredit -> startActivity(
                     Intent(
                         this,
-                        Activity_Credits::class.java as Class<*>
+                        CreditsActivity::class.java as Class<*>
                     )
                 )
 
                 R.id.mnuMainMenu_itmExit -> Process.killProcess(Process.myPid())
                 R.id.mnuMainMenu_itmFastStart -> DialogManager.showFastStartDialog(this)
                 R.id.mnuMainMenu_itmGlossary -> {
-                    val intent = Intent(this, Activity_Glossary::class.java as Class<*>)
+                    val intent = Intent(this, GlossaryActivity::class.java as Class<*>)
                     intent.putExtra(GameConstants.GLOSSARY_HOME, "MAIN")
                     startActivity(intent)
                 }
 
                 R.id.mnuMainMenu_itmNewGame -> DialogManager.confirmNewGame(this)
-                R.id.mnuMainMenu_itmRemote -> startActivity(
-                    Intent(
-                        this,
-                        Activity_Remote::class.java as Class<*>
-                    )
-                )
-
                 R.id.mnuMainMenu_itmSettings -> startActivity(
                     Intent(
                         this,
-                        Activity_Settings::class.java as Class<*>
+                        SettingsActivity::class.java as Class<*>
                     )
                 )
             }
@@ -122,7 +118,7 @@ class MainMenuActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         try {
-            GameLogic.MainMenu = null
+            GameLogic.mainMenu = null
             super.onDestroy()
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
@@ -142,17 +138,17 @@ class MainMenuActivity : AppCompatActivity() {
     fun onClickMainActivity(view: View) {
         try {
             when (view.id) {
-                R.id.actMain_btnIntro -> startActivity(
+                /*R.id.actMain_btnIntro -> startActivity(
                     Intent(
                         this,
                         Activity_Intro::class.java as Class<*>
                     )
-                )
+                )*/
 
                 R.id.actMain_btnMain2 -> startActivity(
                     Intent(
                         this,
-                        Activity_Main2::class.java as Class<*>
+                        MainActivity2::class.java as Class<*>
                     )
                 )
 
@@ -169,7 +165,7 @@ class MainMenuActivity : AppCompatActivity() {
                 }
 
                 R.id.actMain_btnTutorial -> {
-                    val intent = Intent(this, Activity_Tutorial::class.java as Class<*>)
+                    val intent = Intent(this, TutorialActivity::class.java as Class<*>)
                     intent.putExtra(GameConstants.TUTORIAL_HOME, "MAIN")
                     startActivity(intent)
                 }
@@ -189,19 +185,18 @@ class MainMenuActivity : AppCompatActivity() {
                 return
             }
         }
-        (GameLogic.MainMenu!!.findViewById<TextView>(R.id.actMain_txtProfile)!!).text = str
-        findViewById<View?>(R.id.actMain_btnStart).isEnabled = z
-        findViewById<View?>(R.id.actMain_btnRules).isEnabled = z
+        binding.actMainTxtProfile.text = str
+        binding.actMainBtnStart.isEnabled = z
+        binding.actMainBtnRules.isEnabled = z
         setStartButtonText()
     }
 
     fun setStartButtonText() {
         try {
-            val textView = findViewById<View?>(R.id.actMain_btnStart) as TextView
             if (size == 0 || lastChapter!!.chapter == GameConstants.BOOK_CHAPTER_START) {
-                textView.text = getString(R.string.button_GoNavigatorVanilla)
+                binding.actMainBtnStart.text = getString(R.string.button_GoNavigatorVanilla)
             } else {
-                textView.text = getString(R.string.button_GoNavigator)
+                binding.actMainBtnStart.text = getString(R.string.button_GoNavigator)
             }
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }

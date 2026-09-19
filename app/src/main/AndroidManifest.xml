@@ -10,11 +10,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Transport2147">
+        android:theme="@style/AppBaseTheme">
         <activity
             android:name=".LaunchActivity"
             android:exported="true"
-            android:theme="@style/Theme.Transport2147.NoActionBar"
+            android:theme="@style/AppBaseTheme"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,6 +44,22 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity2"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".CreditsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".GlossaryActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TutorialActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

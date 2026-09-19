@@ -4,14 +4,18 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.DisplayMetrics
 import android.view.View
+import android.view.ViewConfiguration
 import android.view.WindowManager
+import rpt.com.base.log.e
 import rpt.games.transport2147.TransportApplication
 import rpt.games.transport2147.utils.view.hacking.TerminalHackingGame
 import rpt.games.transport2147.utils.view.hacking.TerminalToken
+import java.lang.reflect.Field
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.regex.Matcher
 import java.util.regex.Pattern
+import kotlin.math.floor
 
 
 class AppUtils {
@@ -131,6 +135,35 @@ class AppUtils {
                 }
                 length--
             }
+        }
+
+        fun getAppVersion(context: Context): String? {
+            try {
+                return context.packageManager
+                    .getPackageInfo(context.packageName, 0).versionName
+            } catch (e: Exception) {
+                e.message?.let { e(Throwable(e),it) }
+            }
+            return null
+        }
+
+        @SuppressLint("SoonBlockedPrivateApi")
+        @Throws(java.lang.Exception::class)
+        fun makeActionOverflowMenuShown(context: Context) {
+            var declaredField: Field? = null
+            val viewConfiguration: ViewConfiguration = ViewConfiguration.get(context)
+            if (!viewConfiguration.hasPermanentMenuKey() || (ViewConfiguration::class.java.getDeclaredField(
+                    "sHasPermanentMenuKey"
+                ).also { declaredField = it }) == null
+            ) {
+                return
+            }
+            declaredField!!.isAccessible = true
+            declaredField.setBoolean(viewConfiguration, false)
+        }
+
+        fun random(i: Int, i2: Int): Int {
+            return (floor(Math.random() * (((i2 - i) + 1).toDouble())).toInt()) + i
         }
 
     }

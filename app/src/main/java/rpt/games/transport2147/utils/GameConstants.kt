@@ -23,7 +23,7 @@ object GameConstants {
     const val BOOK_CHAPTER_RULES: String = "REGOLE"
     const val BOOK_CHAPTER_RULES1: String = "REGOLAMENTO1"
     const val BOOK_CHAPTER_RULES2: String = "REGOLAMENTO2"
-    const val BOOK_CHAPTER_START: String = "101"
+    const val BOOK_CHAPTER_START: String = "201"
     const val BV_MODE_ACTUAL: String = "actual"
     const val BV_MODE_INITIAL: String = "initial"
     const val BV_MODE_MODIFIED: String = "modified"

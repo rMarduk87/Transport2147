@@ -23,7 +23,7 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTitle(R.string.title_activityHistory);
         GameLogic.checkForAppRecovery(this, true);
-        GameLogic.History = this;
+        GameLogic.history = this;
         binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
         actionBar!!.setDisplayHomeAsUpEnabled(true);
@@ -31,7 +31,7 @@ class HistoryActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         try {
-            GameLogic.History = null
+            GameLogic.history = null
             super.onDestroy()
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }

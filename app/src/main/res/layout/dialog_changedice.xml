@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/dlg.mainLayout">
+    <include layout="@layout/include_dialogtitle"/>
+    <RadioGroup
+        android:id="@+id/dlgChangeDices_rdgDices"
+        style="@style/dlg.radioGroup">
+        <rpt.games.transport2147.utils.view.radiobutton.RPRadioButton
+            android:id="@+id/dlgChangeDices_rdb1"
+            android:text="@string/dialog_dice1"
+            style="@style/dlg.radioButton"/>
+        <rpt.games.transport2147.utils.view.radiobutton.RPRadioButton
+            android:id="@+id/dlgChangeDices_rdb2"
+            android:text="@string/dialog_dice2"
+            style="@style/dlg.radioButton"/>
+        <rpt.games.transport2147.utils.view.radiobutton.RPRadioButton
+            android:id="@+id/dlgChangeDices_rdb3"
+            android:text="@string/dialog_dice3"
+            style="@style/dlg.radioButton"/>
+        <rpt.games.transport2147.utils.view.radiobutton.RPRadioButton
+            android:id="@+id/dlgChangeDices_rdb4"
+            android:text="@string/dialog_dice4"
+            style="@style/dlg.radioButton"/>
+    </RadioGroup>
+</LinearLayout>

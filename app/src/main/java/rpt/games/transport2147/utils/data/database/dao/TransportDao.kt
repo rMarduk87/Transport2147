@@ -83,6 +83,15 @@ interface TransportDao {
     @Query("SELECT * FROM profiles ORDER BY id DESC LIMIT 1")
     fun getMostRecentProfile() : ProfilesModel
 
+    @Query("SELECT * FROM profiles ORDER BY name ASC")
+    fun getAllProfiles(): List<ProfilesModel>
+
+    @Query("UPDATE profiles SET history = :history, used = :used WHERE id = :id")
+    fun updateProfileHistory(id: String, history: String, used: String)
+
+    @Query("UPDATE profiles SET sheet = :sheet, used = :used WHERE id = :id")
+    fun updateProfileSheet(id: String, sheet: String, used: String)
+
     @Query("SELECT talent FROM talents")
     fun getAllTalents(): List<String>
 

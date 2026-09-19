@@ -55,7 +55,7 @@ class SlidingTabLayoutImg @JvmOverloads constructor(
         this.mTabStrip.removeAllViews()
         this.mViewPager = viewPager
         if (viewPager != null) {
-            viewPager.setOnPageChangeListener(SlidingTabLayoutImg.InternalViewPagerListener())
+            viewPager.setOnPageChangeListener(InternalViewPagerListener())
             populateTabStrip()
         }
     }
@@ -110,14 +110,12 @@ class SlidingTabLayoutImg @JvmOverloads constructor(
     }
 
     fun scrollToTab(i: Int, i2: Int) {
-        val childAt: View?
         val childCount: Int = this.mTabStrip.childCount
-        if (childCount == 0 || i < 0 || i >= childCount || (this.mTabStrip.getChildAt(i)
-                .also { childAt = it }) == null
-        ) {
+        val childAt = this.mTabStrip.getChildAt(i)
+        if (childCount == 0 || i < 0 || i >= childCount || childAt == null) {
             return
         }
-        var left = childAt!!.left + i2
+        var left = childAt.left + i2
         if (i > 0 || i2 > 0) {
             left -= this.mTitleOffset
         }
@@ -133,10 +131,10 @@ class SlidingTabLayoutImg @JvmOverloads constructor(
                 return
             }
             this@SlidingTabLayoutImg.mTabStrip.onViewPagerPageChanged(i, f)
+            val selectedChild = this@SlidingTabLayoutImg.mTabStrip.getChildAt(i)
             this@SlidingTabLayoutImg.scrollToTab(
                 i,
-                if (this@SlidingTabLayoutImg.mTabStrip.getChildAt(i) != null)
-                        (r0.getWidth() * f) as Int else 0
+                if (selectedChild != null) (selectedChild.width * f).toInt() else 0
             )
             if (this@SlidingTabLayoutImg.mViewPagerPageChangeListener != null) {
                 this@SlidingTabLayoutImg.mViewPagerPageChangeListener!!

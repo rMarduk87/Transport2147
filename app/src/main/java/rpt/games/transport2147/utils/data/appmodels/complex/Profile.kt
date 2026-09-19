@@ -1,6 +1,6 @@
 package rpt.games.transport2147.utils.data.appmodels.complex
 
-class Profile private constructor(
+class Profile(
     var id: String?,
     var name: String?,
     var lastUsed: String?,

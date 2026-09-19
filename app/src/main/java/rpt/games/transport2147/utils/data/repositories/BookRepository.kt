@@ -87,4 +87,16 @@ class BookRepository(
     fun insertNewProfile(profile: ProfilesModel) {
         bookDao.insertNewProfile(profile)
     }
+
+    fun getAllProfiles(): List<ProfilesModel> {
+        return bookDao.getAllProfiles()
+    }
+
+    fun updateProfileHistory(id: String, history: String, used: String) {
+        bookDao.updateProfileHistory(id, history, used)
+    }
+
+    fun updateProfileSheet(id: String, sheet: String, used: String) {
+        bookDao.updateProfileSheet(id, sheet, used)
+    }
 }

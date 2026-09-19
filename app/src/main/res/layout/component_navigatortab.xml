@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:contentDescription="@string/img"
+    android:id="@+id/cmpNavigatorTab_imgBackground"
+    android:background="@drawable/tab_button_stateful"
+    android:padding="@dimen/cmpNavigatorTab_iconPadding"
+    android:layout_width="@dimen/cmpNavigatorTab_width"
+    android:layout_height="@dimen/cmpNavigatorTab_height"
+    android:layout_margin="@dimen/cmpNavigatorTab_margin"
+    android:src="@drawable/tab_chapter_stateful"
+    android:scaleType="fitCenter"
+    android:adjustViewBounds="true"/>

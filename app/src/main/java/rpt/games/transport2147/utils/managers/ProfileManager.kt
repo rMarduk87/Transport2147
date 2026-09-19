@@ -20,14 +20,14 @@ object ProfileManager {
     fun deleteProfile(context: Context, profile: Profile) {
         try {
             BookManager.deleteProfile(profile)
-            val profile2: Profile? = GameLogic.Profile as Profile?
+            val profile2: Profile? = GameLogic.profile as Profile?
             if (profile2 == null || profile.id != profile2.id) {
                 return
             }
-            GameLogic.Profile = null
-            GameLogic.PlayerSheet = null
+            GameLogic.profile = null
+            GameLogic.playerSheet = null
             cleanHistory()
-            GameLogic.MainMenu!!.profileLoaded(false, null)
+            GameLogic.mainMenu!!.profileLoaded(false, null)
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
         }
@@ -42,7 +42,7 @@ object ProfileManager {
                     return false
                 }
             }
-            val profile2: Profile? = GameLogic.Profile as Profile?
+            val profile2: Profile? = GameLogic.profile as Profile?
             var bool = false
             if (profile2 != null && profile.id == profile2.id) {
                 bool = true
@@ -75,8 +75,8 @@ object ProfileManager {
 
     fun loadProfile(context: Context, profile: Profile) {
         try {
-            GameLogic.Profile = profile
-            GameLogic.PlayerSheet = PlayerSheet(context,
+            GameLogic.profile = profile
+            GameLogic.playerSheet = PlayerSheet(context,
                 getRootElement(profile.sheetData)!!)
             cleanHistory()
             requestedChapter = null
@@ -89,8 +89,8 @@ object ProfileManager {
                 }
                 requestedChapter = strArrSplit[strArrSplit.size - 1]
             }
-            if (GameLogic.MainMenu != null) {
-                GameLogic.MainMenu!!.profileLoaded(true, profile.name)
+            if (GameLogic.mainMenu != null) {
+                GameLogic.mainMenu!!.profileLoaded(true, profile.name)
             }
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
@@ -120,7 +120,7 @@ object ProfileManager {
 
     fun saveProfileSheet(context: Context, profile: Profile) {
         try {
-            profile.sheetData = GameLogic.PlayerSheet!!.toXml(context)
+            profile.sheetData = GameLogic.playerSheet!!.toXml(context)
             BookManager.updateProfileSheet(profile)
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }

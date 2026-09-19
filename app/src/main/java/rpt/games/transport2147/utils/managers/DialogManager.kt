@@ -238,8 +238,8 @@ object DialogManager {
                 R.string.dialog_buttonOk
             ) {
                 trimHistory(i)
-                GameLogic.History!!.loadHistory()
-                ProfileManager.saveProfileHistory(context, GameLogic.Profile)
+                GameLogic.history!!.loadHistory()
+                ProfileManager.saveProfileHistory(context, GameLogic.profile)
                 alertDialogCreate.dismiss()
             }
             setCustomCancelButton(
@@ -322,8 +322,8 @@ object DialogManager {
             val viewFindViewById2 =
                 viewInflate.findViewById<View?>(R.id.dlgMultiObjects_lblQuantity)
             radioButton2.isChecked = true
-            viewFindViewById.visibility = android.view.View.GONE
-            viewFindViewById2.visibility = View.GONE
+            viewFindViewById!!.visibility = android.view.View.GONE
+            viewFindViewById2!!.visibility = View.GONE
             val onClickListener2: View.OnClickListener = View.OnClickListener { view ->
                 
                 when (view.id) {

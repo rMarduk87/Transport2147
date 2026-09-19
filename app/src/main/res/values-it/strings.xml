@@ -15,7 +15,7 @@
     <string name="appid_transport1533">rpt.games.transport1533</string>
     <string name="button_Donate">Fai una donazione</string>
     <string name="button_GoNavigator">Continua a giocare</string>
-    <string name="button_GoNavigatorVanilla">Inizia a giocare al 101</string>
+    <string name="button_GoNavigatorVanilla">Inizia a giocare al 201</string>
     <string name="button_Intro">Introduzione</string>
     <string name="button_Like">Mi piace…</string>
     <string name="button_ModifySheet">Scheda e Regolamento</string>
@@ -145,7 +145,7 @@
     <string name="fnt_fontName05">Paladino</string>
     <string name="history_Title">Paragrafi visitati</string>
     <string name="img_shareWa">images/fTeA_01_SharingPicture_ITA.jpg</string>
-    <string name="info_appVersion" formatted="false">Versione: %s %s</string>
+    <string name="info_appVersion">Versione:</string>
     <string name="info_enableMailForErrors">Abilita l\'invio mail nelle impostazioni per inviare l\'errore al supporto tecnico</string>
     <string name="info_installEmailClient">Installa un client email per segnalare l\'errore.</string>
     <string name="info_sendErrorViaEmail">Invia errore tramite email</string>
@@ -173,7 +173,7 @@
     <string name="menu_remote">Salvataggio partite su Cloud</string>
     <string name="menu_rollDices">Lancia i dadi</string>
     <string name="menu_settings">Impostazioni</string>
-    <string name="msg_share">Ti segnalo Il Marchio, il primo episodio di Fra Tenebra e Abisso, un librogame-app digitale per Android: è come una delle storie interattive che andavano forte anni fa, con la comodità di un dispositivo digitale. Provala, perché l\'app è completamente gratuita e scaricabile al link: %s</string>
+    <string name="msg_share">Ti segnalo Transport 2147, il primo episodio di Fra Tenebra e Abisso, un librogame-app digitale per Android: è come una delle storie interattive che andavano forte anni fa, con la comodità di un dispositivo digitale. Provala, perché l\'app è completamente gratuita e scaricabile al link: %s</string>
     <string name="param_appId">1</string>
     <string name="param_appSeries">ftea</string>
     <string name="param_buildVariant" />
@@ -305,17 +305,17 @@
     <string name="rem_usernameRules">L\'utente deve essere un indirizzo di email valido</string>
     <string name="rem_warning">Attenzione</string>
     <string name="rem_warningPrivacy">Per poter effettuare la registrazione devi accettare le condizioni della privacy facendo click sulla checkbox</string>
-    <string name="title_activityCredits">Il Marchio: Credits</string>
-    <string name="title_activityGlossary">Il Marchio: Glossario</string>
-    <string name="title_activityHistory">Il Marchio: Paragrafi Visitati</string>
-    <string name="title_activityImageZoom">Il Marchio: Immagine</string>
-    <string name="title_activityIntro">Il Marchio: Introduzione</string>
-    <string name="title_activityMain">Fra Tenebra e Abisso: Il Marchio</string>
-    <string name="title_activityMain2">Il Marchio: Altre Opzioni</string>
-    <string name="title_activityNavigator">Fra Tenebra e Abisso: Il Marchio</string>
-    <string name="title_activityRemote">Il Marchio: Salvataggio Profili</string>
-    <string name="title_activitySettings">Il Marchio: Impostazioni</string>
-    <string name="title_activityTutorial">Il Marchio: Tutorial</string>
+    <string name="title_activityCredits">Transport 2147: Credits</string>
+    <string name="title_activityGlossary">Transport 2147: Glossario</string>
+    <string name="title_activityHistory">Transport 2147: Paragrafi Visitati</string>
+    <string name="title_activityImageZoom">Transport 2147: Immagine</string>
+    <string name="title_activityIntro">Transport 2147: Introduzione</string>
+    <string name="title_activityMain">Cronache Dalle Rete: Transport 2147</string>
+    <string name="title_activityMain2">Transport 2147: Altre Opzioni</string>
+    <string name="title_activityNavigator">Cronache Dalle Rete: Transport 2147</string>
+    <string name="title_activityRemote">Transport 2147: Salvataggio Profili</string>
+    <string name="title_activitySettings">Transport 2147: Impostazioni</string>
+    <string name="title_activityTutorial">Transport 2147: Tutorial</string>
     <string name="title_fragmentChapter">Paragrafi</string>
     <string name="title_fragmentCombat">Combatti</string>
     <string name="title_fragmentRules">Regole</string>

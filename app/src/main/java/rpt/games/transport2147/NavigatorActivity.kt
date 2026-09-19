@@ -1,5 +1,6 @@
 package rpt.games.transport2147
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -42,6 +43,12 @@ import java.util.Locale
 class NavigatorActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityNavigatorBinding
+    var itemEnableHistory: MenuItem? = null
+    var itemGoToChapter: MenuItem? = null
+    var itemHistory: MenuItem? = null
+    var itemPreviousChapter: MenuItem? = null
+    var mSectionsPagerAdapter: SectionsPagerAdapter? = null
+    var mViewPager: ViewPager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,15 +56,17 @@ class NavigatorActivity : AppCompatActivity() {
         GameLogic.checkForAppRecovery(this, true)
         binding = ActivityNavigatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        GameLogic.Navigator = this
-        this.mSectionsPagerAdapter = SectionsPagerAdapter(fragmentManager)
+        GameLogic.navigator = this
+        this.mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
         this.mViewPager = findViewById<View?>(R.id.actNavigator_pgrNavigator) as ViewPager?
-        this.mViewPager.setAdapter(this.mSectionsPagerAdapter)
+        this.mViewPager!!.setAdapter(this.mSectionsPagerAdapter)
         val slidingTabLayoutImg =
             findViewById<View?>(R.id.actNavigator_tbsTabs) as SlidingTabLayoutImg
         slidingTabLayoutImg.setDistributeEvenly(true)
         slidingTabLayoutImg.setCustomTabView(R.layout.component_navigatortab)
-        if (requestedChapter == GameConstants.BOOK_CHAPTER_RULES || requestedChapter == GameConstants.BOOK_CHAPTER_RULES1 || requestedChapter == GameConstants.BOOK_CHAPTER_RULES2) {
+        if (requestedChapter == GameConstants.BOOK_CHAPTER_RULES ||
+            requestedChapter == GameConstants.BOOK_CHAPTER_RULES1 ||
+            requestedChapter == GameConstants.BOOK_CHAPTER_RULES2) {
             slidingTabLayoutImg.setTabImages(
                 intArrayOf(
                     R.drawable.tab_chapter_stateful,
@@ -78,14 +87,15 @@ class NavigatorActivity : AppCompatActivity() {
             override fun onPageSelected(i: Int) {
                 this@NavigatorActivity.updateActionBar(i)
                 if (i != 2) {
-                    CombatManager.checkForExitAlert(GameLogic.Navigator)
+                    CombatManager.checkForExitAlert(GameLogic.navigator)
                 }
-                ProfileManager.saveProfileSheet(GameLogic.Navigator, GameLogic.Profile)
+                ProfileManager.saveProfileSheet(GameLogic.navigator!!,
+                    GameLogic.profile!!)
                 SheetManager.initSheet()
             }
         })
-        val actionBar: ActionBar? = getActionBar()
-        actionBar.setTitle(getString(R.string.title_activityNavigator))
+        val actionBar: android.app.ActionBar? = getActionBar()
+        actionBar!!.title = getString(R.string.title_activityNavigator)
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayShowTitleEnabled(true)
         actionBar.setDisplayUseLogoEnabled(true)
@@ -101,16 +111,16 @@ class NavigatorActivity : AppCompatActivity() {
                 !(i != 0 || requestedChapter == GameConstants.BOOK_CHAPTER_RULES ||
                         requestedChapter == GameConstants.BOOK_CHAPTER_RULES1 || requestedChapter ==
                         GameConstants.BOOK_CHAPTER_RULES2)
-            for (menuItem in arrayOf<MenuItem>(
+            for (menuItem in listOfNotNull(
                 this.itemPreviousChapter,
                 this.itemGoToChapter,
                 this.itemHistory,
                 this.itemEnableHistory
             )) {
                 menuItem.isEnabled = z
-                menuItem.icon!!.alpha = if (z) 255 else TransportMediator.KEYCODE_MEDIA_RECORD
+                menuItem.icon!!.alpha = if (z) 255 else 130
             }
-            ActionMenuManager.updateHistoryMenu(this.itemEnableHistory)
+            ActionMenuManager.updateHistoryMenu(this.itemEnableHistory!!)
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
         }
@@ -123,46 +133,44 @@ class NavigatorActivity : AppCompatActivity() {
             this.itemGoToChapter = menu.findItem(R.id.mnuNavigator_itmGoChapter)
             this.itemHistory = menu.findItem(R.id.mnuNavigator_itmHistory)
             this.itemEnableHistory = menu.findItem(R.id.mnuNavigator_itmEnableDisableHistory)
-            if (GameLogic.DiceRoller1 == null) {
-                GameLogic.DiceRoller1 =
+            if (GameLogic.diceRoller1 == null) {
+                GameLogic.diceRoller1 =
                     DiceRollerManager(menu.findItem(R.id.mnuNavigator_itmDiceRoller1), 1)
             } else {
-                GameLogic.DiceRoller1.setMenuItem(menu.findItem(R.id.mnuNavigator_itmDiceRoller1))
+                GameLogic.diceRoller1!!.setMenuItem(menu.findItem(R.id.mnuNavigator_itmDiceRoller1))
             }
-            if (GameLogic.DiceRoller2 == null) {
-                GameLogic.DiceRoller2 =
+            if (GameLogic.diceRoller2 == null) {
+                GameLogic.diceRoller2 =
                     DiceRollerManager(menu.findItem(R.id.mnuNavigator_itmDiceRoller2), 2)
             } else {
-                GameLogic.DiceRoller2.setMenuItem(menu.findItem(R.id.mnuNavigator_itmDiceRoller2))
+                GameLogic.diceRoller2!!.setMenuItem(menu.findItem(R.id.mnuNavigator_itmDiceRoller2))
             }
-            updateActionBar(this.mViewPager.getCurrentItem())
+            updateActionBar(this.mViewPager!!.currentItem)
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
         }
         return true
     }
 
-    // android.app.Activity
     override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
-        return ActionMenuManager.OnActionMenuClicked(this, menuItem) || super.onOptionsItemSelected(
+        return ActionMenuManager.onActionMenuClicked(this@NavigatorActivity, menuItem) ||
+                super.onOptionsItemSelected(
             menuItem
         )
     }
 
-    // android.app.Activity
     public override fun onDestroy() {
-        GameLogic.Navigator = null
-        GameLogic.DiceRoller1 = null
-        GameLogic.DiceRoller2 = null
+        GameLogic.navigator = null
+        GameLogic.diceRoller1 = null
+        GameLogic.diceRoller2 = null
         super.onDestroy()
     }
 
-    // android.app.Activity
     public override fun onStart() {
         try {
             super.onStart()
             if (this.itemEnableHistory != null) {
-                ActionMenuManager.updateHistoryMenu(this.itemEnableHistory)
+                ActionMenuManager.updateHistoryMenu(this.itemEnableHistory!!)
             }
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
@@ -170,20 +178,20 @@ class NavigatorActivity : AppCompatActivity() {
     }
 
     override fun attachBaseContext(context: Context?) {
-        super.attachBaseContext(LocaleHelper.onAttach(context))
+        super.attachBaseContext(LocaleHelper.onAttach(context!!))
     }
 
     fun onClickSheetView(view: View?) {
-        SheetManager.OnClickView(view)
+        SheetManager.onClickView(view)
     }
 
     fun onClickCombatView(view: View?) {
-        CombatManager.OnClickView(view!!)
+        CombatManager.onClickView(view!!)
     }
 
     fun changePagerPage(i: Int) {
         try {
-            this.mViewPager.setCurrentItem(i)
+            this.mViewPager!!.setCurrentItem(i)
             updateActionBar(i)
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
@@ -193,7 +201,7 @@ class NavigatorActivity : AppCompatActivity() {
     fun onChangeFontSize(view: View?) {
         try {
             GameLogic.changeFontSize(this, view!!)
-            GameLogic.ChapterFragment!!.loadChapter(true)
+            GameLogic.chapterFragment!!.loadChapter(true)
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
         }
@@ -214,13 +222,13 @@ class NavigatorActivity : AppCompatActivity() {
 
     fun onToggleHistory(view: View?) {
         try {
-            ActionMenuManager.actionEnableDisableHistory(this.itemEnableHistory)
+            ActionMenuManager.actionEnableDisableHistory(this.itemEnableHistory!!)
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
         }
     }
 
-    class SectionsPagerAdapter(fragmentManager: FragmentManager) :
+    inner class SectionsPagerAdapter(fragmentManager: FragmentManager) :
         FragmentPagerAdapter(fragmentManager) {
         override fun getItem(i: Int): Fragment {
             if (i == 0) {
@@ -246,7 +254,7 @@ class NavigatorActivity : AppCompatActivity() {
             return 2
         }
         
-        override fun getPageTitle(i: Int): CharSequence {
+        override fun getPageTitle(i: Int): CharSequence? {
             val locale: Locale? = Locale.getDefault()
             when (i) {
                 0 -> {
@@ -255,21 +263,25 @@ class NavigatorActivity : AppCompatActivity() {
                         (requestedChapter != GameConstants.BOOK_CHAPTER_RULES1) && 
                         (requestedChapter != GameConstants.BOOK_CHAPTER_RULES2)) {
                         return this@NavigatorActivity.getString(
-                            R.string.title_fragmentChapter)
-                            .toUpperCase(locale)
+                            R.string.title_fragmentChapter
+                        )
+                            .uppercase(locale!!)
                     }
                     return this@NavigatorActivity.getString(
-                        R.string.title_fragmentRules)
-                        .toUpperCase(locale)
+                        R.string.title_fragmentRules
+                    )
+                        .uppercase(locale!!)
                 }
 
                 1 -> return this@NavigatorActivity.getString(
-                    R.string.title_fragmentSheet)
-                    .toUpperCase(locale)
+                    R.string.title_fragmentSheet
+                )
+                    .uppercase(locale!!)
 
                 2 -> return this@NavigatorActivity.getString(
-                    R.string.title_fragmentCombat)
-                    .toUpperCase(locale)
+                    R.string.title_fragmentCombat
+                )
+                    .uppercase(locale!!)
 
                 else -> return null
             }
@@ -295,7 +307,7 @@ class NavigatorActivity : AppCompatActivity() {
         }
 
         override fun onPause() {
-            ProfileManager.saveProfileSheet(GameLogic.Navigator, GameLogic.Profile)
+            ProfileManager.saveProfileSheet(GameLogic.navigator!!, GameLogic.profile!!)
             super.onPause()
         }
 
@@ -344,7 +356,7 @@ class NavigatorActivity : AppCompatActivity() {
         ): View {
             val viewInflate: View =
                 layoutInflater.inflate(R.layout.fragment_chapter, viewGroup, false)
-            GameLogic.ChapterFragment = this
+            GameLogic.chapterFragment = this
             GameLogic.iconToggleHistory =
                 viewInflate.findViewById<View?>(R.id.incFontChgr_btnHistoryToggle) as ImageView?
             val requestedChapter = requestedChapter
@@ -378,9 +390,10 @@ class NavigatorActivity : AppCompatActivity() {
 
         override fun onDestroyView() {
             super.onDestroyView()
-            GameLogic.ChapterFragment = null
+            GameLogic.chapterFragment = null
         }
 
+        @SuppressLint("CutPasteId")
         @JvmOverloads
         fun loadChapter(z: Boolean = false) {
             try {
@@ -416,9 +429,9 @@ class NavigatorActivity : AppCompatActivity() {
                         (requestedChapter != GameConstants.BOOK_CHAPTER_RULES2) &&
                         (size == 0 || lastChapter!!.chapter != requestedChapter)) {
                         addVisitedChapter(requestedChapter, chapterFormatter.lastSummary)
-                        ProfileManager.saveProfileHistory(requireActivity(), GameLogic.Profile)
+                        ProfileManager.saveProfileHistory(requireActivity(), GameLogic.profile)
                     }
-                    GameLogic.CleanTakenObjectList()
+                    GameLogic.cleanTakenObjectList()
                     this._renderedChapter = requestedChapter
                 }
             } catch (e: Exception) {

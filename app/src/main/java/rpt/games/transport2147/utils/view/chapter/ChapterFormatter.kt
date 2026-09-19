@@ -6,6 +6,8 @@ import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
+import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +18,7 @@ import android.widget.TableRow
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.GravityCompat
+import androidx.core.view.ViewCompat
 import org.w3c.dom.Element
 import org.w3c.dom.Text
 import rpt.com.base.log.e
@@ -53,13 +56,13 @@ class ChapterFormatter {
     var lastSummary: String? = null
 
     @Throws(Exception::class)
-    fun formatChapter(linearLayout: LinearLayout, context: Context, str: String?): Boolean {
+    fun formatChapter(linearLayout: LinearLayout?, context: Context, str: String?): Boolean {
         try {
             val strExecReplace: String = AppUtils.execReplace(
                 BookManager.getChapter(str),
                 GameConstants.REGEX_GENDER_SEARCH,
-                if (GameLogic.PlayerSheet == null || 
-                    GameLogic.PlayerSheet!!.gender == GenderEnum.MALE) 
+                if (GameLogic.playerSheet == null ||
+                    GameLogic.playerSheet!!.gender == GenderEnum.MALE)
                     GameConstants.REGEX_GENDER_REPLACE_MALE 
                 else GameConstants.REGEX_GENDER_REPLACE_FEMALE
             )
@@ -70,7 +73,7 @@ class ChapterFormatter {
             }
             this.lastSummary =
                 AppUtils.execSingleRegex(strExecReplace, GameConstants.REGEX_FIND_CHAPTER_SUMMARY)
-            createChapter(linearLayout, context, rootElement)
+            createChapter(linearLayout!!, context, rootElement)
             return attribute.toBoolean()
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
@@ -355,12 +358,12 @@ class ChapterFormatter {
             loopInnerElements(element, context)
         try {
             val enemy: Enemy = Enemy(context, XmlUtility.getElementAttribute(element, "id"))
-            var RPSpannableString: RPSpannableString = RPSpannableString("")
+            var spannableString: RPSpannableString = RPSpannableString("")
             if (enemy.noteNode != null) {
-                RPSpannableString =
+                spannableString =
                     RPSpannableString(loopInnerElements(enemy.noteNode!!, context))
             }
-            val spannableString2: RPSpannableString = RPSpannableString
+            val spannableString2: RPSpannableString = spannableString
             if (spannableStringLoopInnerElements.toString() == "") {
                 spannableStringLoopInnerElements = RPSpannableString(enemy.name)
             }
@@ -567,7 +570,7 @@ class ChapterFormatter {
                             MainMenuActivity::class.java as Class<*>
                         )
                     )
-                    GameLogic.Navigator!!.finish()
+                    GameLogic.navigator!!.finish()
                 }
                 if (attribute.equals(
                         GameConstants.JUMP_TYPE_ACTIVITY,
@@ -576,7 +579,7 @@ class ChapterFormatter {
                 ) {
                     context.startActivity(Intent(context, 
                         MainActivity2::class.java as Class<*>))
-                    GameLogic.Navigator!!.finish()
+                    GameLogic.navigator!!.finish()
                 }
                 if (attribute.equals(GameConstants.JUMP_TYPE_PLAYSTORE, ignoreCase = true)) {
                     SocialManager.openGooglePlay(context, attribute2)
@@ -623,7 +626,7 @@ class ChapterFormatter {
             override fun onClick(p0: View) {
                 if (!GameLogic.isObjectTaken(playerObject)) {
                     SheetManager.addObject(playerObject)
-                    GameLogic.AddTakenObject(playerObject)
+                    GameLogic.addTakenObject(playerObject)
                     ToastManager.showGenericToast(
                         context,
                         context.getString(
@@ -670,7 +673,7 @@ class ChapterFormatter {
 
             override fun onClick(p0: View) {
                 Toast.makeText(context, context.getString(
-                    R.string.toast_msgTickAdded), 1).show()
+                    R.string.toast_msgTickAdded), Toast.LENGTH_LONG).show()
                 SheetManager.addTime(context)
             }
         }, 0, span.length, 0)
@@ -726,8 +729,8 @@ class ChapterFormatter {
     }
 
     private fun applySmallCapsFormatting(spannableString: RPSpannableString): RPSpannableString {
-        val string: String = GameLogic.Navigator!!.getString(R.string.lowCaseChars)
-        val string2: String = GameLogic.Navigator!!.getString(R.string.uppCaseChars)
+        val string: String = GameLogic.navigator!!.getString(R.string.lowCaseChars)
+        val string2: String = GameLogic.navigator!!.getString(R.string.uppCaseChars)
         if (spannableString.toString() == "") {
             return spannableString
         }
@@ -773,7 +776,7 @@ class ChapterFormatter {
     }
     
     private fun formatSpan(spannableString: RPSpannableString, str: String): RPSpannableString {
-        val arrayList: ArrayList<*> = ArrayList<Any?>()
+        val arrayList = ArrayList<Any>()
         when (str) {
             "bold" -> arrayList.add(StyleSpan(1))
             "hlink", "jump", "link" -> {
@@ -781,7 +784,7 @@ class ChapterFormatter {
                 arrayList.add(StyleSpan(1))
                 arrayList.add(
                     ForegroundColorSpan(
-                        GameLogic.AppContext!!.getResources().getColor(R.color.paragraph_link)
+                        GameLogic.appContext!!.resources.getColor(R.color.paragraph_link)
                     )
                 )
             }
@@ -800,7 +803,7 @@ class ChapterFormatter {
             "title" -> {
                 arrayList.add(RelativeSizeSpan(1.5f))
                 arrayList.add(StyleSpan(1))
-                RPSpannableString.setGravity(1)
+                spannableString.gravity = 1
             }
             "objectref_code", "enemyref", "objectref", "abilitychange" -> {
                 arrayList.add(UnderlineSpan())
