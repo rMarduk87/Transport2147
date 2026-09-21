@@ -1,10 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    style="@style/actMain.layout.outer"
+    android:background="#050608">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout style="@style/actMain.layout.middle">
+        <LinearLayout style="@style/actMain.layout.inner">
+
+            <ImageView style="@style/actMain.image.title"
+                android:contentDescription="@string/img" />
+
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/actMain2_btnBack"
+                android:background="@drawable/main_btn_generic"
+                android:drawableStart="@drawable/ic_cyber_arrow_back"
+                android:paddingStart="16dp"
+                style="@style/actMain.navigation"
+                tools:ignore="RtlSymmetry" />
+
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/actMain2_btnShareWa"
+                android:background="@drawable/main_btn_generic"
+                android:drawableStart="@drawable/ic_cyber_chat"
+                android:drawablePadding="16dp"
+                android:text="@string/button_ShareWa"
+                style="@style/actMain.item"/>
+
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/actMain2_btnShare"
+                android:background="@drawable/main_btn_generic"
+                android:drawableStart="@drawable/ic_cyber_share"
+                android:drawablePadding="16dp"
+                android:text="@string/button_Share"
+                style="@style/actMain.item"/>
+
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/actMain2_btnLike"
+                android:background="@drawable/main_btn_generic"
+                android:drawableStart="@drawable/ic_cyber_star"
+                android:drawablePadding="16dp"
+                android:text="@string/button_Like"
+                style="@style/actMain.item"/>
+
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/actMain2_btnRemote"
+                android:background="@drawable/main_btn_generic"
+                android:drawableStart="@drawable/ic_cyber_cloud"
+                android:drawablePadding="16dp"
+                android:text="@string/button_Remote"
+                style="@style/actMain.item"/>
+
+            <rpt.games.transport2147.utils.view.text.RPTextView
+                android:id="@+id/actMain2_btnDonate"
+                android:background="@drawable/main_btn_generic"
+                android:drawableStart="@drawable/ic_cyber_coin"
+                android:drawablePadding="16dp"
+                android:text="@string/button_Donate"
+                style="@style/actMain.item"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

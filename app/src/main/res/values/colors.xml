@@ -17,9 +17,7 @@
     <color name="background_top">#ddd3c9</color>
     <color name="background_top_dream">#ccccee</color>
     <color name="black_overlay">#66000000</color>
-    <color name="dialog_title">#6a231b</color>
     <color name="divider">#000000</color>
-    <color name="dlg_button_text">#ddd3c9</color>
     <color name="element_background">#336a231b</color>
     <color name="element_border">#6a231b</color>
     <color name="element_border_disabled">#666a231b</color>
@@ -30,4 +28,10 @@
     <color name="paragraph_text">#444444</color>
     <color name="sheet_koBackground">#ffcccc</color>
     <color name="sheet_okBackground">#eeeeee</color>
+    <color name="dlg_button_text">#FF9900</color>
+    <color name="dialog_title">#FF003C</color>
+    <color name="cyber_bg_normal">#0D0F12</color>
+    <color name="cyber_bg_pressed">#33FF9900</color>
+    <color name="cyber_border_normal">#CC7A00</color>
+    <color name="cyber_border_active">#00E5FF</color> <!-- Ciano per il tasto Play -->
 </resources>

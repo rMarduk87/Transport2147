@@ -1,5 +1,7 @@
 package rpt.games.transport2147.utils.managers
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 import rpt.com.base.log.e
 import rpt.games.transport2147.R
 import rpt.games.transport2147.TransportApplication
@@ -15,16 +17,20 @@ class BookManager {
 
     companion object {
 
-        fun openBook(){
+        fun openBook() = runBlocking(Dispatchers.IO) {
             val dbBookVersion: BookVersion? = getDbBookVersion()
-            val strLoadBook: String? = loadBook()
+            val strLoadBook = loadBook() ?: return@runBlocking
+            
             val bookVersion = BookVersion(1,
                 AppUtils.execSingleRegex(strLoadBook,
                     GameConstants.REGEX_FIND_BOOK_LANGUAGE, 1),
                 AppUtils.execSingleRegex(strLoadBook,
                     GameConstants.REGEX_FIND_BOOK_VERSION, 1)?.toInt() ?: 0
             )
-            if (dbBookVersion == null ||
+            
+            val isDatabaseEmpty = getChapter("INTRODUZIONE").isEmpty()
+            
+            if (dbBookVersion == null || isDatabaseEmpty ||
                 dbBookVersion.language != bookVersion.language ||
                 dbBookVersion.version < bookVersion.version) {
                 populateDatabase(strLoadBook, bookVersion)
@@ -33,8 +39,7 @@ class BookManager {
 
         private fun getDbBookVersion(): BookVersion? {
             try {
-                val bookVersion = RepositoryManager.bookRepository.getBookVersion()
-                return bookVersion
+                return RepositoryManager.bookRepository.getBookVersion()
             } catch (e: Exception) {
                 e.message?.let { e(Throwable(e), it) }
             }
@@ -47,10 +52,10 @@ class BookManager {
         }
 
         private fun populateDatabase(
-            strLoadBook: String?,
+            strLoadBook: String,
             bookVersion: BookVersion
         ) {
-            populateTable("chapters", strLoadBook!!, "chapter", "name")
+            populateTable("chapters", strLoadBook, "chapter", "name")
             populateTable("enemy", strLoadBook, GameConstants.XML_NODE_ENEMY,
                 "id")
             populateTable("objects", strLoadBook, GameConstants.XML_NODE_OBJECT,
@@ -97,20 +102,21 @@ class BookManager {
                 }
             }
         }
-        fun getTemplates(): ArrayList<String?> {
+        fun getTemplates(): ArrayList<String?> = runBlocking(Dispatchers.IO) {
             val templates = RepositoryManager.bookRepository.getAllTemplates()
-            return ArrayList(templates)
+            return@runBlocking ArrayList(templates)
         }
 
         @Throws(Exception::class)
-        fun getChapter(str: String?): String {
-            if (str == null) return ""
-            return RepositoryManager.bookRepository.getChapter(str) ?: ""
+        fun getChapter(str: String?): String = runBlocking(Dispatchers.IO) {
+            if (str == null) return@runBlocking ""
+            return@runBlocking RepositoryManager.bookRepository.getChapter(str) ?: ""
         }
 
         @Throws(Exception::class)
-        fun getEnemy(str: String?): String {
-            return getXmlElement("enemies", "id", "enemy", str)
+        fun getEnemy(str: String?): String = runBlocking(Dispatchers.IO) {
+            return@runBlocking getXmlElement("enemies", "id",
+                "enemy", str)
         }
 
         private fun getXmlElement(
@@ -118,10 +124,10 @@ class BookManager {
             queryColumn: String?,
             resultColumn: String?,
             value: String?
-        ): String {
-            if (value == null) return ""
+        ): String = runBlocking(Dispatchers.IO) {
+            if (value == null) return@runBlocking ""
             
-            return when (tableName) {
+            return@runBlocking when (tableName) {
                 "enemies" -> RepositoryManager.bookRepository.getEnemy(value)
                 "objects" -> RepositoryManager.bookRepository.getObject(value)
                 "talents" -> RepositoryManager.bookRepository.getTalent(value)
@@ -132,52 +138,62 @@ class BookManager {
             } ?: ""
         }
 
-        fun getMostRecentProfile() : rpt.games.transport2147.utils.data.appmodels.complex.Profile {
-            val profile = RepositoryManager.bookRepository.getMostRecentProfile().map<Profile>()
-            val profileComplex = rpt.games.transport2147.utils.data.appmodels.complex.Profile(
+        fun getMostRecentProfile() : rpt.games.transport2147.utils.data.appmodels.complex.Profile? =
+            runBlocking(Dispatchers.IO) {
+                val profile =
+                    RepositoryManager.bookRepository.getMostRecentProfile()?.map<Profile>()
+                        ?: return@runBlocking null
+                val profileComplex = rpt.games.transport2147.utils.data.appmodels.complex.Profile(
                 profile.id, profile.name, profile.sheet,
                 profile.history, profile.used)
-            return profileComplex
+            return@runBlocking profileComplex
         }
 
-        fun getTalents(): ArrayList<String?> {
+        fun getTalents(): ArrayList<String?> = runBlocking(Dispatchers.IO) {
             val talents = RepositoryManager.bookRepository.getAllTalents()
-            return ArrayList(talents)
+            return@runBlocking ArrayList(talents)
         }
-        fun getObject(str: String?): String {
-            return getXmlElement("objects", "id", "item",
+        fun getObject(str: String?): String = runBlocking(Dispatchers.IO) {
+            return@runBlocking getXmlElement("objects", "id", "item",
                 str)
         }
 
-        fun getDictionaryEntry(str: String?): String {
-            return getXmlElement("dictionary", "id",
+        fun getDictionaryEntry(str: String?): String = runBlocking(Dispatchers.IO) {
+            return@runBlocking getXmlElement("dictionary", "id",
                 "entry", str)
         }
 
-        fun deleteProfile(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile) {
+        fun deleteProfile(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile) =
+            runBlocking(Dispatchers.IO) {
             val profileApp = Profile(profile.id!!, profile.name!!,
                 profile.sheetData!!, profile.historyData!!, profile.lastUsed!!)
             RepositoryManager.bookRepository.deleteProfile(profileApp.id)
         }
 
-        fun addProfile(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile): Boolean {
+        fun addProfile(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile):
+                Boolean = runBlocking(Dispatchers.IO) {
             val profileApp = Profile(profile.id!!, profile.name!!,
                 profile.sheetData!!, profile.historyData!!, profile.lastUsed!!)
             RepositoryManager.bookRepository.insertNewProfile(profileApp.toDBModel())
-            return true
+            return@runBlocking true
         }
 
-        fun updateProfileHistory(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile): Boolean {
-            RepositoryManager.bookRepository.updateProfileHistory(profile.id!!, profile.historyData!!, profile.lastUsed!!)
-            return true
+        fun updateProfileHistory(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile):
+                Boolean = runBlocking(Dispatchers.IO) {
+            RepositoryManager.bookRepository.updateProfileHistory(profile.id!!,
+                profile.historyData!!, profile.lastUsed!!)
+            return@runBlocking true
         }
 
-        fun updateProfileSheet(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile): Boolean {
-            RepositoryManager.bookRepository.updateProfileSheet(profile.id!!, profile.sheetData!!, profile.lastUsed!!)
-            return true
+        fun updateProfileSheet(profile: rpt.games.transport2147.utils.data.appmodels.complex.Profile):
+                Boolean = runBlocking(Dispatchers.IO) {
+            RepositoryManager.bookRepository.updateProfileSheet(profile.id!!,
+                profile.sheetData!!, profile.lastUsed!!)
+            return@runBlocking true
         }
 
-        fun getProfiles(): ArrayList<rpt.games.transport2147.utils.data.appmodels.complex.Profile?> {
+        fun getProfiles(): ArrayList<rpt.games.transport2147.utils.data.appmodels.complex.Profile?> =
+            runBlocking(Dispatchers.IO) {
             val profiles = RepositoryManager.bookRepository.getAllProfiles()
             val arrayList = ArrayList<rpt.games.transport2147.utils.data.appmodels.complex.Profile?>()
             for (profilesModel in profiles) {
@@ -189,12 +205,18 @@ class BookManager {
                     )
                 )
             }
-            return arrayList
+            return@runBlocking arrayList
         }
 
         @Throws(Exception::class)
-        fun getChapterSummary(str: String?): String? {
-            return AppUtils.execSingleRegex(getChapter(str), GameConstants.REGEX_FIND_CHAPTER_SUMMARY)
+        fun getChapterSummary(str: String?): String? = runBlocking(Dispatchers.IO) {
+            return@runBlocking AppUtils.execSingleRegex(getChapter(str),
+                GameConstants.REGEX_FIND_CHAPTER_SUMMARY)
+        }
+
+        fun getDictionaryEntries(): ArrayList<String?> = runBlocking(Dispatchers.IO) {
+            return@runBlocking ArrayList(
+                RepositoryManager.bookRepository.getAllDictionaryEntries())
         }
     }
 }

@@ -2,6 +2,7 @@ package rpt.games.transport2147.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.Configuration
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.ViewConfiguration
@@ -70,12 +71,12 @@ class AppUtils {
         }
 
         fun execSingleRegex(str: String?, str2: String?): String? {
-            val matcher: Matcher = Pattern.compile(str2).matcher(str)
+            val matcher: Matcher = Pattern.compile(str2, Pattern.DOTALL).matcher(str)
             return if (matcher.find()) matcher.group() else ""
         }
 
         fun execSingleRegex(str: String?, str2: String?, i: Int): String? {
-            val matcher: Matcher = Pattern.compile(str2).matcher(str)
+            val matcher: Matcher = Pattern.compile(str2, Pattern.DOTALL).matcher(str)
             return if (matcher.find()) matcher.group(i) else ""
         }
 
@@ -85,7 +86,7 @@ class AppUtils {
             str3: String
         ): MutableMap<String, String> {
             val matcher =
-                Pattern.compile("<$str\\s+.*?$str2\\s*=\"(.*?)\"\\s*.*?>.*?</$str>")
+                Pattern.compile("<$str\\s+.*?$str2\\s*=\"(.*?)\"\\s*.*?>.*?</$str>", Pattern.DOTALL)
                     .matcher(str3)
             val map: HashMap<String, String> = HashMap<String, String>()
             while (matcher.find()) {
@@ -164,6 +165,15 @@ class AppUtils {
 
         fun random(i: Int, i2: Int): Int {
             return (floor(Math.random() * (((i2 - i) + 1).toDouble())).toInt()) + i
+        }
+
+        fun getDeviceType(context: Context): Int {
+            val configuration: Configuration = context.resources.configuration
+            if (configuration.screenWidthDp >= 720 || configuration.screenHeightDp >= 720) {
+                return 2
+            }
+            return if (configuration.screenWidthDp >= 600 || configuration.screenHeightDp >= 600) 1
+            else 0
         }
 
     }

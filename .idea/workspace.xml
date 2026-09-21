@@ -10,6 +10,51 @@
           <theme>@style/Theme.Transport2147</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_arrow.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_arrow_back.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_chat.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_cloud.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_coin.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_share.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_star.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/main_btn_generic.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/main_btn_play.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_credits.xml">
         <config>
           <theme>@style/Theme.Transport2147</theme>
@@ -17,7 +62,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_glossary.xml">
         <config>
-          <theme>@style/Theme.Transport2147</theme>
+          <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_history.xml">
@@ -27,7 +72,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_image_zoom.xml">
         <config>
-          <theme>@style/Theme.Transport2147</theme>
+          <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_launch.xml">
@@ -42,12 +87,12 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml">
         <config>
-          <theme>@style/Theme.Transport2147</theme>
+          <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml">
         <config>
-          <theme>@style/Theme.Transport2147</theme>
+          <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_navigator.xml">
@@ -63,6 +108,11 @@
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tutorial.xml">
         <config>
           <theme>@style/Theme.Transport2147</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/component_glossaryentry.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/component_listelementprofile.xml">
@@ -230,6 +280,12 @@
           <theme>@style/Theme.Transport2147</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/xml/preferences.xml">
+        <config>
+          <state>Portrait</state>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
@@ -237,20 +293,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e0a8417-1702-4e41-8083-c9daef255fee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/CreditsActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/GlossaryActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/SettingsActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/TutorialActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/game/DiceRollerDispatcher.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_credits.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_glossary.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tutorial.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/component_navigatortab.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_changedice.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_gotochapter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_combat.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sheet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/image/TouchImageView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/text_btn_play.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_arrow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_arrow_back.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_chat.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_cloud.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_coin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_share.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_star.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/main_btn_generic.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/component_glossaryentry.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/preferences.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/checksums/sha1-checksums.bin" afterDir="false" />
@@ -261,37 +315,42 @@
       <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/HistoryActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/HistoryActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/CreditsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/CreditsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/GlossaryActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/GlossaryActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/ImageZoomActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/ImageZoomActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/LaunchActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/LaunchActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/MainActivity2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/MainActivity2.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/MainMenuActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/MainMenuActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/NavigatorActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/NavigatorActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/SettingsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/SettingsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/ui/intro/IntroFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/ui/intro/IntroFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/AppUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/AppUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/GameConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/GameConstants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/data/appmodels/complex/Profile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/data/appmodels/complex/Profile.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/LocalHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/LocalHelper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/data/database/dao/TransportDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/data/database/dao/TransportDao.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/data/repositories/BookRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/data/repositories/BookRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/ActionMenuManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/ActionMenuManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/BookManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/BookManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/CombatManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/CombatManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/DialogManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/DialogManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/DiceRollerManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/DiceRollerManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/ProfileManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/ProfileManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/SheetManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/SheetManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/chapter/ChapterFormatter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/chapter/ChapterFormatter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/game/GameLogic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/game/GameLogic.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/tab/SlidingTabLayoutImg.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/tab/SlidingTabLayoutImg.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/main_filler.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/main_filler.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/main_filler.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/main_filler.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/main_filler.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/main_filler.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/main_btn_play.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/main_btn_play.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_glossary.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_glossary.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_image_zoom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_image_zoom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/raw-it/transport_2147.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw-it/transport_2147.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/transport_2147.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw/transport_2147.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -302,7 +361,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=C:\Users\shaun\.android\avd\Pixel_10_Pro_XL.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[PhysicalDevice::serial=356651111179099]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -334,6 +393,7 @@
         <option value="layoutResourceFile" />
         <option value="valueResourceFile" />
         <option value="Kotlin Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -354,8 +414,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Android App.app.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "PROJECT_TRUSTED_KEY": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -366,16 +428,16 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "features/2026/first",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/shaun/Sviluppo/Transport2147/app/src/main/res/layout",
+    "last_opened_file_path": "C:/Transport2147/app/src/main/res/layout",
     "settings.editor.selected.configurable": "templates.modelproviders.configurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Transport2147\app\src\main\res\layout" />
       <recent name="C:\Users\shaun\Sviluppo\Transport2147\app\src\main\res\layout" />
       <recent name="C:\Users\shaun\Sviluppo\Transport2147\app\src\main\java\rpt\games\transport2147\utils\managers" />
       <recent name="C:\Transport2147\app\src\main\java\rpt\games\transport2147\utils\view\chapter" />
-      <recent name="C:\Transport2147\app\src\main\res\layout" />
       <recent name="C:\Transport2147\app\src\main\java\rpt\games\transport2147\ui" />
     </key>
     <key name="android.template.-2082033488">
@@ -398,7 +460,7 @@
       <recent name="rpt.games.transport2147" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.unitTest">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="androidTest" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Transport2147.app.androidTest" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -679,12 +741,12 @@
       <map>
         <entry key="rpt.games.transport2147">
           <value>
-            <CheckInfo lastCheckTimestamp="1789826659664" />
+            <CheckInfo lastCheckTimestamp="1789976051123" />
           </value>
         </entry>
         <entry key="rpt.games.transport2147.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1789826659664" />
+            <CheckInfo lastCheckTimestamp="1789976051125" />
           </value>
         </entry>
       </map>

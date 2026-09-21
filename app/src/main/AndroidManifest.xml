@@ -14,7 +14,7 @@
         <activity
             android:name=".LaunchActivity"
             android:exported="true"
-            android:theme="@style/AppBaseTheme"
+            android:theme="@style/AppBaseLaunchTheme"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

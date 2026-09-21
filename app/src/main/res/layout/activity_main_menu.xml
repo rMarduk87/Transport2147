@@ -1,49 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" style="@style/actMain.layout.outer">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/actMain.layout.outer"
+    android:background="#050608">
+
     <LinearLayout style="@style/actMain.layout.middle">
+
         <LinearLayout style="@style/actMain.layout.inner">
-            <ImageView style="@style/actMain.image.title"
-                android:contentDescription="@string/img"/>
+
+            <ImageView
+                style="@style/actMain.image.title"
+                android:contentDescription="@string/img" />
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/actMain_btnIntro"
-                android:background="@drawable/main_btn_intro"
+                android:background="@drawable/main_btn_generic"
                 android:text="@string/button_Intro"
-                style="@style/actMain.item"/>
+                style="@style/actMain.item" />
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/actMain_btnTutorial"
-                android:background="@drawable/main_btn_tutorial"
+                android:background="@drawable/main_btn_generic"
                 android:text="@string/button_Tutorial"
-                style="@style/actMain.item"/>
+                style="@style/actMain.item" />
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/actMain_btnProfiles"
-                android:background="@drawable/main_btn_profiles"
+                android:background="@drawable/main_btn_generic"
                 android:text="@string/button_Profiles"
-                style="@style/actMain.item"/>
+                style="@style/actMain.item" />
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/actMain_lblProfile"
-                style="@style/actMain.text.profile"/>
+                android:textColor="#FFFFFFFF"
+                style="@style/actMain.text.profile" />
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/actMain_txtProfile"
-                style="@style/actMain.text.profile.red"/>
-            <ImageView style="@style/actMain.image"
-                android:contentDescription="@string/img"/>
+                style="@style/actMain.text.profile.red" />
+
+            <ImageView
+                style="@style/actMain.image"
+                android:src="@drawable/main_filler"
+                android:contentDescription="@string/img"
+                android:tintMode="src_in"
+                app:tint="#FFFFFFFF" />
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/actMain_btnRules"
-                android:background="@drawable/main_btn_sheet"
+                android:background="@drawable/main_btn_play"
                 android:text="@string/button_ModifySheet"
+                android:textColor="@color/text_btn_play"
                 style="@style/actMain.item"/>
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/actMain_btnStart"
                 android:background="@drawable/main_btn_play"
                 android:text="@string/button_GoNavigator"
+                android:textColor="@color/text_btn_play"
                 style="@style/actMain.item"/>
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/actMain_btnMain2"
-                android:background="@drawable/main_btn_next"
-                style="@style/actMain.navigation"/>
+                android:background="@drawable/main_btn_generic"
+                android:drawableEnd="@drawable/ic_cyber_arrow"
+                android:paddingEnd="16dp"
+                style="@style/actMain.navigation"
+                tools:ignore="RtlSymmetry" />
+
         </LinearLayout>
+
         <rpt.games.transport2147.utils.view.text.RPTextView
             android:id="@+id/actMain_txtVersion"
+            android:textColor="#FFFFFFFF"
             style="@style/actMain.text.version"/>
+
     </LinearLayout>
 </ScrollView>

@@ -94,7 +94,7 @@ class NavigatorActivity : AppCompatActivity() {
                 SheetManager.initSheet()
             }
         })
-        val actionBar: android.app.ActionBar? = getActionBar()
+        val actionBar = supportActionBar
         actionBar!!.title = getString(R.string.title_activityNavigator)
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayShowTitleEnabled(true)

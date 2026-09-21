@@ -74,6 +74,7 @@ object ActionMenuManager {
             e2.message?.let { e(Throwable(e2),it) }
             z = false
         }
+        return false
     }
 
     fun actionEnableDisableHistory(menuItem: MenuItem) {
@@ -92,8 +93,7 @@ object ActionMenuManager {
     }
 
     fun updateHistoryIcon() {
-        GameLogic.iconToggleHistory!!.getDrawable()
-            .setLevel(if (History.historyEnabled) 1 else 2)
+        GameLogic.iconToggleHistory!!.drawable.level = if (History.historyEnabled) 1 else 2
     }
 
     fun actionChangeRoller(context: Context, menuItem: MenuItem) {
@@ -116,37 +116,19 @@ object ActionMenuManager {
             } else {
                 GameLogic.diceRoller2!!.dices
             }
-            (viewInflate.findViewById<T?>(
-                DiceRollerDispatcher.getFromNum(dices).id()
-            ) as RadioButton).setChecked(true)
+            viewInflate.findViewById<RadioButton>(
+                DiceRollerDispatcher.getFromNum(dices)!!.id
+            ).isChecked = true
             val alertDialogCreate = builder.create()
             alertDialogCreate.show()
-            (viewInflate.findViewById<View?>(R.id.dlgChangeDices_rdgDices) as RadioGroup).setOnCheckedChangeListener(
-                object : RadioGroup.OnCheckedChangeListener {
-
-                    override fun onCheckedChanged(radioGroup: RadioGroup?, i: Int) {
-                        val DiceRollerManager: DiceRollerManager =
-                            if (menuItem.getItemId() == R.id.mnuNavigator_itmChangeRoller1)
-                                GameLogic.diceRoller1 else GameLogic.diceRoller2
-                        DiceRollerManager.dices = DiceRollerDispatcher.getFromId(i)!!.num
-                        DiceRollerManager.setUsage(false)
-                        alertDialogCreate.dismiss()
-                        GameLogic.navigator!!.invalidateOptionsMenu()
-                    }
-
-                    override fun onCheckedChanged(
-                        group: RadioGroup,
-                        checkedId: Int
-                    ) {
-                        val diceRollerManager: DiceRollerManager =
-                            if (menuItem.getItemId() == R.id.mnuNavigator_itmChangeRoller1) 
-                                GameLogic.diceRoller1 else GameLogic.diceRoller2
-                        diceRollerManager.dices = DiceRollerDispatcher.getFromId(i)!!.num
-                        diceRollerManager.setUsage(false)
-                        alertDialogCreate.dismiss()
-                        GameLogic.navigator!!.invalidateOptionsMenu()
-                    }
-                })
+            viewInflate.findViewById<RadioGroup>(R.id.dlgChangeDices_rdgDices).setOnCheckedChangeListener { _, checkedId ->
+                val diceRollerManager = if (menuItem.itemId == R.id.mnuNavigator_itmChangeRoller1)
+                    GameLogic.diceRoller1 else GameLogic.diceRoller2
+                diceRollerManager?.dices = DiceRollerDispatcher.getFromId(checkedId)!!.num
+                diceRollerManager?.setUsage(false)
+                alertDialogCreate.dismiss()
+                GameLogic.navigator!!.invalidateOptionsMenu()
+            }
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
         }
@@ -173,10 +155,10 @@ object ActionMenuManager {
                 alertDialogCreate,
                 R.string.dialog_buttonOk
             ) {
-                val string = editText.getText().toString()
+                val string = editText.text.toString()
                 try {
                     BookManager.getChapter(string)
-                    ActionMenuManager.actionLoadChapter(context, string)
+                    actionLoadChapter(context, string)
                     alertDialogCreate.dismiss()
                 } catch (unused: Exception) {
                     ToastManager.error_invalidChapter(context, string)

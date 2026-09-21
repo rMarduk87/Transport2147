@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppBaseTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     </style>
     <style name="AppTheme" parent="@style/AppBaseTheme">
         <item name="android:buttonStyle">@style/ButtonAppTheme</item>
@@ -14,21 +14,28 @@
         <item name="android:actionOverflowButtonStyle">@style/OverflowButtonLight</item>
         <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
     </style>
-    <style name="ButtonAppTheme" parent="@android:style/Widget.Holo.Light.Button">
+    <style name="AppBaseLaunchTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+    <style name="AppLaunchTheme" parent="@style/AppBaseLaunchTheme">
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:soundEffectsEnabled">true</item>
+        <item name="android:hapticFeedbackEnabled">true</item>
+    </style>
+    <style name="ButtonAppTheme" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/apptheme_btn_default_holo_light</item>
     </style>
-    <style name="FullscreenActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
         <item name="android:background">@color/black_overlay</item>
     </style>
-    <style name="FullscreenTheme" parent="@android:style/Theme.Holo">
+    <style name="FullscreenTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@null</item>
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
         <item name="android:windowActionBarOverlay">true</item>
     </style>
-    <style name="ImageButtonAppTheme" parent="@android:style/Widget.Holo.Light.ImageButton">
+    <style name="ImageButtonAppTheme" parent="Widget.AppCompat.ImageButton">
         <item name="android:background">@drawable/apptheme_btn_default_holo_light</item>
     </style>
-    <style name="NavigatorActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+    <style name="NavigatorActionBar" parent="Widget.AppCompat.ActionBar.Solid">
         <item name="android:background">@drawable/ab_solid_example</item>
         <item name="android:backgroundSplit">@drawable/bkg_chapter_bar</item>
     </style>
@@ -45,10 +52,10 @@
         <item name="android:actionOverflowButtonStyle">@style/OverflowButton</item>
         <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
     </style>
-    <style name="OverflowButton" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+    <style name="OverflowButton" parent="Widget.AppCompat.ActionButton.Overflow">
         <item name="android:src">@drawable/ico_action_dots</item>
     </style>
-    <style name="OverflowButtonLight" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+    <style name="OverflowButtonLight" parent="Widget.AppCompat.ActionButton.Overflow">
         <item name="android:src">@drawable/ico_action_dots_light</item>
     </style>
     <style name="actMain" parent="">
@@ -64,7 +71,7 @@
         <item name="android:maxWidth">@dimen/actMain_item_widht</item>
     </style>
     <style name="actMain.image.title" parent="@style/actMain.image">
-        <item name="android:src">@drawable/main_title</item>
+        <item name="android:src">@drawable/transport</item>
         <item name="android:maxWidth">@dimen/actMain_title_maxWidht</item>
     </style>
     <style name="actMain.item" parent="@style/actMain">
@@ -73,14 +80,16 @@
         <item name="android:textColor">@color/dlg_button_text</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/actMain_item_PaddingLeft</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
         <item name="android:clickable">true</item>
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">@dimen/actMain_item_marginBottom</item>
-        <item name="android:height">@dimen/actMain_item_height</item>
-        <item name="android:width">@dimen/actMain_item_widht</item>
+        <item name="android:minHeight">@dimen/actMain_item_height</item>
         <item name="android:onClick">onClickMainActivity</item>
         <item name="customFont">@string/fnt_FontTitle</item>
+        <item name="android:textAllCaps">true</item>
     </style>
     <style name="actMain.layout" parent="@style/actMain">
     </style>
@@ -138,6 +147,8 @@
     <style name="actMain.text.profile.red" parent="@style/actMain.text.profile">
         <item name="android:textColor">@color/dialog_title</item>
         <item name="android:text">@string/txt_placeholder</item>
+        <item name="android:shadowColor">#4DFF003C</item>
+        <item name="android:shadowRadius">4</item>
     </style>
     <style name="actMain.text.version" parent="@style/actMain.text">
         <item name="android:textSize">@dimen/actMain_version_textSize</item>

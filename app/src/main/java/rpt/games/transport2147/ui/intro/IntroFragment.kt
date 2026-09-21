@@ -29,7 +29,15 @@ class IntroFragment : BaseFragment<FragmentIntroBinding>(
     }
 
     private fun loadIntro() {
-        DialogManager.showFastStartDialog(requireContext())
+        DialogManager.showFastStartDialog(requireContext()){
+            navigateToMainMenu()
+        }
+    }
+
+    private fun navigateToMainMenu() {
+        val intent = Intent(requireContext(), MainMenuActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
     }
 
 

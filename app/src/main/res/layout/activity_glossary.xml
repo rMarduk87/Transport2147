@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bkg_chapter_body"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GlossaryActivity">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:fillViewport="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/include_fontsizechanger"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/actGlossary_mainLayout"
+            android:paddingLeft="@dimen/activity_paddingHorizontal"
+            android:paddingRight="@dimen/activity_paddingHorizontal"
+            android:paddingBottom="@dimen/activity_paddingVertical"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

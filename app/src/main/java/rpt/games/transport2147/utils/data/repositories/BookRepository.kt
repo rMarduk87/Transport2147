@@ -72,12 +72,16 @@ class BookRepository(
         bookDao.insertDictionaryEntry(dictionaryModel)
     }
 
-    fun getMostRecentProfile(): Profile {
-        return bookDao.getMostRecentProfile().map()
+    fun getMostRecentProfile(): Profile? {
+        return bookDao.getMostRecentProfile()?.map()
     }
 
     fun getAllTalents(): List<String> {
         return bookDao.getAllTalents()
+    }
+
+    fun getAllDictionaryEntries(): List<String> {
+        return bookDao.getAllDictionaryEntries()
     }
 
     fun deleteProfile(id: String) {

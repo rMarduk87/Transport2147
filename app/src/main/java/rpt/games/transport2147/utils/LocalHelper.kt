@@ -11,18 +11,12 @@ import java.util.Locale
 
 object LocaleHelper {
     fun onAttach(context: Context): Context? {
-        var language: String? = GameLogic.language
-        if (language == null) {
-            language = getPersistedData(context, Locale.getDefault().language)
-        }
+        val language: String = GameLogic.getLanguage()
         return setLocale(context, language)
     }
 
     fun onAttach(context: Context, str: String?): Context? {
-        var language: String? = GameLogic.language
-        if (language == null) {
-            language = getPersistedData(context, str)
-        }
+        val language: String = GameLogic.getLanguage()
         return setLocale(context, language)
     }
 

@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <array name="combat_imgButtons">
+        <item>@id/frgCombat_btnAddEnemyCraft</item>
+        <item>@id/frgCombat_btnAddEnemyDamage</item>
+        <item>@id/frgCombat_btnAddEnemyME</item>
+        <item>@id/frgCombat_btnAddEnemyPE</item>
+        <item>@id/frgCombat_btnAddEnemyProtection</item>
+        <item>@id/frgCombat_btnAddEnemyValor</item>
+        <item>@id/frgCombat_btnAddPlayerCraft</item>
+        <item>@id/frgCombat_btnAddPlayerDamage</item>
+        <item>@id/frgCombat_btnAddPlayerME</item>
+        <item>@id/frgCombat_btnAddPlayerPE</item>
+        <item>@id/frgCombat_btnAddPlayerProtection</item>
+        <item>@id/frgCombat_btnAddPlayerValor</item>
+        <item>@id/frgCombat_btnSubtractEnemyCraft</item>
+        <item>@id/frgCombat_btnSubtractEnemyDamage</item>
+        <item>@id/frgCombat_btnSubtractEnemyME</item>
+        <item>@id/frgCombat_btnSubtractEnemyPE</item>
+        <item>@id/frgCombat_btnSubtractEnemyProtection</item>
+        <item>@id/frgCombat_btnSubtractEnemyValor</item>
+        <item>@id/frgCombat_btnSubtractPlayerCraft</item>
+        <item>@id/frgCombat_btnSubtractPlayerDamage</item>
+        <item>@id/frgCombat_btnSubtractPlayerME</item>
+        <item>@id/frgCombat_btnSubtractPlayerPE</item>
+        <item>@id/frgCombat_btnSubtractPlayerProtection</item>
+        <item>@id/frgCombat_btnSubtractPlayerValor</item>
+    </array>
+    <array name="combat_txtFields">
+        <item>@id/frgCombat_txtEnemyName</item>
+        <item>@id/frgCombat_txtEnemyValor</item>
+        <item>@id/frgCombat_txtEnemyCraft</item>
+        <item>@id/frgCombat_txtEnemyME</item>
+        <item>@id/frgCombat_txtEnemyPE</item>
+        <item>@id/frgCombat_txtEnemyProtection</item>
+        <item>@id/frgCombat_txtEnemyDamage</item>
+        <item>@id/frgCombat_txtNotes</item>
+        <item>@id/frgCombat_txtPlayerName</item>
+        <item>@id/frgCombat_txtPlayerValor</item>
+        <item>@id/frgCombat_txtPlayerCraft</item>
+        <item>@id/frgCombat_txtPlayerME</item>
+        <item>@id/frgCombat_txtPlayerPE</item>
+        <item>@id/frgCombat_txtPlayerProtection</item>
+        <item>@id/frgCombat_txtPlayerDamage</item>
+        <item>@id/frgCombat_txtPlayerName</item>
+        <item>@id/frgCombat_txtEnemyName</item>
+        <item>@id/frgCombat_txtNotes</item>
+        <item>@id/frgCombat_txtRound</item>
+    </array>
     <array name="font_dimension">
         <item>0</item>
         <item>1</item>
@@ -15,6 +62,29 @@
         <item>11</item>
         <item>12</item>
     </array>
+    <array name="font_dimensionText">
+        <item>@string/pref_textSizeValue0</item>
+        <item>@string/pref_textSizeValue1</item>
+        <item>@string/pref_textSizeValue2</item>
+        <item>@string/pref_textSizeValue3</item>
+        <item>@string/pref_textSizeValue4</item>
+        <item>@string/pref_textSizeValue5</item>
+        <item>@string/pref_textSizeValue6</item>
+        <item>@string/pref_textSizeValue7</item>
+        <item>@string/pref_textSizeValue8</item>
+        <item>@string/pref_textSizeValue9</item>
+        <item>@string/pref_textSizeValue10</item>
+        <item>@string/pref_textSizeValue11</item>
+        <item>@string/pref_textSizeValue12</item>
+    </array>
+    <array name="font_names">
+        <item>@string/fnt_fontName00</item>
+        <item>@string/fnt_fontName01</item>
+        <item>@string/fnt_fontName02</item>
+        <item>@string/fnt_fontName03</item>
+        <item>@string/fnt_fontName04</item>
+        <item>@string/fnt_fontName05</item>
+    </array>
     <array name="font_points">
         <item>@dimen/font_dimen0</item>
         <item>@dimen/font_dimen1</item>
@@ -29,5 +99,21 @@
         <item>@dimen/font_dimen10</item>
         <item>@dimen/font_dimen11</item>
         <item>@dimen/font_dimen12</item>
+    </array>
+    <array name="font_ttf">
+        <item>@string/fnt_font00</item>
+        <item>@string/fnt_font01</item>
+        <item>@string/fnt_font02</item>
+        <item>@string/fnt_font03</item>
+        <item>@string/fnt_font04</item>
+        <item>@string/fnt_font05</item>
+    </array>
+    <array name="languages_codes">
+        <item>@string/language_codeIT</item>
+        <item>@string/language_codeEN</item>
+    </array>
+    <array name="languages_texts">
+        <item>@string/language_it</item>
+        <item>@string/language_en</item>
     </array>
 </resources>

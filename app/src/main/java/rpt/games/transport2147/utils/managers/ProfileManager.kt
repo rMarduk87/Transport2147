@@ -27,7 +27,7 @@ object ProfileManager {
             GameLogic.profile = null
             GameLogic.playerSheet = null
             cleanHistory()
-            GameLogic.mainMenu!!.profileLoaded(false, null)
+            GameLogic.mainMenu?.profileLoaded(false, null)
         } catch (e: Exception) {
             e.message?.let { e(Throwable(e),it) }
         }

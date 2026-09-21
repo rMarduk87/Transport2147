@@ -358,7 +358,7 @@ object DialogManager {
         }
     }
 
-    fun showFastStartDialog(context: Context) {
+    fun showFastStartDialog(context: Context, onCancel: () -> Unit) {
         try {
             val builder = AlertDialog.Builder(context)
             val layoutInflater = context.getSystemService("layout_inflater") as LayoutInflater
@@ -380,7 +380,13 @@ object DialogManager {
                 context,
                 alertDialogCreate,
                 R.string.dialog_fastStartMenu
-            ) { alertDialogCreate.dismiss() }
+            ) {
+                alertDialogCreate.dismiss()
+                onCancel()
+            }
+            alertDialogCreate.setOnCancelListener {
+                onCancel()
+            }
             setCustomOkButton(
                 context,
                 alertDialogCreate,

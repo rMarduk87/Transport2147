@@ -8,6 +8,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import rpt.com.base.log.e
 import rpt.games.transport2147.databinding.ActivityMainMenuBinding
 import rpt.games.transport2147.utils.AppUtils
@@ -45,8 +49,17 @@ class MainMenuActivity : AppCompatActivity() {
             append(getString(R.string.param_buildVariant))
         }
 
-        val mostRecentProfile: Profile = BookManager.getMostRecentProfile()
-        ProfileManager.loadProfile(this@MainMenuActivity, mostRecentProfile)
+        lifecycleScope.launch(Dispatchers.IO) {
+            val mostRecentProfile: Profile? = BookManager.getMostRecentProfile()
+            withContext(Dispatchers.Main) {
+                if (mostRecentProfile != null) {
+                    ProfileManager.loadProfile(this@MainMenuActivity, mostRecentProfile)
+                } else {
+                    profileLoaded(false, null)
+                }
+            }
+        }
+
         if (SharedPreferencesManager.language
                 .equals(getString(R.string.language_codeIT)) &&
             !SharedPreferencesManager.initialPopUpShow
@@ -94,7 +107,7 @@ class MainMenuActivity : AppCompatActivity() {
                 )
 
                 R.id.mnuMainMenu_itmExit -> Process.killProcess(Process.myPid())
-                R.id.mnuMainMenu_itmFastStart -> DialogManager.showFastStartDialog(this)
+                R.id.mnuMainMenu_itmFastStart -> DialogManager.showFastStartDialog(this){}
                 R.id.mnuMainMenu_itmGlossary -> {
                     val intent = Intent(this, GlossaryActivity::class.java as Class<*>)
                     intent.putExtra(GameConstants.GLOSSARY_HOME, "MAIN")

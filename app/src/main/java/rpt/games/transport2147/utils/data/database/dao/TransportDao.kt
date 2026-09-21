@@ -81,7 +81,7 @@ interface TransportDao {
     fun insertDictionaryEntry(dictionaryModel: DictionaryModel)
 
     @Query("SELECT * FROM profiles ORDER BY id DESC LIMIT 1")
-    fun getMostRecentProfile() : ProfilesModel
+    fun getMostRecentProfile() : ProfilesModel?
 
     @Query("SELECT * FROM profiles ORDER BY name ASC")
     fun getAllProfiles(): List<ProfilesModel>
@@ -94,6 +94,9 @@ interface TransportDao {
 
     @Query("SELECT talent FROM talents")
     fun getAllTalents(): List<String>
+
+    @Query("SELECT entry FROM dictionary")
+    fun getAllDictionaryEntries(): List<String>
 
     @Query("DELETE FROM profiles WHERE id = :id")
     fun deleteProfile(id: String)

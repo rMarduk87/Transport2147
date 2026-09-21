@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <rpt.games.transport2147.utils.view.text.RPTextView
+        android:textSize="@dimen/dlg_subtitleTextSize"
+        android:textStyle="bold"
+        android:textColor="@color/paragraph_text"
+        android:id="@+id/dlgGlossaryEntry_txtTitle"
+        android:paddingStart="@dimen/dlg_subtitlePaddingLeft"
+        android:paddingTop="@dimen/dlg_subtitlePaddingTop"
+        android:paddingEnd="@dimen/dlg_subtitlePaddingRight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_placeholder"
+        custom:font="@string/fnt_FontCore"/>
+    <rpt.games.transport2147.utils.view.text.RPTextView
+        android:textSize="@dimen/dlg_textTextSize"
+        android:textColor="@color/paragraph_text"
+        android:id="@+id/dlgGlossaryEntry_txtDescription"
+        android:paddingStart="@dimen/dlg_textPaddingLeft"
+        android:paddingEnd="@dimen/dlg_textPaddingRight"
+        android:paddingBottom="@dimen/dlg_textPaddingBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_placeholder"
+        custom:font="@string/fnt_FontCore"/>
+</LinearLayout>
