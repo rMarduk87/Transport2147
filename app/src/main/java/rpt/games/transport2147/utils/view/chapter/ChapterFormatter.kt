@@ -58,8 +58,12 @@ class ChapterFormatter {
     @Throws(Exception::class)
     fun formatChapter(linearLayout: LinearLayout?, context: Context, str: String?): Boolean {
         try {
+            val chapterXml = BookManager.getChapter(str)
+            if (chapterXml.isEmpty()) {
+                return false
+            }
             val strExecReplace: String = AppUtils.execReplace(
-                BookManager.getChapter(str),
+                chapterXml,
                 GameConstants.REGEX_GENDER_SEARCH,
                 if (GameLogic.playerSheet == null ||
                     GameLogic.playerSheet!!.gender == GenderEnum.MALE)
@@ -67,8 +71,11 @@ class ChapterFormatter {
                 else GameConstants.REGEX_GENDER_REPLACE_FEMALE
             )
             val rootElement: Element? = XmlUtility.getRootElement(strExecReplace)
-            var attribute = rootElement!!.getAttribute(GameConstants.XML_NODE_CHAPTER_ATTR_DREAM)
-            if (attribute == null) {
+            if (rootElement == null) {
+                return false
+            }
+            var attribute = rootElement.getAttribute(GameConstants.XML_NODE_CHAPTER_ATTR_DREAM)
+            if (attribute.isNullOrEmpty()) {
                 attribute = "false"
             }
             this.lastSummary =
@@ -234,31 +241,21 @@ class ChapterFormatter {
     
     @Throws(Exception::class)
     private fun loopInnerElements(element: Element, context: Context): RPSpannableString {
-        var z: Boolean = false
         val childNodes = element.childNodes
-        var spannableString: RPSpannableString? = null
-        var spannableString2: RPSpannableString = RPSpannableString("")
+        var spannableString2 = RPSpannableString("")
         for (i in 0..<childNodes.length) {
             val nodeItem = childNodes.item(i)
+            var currentSpannable: RPSpannableString? = null
             if (nodeItem is Element) {
-                spannableString = parseInnerTag(nodeItem, context)
-            } else {
-                if (nodeItem is Text) {
-                    val nodeValue = nodeItem.nodeValue
-                    z = nodeValue != ""
-                    spannableString = RPSpannableString(nodeValue)
-                }
-                if (z) {
-                    spannableString2 =
-                        RPSpannableString(TextUtils.concat(spannableString2,
-                            spannableString))
+                currentSpannable = parseInnerTag(nodeItem, context)
+            } else if (nodeItem is Text) {
+                val nodeValue = nodeItem.nodeValue
+                if (!nodeValue.isNullOrEmpty()) {
+                    currentSpannable = RPSpannableString(nodeValue)
                 }
             }
-            z = true
-            if (z) {
-                spannableString2 =
-                    RPSpannableString(TextUtils.concat(spannableString2,
-                        spannableString))
+            if (currentSpannable != null) {
+                spannableString2 = RPSpannableString(TextUtils.concat(spannableString2, currentSpannable))
             }
         }
         return spannableString2

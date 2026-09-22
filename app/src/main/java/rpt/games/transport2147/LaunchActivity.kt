@@ -11,6 +11,7 @@ import rpt.games.transport2147.databinding.ActivityLaunchBinding
 import rpt.games.transport2147.utils.managers.BookManager
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 @SuppressLint("CustomSplashScreen")
@@ -19,7 +20,6 @@ class LaunchActivity  : AppCompatActivity() {
     private lateinit var binding : ActivityLaunchBinding
 
     var handler: Handler? = null
-    var runnable: Runnable? = null
     var millisecond: Int = 1100
 
 
@@ -34,22 +34,21 @@ class LaunchActivity  : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-
-        runnable = Runnable {
-            openBook()
-            val  intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
         handler = Handler(Looper.getMainLooper())
-        handler!!.postDelayed(runnable!!, millisecond.toLong())
+        handler!!.postDelayed({
+            openBook()
+        }, millisecond.toLong())
     }
 
     private fun openBook() {
         lifecycleScope.launch(Dispatchers.IO) {
             BookManager.openBook()
+            withContext(Dispatchers.Main) {
+                val  intent = Intent(this@LaunchActivity, MainMenuActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
-
     }
 
 }

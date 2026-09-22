@@ -203,7 +203,7 @@
       <title>212</title>
       <p>La donna guarda l’oggetto, ammirata; sembra che le piaccia. Però te lo rende subito: «È molto bella, questa collana. Ma perdonami, io non posso accettarla», dice. «Ti prego: non offenderti!»</p>
       <p>Non sembra disposta a cambiare idea, quindi non ti resta che riporre la collana e incamminarti: dovrai muoverti di buon passo se vuoi raggiungere Sorgand prima che tramonti il sole, quando verranno chiuse le porte cittadine.</p>
-      <p>«Fa’ buon viaggio!» ti augura la donna, mentre la saluti. «E non dimenticarti: qui da <objectref id="dehanda">Dehanda</objectref> sarai sempre benvenut[o|a]!»</p>
+      <p>«Fa’ buon viaggio!» ti augura la donna, mentre la saluti. «E non dimenticarti: qui da <objectref id="sakura">Sakura</objectref> sarai sempre benvenut[o|a]!»</p>
       <p>Prendi nota del nome della donna: hai la sensazione che in futuro potrà tornarti utile. Ora prosegui al <link>502</link>.</p>
     </chapter>
 
@@ -412,7 +412,7 @@
     <chapter name ="238">
       <title>238</title>
       <summary>Un arrivederci</summary>
-      <p>La donna ascolta la tua proposta e annuisce con entusiasmo. «Mi saresti di grande aiuto. Ti aspetterò, allora!» Ti accompagna per qualche passo in direzione della strada per Sorgand, e ne approfittate per presentarvi. Si chiama Dehanda. Annota sulla scheda il <objectref id="dehanda">nome della donna</objectref> e il codice <objectref id="metalepsis">metalepsis</objectref>, poi affrettati: al tramonto le porte di Sorgand verranno chiuse, e tu non intendi passare la notte fuori dalla città. Vai al <link>502</link>.</p>
+      <p>La donna ascolta la tua proposta e annuisce con entusiasmo. «Mi saresti di grande aiuto. Ti aspetterò, allora!» Ti accompagna per qualche passo in direzione della strada per Sorgand, e ne approfittate per presentarvi. Si chiama Sakura. Annota sulla scheda il <objectref id="sakura">nome della donna</objectref> e il codice <objectref id="metalepsis">metalepsis</objectref>, poi affrettati: al tramonto le porte di Sorgand verranno chiuse, e tu non intendi passare la notte fuori dalla città. Vai al <link>502</link>.</p>
     </chapter>
 
     <chapter name ="239">
@@ -627,7 +627,7 @@
       <summary>Il giovane guerriero</summary>
       <p>Esci fuori dal nascondiglio e ti lanci contro il nemico: avendolo colto di sorpresa, puoi attaccarlo per prim[o|a], e anche condurre un attacco con armi da lancio o simili prima di passare alla mischia, se vuoi.</p>
       <enemyref id="giovaneGuerriero">giovane guerriero</enemyref>
-      <p>Se usi la Rima ammaliante di Nedaja, vai al <link>311</link>.</p>
+      <p>Se usi l'Haiku Ferroviario, vai al <link>311</link>.</p>
       <p>Se il tuo avversario scende a 5 o meno punti di EF, vai al <link>573</link>.</p>
       <p>Se vuoi arrenderti, vai al <link>262</link>.</p>
       <p>Se vuoi provare a scappare, vai al <link>221</link>.</p>
@@ -982,7 +982,7 @@
       <summary>Combattimento con il giovane guerriero</summary>
       <p>Esci fuori dal tuo nascondiglio sfoderando un sorriso anziché l’arma, e saluti il giovane tenendoti pront[o|a] a un’eventuale reazione ostile. Lui non sembra ascoltarti e si getta su di te. Benché sia lui ad attaccare, tu eri comunque sul chi vive, quindi procedi come di consueto per stabilire chi tenterà per primo il colpo.</p>
       <enemyref id="giovaneGuerriero">giovane guerriero</enemyref>
-      <p>Se, al tuo turno, usi la Rima ammaliante di Nedaja, togliti <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange> e vai al <link>311</link>.</p>
+      <p>Se, al tuo turno, usi l'Haiku Ferroviario, togliti <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange> e vai al <link>311</link>.</p>
       <p>Se il tuo avversario scende a 5 o meno punti di EF, vai al <link>573</link>.</p>
       <p>Se vuoi arrenderti, vai al <link>262</link>.</p>
       <p>Se vuoi provare a scappare, vai al <link>221</link>.</p>
@@ -1121,7 +1121,7 @@
       <p>Il tuo sollievo dura pochissimo: senza alcun preavviso ti assale una sensazione di disagio, che rapidamente si trasforma in un senso di angoscia disperata; ti guardi intorno, senza capire da dove provenga, poi hai l’impressione che l’aria si riempia di sussurri gravidi di sofferenza e struggimento.</p>
       <p>La vegetazione alla tua sinistra comincia a ondeggiare paurosamente, e l’aria è scossa da un urlo disumano. «<italic>Gug-bash, m’kre!</italic>» senti gridare.</p>
       <p>Un istante dopo spunta sulla strada un immenso omone dal ventre gigantesco, le braccia lunghe e le spalle possenti. Porta una specie di cappuccio di cuoio calato sulla testa, ma che lascia scoperta la bocca, irta di zanne, e brandisce un’enorme clava di legno temprato. Non hai mai visto nulla del genere, prima d’ora, ma capisci subito che è una creatura di cui senti raccontare fin da fanciull[o|a]. È un mostro che popola le foreste e le alte forre, solitario e selvaggio, circondato da un alone di dolore e morte, e sempre affamato di carne, possibilmente umana. I saggi lo chiamano Alagh, o Divoratore; ma per la gente comune è l’Orco.</p>
-      <p>Che cosa fai? Ti metti a correre verso nord? Vai al <link>542</link>. In alternativa puoi prepararti ad affrontare la creatura: per quanto sia possente e circondata da un’aura di malefici, le storie confermano infatti che è di carne e sangue, quindi non invincibile. Estrai l’arma e vai al <link>341</link>. Se conosci la Rima ammaliante di Nedaja, però, non farti illusioni: l’Orco è un feroce araldo della Tenebra, e non si piegherà al potere della tua malia.</p>
+      <p>Che cosa fai? Ti metti a correre verso nord? Vai al <link>542</link>. In alternativa puoi prepararti ad affrontare la creatura: per quanto sia possente e circondata da un’aura di malefici, le storie confermano infatti che è di carne e sangue, quindi non invincibile. Estrai l’arma e vai al <link>341</link>. Se conosci l'Haiku Ferroviario, però, non farti illusioni: l’Orco è un feroce araldo della Tenebra, e non si piegherà al potere della tua malia.</p>
     </chapter>
 
     <chapter name ="334">
@@ -1581,7 +1581,7 @@
       <p>Mentre ti allontani dal tavolo dei mercanti, ti senti crollare qualcosa addosso. «Ma che fai, moccios[o|a]!» ti ringhia contro un ubriacone, dopo essere goffamente inciampato per conto suo e averti sbattuto contro. Lo conosci di vista: è Mawert. Un tempo lavorava all'Arsenale, per l'Orceta, ma ora è solo un beone buono a nulla che a volte si ubriaca in locanda solo perché le locande tendono a chiudere più tardi rispetto alle taverne… È cotto a puntino, ma anche piuttosto robusto, e hai sentito dire che ha un destro niente male. Tu non hai fatto proprio niente e provi a spiegarglielo, ma il ceffo insiste e ti sferra un pugno.</p>
       <p>Affrontalo:</p>
       <enemyref id="ubriacone1">ubriacone</enemyref>
-      <p>Ricorda che il primo ad attaccare è lui, perché tu non stavi cercando rogne, e che devi procedere tirando 2D e confrontando il risultato con il punteggio di Valore del tuo avversario. Se fallisce, tocca a te; ricorda di sottrarre 1 punto al Valore perché, per ora, stai combattendo a mani nude. Se possiedi la Rima ammaliante di Nedaja, decidi che è meglio conservarla per le prove che ti attendono nei prossimi giorni, piuttosto che sprecarla con questo energumeno!</p>
+      <p>Ricorda che il primo ad attaccare è lui, perché tu non stavi cercando rogne, e che devi procedere tirando 2D e confrontando il risultato con il punteggio di Valore del tuo avversario. Se fallisce, tocca a te; ricorda di sottrarre 1 punto al Valore perché, per ora, stai combattendo a mani nude. Se possiedi l'Haiku Ferroviario, decidi che è meglio conservarla per le prove che ti attendono nei prossimi giorni, piuttosto che sprecarla con questo energumeno!</p>
       <p>Se il primo a centrare l’altro sei tu, vai al <link>320</link>.</p>
       <p>Se ti becca prima lui, vai al <link>505</link>.</p>
     </chapter>
@@ -1716,7 +1716,7 @@
       <p>Sapere che qualcuno ti è alle costole e aspettarne la prima mossa non è un’esperienza rilassante. Continui a camminare, coi nervi a fior di pelle e il sudore che ti cola lungo la schiena, finché in effetti cogli un rapido movimento alla tua sinistra: una figura sbuca dalla vegetazione brandendo una pesante ascia verso di te.</p>
       <p>Non sai chi sia né se sia un avversario alla tua portata, ma l’attacco non ti coglie di sorpresa, quindi stabilisci come di consueto chi attacca per primo:</p>
       <enemyref id="giovaneGuerriero">giovane guerriero</enemyref>
-      <p>Se, al tuo turno, usi la Rima ammaliante di Nedaja, togliti <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange> e vai al <link>311</link>.</p>
+      <p>Se, al tuo turno, usi l'Haiku Ferroviario, togliti <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange> e vai al <link>311</link>.</p>
       <p>Se il tuo avversario scende a 5 o meno punti di EF, vai al <link>573</link>.</p>
       <p>Se vuoi arrenderti, vai al <link>262</link>.</p>
       <p>Se vuoi provare a scappare, vai al <link>221</link>.</p>
@@ -1916,7 +1916,7 @@
       <p>Fai un balzo verso il lato destro della strada, evitando di misura la pesante ascia.</p>
       <p>Alla fioca luce del crepuscolo, vedi che ad aggredirti è un ragazzo giovane, avrà sì e no l’età di Noder… Ma non farti ingannare: ha un’espressione feroce e determinata, e vuole ammazzarti. Sei ancora spiazzat[o|a], e il primo attacco spetta a lui.</p>
       <enemyref id="giovaneGuerriero">giovane guerriero</enemyref>
-      <p>Se, al tuo turno, usi la Rima ammaliante di Nedaja, togliti <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange> e vai al <link>311</link>.</p>
+      <p>Se, al tuo turno, usi l'Haiku Ferroviario, togliti <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange> e vai al <link>311</link>.</p>
       <p>Se il tuo avversario scende a 5 o meno punti di EF, vai al <link>573</link>.</p>
       <p>Se vuoi arrenderti, vai al <link>262</link>.</p>
       <p>Se vuoi provare a scappare, vai al <link>221</link>.</p>
@@ -2330,7 +2330,7 @@
       <p>Affrontali: non sono molto grandi, ma sono in tre e si coordinano con la sottile intelligenza dei cacciatori gregari, come a formare un unico avversario dotato di tre serie di fauci.</p>
       <enemyref id="caniSelvaggi">cani selvaggi</enemyref>
       <p>Se vuoi tentare la fuga, vai al <link>265</link>.</p>
-      <p>Se possiedi la Rima ammaliante di Nedaja e la usi, vai al <link>283</link>.</p>
+      <p>Se possiedi l'Haiku Ferroviario e la usi, vai al <link>283</link>.</p>
       <p>Se vuoi usare un oggetto, vai al <link>556</link>.</p>
       <p>Se li combatti e li riduci a 5 o meno di EF, vai al <link>387</link>.</p>
     </chapter>
@@ -2429,7 +2429,7 @@
       <p>«Sì», riprende il compare. «Noi non siamo mercanti e non andiamo a Sorgand. Se ti può interessare, e credo che ti interessi, siamo briganti; fino a qualche settimana fa marcivamo nelle prigioni della tua città; poi siamo evasi e, fatte calmare le acque, ce ne siamo usciti senza dare nell’occhio.»</p>
       <p>«Cheti cheti», chiosa Hilbart.</p>
       <p>«Già», commenta Jemmen. «E ora noi ce ne andiam per la foresta.» Guarda i compagni, teatralmente, poi riprende: «Tu, no», e sfodera la spada corta.</p>
-      <p>Ora, cerca di non tremare troppo e prendi il tuo punteggio di Fato; aggiungi 1 punto se hai il codice <smallCaps>agon</smallCaps> annotato sulla scheda, 1 punto se sei una ragazza, 1 punto se conosci la Rima ammaliante di Nedaja e la usi per addolcire di nascosto almeno un brigante (non puoi usarla più di una volta, o se ne accorgeranno e saranno dolori; ricordati di cancellare <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange>).</p>
+      <p>Ora, cerca di non tremare troppo e prendi il tuo punteggio di Fato; aggiungi 1 punto se hai il codice <smallCaps>agon</smallCaps> annotato sulla scheda, 1 punto se sei una ragazza, 1 punto se conosci l'Haiku Ferroviario e la usi per addolcire di nascosto almeno un brigante (non puoi usarla più di una volta, o se ne accorgeranno e saranno dolori; ricordati di cancellare <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange>).</p>
       <p>Se la somma è 1 o 2, vai al <link>562</link>.</p>
       <p>Se è 3 o 4, vai al <link>453</link>.</p>
       <p>Se è compresa tra 5 e 7, vai al <link>587</link>.</p>
@@ -2745,7 +2745,7 @@
       <title>526</title>
       <p>Cerchi di evitare il colpo, ma senza riuscirci: la lama ti scava profondamente nel braccio sinistro, togliendoti <abilitychange ability="physicalenergy" quantity="2" operation="subtract">2 punti di EF</abilitychange>. Se sei ancora viv[o|a], vedi che hai di fronte un ragazzo che avrà qualche anno in meno di te, ma che è assolutamente determinato a ucciderti. Affrontalo, ma considera che sei spiazzat[o|a] e tramortit[o|a] dal dolore: il primo attacco spetta di nuovo a lui.</p>
       <enemyref id="giovaneGuerriero">giovane guerriero</enemyref>
-      <p>Se, al tuo turno, usi la Rima ammaliante di Nedaja, togliti <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange> e vai al <link>311</link>.</p>
+      <p>Se, al tuo turno, usi l'Haiku Ferroviario, togliti <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange> e vai al <link>311</link>.</p>
       <p>Se il tuo avversario scende a 5 o meno punti di EF, vai al <link>573</link>.</p>
       <p>Se vuoi arrenderti, vai al <link>262</link>.</p>
       <p>Se vuoi provare a scappare, vai al <link>221</link>.</p>
@@ -3187,7 +3187,7 @@
       <summary>Lo sgherro</summary>
       <p>Sfoderi l’arma e ti getti contro l’uomo, che ti guarda con una punta di compassione. È un solido veterano dell’Inverno Rosso, è bene armato e non ha alcuna paura di te.</p>
       <enemyref id="sgherro">sgherro</enemyref>
-      <p>Ricorda che il punteggio di EM mette l’uomo al riparo dall’uso della Rima ammaliante di Nedaja.</p>
+      <p>Ricorda che il punteggio di EM mette l’uomo al riparo dall’uso della Haiku Ferroviario.</p>
       <p>Dopo due scontri, vai al <link>396</link>.</p>
     </chapter>
 
@@ -3420,8 +3420,8 @@
     <object id="droneCiakko" type="note" name="Drone-Corvo Ciakko">
       Al mercato nero del Terminal Zero ti è stato affidato il drone-spia Ciakko.
     </object>
-    <object id="dehanda" type="note" name="Dehanda">
-      Pochi chilometri a sud del Settore Oscuro, hai fatto amicizia con l'esploratrice Dehanda.
+    <object id="sakura" type="note" name="Sakura">
+      Pochi chilometri a sud del Settore Oscuro, hai fatto amicizia con l'esploratrice Sakura.
     </object>
     <object id="eurema" type="code" name="EUREMA">
       Lungo i binari fra il Terminal Zero e Shin-Jiku hai scoperto un gruppo di predoni.
@@ -3474,7 +3474,7 @@
       I sistemi di sicurezza di Shin-Jiku si sono rifiutati di aprire le porte stagne notturne.
     </object>
     <object id="metalepsis" type="code" name="METALEPSIS">
-      Hai promesso a Dehanda di tornare ad aiutarla.
+      Hai promesso a Sakura di tornare ad aiutarla.
     </object>
     <object id="innescoEMP" type="item" name="Innesco per cariche EMP">
       Di per sé, serve per innescare le detonazioni elettromagnetiche. Per i dettagli, vai al <link>538</link>.
@@ -3567,7 +3567,7 @@
       <basedOn>Sapienza</basedOn>
       <text>Sei un profondo conoscitore delle tecniche di primo soccorso e dell'uso dei medikit pre-collasso; ogni volta che subisci un danno, finito un combattimento o a seguito di un incidente (ma non quando perdi punti di EF per via della fame o delle radiazioni!), puoi spendere 1 punto di EM e mettere alla Prova la tua Sapienza; in caso di successo, recuperi subito fino a 3 punti di EF. Come vedrai, questa Specialità ti verrà utile anche in altre situazioni, per esempio per isolare impianti infetti. <italic>Sei tu a decidere quando usare questa specialità. Effettua le Prove ed aggiorna le Energie di conseguenza.</italic></text>
     </specialty>
-    <specialty id="Rima ammaliante di Nedaja" title="Protocollo di Pacificazione">
+    <specialty id="Haiku Ferroviario" title="Protocollo di Pacificazione">
       <basedOn>Sapienza</basedOn>
       <text>Quando lanci questo override a corto raggio, la vittima deporrà istantaneamente ogni intento aggressivo nei tuoi confronti (i suoi sensori di minaccia verranno disattivati temporaneamente), anche se ovviamente reagirà a eventuali attacchi fisici. Questo significa che potrai comportarti come se avessi vinto il combattimento e proseguire nella tua avventura, salvo che non potrai depredare la vittima. Eseguire questo hack costa 3 punti di Energia Mentale, e ne sono immuni tutte le creature organiche prive di innesti o nemici con EM pari o superiore a 10. Talvolta potrai usarlo anche al di fuori dei combattimenti.</text>
     </specialty>
@@ -3735,7 +3735,7 @@
         </ability>
       </abilities>
       <talents>
-        <talent id="Rima ammaliante di Nedaja" />
+        <talent id="Haiku Ferroviario" />
         <talent id="Medicina" />
       </talents>
       <objectlist id="weapon">

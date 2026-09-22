@@ -28,9 +28,11 @@ class BookManager {
                     GameConstants.REGEX_FIND_BOOK_VERSION, 1)?.toInt() ?: 0
             )
             
-            val isDatabaseEmpty = getChapter("INTRODUZIONE").isEmpty()
+            val introChapter = getChapter("INTRODUZIONE")
+            val fastStartChapter = getChapter("FASTSTART")
+            val isDatabaseIncomplete = introChapter.isEmpty() || fastStartChapter.isEmpty()
             
-            if (dbBookVersion == null || isDatabaseEmpty ||
+            if (dbBookVersion == null || isDatabaseIncomplete ||
                 dbBookVersion.language != bookVersion.language ||
                 dbBookVersion.version < bookVersion.version) {
                 populateDatabase(strLoadBook, bookVersion)
