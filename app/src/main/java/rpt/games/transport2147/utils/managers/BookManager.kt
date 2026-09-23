@@ -104,6 +104,7 @@ class BookManager {
                 }
             }
         }
+
         fun getTemplates(): ArrayList<String?> = runBlocking(Dispatchers.IO) {
             val templates = RepositoryManager.bookRepository.getAllTemplates()
             return@runBlocking ArrayList(templates)

@@ -70,13 +70,13 @@ class DiceRollerManager(menuItem: MenuItem?, i: Int) {
         if (z) {
             return
         }
-        this._menuItem!!.icon!!.setLevel(this.dices * 100)
+        this._menuItem!!.icon!!.level = this.dices * 100
     }
 
     fun toggleRollDices() {
         setUsage(!this.isUsed)
         if (this.isUsed) {
-            this._menuItem!!.icon!!.setLevel(rollD6(this.dices))
+            this._menuItem!!.icon!!.level = rollD6(this.dices)
         }
     }
 

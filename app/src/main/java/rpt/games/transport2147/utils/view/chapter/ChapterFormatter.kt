@@ -1,5 +1,6 @@
 package rpt.games.transport2147.utils.view.chapter
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.text.TextUtils
@@ -59,9 +60,6 @@ class ChapterFormatter {
     fun formatChapter(linearLayout: LinearLayout?, context: Context, str: String?): Boolean {
         try {
             val chapterXml = BookManager.getChapter(str)
-            if (chapterXml.isEmpty()) {
-                return false
-            }
             val strExecReplace: String = AppUtils.execReplace(
                 chapterXml,
                 GameConstants.REGEX_GENDER_SEARCH,
@@ -70,16 +68,19 @@ class ChapterFormatter {
                     GameConstants.REGEX_GENDER_REPLACE_MALE 
                 else GameConstants.REGEX_GENDER_REPLACE_FEMALE
             )
-            val rootElement: Element? = XmlUtility.getRootElement(strExecReplace)
-            if (rootElement == null) {
-                return false
-            }
+            val rootElement: Element = XmlUtility.getRootElement(strExecReplace) ?: return false
             var attribute = rootElement.getAttribute(GameConstants.XML_NODE_CHAPTER_ATTR_DREAM)
             if (attribute.isNullOrEmpty()) {
                 attribute = "false"
             }
             this.lastSummary =
                 AppUtils.execSingleRegex(strExecReplace, GameConstants.REGEX_FIND_CHAPTER_SUMMARY)
+            val children = rootElement.childNodes
+            val tags = StringBuilder()
+
+            for (i in 0 until children.length) {
+                tags.append("${i}: ${children.item(i).nodeName}\n")
+            }
             createChapter(linearLayout!!, context, rootElement)
             return attribute.toBoolean()
         } catch (e: Exception) {
@@ -157,6 +158,7 @@ class ChapterFormatter {
             val nodeItem = childNodes.item(i)
             if (nodeItem is Element) {
                 val element2 = nodeItem
+
                 var z2 = true
                 when (element2.tagName.lowercase(Locale.getDefault())) {
                     "title" -> {
@@ -223,29 +225,31 @@ class ChapterFormatter {
     
     @Throws(Exception::class)
     private fun parseInnerTag(element: Element, context: Context): RPSpannableString {
-        when (element.tagName.lowercase(Locale.getDefault())) {
-            "bold", "italic", "quote" -> return formatSimpleNode(element, context)
-            "link" -> return format_LINK(element, context)
-            "hlink" -> return format_HLINK(element, context)
-            "smallcaps" -> return format_SMALLCAPS(element, context)
-            "objectref" -> return format_OBJECTREF(element, context)
-            "sidepiece" -> return format_SIDEPIECE(element, context)
-            "glossary" -> return format_GLOSSARY(element, context)
-            "br" -> return format_BR(element, context)
-            "xp" -> return format_XP(element, context)
-            "abilitychange" -> return format_ABILITYCHANGE(element, context)
-            "jump" -> return format_JUMP(element, context)
-            else -> return RPSpannableString("")
+        return when (element.tagName.lowercase(Locale.getDefault())) {
+            "bold", "italic", "quote" -> formatSimpleNode(element, context)
+            "link" -> format_LINK(element, context)
+            "hlink" -> format_HLINK(element, context)
+            "smallcaps" -> format_SMALLCAPS(element, context)
+            "objectref" -> format_OBJECTREF(element, context)
+            "sidepiece" -> format_SIDEPIECE(element, context)
+            "glossary" -> format_GLOSSARY(element, context)
+            "br" -> format_BR(element, context)
+            "xp" -> format_XP(element, context)
+            "abilitychange" -> format_ABILITYCHANGE(element, context)
+            "jump" -> format_JUMP(element, context)
+            else -> RPSpannableString("")
         }
     }
-    
+
     @Throws(Exception::class)
     private fun loopInnerElements(element: Element, context: Context): RPSpannableString {
         val childNodes = element.childNodes
         var spannableString2 = RPSpannableString("")
+
         for (i in 0..<childNodes.length) {
             val nodeItem = childNodes.item(i)
             var currentSpannable: RPSpannableString? = null
+
             if (nodeItem is Element) {
                 currentSpannable = parseInnerTag(nodeItem, context)
             } else if (nodeItem is Text) {
@@ -254,10 +258,13 @@ class ChapterFormatter {
                     currentSpannable = RPSpannableString(nodeValue)
                 }
             }
+
             if (currentSpannable != null) {
-                spannableString2 = RPSpannableString(TextUtils.concat(spannableString2, currentSpannable))
+                spannableString2 =
+                    RPSpannableString(TextUtils.concat(spannableString2, currentSpannable))
             }
         }
+
         return spannableString2
     }
 

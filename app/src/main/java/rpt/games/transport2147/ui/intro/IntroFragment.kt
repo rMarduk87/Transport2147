@@ -1,9 +1,11 @@
 package rpt.games.transport2147.ui.intro
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import rpt.com.base.BaseFragment
+import rpt.com.base.log.d
 import rpt.com.base.navigation.safeNavController
 import rpt.com.base.navigation.safeNavigate
 import rpt.games.transport2147.MainMenuActivity
@@ -30,7 +32,7 @@ class IntroFragment : BaseFragment<FragmentIntroBinding>(
 
     private fun loadIntro() {
         DialogManager.showFastStartDialog(requireContext()){
-            navigateToMainMenu()
+            //navigateToMainMenu()
         }
     }
 

@@ -17,23 +17,17 @@ open class Ability {
         this._modes = null
         this.type = abilityTypeEnum
         this._modes = HashMap()
-        this._modes!!.put(
+        this._modes!![BaseValueModeEnum.ACTUAL] = BaseValue(
             BaseValueModeEnum.ACTUAL,
-            BaseValue(
-                BaseValueModeEnum.ACTUAL,
-                abilityTypeEnum.min,
-                abilityTypeEnum.max,
-                abilityTypeEnum.start
-            )
+            abilityTypeEnum.min,
+            abilityTypeEnum.max,
+            abilityTypeEnum.start
         )
-        this._modes!!.put(
+        this._modes!![BaseValueModeEnum.INITIAL] = BaseValue(
             BaseValueModeEnum.INITIAL,
-            BaseValue(
-                BaseValueModeEnum.INITIAL,
-                abilityTypeEnum.min,
-                abilityTypeEnum.max,
-                abilityTypeEnum.start
-            )
+            abilityTypeEnum.min,
+            abilityTypeEnum.max,
+            abilityTypeEnum.start
         )
     }
 
@@ -41,8 +35,8 @@ open class Ability {
         this._modes = null
         this.type = abilityTypeEnum
         this._modes = HashMap()
-        this._modes!!.put(BaseValueModeEnum.ACTUAL, BaseValue.fromXml(element2))
-        this._modes!!.put(BaseValueModeEnum.INITIAL, BaseValue.fromXml(element))
+        this._modes!![BaseValueModeEnum.ACTUAL] = BaseValue.fromXml(element2)
+        this._modes!![BaseValueModeEnum.INITIAL] = BaseValue.fromXml(element)
     }
 
     fun toXml(): String {

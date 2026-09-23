@@ -151,12 +151,15 @@ class MainMenuActivity : AppCompatActivity() {
     fun onClickMainActivity(view: View) {
         try {
             when (view.id) {
-                /*R.id.actMain_btnIntro -> startActivity(
-                    Intent(
-                        this,
-                        Activity_Intro::class.java as Class<*>
+                R.id.actMain_btnIntro -> {
+                    SharedPreferencesManager.showIntro = true
+                    startActivity(
+                        Intent(
+                            this,
+                            MainActivity::class.java as Class<*>
+                        )
                     )
-                )*/
+                }
 
                 R.id.actMain_btnMain2 -> startActivity(
                     Intent(

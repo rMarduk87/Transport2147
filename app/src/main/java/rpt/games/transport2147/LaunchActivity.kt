@@ -44,7 +44,7 @@ class LaunchActivity  : AppCompatActivity() {
         lifecycleScope.launch(Dispatchers.IO) {
             BookManager.openBook()
             withContext(Dispatchers.Main) {
-                val  intent = Intent(this@LaunchActivity, MainMenuActivity::class.java)
+                val  intent = Intent(this@LaunchActivity, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }
