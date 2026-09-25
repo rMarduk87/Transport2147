@@ -3,12 +3,14 @@ package rpt.games.transport2147.utils.view.chapter
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -210,7 +212,8 @@ class ChapterFormatter {
                     val textView: TextView = getTextView(context)
                     textView.setText(simpleNode, TextView.BufferType.SPANNABLE)
                     textView.gravity = simpleNode!!.gravity
-                    if (simpleNode!!.gravity == 8388611 && textJustification && (textView is RPTextView2)) {
+                    textView.setTextColor(Color.WHITE)
+                    if (simpleNode.gravity == Gravity.START && textJustification && (textView is RPTextView2)) {
                         (textView as RPTextView2).justification = textJustification
                     }
                     linearLayout.addView(textView)

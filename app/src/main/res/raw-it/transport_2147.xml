@@ -93,16 +93,16 @@
     </chapter>
 
     <chapter name ="CREDITS">
-      <title>CREDITS</title>
-      <p><italic>Testi:</italic> RP Technologies</p>
-      <p><italic>Programmazione:</italic> RP Technologies</p>
-      <p><italic>Program management e grafica:</italic> RP Technologies</p>
-      <p><italic>Illustrazioni:</italic> RP Technologies</p>
-      <p><italic>Traduzione inglese:</italic></p>
+      <title>LOG DI SISTEMA // CREDITS</title>
+      <p><italic>Architettura Testi e Narrazione:</italic> RP Technologies</p>
+      <p><italic>Core Coding e Protocolli Logici:</italic> RP Technologies</p>
+      <p><italic>Program Management e UI Design:</italic> RP Technologies</p>
+      <p><italic>Asset Grafici e Concept Art:</italic> RP Technologies</p>
+      <p><italic>Localizzazione e Compilazione Core-Script (EN):</italic> RP Technologies</p>
     </chapter>
 
     <chapter name ="FASTSTART">
-      <title>TRANSPORT2247</title>
+      <title>TRANSPORT2147</title>
       <p>Ciao e benvenuto tra i terminali virtuali di <italic>Transport2147</italic>, primo volume della saga «Cronache della Grande Rete».</p>
       <p>«In questa app il protagonista sei tu»: come nei librogame classici, starà a te aggiornare la scheda, tirare i dadi e in generale applicare i protocolli di sopravvivenza.</p>
       <p>L'avvio del sistema inizia al paragrafo 201. Puoi accedervi direttamente scegliendo uno degli operatori pregenerati indicati qui di seguito.</p>

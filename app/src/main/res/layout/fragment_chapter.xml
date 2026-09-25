@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/frgChapter_scvScroll"
-    android:background="@drawable/bkg_chapter_body"
+    android:background="#050608"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Transport2147</string>
+    <string name="app_name">Cronache della GR: Transport 2147</string>
     <string name="img">img</string>
     <string name="errore_terminale_bloccato">ERROR: Terminal locked.</string>
     <string name="errore_parola_gi_scartata">ERROR: Word already discarded.</string>

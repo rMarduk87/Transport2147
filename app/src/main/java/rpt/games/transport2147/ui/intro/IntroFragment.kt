@@ -32,7 +32,7 @@ class IntroFragment : BaseFragment<FragmentIntroBinding>(
 
     private fun loadIntro() {
         DialogManager.showFastStartDialog(requireContext()){
-            //navigateToMainMenu()
+            navigateToMainMenu()
         }
     }
 

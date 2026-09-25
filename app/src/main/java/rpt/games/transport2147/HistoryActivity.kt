@@ -26,7 +26,7 @@ class HistoryActivity : AppCompatActivity() {
         GameLogic.history = this;
         binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        actionBar!!.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onDestroy() {

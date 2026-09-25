@@ -44,7 +44,7 @@ class GameLogic {
         var playerSheet: PlayerSheet? = null
         var profile: Profile? = null
         private var _TookObjects: HashMap<PlayerObject?, PlayerObject?>? = null
-        var _fontDimension: Int = 2130968660
+        var _fontDimension: Int = R.dimen.font_dimen1
         var _fontDimensionIndex: Int = 2
         var _fontDimensionMaxIndex: Int = 12
         var _fontDimensionMinIndex: Int = 0

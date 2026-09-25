@@ -10,6 +10,16 @@
           <theme>@style/Theme.Transport2147</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_cyber_dialog.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/dlg_title_cyber_line.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_cyber_arrow.xml">
         <config>
           <theme>@style/AppBaseTheme</theme>
@@ -45,6 +55,31 @@
           <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ico_cyber_empty.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ico_cyber_font_larger.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ico_cyber_font_smaller.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ico_cyber_historytrack.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ico_cyber_justifier.xml">
+        <config>
+          <theme>@style/AppBaseTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/main_btn_generic.xml">
         <config>
           <theme>@style/AppBaseTheme</theme>
@@ -57,7 +92,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_credits.xml">
         <config>
-          <theme>@style/Theme.Transport2147</theme>
+          <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_glossary.xml">
@@ -152,7 +187,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_faststart.xml">
         <config>
-          <theme>@style/Theme.Transport2147</theme>
+          <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_glossaryentry.xml">
@@ -192,7 +227,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_chapter.xml">
         <config>
-          <theme>@style/Theme.Transport2147</theme>
+          <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_combat.xml">
@@ -257,12 +292,12 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/include_fontsizechanger.xml">
         <config>
-          <theme>@style/Theme.Transport2147</theme>
+          <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/include_introtitle.xml">
         <config>
-          <theme>@style/Theme.Transport2147</theme>
+          <theme>@style/AppBaseTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/include_okcancel.xml">
@@ -293,6 +328,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e0a8417-1702-4e41-8083-c9daef255fee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_cyber_dialog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/dlg_title_cyber_line.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ico_cyber_empty.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ico_cyber_font_larger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ico_cyber_font_smaller.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ico_cyber_historytrack.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ico_cyber_justifier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.6.0/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.6.0/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.6.0/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.6.0/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.6.0/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.6.0/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.6.0/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.6.0/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.6.0/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -300,20 +354,26 @@
       <change beforePath="$PROJECT_DIR$/.gradle/9.7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/CreditsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/CreditsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/HistoryActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/HistoryActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/LaunchActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/LaunchActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/MainMenuActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/MainMenuActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/ui/intro/IntroFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/ui/intro/IntroFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/AppUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/AppUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/data/appmodels/complex/Ability.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/data/appmodels/complex/Ability.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/data/appmodels/complex/History.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/data/appmodels/complex/History.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/BookManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/BookManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/DialogManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/DialogManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/DiceRollerManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/managers/DiceRollerManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/chapter/ChapterFormatter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/chapter/ChapterFormatter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/hacking/StationTerminal.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/hacking/TerminalHackingGame.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/hacking/TerminalToken.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/game/GameLogic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/game/GameLogic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/text/RPTextView2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/utils/view/text/RPTextView2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_credits.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_faststart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_faststart.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_chapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_chapter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/include_fontsizechanger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/include_fontsizechanger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/include_introtitle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/include_introtitle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw-it/transport_2147.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw-it/transport_2147.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/transport_2147.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw/transport_2147.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -388,6 +448,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
     "git-widget-placeholder": "features/2026/first",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Transport2147/app/src/main/res/layout",
@@ -698,17 +759,28 @@
     </task>
     <servers />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/rpt/games/transport2147/CreditsActivity.kt</url>
+          <line>52</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
       <map>
         <entry key="rpt.games.transport2147">
           <value>
-            <CheckInfo lastCheckTimestamp="1790159676594" />
+            <CheckInfo lastCheckTimestamp="1790326908062" />
           </value>
         </entry>
         <entry key="rpt.games.transport2147.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1790159676594" />
+            <CheckInfo lastCheckTimestamp="1790326908060" />
           </value>
         </entry>
       </map>

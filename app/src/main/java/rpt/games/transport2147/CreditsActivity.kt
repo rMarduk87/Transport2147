@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import rpt.com.base.log.e
-import rpt.games.transport2147.databinding.ActivityCreditsBinding
+import rpt.games.transport2147.databinding.FragmentChapterBinding
 import rpt.games.transport2147.utils.GameConstants
 import rpt.games.transport2147.utils.LocaleHelper.onAttach
 import rpt.games.transport2147.utils.view.chapter.ChapterFormatter
@@ -15,15 +15,15 @@ import rpt.games.transport2147.utils.view.game.GameLogic
 
 class CreditsActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityCreditsBinding
+    private lateinit var binding : FragmentChapterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTitle(R.string.title_activityCredits)
         GameLogic.checkForAppRecovery(this, true)
-        binding = ActivityCreditsBinding.inflate(layoutInflater)
+        binding = FragmentChapterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        actionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onResume() {
