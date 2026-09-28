@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="AppBaseActionBarStyle" parent="Widget.MaterialComponents.ActionBar.Solid">
+        <item name="android:background">@color/actionbar_background</item>
+        <item name="background">@color/actionbar_background</item>
+    </style>
     <style name="AppBaseTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="android:windowBackground">@color/cyber_bg_normal</item>
-        <item name="colorPrimary">@color/dlg_button_text</item>
+        <item name="colorPrimary">@color/actionbar_background</item>
+        <item name="colorPrimaryVariant">@color/actionbar_background</item>
+        <item name="colorSurface">@color/actionbar_background</item>
         <item name="colorAccent">@color/dlg_button_text</item>
+        <item name="android:actionBarStyle">@style/AppBaseActionBarStyle</item>
+        <item name="actionBarStyle">@style/AppBaseActionBarStyle</item>
     </style>
     <style name="AppTheme" parent="@style/AppBaseTheme">
         <item name="android:buttonStyle">@style/ButtonAppTheme</item>
@@ -117,6 +125,7 @@
         <item name="android:background">@drawable/bkg_chapter_body</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
     <style name="actMain.layout.profile" parent="@style/actMain.layout">
         <item name="android:orientation">horizontal</item>
@@ -137,7 +146,7 @@
     </style>
     <style name="actMain.text" parent="@style/actMain">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="customFont">@string/fnt_FontTitle</item>
@@ -220,7 +229,7 @@
         <item name="customFont">@string/fnt_FontCore</item>
     </style>
     <style name="dlg.editText" parent="@style/dlg">
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">@dimen/dlg_sectionPaddingBottom</item>
@@ -262,7 +271,7 @@
     </style>
     <style name="dlg.mainLayout" parent="@style/dlg">
         <item name="android:orientation">vertical</item>
-        <item name="android:background">@drawable/bkg_dialog</item>
+        <item name="android:background">@color/actionbar_background</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
@@ -292,7 +301,7 @@
     <style name="dlg.sectionTitleText" parent="@style/dlg">
         <item name="android:textSize">@dimen/dlg_sectionTextSize</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -302,7 +311,7 @@
     <style name="dlg.subtitleText" parent="@style/dlg">
         <item name="android:textSize">@dimen/dlg_subtitleTextSize</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:paddingLeft">@dimen/dlg_subtitlePaddingLeft</item>
         <item name="android:paddingTop">@dimen/dlg_subtitlePaddingTop</item>
         <item name="android:paddingRight">@dimen/dlg_subtitlePaddingRight</item>
@@ -313,7 +322,7 @@
     </style>
     <style name="dlg.text" parent="@style/dlg">
         <item name="android:textSize">@dimen/dlg_textTextSize</item>
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:paddingLeft">@dimen/dlg_textPaddingLeft</item>
         <item name="android:paddingRight">@dimen/dlg_textPaddingRight</item>
         <item name="android:paddingBottom">@dimen/dlg_textPaddingBottom</item>
@@ -602,7 +611,7 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
     <style name="frgRemote.text" parent="@style/frgRemote">
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="customFont">@string/fnt_FontCore</item>
@@ -635,7 +644,7 @@
     <style name="frgSheet.description" parent="@style/frgSheet">
         <item name="android:textSize">@dimen/frgSheet_text_textSize</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center_vertical|right</item>
         <item name="android:paddingRight">@dimen/cmpListElementItem_icon_padding</item>
         <item name="android:layout_width">0dp</item>
@@ -691,7 +700,7 @@
         <item name="android:maxHeight">@dimen/cmpListElementItem_iconSmall_sizeMax</item>
     </style>
     <style name="frgSheet.text" parent="@style/frgSheet">
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="frgSheet.text.header" parent="@style/frgSheet.text">
         <item name="android:textSize">@dimen/frgSheet_lblHeader_textSize</item>
@@ -761,7 +770,7 @@
     <style name="frgSheetItemListTitle" parent="">
         <item name="android:textSize">@dimen/frgSheet_subTitle_textSize</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:paddingTop">@dimen/frgSheet_subTitle_paddingTop</item>
         <item name="android:layout_width">match_parent</item>
@@ -787,7 +796,7 @@
     </style>
     <style name="frgSheetText" parent="">
         <item name="android:textSize">@dimen/frgSheet_text_textSize</item>
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:background">@drawable/bg_sheet_text_red</item>
         <item name="android:paddingLeft">@dimen/frgSheet_text_paddingLeft</item>
         <item name="android:paddingRight">@dimen/frgSheet_text_paddingRight</item>
@@ -809,7 +818,7 @@
     </style>
     <style name="frgSheetValueNumber" parent="">
         <item name="android:textSize">@dimen/frgSheet_abilityValue_textSize</item>
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center</item>
         <item name="android:clickable">true</item>
         <item name="android:layout_width">wrap_content</item>
@@ -823,7 +832,7 @@
     </style>
     <style name="frgSheetValueTitle" parent="">
         <item name="android:textSize">@dimen/frgSheet_ability_textSize</item>
-        <item name="android:textColor">@color/paragraph_text</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

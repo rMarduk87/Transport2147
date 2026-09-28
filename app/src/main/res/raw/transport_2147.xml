@@ -120,7 +120,7 @@
       <p>Rifletti un poco su quanto hai sentito. «Che cosa credi, tu?» chiedi poi.</p>
       <p>Il vecchio scuote la testa. «Non so… Mi fido di Istwe, altrimenti non gli avrei certo affidato mio figlio; ma è assurdo che mi lasci così, in preda a un bug logico del genere.» Ti versa ancora un goccio di tè sintetico, una stilla di tepore nell’umidità perenne dei tunnel sotterranei, poi ti rivolge di nuovo il suo sguardo fisso e angustiato.</p>
       <p>«Mi aiuterai? Andrai a Shin-Jiku e mi porterai notizie di mio figlio? Ci andrei io, ovviamente, ma i miei innesti neurali sono ormai obsoleti e le mie ginocchia non reggerebbero.»</p>
-      <p>Come il Terminal Zero, dove vivi, Shin-Jiku è un <glossary id="cittaLibere">Terminale Libero</glossary>, di fatto il più vicino a voi; viaggiando a piedi seguendo il corso dei tunnel allagati della vecchia Linea Meyr, per raggiungerla occorrono però quattro o cinque giorni. Sui binari incontreresti solo pochi piccoli accampamenti, molto dispersi, poiché la Rete è vasta e letale, e i sensori di sicurezza in questo quadrante sono guasti. Hideo non sta chiedendo un favore da poco, specie a un[o|a] giovane operatore come te.</p>
+      <p>Come il Terminal Zero, dove vivi, Shin-Jiku è un <glossary id="terminaliLiberi">Terminale Libero</glossary>, di fatto il più vicino a voi; viaggiando a piedi seguendo il corso dei tunnel allagati della vecchia Linea Meyr, per raggiungerla occorrono però quattro o cinque giorni. Sui binari incontreresti solo pochi piccoli accampamenti, molto dispersi, poiché la Rete è vasta e letale, e i sensori di sicurezza in questo quadrante sono guasti. Hideo non sta chiedendo un favore da poco, specie a un[o|a] giovane operatore come te.</p>
       <p>Sei dispost[o|a] ad aiutare il tuo mentore? Vai al <link>406</link>.</p>
       <p>O pensi che il vecchio stia cercando di cavarsela un po’ troppo a buon mercato? Vai al <link>215</link>.</p>
     </chapter>
@@ -229,7 +229,7 @@
 
     <chapter name ="216">
       <title>216</title>
-      <p>In <glossary id="kadjan">Kadjan</glossary>, la Madre delle Lingue, che viene ancora usata dai dotti, l’espressione «Jum-Gadul» indica l’insieme delle forze abissali che la gente normale, semplificando molto la questione, chiama comunemente «demoni». E scongiurare queste forze e allontanarne l’influenza dalla vita delle persone sono tra le funzioni più importanti delle dottrine degli <glossary id="higDayr">Iatromanti</glossary>, che Noder sta imparando.</p>
+      <p>In <glossary id="coreScript">Kadjan</glossary>, la Madre delle Lingue, che viene ancora usata dai dotti, l’espressione «Jum-Gadul» indica l’insieme delle forze abissali che la gente normale, semplificando molto la questione, chiama comunemente «demoni». E scongiurare queste forze e allontanarne l’influenza dalla vita delle persone sono tra le funzioni più importanti delle dottrine degli <glossary id="higDayr">Iatromanti</glossary>, che Noder sta imparando.</p>
       <p>Quello che hai sognato non promette niente di buono… Sempre più preoccupat[o|a] per il tuo amico, vai al <link>389</link> se sei in locanda, al <link>506</link> se sei su una chiatta, diversamente passa al <link>496</link>.</p>
     </chapter>
 
@@ -490,7 +490,7 @@
       <summary>Due loschi figuri</summary>
       <p>Dopo un po’ che fai [il matto|la matta] sotto gli occhi del vicinato di Molwarum Istwe, senti una voce alle tue spalle.</p>
       <p>«Oh, non ti pare di esagerare?»</p>
-      <p>Ti volti e dall’assembramento ormai cospicuo di curiosi vedi avanzare due soggetti dall’aria loschissima, che brandiscono l’uno un robusto bastone – di fatto un randello –, l’altro un lungo pugnale. Non sembrano possedere Kidnè-Nabar: con tutta probabilità non sono cittadini Liberi, e forse non sono nemmeno <glossary id="esardan">Esardan</glossary>, come te, ma Amardan, cioè discendenti dei <glossary id="sajagin">Sajagin</glossary> assoggettati dalla tua gente nei tempi andati.</p>
+      <p>Ti volti e dall’assembramento ormai cospicuo di curiosi vedi avanzare due soggetti dall’aria loschissima, che brandiscono l’uno un robusto bastone – di fatto un randello –, l’altro un lungo pugnale. Non sembrano possedere Kidnè-Nabar: con tutta probabilità non sono cittadini Liberi, e forse non sono nemmeno <glossary id="discesi">Esardan</glossary>, come te, ma Amardan, cioè discendenti dei <glossary id="tossici">Sajagin</glossary> assoggettati dalla tua gente nei tempi andati.</p>
       <p>Che fai? Scrolli le spalle e te ne vai? Vai al <link>362</link>.</p>
       <p>O gli rispondi di farsi gli affari loro? Vai al <link>288</link>.</p>
     </chapter>
@@ -512,7 +512,7 @@
 
     <chapter name ="253">
       <title>253</title>
-      <p>Henar Jesseram? Certo che lo conosci: <italic>Usi tribali dei Kruagar</italic>, <italic>Ricerca del confine fisico occidentale del <glossary id="rayn">Rayn</glossary></italic>, <italic>Cosmostoria imperiale</italic>, <italic>Lineamenti geografici del Kay-seràm</italic>… Non si contano i trattati di quest’uomo che hai avuto la fortuna di leggere nel corso dei tuoi studi! Si tratta di un grande erudito, certo, ma anche di un instancabile viaggiatore ed esploratore, e deve buona parte della sua fama ai suoi scritti di geografia. Se non ricordi male è stato allievo di Eidon Sollesa, l'irraggiunto autore dei <italic>Fondamenti di pensiero anantropico</italic>. Ma non sapevi che vivesse a Sorgand, e tanto meno che avresti condiviso un viaggio con lui. Vai al <link>588</link>.</p>
+      <p>Henar Jesseram? Certo che lo conosci: <italic>Usi tribali dei Kruagar</italic>, <italic>Ricerca del confine fisico occidentale del <glossary id="infrastruttura">Rayn</glossary></italic>, <italic>Cosmostoria imperiale</italic>, <italic>Lineamenti geografici del Kay-seràm</italic>… Non si contano i trattati di quest’uomo che hai avuto la fortuna di leggere nel corso dei tuoi studi! Si tratta di un grande erudito, certo, ma anche di un instancabile viaggiatore ed esploratore, e deve buona parte della sua fama ai suoi scritti di geografia. Se non ricordi male è stato allievo di Eidon Sollesa, l'irraggiunto autore dei <italic>Fondamenti di pensiero anantropico</italic>. Ma non sapevi che vivesse a Sorgand, e tanto meno che avresti condiviso un viaggio con lui. Vai al <link>588</link>.</p>
       <image id="filler_money" zoom="true"/>
     </chapter>
 
@@ -571,7 +571,7 @@
 
     <chapter name ="262">
       <title>262</title>
-      <p>Alzi le mani disarmate, implorando mercé. Il ragazzo ti guarda con grande disprezzo, ma capisci subito che non parla la tua lingua: ha i capelli neri e la pelle chiarissima, e temi che possa essere un discendente degli antichi <glossary id="sajagin">Sajagin</glossary>, perché non tutti furono scacciati al di là dei Monti Raghror o ridotti in schiavitù, ma alcuni vivono ancora nascosti negli angoli più inaccessibili della foresta, là dove regna la Tenebra. Questo ti fa temere ancor di più per la tua vita, ma il giovane non ti finisce: ti prende le armi e l’armatura, se ce l’hai, e tutto ciò che hai a parte abiti, denaro (che pare non interessargli proprio), lettere e cibo. Poi si allontana. Umiliat[o|a] e sanguinante, puoi proseguire al <link>332</link>.</p>
+      <p>Alzi le mani disarmate, implorando mercé. Il ragazzo ti guarda con grande disprezzo, ma capisci subito che non parla la tua lingua: ha i capelli neri e la pelle chiarissima, e temi che possa essere un discendente degli antichi <glossary id="tossici">Sajagin</glossary>, perché non tutti furono scacciati al di là dei Monti Raghror o ridotti in schiavitù, ma alcuni vivono ancora nascosti negli angoli più inaccessibili della foresta, là dove regna la Tenebra. Questo ti fa temere ancor di più per la tua vita, ma il giovane non ti finisce: ti prende le armi e l’armatura, se ce l’hai, e tutto ciò che hai a parte abiti, denaro (che pare non interessargli proprio), lettere e cibo. Poi si allontana. Umiliat[o|a] e sanguinante, puoi proseguire al <link>332</link>.</p>
       <image id="filler_horses" zoom="true"/>
     </chapter>
 
@@ -654,7 +654,7 @@
     <chapter name ="275">
       <title>275</title>
       <summary>Il bottino di guerra</summary>
-      <p>Con un ultimo colpo abbatti il giovane implorante, pensando che un selvaggio <glossary id="sajagin">Sajagin</glossary> non merita niente di meglio. Mondi l’arma sulle sue vesti e lo frughi in cerca di bottino.</p>
+      <p>Con un ultimo colpo abbatti il giovane implorante, pensando che un selvaggio <glossary id="tossici">Sajagin</glossary> non merita niente di meglio. Mondi l’arma sulle sue vesti e lo frughi in cerca di bottino.</p>
       <p>Puoi prendere le seguenti cose:</p>
       <list>
         <element>
@@ -732,7 +732,7 @@
 
     <chapter name ="283">
       <title>283</title>
-      <p>Non sei certissim[o|a] dell’effetto che la Rima può sortire su tre cani inferociti, ma decidi di provare, e fai bene: non hai nemmeno finito di recitare la breve terzina in <glossary id="kadjan">Kadjan</glossary> che i tre cani si tranquillizzano. Mentre, caut[o|a], cominci ad allontanarti, loro ti seguono per un po’ con atteggiamento del tutto diverso rispetto a prima; dopo qualche decina di passi, poi, ti lasciano perdere e se ne vanno. Ricorda di togliere <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange> e vai al <link>366</link>.</p>
+      <p>Non sei certissim[o|a] dell’effetto che la Rima può sortire su tre cani inferociti, ma decidi di provare, e fai bene: non hai nemmeno finito di recitare la breve terzina in <glossary id="coreScript">Kadjan</glossary> che i tre cani si tranquillizzano. Mentre, caut[o|a], cominci ad allontanarti, loro ti seguono per un po’ con atteggiamento del tutto diverso rispetto a prima; dopo qualche decina di passi, poi, ti lasciano perdere e se ne vanno. Ricorda di togliere <abilitychange ability="mentalenergy" quantity="3" operation="subtract">3 punti di EM</abilitychange> e vai al <link>366</link>.</p>
     </chapter>
 
     <chapter name ="284">
@@ -748,7 +748,7 @@
     <chapter name ="285">
       <title>285</title>
       <p>Il maresciallo scuote la testa con l’aria disgustata.</p>
-      <p>«Neanche per idea. Va’ pure dall’<glossary id="arconte">Arconte</glossary>, se ne hai il fegato, ma sappi che tu sei solo [un forestiero|una forestiera] piantagrane, mentre io sono il maresciallo Kejmar Nasseter».</p>
+      <p>«Neanche per idea. Va’ pure dall’<glossary id="sovrintendente">Arconte</glossary>, se ne hai il fegato, ma sappi che tu sei solo [un forestiero|una forestiera] piantagrane, mentre io sono il maresciallo Kejmar Nasseter».</p>
       <p>Vai al <link>491</link>.</p>
     </chapter>
 
@@ -775,7 +775,7 @@
 
     <chapter name ="289">
       <title>289</title>
-      <p>Forse la vampata nel camino non è dovuta all’aria entrata dalla finestra; e forse quelle strisce appese alla mensola sono coperte di scritte in <glossary id="kadjan">Kadjan</glossary>, la Madre delle Lingue. Forse il panico che ti sta assalendo non è immotivato quanto sembra; forse, Kiddadwa, lo Spirito Custode, veglia su queste stanze, pronto a ghermire l’anima di chi, non invitato, vi si avventuri.</p>
+      <p>Forse la vampata nel camino non è dovuta all’aria entrata dalla finestra; e forse quelle strisce appese alla mensola sono coperte di scritte in <glossary id="coreScript">Kadjan</glossary>, la Madre delle Lingue. Forse il panico che ti sta assalendo non è immotivato quanto sembra; forse, Kiddadwa, lo Spirito Custode, veglia su queste stanze, pronto a ghermire l’anima di chi, non invitato, vi si avventuri.</p>
       <p>E ne hai conferma non appena muovi un passo in avanti, verso la porta a destra. Una voce infatti canta nella tua testa…</p>
       <p><italic>Esci o muori. Esci o muori. Esci o muori.</italic></p>
       <p>È una voce dolce e suadente, in sé nient’affatto minacciosa. La voce di Kiddadwa, appunto.</p>
@@ -838,7 +838,7 @@
 
     <chapter name ="297">
       <title>297</title>
-      <p>Tornando a casa, mediti sulle parole della vecchia. Qui o là, sopra o sotto, Veglianti o Vegliati… Non sai se Manerga fosse preda o meno dei fumi dell’alcol, ma sai per certo che, benedicendoti, non stava vaneggiando: stava alludendo, pur in termini popolari, alla Tripartizione del <glossary id="rayn">Rayn</glossary>, teorizzata da molti sapienti, per la quale esistono un sopra e qui (la Luce), un sotto (la Tenebra) e un là (l’Abisso), e ad altre complesse dottrine note solo ai dotti e agli stregoni.</p>
+      <p>Tornando a casa, mediti sulle parole della vecchia. Qui o là, sopra o sotto, Veglianti o Vegliati… Non sai se Manerga fosse preda o meno dei fumi dell’alcol, ma sai per certo che, benedicendoti, non stava vaneggiando: stava alludendo, pur in termini popolari, alla Tripartizione del <glossary id="infrastruttura">Rayn</glossary>, teorizzata da molti sapienti, per la quale esistono un sopra e qui (la Luce), un sotto (la Tenebra) e un là (l’Abisso), e ad altre complesse dottrine note solo ai dotti e agli stregoni.</p>
       <p>Interrogandoti sull’incontro con la vecchia, raggiungi casa tua e vai al <link>540</link>.</p>
     </chapter>
 
@@ -878,7 +878,7 @@
       <summary>Qualcuno ti segue?</summary>
       <p>Lasci lo Scalo di Ossern e ti incammini verso Sorgand, seguendo la strada in direzione nord. Il tempo è buono: il sole sta sciogliendo gli ultimi rimasugli di neve che indugiano sui campi, e un vento relativamente tiepido spira dai monti che intravedi, a nord, attraverso l’aria limpida del mattino.</p>
       <p>Dopo due o tre miglia superi un’ultima cascina isolata e già parzialmente circondata dalla foresta, e capisci che la vegetazione si sta ormai per chiudere intorno alla strada, e che probabilmente non incontrerai tracce di civiltà fino al pomeriggio di domani. Più a est, oltre il fiume, si apre una piana boscosa punteggiata qua e là dalle fattorie fortificate della Isadh Neg-horad, una fratria di agricoltori forgiati da vite laboriose e severe; ma qui, sulla riva occidentale, probabilmente non incontrerai nessuno. Stai per affrontare il tratto più solitario e potenzialmente pericoloso del tuo viaggio.</p>
-      <p>Verso mezzogiorno il Meyr, almeno sulla riva su cui ti muovi tu, è costeggiato in maniera ininterrotta da pendii boschivi quasi incontaminati, in cui il tuo sguardo non coglie null’altro che alberi antichi e possenti. Non puoi fare a meno di pensare che è in zone come queste che i tuoi antenati, durante la Conquista, hanno condotto le ultime lotte sanguinose con i selvaggi <glossary id="sajagin">Sajagin</glossary>, i mangiatori di carne cruda, che popolavano Ortnan prima che giungeste voi, gli <glossary id="esardan">Esardan</glossary>, sotto l’illuminata guida del <glossary id="patriarca">Patriarca</glossary>.</p>
+      <p>Verso mezzogiorno il Meyr, almeno sulla riva su cui ti muovi tu, è costeggiato in maniera ininterrotta da pendii boschivi quasi incontaminati, in cui il tuo sguardo non coglie null’altro che alberi antichi e possenti. Non puoi fare a meno di pensare che è in zone come queste che i tuoi antenati, durante la Conquista, hanno condotto le ultime lotte sanguinose con i selvaggi <glossary id="tossici">Sajagin</glossary>, i mangiatori di carne cruda, che popolavano Ortnan prima che giungeste voi, gli <glossary id="discesi">Esardan</glossary>, sotto l’illuminata guida del <glossary id="DG">Patriarca</glossary>.</p>
       <p>Facendo solo poche pause, cammini per ore, accompagnat[o|a] dal canto degli uccelli che salutano l’approssimarsi della primavera. Il sole si sta abbassando, e ti chiedi se la tua sia soltanto un’impressione erronea, o se davvero qualcuno ti sta osservando.</p>
       <p>Tenta una Prova di Astuzia: se riesce, vai al <link>555</link>, altrimenti procedi al <link>447</link>.</p>
       <p>In alternativa, puoi provare a toglierti il dubbio ricorrendo alla Divinazione, se la possiedi. Vai al <link>549</link>.</p>
@@ -928,7 +928,7 @@
     <chapter name ="309">
       <title>309</title>
       <summary>Gli Iatromanti</summary>
-      <p>«Sono una casta di stregoni dediti alla cura dei malati, agli esorcismi, alla divinazione e alla magia protettiva. In genere lavorano in cambio di offerte, ma la ricchezza e il prestigio piacciono un po’ a tutti, cosicché alcuni dei più bravi lavorano solo a favore di persone potenti e in cambio di grandi ricompense. Stando a quanto dicono loro, la magia che esercitano deriva direttamente dagli <glossary id="antichi">Antichi</glossary>. Ah, portano sempre il volto coperto da una maschera, almeno quando sono in pubblico o praticano i loro rituali; pare che lo facciano per non farsi riconoscere dalle forze oscure che allontanano con i loro scongiuri. Noder sembrava molto portato per le loro arti, quindi l’ho mandato a fare da apprendista a Molwarum Istwe, che è uno <glossary id="higDayr">Iatromante</glossary> rispettato e che era disposto a prenderlo con sé.»</p>
+      <p>«Sono una casta di stregoni dediti alla cura dei malati, agli esorcismi, alla divinazione e alla magia protettiva. In genere lavorano in cambio di offerte, ma la ricchezza e il prestigio piacciono un po’ a tutti, cosicché alcuni dei più bravi lavorano solo a favore di persone potenti e in cambio di grandi ricompense. Stando a quanto dicono loro, la magia che esercitano deriva direttamente dagli <glossary id="primi">Antichi</glossary>. Ah, portano sempre il volto coperto da una maschera, almeno quando sono in pubblico o praticano i loro rituali; pare che lo facciano per non farsi riconoscere dalle forze oscure che allontanano con i loro scongiuri. Noder sembrava molto portato per le loro arti, quindi l’ho mandato a fare da apprendista a Molwarum Istwe, che è uno <glossary id="higDayr">Iatromante</glossary> rispettato e che era disposto a prenderlo con sé.»</p>
       <p>Vuoi chiedere qualcos’altro? Torna al <link>492</link>. Altrimenti vai al <link>560</link>.</p>
     </chapter>
 
@@ -942,12 +942,12 @@
     <chapter name ="311">
       <title>311</title>
       <summary>Affascinando il Sajagin</summary>
-      <p>Pronunci la Rima, svelt[o|a], e la furia omicida del giovane pare placarsi in un istante. Guarda stupito prima te, poi la sua ascia, e infine depone l’arma. Capisci subito che non parla la tua lingua; ha i capelli nerissimi e la pelle molto chiara, e sospetti che possa essere un discendente degli antichi <glossary id="sajagin">Sajagin</glossary>: sai che non tutti sono stati scacciati oltre i Monti Raghror o ridotti in servitù, e che esistono ancora alcune comunità nascoste nelle profondità più recondite della foresta, là dove osano muoversi solo i figli della Tenebra. Il pensiero ti fa rabbrividire, e fai per allontanarti, ma prima il ragazzo, cui il sorriso non cancella l’espressione feroce, si slaccia la <objectref id="collanaLegnoRame">collana</objectref> che porta al collo e te la porge. È fatta di pezzetti di legno intarsiato alternati a piccoli monili di rame. Prendila, se vuoi, e prosegui al <link>332</link>.</p>
+      <p>Pronunci la Rima, svelt[o|a], e la furia omicida del giovane pare placarsi in un istante. Guarda stupito prima te, poi la sua ascia, e infine depone l’arma. Capisci subito che non parla la tua lingua; ha i capelli nerissimi e la pelle molto chiara, e sospetti che possa essere un discendente degli antichi <glossary id="tossici">Sajagin</glossary>: sai che non tutti sono stati scacciati oltre i Monti Raghror o ridotti in servitù, e che esistono ancora alcune comunità nascoste nelle profondità più recondite della foresta, là dove osano muoversi solo i figli della Tenebra. Il pensiero ti fa rabbrividire, e fai per allontanarti, ma prima il ragazzo, cui il sorriso non cancella l’espressione feroce, si slaccia la <objectref id="collanaLegnoRame">collana</objectref> che porta al collo e te la porge. È fatta di pezzetti di legno intarsiato alternati a piccoli monili di rame. Prendila, se vuoi, e prosegui al <link>332</link>.</p>
     </chapter>
 
     <chapter name ="312">
       <title>312</title>
-      <p>Pensi che si tratti di una reazione al contatto con il velo di Kadha, la malattia di cui soffriva Jesseram; il grande medico Javaol Ker-Nimaster ne parla nella sua <italic>Anatomia delle sofferenze delle <glossary id="genti">Genti</glossary></italic>, e non credi di essere stat[o|a] contagiat[o|a] dal male. Sei quasi cert[o|a] che tra un paio di giorni passerà; fino ad allora dovrai solo riguardarti un poco. Vai al <link>431</link>.</p>
+      <p>Pensi che si tratti di una reazione al contatto con il velo di Kadha, la malattia di cui soffriva Jesseram; il grande medico Javaol Ker-Nimaster ne parla nella sua <italic>Anatomia delle sofferenze delle <glossary id="biologici">Genti</glossary></italic>, e non credi di essere stat[o|a] contagiat[o|a] dal male. Sei quasi cert[o|a] che tra un paio di giorni passerà; fino ad allora dovrai solo riguardarti un poco. Vai al <link>431</link>.</p>
       <image id="filler_shield" zoom="true"/>
     </chapter>
 
@@ -1039,7 +1039,7 @@
       <summary>Un aiuto inatteso</summary>
       <p>Lotti con accanimento contro un possente avversario, mentre un angolo del tuo cuore spera che i tuoi giorni non siano finiti, e che il destino ti riservi ancora una sorpresa.</p>
       <p>Poi tre figure escono improvvisamente dalla vegetazione, urlando frasi selvagge in una strana lingua; solo quando sono a pochi passi da te riconosci che sono esseri umani, anche se dall’aspetto straniero e misterioso. Ti smarchi dal combattimento, esaust[o|a], e osservi i tre coordinare i propri attacchi con grande affiatamento, costringendo l’Orco a difendersi da alcuni attacchi per subire inevitabilmente i più insidiosi, rivolti sempre alle gambe. Dopo numerosi assalti entra il colpo giusto, e ti pare addirittura di sentire lo schiocco di un tendine che si strappa, mentre la grande creatura cade sulle ginocchia con un urlo disumano. A quel punto, i tre lo sfiniscono colpendolo da distanza di sicurezza non solo con le armi, ma con tutto quello che finisce loro tra le mani, compresi bastoni e pietre: occorre molto tempo per stroncare la pervicace esistenza dell’Orco, che però, dopo quella che pare un’eternità, alla fine si accascia, esanime.</p>
-      <p>I tre uomini, col fiato corto ma quasi illesi, ti si avvicinano, scambiandosi brevi frasi in quella lingua brutale che non capisci; poi ti circondano. Hanno i capelli neri o castani e la pelle molto chiara, strane vesti e sguardi truci. A questo punto sei cert[o|a] che siano feroci <glossary id="sajagin">Sajagin</glossary>.</p>
+      <p>I tre uomini, col fiato corto ma quasi illesi, ti si avvicinano, scambiandosi brevi frasi in quella lingua brutale che non capisci; poi ti circondano. Hanno i capelli neri o castani e la pelle molto chiara, strane vesti e sguardi truci. A questo punto sei cert[o|a] che siano feroci <glossary id="tossici">Sajagin</glossary>.</p>
       <p>Hai con te una collana di rame e legno? Vai al <link>593</link>.</p>
       <p>Altrimenti prosegui al <link>300</link>.</p>
     </chapter>
@@ -1163,7 +1163,7 @@
     <chapter name ="339">
       <title>339</title>
       <summary>Il mercato di Sorgand</summary>
-      <p>Come puoi aspettarti, qui al mercato c’è più o meno di tutto: solo, molte cose non sono purtroppo alla tua portata, come per esempio gli artefatti dei membri della Technia, gilda di fabbri, alchimisti e ingegneri che custodiscono i segreti dell’arcana tecnologia degli <glossary id="antichi">Antichi</glossary>; dovrai quindi accontentarti di oggetti più convenzionali. Se hai bisogno di denaro, potrai anche liberarti di alcuni oggetti acquisiti nei giorni scorsi e che non ritieni di particolare utilità. Non illuderti, però: non otterrai un ricavo molto vantaggioso.</p>
+      <p>Come puoi aspettarti, qui al mercato c’è più o meno di tutto: solo, molte cose non sono purtroppo alla tua portata, come per esempio gli artefatti dei membri della Technia, gilda di fabbri, alchimisti e ingegneri che custodiscono i segreti dell’arcana tecnologia degli <glossary id="primi">Antichi</glossary>; dovrai quindi accontentarti di oggetti più convenzionali. Se hai bisogno di denaro, potrai anche liberarti di alcuni oggetti acquisiti nei giorni scorsi e che non ritieni di particolare utilità. Non illuderti, però: non otterrai un ricavo molto vantaggioso.</p>
       <p>Queste sono le tue opzioni di <italic>vendita</italic> con i relativi guadagni:</p>
       <list>
         <element>
@@ -1621,7 +1621,7 @@
     <chapter name ="381">
       <title>381</title>
       <summary>L'imboscata</summary>
-      <p>Pare che i due stiano per tornare a Sorgand, quindi devi levarti di lì, o con tutta probabilità ti vedranno. Ti volti, pront[o|a] a cercare un nascondiglio migliore, ma a pochi passi da te scorgi alcune figure che si stanno avvicinando. Una, coperta da una cotta di maglia brunita, ti fa segno di tacere con un dito, e tu istintivamente obbedisci. Molwarum Istwe e il suo sgherro girano l’angolo e si trovano di fronte una mezza dozzina di <glossary id="veltriKarmaugen">Veltri di Karmaugen</glossary>, con una coppia di mastini, e due Lame Brune. Sono venuti tutti proprio per loro, e in un attimo li circondano e disarmano Zakan, la guardia del corpo dello <glossary id="higDayr">Iatromante</glossary>.</p>
+      <p>Pare che i due stiano per tornare a Sorgand, quindi devi levarti di lì, o con tutta probabilità ti vedranno. Ti volti, pront[o|a] a cercare un nascondiglio migliore, ma a pochi passi da te scorgi alcune figure che si stanno avvicinando. Una, coperta da una cotta di maglia brunita, ti fa segno di tacere con un dito, e tu istintivamente obbedisci. Molwarum Istwe e il suo sgherro girano l’angolo e si trovano di fronte una mezza dozzina di <glossary id="AkaitsukiNoShinja-tachi">Veltri di Karmaugen</glossary>, con una coppia di mastini, e due Lame Brune. Sono venuti tutti proprio per loro, e in un attimo li circondano e disarmano Zakan, la guardia del corpo dello <glossary id="higDayr">Iatromante</glossary>.</p>
       <p>Vai al <link>463</link>.</p>
     </chapter>
 
@@ -1742,7 +1742,7 @@
     <chapter name ="398">
       <title>398</title>
       <p>In tutta onestà, non ritieni di avere molte possibilità di battere i due, ma il tuo cuore e la tua mano fremono, e tu non riesci a far altro che sgombrare loro la strada.</p>
-      <p>Ti avventi sullo <glossary id="higDayr">Iatromante</glossary>, ma la sua guardia del corpo, massiccia e bene armata, si frappone, parando il tuo colpo e passando al contrattacco. Cerchi di concentrarti sul tuo avversario, ma senti un gran tramestio tutt’intorno, e una voce che intima di fermarvi. In un attimo siete circondati da una mezza dozzina di mercenari appartenenti alla gilda dei <glossary id="veltriKarmaugen">Veltri di Karmaugen</glossary>, e due grossi mastini vi abbaiano contro. Dopo un poco di esitazione, fate un passo indietro e ponete fine, forzosamente, alle ostilità.</p>
+      <p>Ti avventi sullo <glossary id="higDayr">Iatromante</glossary>, ma la sua guardia del corpo, massiccia e bene armata, si frappone, parando il tuo colpo e passando al contrattacco. Cerchi di concentrarti sul tuo avversario, ma senti un gran tramestio tutt’intorno, e una voce che intima di fermarvi. In un attimo siete circondati da una mezza dozzina di mercenari appartenenti alla gilda dei <glossary id="AkaitsukiNoShinja-tachi">Veltri di Karmaugen</glossary>, e due grossi mastini vi abbaiano contro. Dopo un poco di esitazione, fate un passo indietro e ponete fine, forzosamente, alle ostilità.</p>
       <p>Recuperi <abilitychange ability="mentalenergy" quantity="2" operation="add">2 punti di EM</abilitychange>, poi vai al <link>544</link>.</p>
     </chapter>
 
@@ -1959,7 +1959,7 @@
 
     <chapter name ="430">
       <title>430</title>
-      <p>Uccidi i due uomini, col sangue che ti bolle nella testa, caric[o|a] di furia. Eccitat[o|a], ti appoggi al muro, con il fiatone e l’arma ancora insanguinata, ma appena ti guardi intorno ti rendi conto di essere in una situazione molto pericolosa: se anche non dovesse presentarsi una pattuglia di <glossary id="veltriKarmaugen">Veltri di Karmaugen</glossary>, sei circondat[o|a] da dozzine di persone che ti fissano inferocite; la rapida e brutta fine che hai fatto fare ai due ribaldi ha incusso loro una certa dose di timore, ma sai che la paura non li tratterrà in eterno. Devi cambiare tattica, e anche aria, in fretta.</p>
+      <p>Uccidi i due uomini, col sangue che ti bolle nella testa, caric[o|a] di furia. Eccitat[o|a], ti appoggi al muro, con il fiatone e l’arma ancora insanguinata, ma appena ti guardi intorno ti rendi conto di essere in una situazione molto pericolosa: se anche non dovesse presentarsi una pattuglia di <glossary id="AkaitsukiNoShinja-tachi">Veltri di Karmaugen</glossary>, sei circondat[o|a] da dozzine di persone che ti fissano inferocite; la rapida e brutta fine che hai fatto fare ai due ribaldi ha incusso loro una certa dose di timore, ma sai che la paura non li tratterrà in eterno. Devi cambiare tattica, e anche aria, in fretta.</p>
       <p>Vuoi recarti al mercato per reperire attrezzatura? Vai al <link>568</link>. Oppure opti per cercare un posto tranquillo, per esempio per tentare una Divinazione (se possiedi questa Specialità), o per preparare la tua prossima mossa? Vai al <link>483</link>.</p>
     </chapter>
 
@@ -2053,7 +2053,7 @@
 
     <chapter name ="441">
       <title>441</title>
-      <p>Senza tanti preamboli dici al capoturno che far uscire qualcuno nottetempo è un reato molto grave, paragonabile al tradimento, e che pretendi lo stesso trattamento, se non vuole che qualche voce arrivi all’orecchio dell’<glossary id="arconte">Arconte</glossary> della città. Il maresciallo ti squadra con comprensibile ostilità: evidentemente sta valutando se farti buttare un sacco in testa dai suoi uomini e gettarti più mort[o|a] che viv[o|a] in qualche fosso… Tenta una Prova d’Astuzia, per capire quanto sei stat[o|a] convincente: se riesce, vai al <link>385</link>, altrimenti procedi al <link>285</link>.</p>
+      <p>Senza tanti preamboli dici al capoturno che far uscire qualcuno nottetempo è un reato molto grave, paragonabile al tradimento, e che pretendi lo stesso trattamento, se non vuole che qualche voce arrivi all’orecchio dell’<glossary id="sovrintendente">Arconte</glossary> della città. Il maresciallo ti squadra con comprensibile ostilità: evidentemente sta valutando se farti buttare un sacco in testa dai suoi uomini e gettarti più mort[o|a] che viv[o|a] in qualche fosso… Tenta una Prova d’Astuzia, per capire quanto sei stat[o|a] convincente: se riesce, vai al <link>385</link>, altrimenti procedi al <link>285</link>.</p>
       <image id="filler_shield" zoom="true"/>
     </chapter>
 
@@ -2090,7 +2090,7 @@
       <p>«Sì?» fai tu. «Spiegatemi tutto da principio.»</p>
       <p>L’uomo sospira. «A questo punto, posso anche farlo. È ormai chiaro che Noder non tornerà.»</p>
       <p>Sentendo quelle parole, qualcosa dentro di te pare incrinarsi, ti sembra quasi di sentirne il rumore stridente. Rimani però in silenzio, ansios[o|a] di ascoltare la verità di Molwarum Istwe.</p>
-      <p>«Noder è marchiato», riprende l’uomo. «Ha su di sé quello che gli <glossary id="antichi">Antichi</glossary> – e noi Iatromanti con loro – chiamano Evet-Nuitha, Transport 2147 del Vassallaggio; quindi, lo Jum-Gadul ha dei diritti su di lui. Noder non l’ha capito da molto, ma è da molto che Transport 2147 sta scavando nella sua anima, logorandola, fino a condurlo a questa sua ultima follia: rifugiarsi in una Kethra.»</p>
+      <p>«Noder è marchiato», riprende l’uomo. «Ha su di sé quello che gli <glossary id="primi">Antichi</glossary> – e noi Iatromanti con loro – chiamano Evet-Nuitha, Transport 2147 del Vassallaggio; quindi, lo Jum-Gadul ha dei diritti su di lui. Noder non l’ha capito da molto, ma è da molto che Transport 2147 sta scavando nella sua anima, logorandola, fino a condurlo a questa sua ultima follia: rifugiarsi in una Kethra.»</p>
       <p>«Da quanto tempo questo Marchio “scava”?» chiedi, con un tremito nella mascella.</p>
       <p>«Da alcuni anni. Da quando il ragazzo è presso di me. Più precisamente, da quando Namer Nizwa l’ha portato a Sorgand.»</p>
       <p>«Ma che cos’è questo Marchio?» chiedi.</p>
@@ -2226,8 +2226,8 @@
     <chapter name ="463">
       <title>463</title>
       <summary>Una dura verità</summary>
-      <p>I <glossary id="veltriKarmaugen">Veltri</glossary> e una delle Lame Brune si allontanano in direzione di Sorgand, prendendo in consegna Molwarum Istwe e la sua guardia, mentre la seconda Lama Bruna fa qualche passo nella tua direzione.</p>
-      <p>«Non siamo direttamente interessati alle vicende tue o di quel ragazzo, Noder», esordisce, parlando attraverso l’elmo. «L’<glossary id="arconte">Arconte</glossary> di Sorgand ci ha incaricati di scoprire che pasticci combina Molwarum Istwe, come per esempio il piccolo spettacolo che ha dato poco fa, e di catturarlo, e questo abbiamo fatto. Però ci sei stat[o|a] d’aiuto, e voglio darti una qualche spiegazione, se la desideri.»</p>
+      <p>I <glossary id="AkaitsukiNoShinja-tachi">Veltri</glossary> e una delle Lame Brune si allontanano in direzione di Sorgand, prendendo in consegna Molwarum Istwe e la sua guardia, mentre la seconda Lama Bruna fa qualche passo nella tua direzione.</p>
+      <p>«Non siamo direttamente interessati alle vicende tue o di quel ragazzo, Noder», esordisce, parlando attraverso l’elmo. «L’<glossary id="sovrintendente">Arconte</glossary> di Sorgand ci ha incaricati di scoprire che pasticci combina Molwarum Istwe, come per esempio il piccolo spettacolo che ha dato poco fa, e di catturarlo, e questo abbiamo fatto. Però ci sei stat[o|a] d’aiuto, e voglio darti una qualche spiegazione, se la desideri.»</p>
       <p>Annuisci, tes[o|a] e in silenzio.</p>
       <p>«A logorare il tuo amico è l’Evet-Nuitha, Transport 2147 del Vassallaggio, una specie di accordo con cui una persona si mette a servizio dello Jum-Gadul. Questo accordo garantisce dei vantaggi, ma ha anche conseguenze devastanti sulla mente e sul corpo. No, non è stato Noder a fare un’idiozia del genere; è stato suo padre. Sì, Namer Nizwa. Per anni Namer si è servito dei vantaggi concessi dal Marchio ma, quando questi hanno smesso di essergli utili, o gli svantaggi hanno cominciato a bussare alla porta, il laido s’è preso paura.»</p>
       <p>Non sai se credere a quanto l’uomo sta dicendo, ma non puoi fare a meno di seguire il fascio di luce che sta proiettando nella vostra storia.</p>
@@ -2452,7 +2452,7 @@
 
     <chapter name ="490">
       <title>490</title>
-      <p>Mentre il Meyr scorre lento sotto di voi e vi muovete verso Sorgand, i barcaioli manovrano con gesti calmi la chiatta, e tu ti intrattieni con loro, conversando principalmente sulla loro professione; più tardi, mentre pranzate mangiando trote, pane e noci, chiacchieri anche con i due giovani miliziani che scortano l’eminente Jesseram. Questi ti raccontano di essere di ritorno da Emraia, la città del <glossary id="patriarca">Patriarca</glossary>, dove hanno scortato il loro protetto in cerca di una cura per il male che lo affligge, chiamato «velo di Kadha», ma ti rassicurano sul fatto che, a quanto ne sanno loro, nessuna delle persone che gli sono state vicine ha mai contratto la malattia. Il viaggio, in ogni caso, si è rivelato infruttuoso: neppure i rinomati medici di Emraia, la Prima Città, sono riusciti a trovare una cura per Henar Jesseram. Passi gran parte della giornata a parlare e a giocare a dadi con i due giovani miliziani, con cui ti pare di avere molto in comune; anziché puntare soldi puntate fagioli perché, come te, hanno poco denaro da spendere, e vogliono conservarlo per le famiglie, che non vedono da molto tempo e non vedono l’ora di riabbracciare. Quando, verso il tramonto, la chiatta accosta alla riva occidentale del fiume (da alcune ore ormai il corso ha piegato con decisione verso nord), ceni con loro e con i barcaioli. Questi ormeggiano la chiatta a uno dei piccoli moli malcerti che di tanto in tanto punteggiano il corso del fiume, poi si accingono a montare la guardia a turno. Anche se non sospettate agguati di sorta, a circondarvi per diverse miglia ci sono solo le selvagge foreste, e qualche precauzione è consigliabile.</p>
+      <p>Mentre il Meyr scorre lento sotto di voi e vi muovete verso Sorgand, i barcaioli manovrano con gesti calmi la chiatta, e tu ti intrattieni con loro, conversando principalmente sulla loro professione; più tardi, mentre pranzate mangiando trote, pane e noci, chiacchieri anche con i due giovani miliziani che scortano l’eminente Jesseram. Questi ti raccontano di essere di ritorno da Emraia, la città del <glossary id="DG">Patriarca</glossary>, dove hanno scortato il loro protetto in cerca di una cura per il male che lo affligge, chiamato «velo di Kadha», ma ti rassicurano sul fatto che, a quanto ne sanno loro, nessuna delle persone che gli sono state vicine ha mai contratto la malattia. Il viaggio, in ogni caso, si è rivelato infruttuoso: neppure i rinomati medici di Emraia, la Prima Città, sono riusciti a trovare una cura per Henar Jesseram. Passi gran parte della giornata a parlare e a giocare a dadi con i due giovani miliziani, con cui ti pare di avere molto in comune; anziché puntare soldi puntate fagioli perché, come te, hanno poco denaro da spendere, e vogliono conservarlo per le famiglie, che non vedono da molto tempo e non vedono l’ora di riabbracciare. Quando, verso il tramonto, la chiatta accosta alla riva occidentale del fiume (da alcune ore ormai il corso ha piegato con decisione verso nord), ceni con loro e con i barcaioli. Questi ormeggiano la chiatta a uno dei piccoli moli malcerti che di tanto in tanto punteggiano il corso del fiume, poi si accingono a montare la guardia a turno. Anche se non sospettate agguati di sorta, a circondarvi per diverse miglia ci sono solo le selvagge foreste, e qualche precauzione è consigliabile.</p>
       <p>Ti prepari un giaciglio e, dopo un ultimo sguardo alle acque che scintillano di luce lunare, ti addormenti al dolcissimo rollio della chiatta.</p>
       <p>Vai al <link>572</link>.</p>
     </chapter>
@@ -2501,7 +2501,7 @@
       <title>497</title>
       <summary>Un incontro illuminante</summary>
       <p>Henar Jesseram ti chiede alcune cose di te con voce un po’ debole, ma chiara, e poco dopo siete immersi in un’intensa conversazione, come amici che non si vedano da lungo tempo, ma che abbiano mantenuto intatti i vincoli dell’affetto.</p>
-      <p>Il sapiente, che è stato innanzitutto un viaggiatore e geografo, ti racconta con generosità delle sue peripezie intorno al <glossary id="rayn">Rayn</glossary>, e delle meraviglie che ha avuto modo di vedere: il misterioso Mare Viola di Nyver; le Cento Colonne dello Hir-nakàn, montagne così alte e strette da sembrare pilastri scolpiti dai Giganti; l’astuta Giungla di Wagha; il mefitico Lago di Agadu-Riath. Ha frequentato la corte imperiale, carica di ori, incensi e veleni, le opulente e bellicose città del Kay-seràm, le inospitali e violente fortezze dei Kruagar, e molti altri posti ancora. E ha cercato il confine occidentale del mondo, in un vano viaggio durato anni e costellato di naufragi, ma da cui, dice, ha appreso molto sulla natura dell’uomo, e su se stesso. Ha conosciuto mercanti e guerrieri, donne di malaffare e sant’uomini, profetesse e tagliagole.</p>
+      <p>Il sapiente, che è stato innanzitutto un viaggiatore e geografo, ti racconta con generosità delle sue peripezie intorno al <glossary id="infrastruttura">Rayn</glossary>, e delle meraviglie che ha avuto modo di vedere: il misterioso Mare Viola di Nyver; le Cento Colonne dello Hir-nakàn, montagne così alte e strette da sembrare pilastri scolpiti dai Giganti; l’astuta Giungla di Wagha; il mefitico Lago di Agadu-Riath. Ha frequentato la corte imperiale, carica di ori, incensi e veleni, le opulente e bellicose città del Kay-seràm, le inospitali e violente fortezze dei Kruagar, e molti altri posti ancora. E ha cercato il confine occidentale del mondo, in un vano viaggio durato anni e costellato di naufragi, ma da cui, dice, ha appreso molto sulla natura dell’uomo, e su se stesso. Ha conosciuto mercanti e guerrieri, donne di malaffare e sant’uomini, profetesse e tagliagole.</p>
       <p>Sentendo raccontare quella vita lunga e piena, ti duole pensare che nell’arco di poco tempo tutte quelle visioni, quei ricordi e quelle parole, finiranno in polvere; ma ti consola constatare che ciò non sembra turbare troppo Henar Jesseram.</p>
       <p>Parlate molte ore, interrotti soltanto di tanto in tanto da Vodam, il servitore («vecchio amico», lo chiama Jesseram, «dagli occhi pieni di mondo»), che si prende cura delle sue necessità, e ogni tanto abbeveri tu stess[o|a] l’uomo.</p>
       <p>Dopo un po’ il geografo sposta la conversazione su di te e, guidandoti con domande sapienti eppure discrete, ti porta a considerare, con tuo stesso stupore, quante cose assai poco scontate vi siano nella tua esistenza, e il tuo mondo ti appare meno ovvio e piccolo di quanto ti era parso ascoltando i resoconti di Jesseram. La curiosità di quest’uomo è davvero viva: ascolta con interesse ogni piccolo dettaglio, perché, dice, dietro ogni angolo, oltre ogni collina c’è qualcosa che non si conosce e che vale la pena scoprire.</p>
@@ -2525,7 +2525,7 @@
       <p>«Ed è venuto qui.»</p>
       <p>«Così sospettavo, e avevo ragione; l’ho perfino intravisto, una sera, attraverso uno dei pozzi. Ma ormai è molto cambiato e non so neanche se mi ha riconosciuto. Ho cercato di ricondurlo a me, ma ormai sono rassegnato: credo che non lascerà mai questo posto…»</p>
       <p>«Perché è venuto qui?»</p>
-      <p>«Perché è in luoghi come questo che, negli Anni del Caos, si incontravano la Luce delle <glossary id="genti">Genti</glossary> e la Tenebra degli <glossary id="antichi">Antichi</glossary>; ed è nell’incontro tra Luce e Tenebra che si disvela l’Abisso; ed è all’Abisso, ormai, che Noder appartiene. Egli lo odia, ma al contempo lo cerca, come una creatura che, pur anelando alla luce, abbia vissuto troppo a lungo nella tenebra: non riuscendo più a reggere il barbiglio del sole, non può fare altro che strisciare nel buio, pur disprezzandolo.»</p>
+      <p>«Perché è in luoghi come questo che, negli Anni del Caos, si incontravano la Luce delle <glossary id="biologici">Genti</glossary> e la Tenebra degli <glossary id="primi">Antichi</glossary>; ed è nell’incontro tra Luce e Tenebra che si disvela l’Abisso; ed è all’Abisso, ormai, che Noder appartiene. Egli lo odia, ma al contempo lo cerca, come una creatura che, pur anelando alla luce, abbia vissuto troppo a lungo nella tenebra: non riuscendo più a reggere il barbiglio del sole, non può fare altro che strisciare nel buio, pur disprezzandolo.»</p>
       <p>«Si può tornare indietro? Si può rimuovere Transport 2147?» chiedi, stentando a controllare la rabbia.</p>
       <p>«A volte lo si può <italic>spostare</italic> da una persona a un’altra, ma mai <italic>cancellare</italic>; e comunque solo a certe condizioni.»</p>
       <p>«Ci sono queste condizioni?»</p>
@@ -2606,7 +2606,7 @@
       <p>«Ma perché è venuto qui?» chiedi.</p>
       <p>L’uomo alza le spalle. «In qualche modo, le Kethra come questa attraggono le creature legate all’Abisso, e Noder ormai è una di loro, anche se in lui c’è di certo una parte che si ribella con veemenza.» L’uomo leva la mano in segno di saluto. «Ora devo andare. Buona fortuna», dice, e fa per voltarsi.</p>
       <p>«Che cosa posso fare?» chiedi, con una nota di disperazione che avresti preferito non far trapelare.</p>
-      <p>La Lama Bruna si ferma. «Non lo so. Ti ci vorrebbe l’aiuto di un grandissimo <glossary id="higDayr">Iatromante</glossary>, o di un potentissimo stregone Goeta, di quelli che si trovano nella città del <glossary id="patriarca">Patriarca</glossary>, Emraia. O forse potrebbe togliere Transport 2147 proprio chi officiò il vassallaggio di Namer Nizwa.»</p>
+      <p>La Lama Bruna si ferma. «Non lo so. Ti ci vorrebbe l’aiuto di un grandissimo <glossary id="higDayr">Iatromante</glossary>, o di un potentissimo stregone Goeta, di quelli che si trovano nella città del <glossary id="DG">Patriarca</glossary>, Emraia. O forse potrebbe togliere Transport 2147 proprio chi officiò il vassallaggio di Namer Nizwa.»</p>
       <p>«Chi è stato? Voi lo sapete?» chiedi.</p>
       <p>«Sì. Transport1533 di Nohr-Druatt.» L’uomo si volta e se ne va, diretto verso Sorgand e i suoi compagni.</p>
       <p>Dovrai riflettere a lungo su quanto hai sentito, ma ora il tuo animo ti spinge verso qualcosa di più urgente: vedere Noder.</p>
@@ -2758,8 +2758,8 @@
       <p>I due camminano per un bel po’, forse un paio di miglia, finché finalmente vedi la luce fermarsi a non più di un centinaio di passi avanti a te, appena oltre una curva; rallenti e avanzi con circospezione fino a una grossa quercia, dietro cui ti nascondi. Sporgi il capo e li vedi poco lontano.</p>
       <p>Molwarum Istwe e il suo sgherro in effetti si sono fermati; una lanterna è appoggiata ai piedi della guardia del corpo, mentre lo <glossary id="higDayr">Iatromante</glossary>, chino, sta frugando in una sacca. Ma ciò che ti colpisce maggiormente è il luogo in cui si sono fermati.</p>
       <p>Sono ai margini del querceto o, meglio, all’interno di una grandissima radura, sul cui fondo troneggia una specie di massiccio torrione in rovina. Il torrione pare avere un ingresso rialzato, che si raggiunge salendo un’ampia scalinata dissestata, e da esso si dipartono i resti di antiche mura semicircolari che sembrano come abbracciare lo spazio tra i due uomini e il torrione. In questo spazio intravedi numerosi grossi buchi, si direbbero come dei pozzi scavati a livello del terreno: sono molti, forse un centinaio, piuttosto ravvicinati e larghi in media poco meno di due passi.</p>
-      <p>Ti accorgi improvvisamente di essere madid[o|a] di sudore, sulla fronte e lungo la schiena. Hai già visto un luogo del genere, da ragazzin[o|a], quando si faceva a  gara a chi avesse più fegato: è una Kethra, una sorta di cimitero-santuario dei tempi dimenticati, quando gli <glossary id="antichi">Antichi</glossary> ancora incedevano nella Luce, e le <glossary id="genti">Genti</glossary> lottavano per spezzarne il giogo. È un luogo antico e pregno di morte.</p>
-      <p>Ti riscuoti a stento, ansios[o|a] di capire che cosa sta per succedere. Molwarum Istwe ha finito di rovistare nella sacca e ora sta tracciando dei segni per terra, mentre il suo massiccio sgherro, armato fino ai denti, si guarda intorno, visibilmente nervoso. Dopo un po’, lo Iatromante pare accendere un braciere e coprirlo di essenze odorose, per poi mettersi a salmodiare in una lingua aliena, probabilmente <glossary id="kadjan">Kadjan</glossary>.</p>
+      <p>Ti accorgi improvvisamente di essere madid[o|a] di sudore, sulla fronte e lungo la schiena. Hai già visto un luogo del genere, da ragazzin[o|a], quando si faceva a  gara a chi avesse più fegato: è una Kethra, una sorta di cimitero-santuario dei tempi dimenticati, quando gli <glossary id="primi">Antichi</glossary> ancora incedevano nella Luce, e le <glossary id="biologici">Genti</glossary> lottavano per spezzarne il giogo. È un luogo antico e pregno di morte.</p>
+      <p>Ti riscuoti a stento, ansios[o|a] di capire che cosa sta per succedere. Molwarum Istwe ha finito di rovistare nella sacca e ora sta tracciando dei segni per terra, mentre il suo massiccio sgherro, armato fino ai denti, si guarda intorno, visibilmente nervoso. Dopo un po’, lo Iatromante pare accendere un braciere e coprirlo di essenze odorose, per poi mettersi a salmodiare in una lingua aliena, probabilmente <glossary id="coreScript">Kadjan</glossary>.</p>
       <image id="fullpage_rite" zoom="true"/>
       <p>Il tuo disagio si amplifica. Che cosa fai?</p>
       <p>Esci allo scoperto e interrompi le stregonerie di Molwarum Istwe? Vai al <link>446</link>.</p>
@@ -2837,8 +2837,8 @@
     <chapter name ="535">
       <title>535</title>
       <p>Eccitati dall’alcol e dall’ira, tu e Mawert vi scambiate una serie di affondi, mentre il pavimento comincia a macchiarsi di sangue; gli astanti seguono con attenzione il combattimento, ma si guardano bene dall’intervenire e rischiare di prendersi una coltellata cercando di separare due facinorosi come voi.</p>
-      <p>Ma non per questo sono rimasti del tutto inerti: infatti odi presto dei pesanti passi di stivali, all’esterno della locanda, e l’inconfondibile cigolio del metallo rivettato sul cuoio. Qualcuno ha chiamato i <glossary id="veltriKarmaugen">Veltri di Karmaugen</glossary>, mercenari che a Neltau, come in altre città, fungono da forza di polizia!</p>
-      <p>Cerchi una via di fuga, lasciando perdere il tuo avversario; tenti di sottrarti all’arresto, scappando lungo le scale che portano al primo piano, ma presto un mastino ti azzanna un polpaccio, e dietro l’animale fanno capolino le scure e minacciose sagome di tre <glossary id="veltriKarmaugen">Veltri</glossary>, esperti soldati calzati di ferro contro cui, da sol[o|a], non hai alcuna speranza.</p>
+      <p>Ma non per questo sono rimasti del tutto inerti: infatti odi presto dei pesanti passi di stivali, all’esterno della locanda, e l’inconfondibile cigolio del metallo rivettato sul cuoio. Qualcuno ha chiamato i <glossary id="AkaitsukiNoShinja-tachi">Veltri di Karmaugen</glossary>, mercenari che a Neltau, come in altre città, fungono da forza di polizia!</p>
+      <p>Cerchi una via di fuga, lasciando perdere il tuo avversario; tenti di sottrarti all’arresto, scappando lungo le scale che portano al primo piano, ma presto un mastino ti azzanna un polpaccio, e dietro l’animale fanno capolino le scure e minacciose sagome di tre <glossary id="AkaitsukiNoShinja-tachi">Veltri</glossary>, esperti soldati calzati di ferro contro cui, da sol[o|a], non hai alcuna speranza.</p>
       <p>Verrai tradott[o|a] nelle carceri cittadine, da cui probabilmente, se ti comporterai bene, uscirai entro poche settimane; comunque troppo tardi per rispondere alla chiamata del Fato: Namer Nizwa si è rivolto a qualcun altro, e la tua avventura finisce qui.</p>
     </chapter>
 
@@ -2900,14 +2900,14 @@
     <chapter name ="544">
       <title>544</title>
       <summary>Come contrastare Transport 2147?</summary>
-      <p>I <glossary id="veltriKarmaugen">Veltri</glossary> non paiono aver alcun interesse per te: con tutta evidenza, sono venuti qui per Molwarum Istwe. Disarmano brutalmente Zakan, il suo sgherro, mentre dall’angolo della stradina spuntano altre due figure, coperte di usberghi di maglia bruniti. Sono Lame Brune, probabilmente le stesse che hai intravisto questa sera nei pressi della porta meridionale. Uno dei due fa un cenno ai Veltri, che senza riguardi spingono i due prigionieri in direzione di Sorgand, e si incammina con loro, mentre il secondo fa qualche passo nella tua direzione.</p>
-      <p>«È stato l’<glossary id="arconte">Arconte</glossary> della città a incaricarci di catturare Molwarum Istwe», ti dice attraverso l’elmo, prima che tu possa dire alcunché. «Non tutti gli <glossary id="higDayr">Iatromanti</glossary>, evidentemente, contrastano l’Abisso come dovrebbero…»</p>
+      <p>I <glossary id="AkaitsukiNoShinja-tachi">Veltri</glossary> non paiono aver alcun interesse per te: con tutta evidenza, sono venuti qui per Molwarum Istwe. Disarmano brutalmente Zakan, il suo sgherro, mentre dall’angolo della stradina spuntano altre due figure, coperte di usberghi di maglia bruniti. Sono Lame Brune, probabilmente le stesse che hai intravisto questa sera nei pressi della porta meridionale. Uno dei due fa un cenno ai Veltri, che senza riguardi spingono i due prigionieri in direzione di Sorgand, e si incammina con loro, mentre il secondo fa qualche passo nella tua direzione.</p>
+      <p>«È stato l’<glossary id="sovrintendente">Arconte</glossary> della città a incaricarci di catturare Molwarum Istwe», ti dice attraverso l’elmo, prima che tu possa dire alcunché. «Non tutti gli <glossary id="higDayr">Iatromanti</glossary>, evidentemente, contrastano l’Abisso come dovrebbero…»</p>
       <p>«Sapete che cosa ha fatto a Noder Nizwa?» chiedi.</p>
       <p>«Sì. Tempo fa, un amico di Molwarum Istwe e di Namer Nizwa ci raccontò tutta la storia. Comunque non credere: non è per questo che l’Arconte vuole la sua testa. In fin dei conti, il ragazzo tuo amico è di Neltau. Noi abbiamo solo raccolto qualche elemento… sconveniente sul conto dello Iatromante.»</p>
       <p>Non nutri molto interesse verso le beghe che possano esserci tra lo Iatromante e l’Arconte di Sorgand, quindi torni sul tuo argomento: «Ma voi potete aiutare Noder?»</p>
       <p>«Assolutamente no», ti risponde la Lama Bruna, facendo per voltarsi.</p>
       <p>«Sapete chi può aiutarmi?» lo incalzi, esasperat[o|a].</p>
-      <p>L’uomo si ferma e scrolla le spalle. «Forse un grande Iatromante, o un potente stregone Goeta, di quelli che vivono nella città del <glossary id="patriarca">Patriarca</glossary>, Emraia», comincia a risponderti, per poi tacere per qualche istante. «O forse chi ha officiato il vassallaggio di Namer Nizwa, apponendogli di fatto Transport 2147.»</p>
+      <p>L’uomo si ferma e scrolla le spalle. «Forse un grande Iatromante, o un potente stregone Goeta, di quelli che vivono nella città del <glossary id="DG">Patriarca</glossary>, Emraia», comincia a risponderti, per poi tacere per qualche istante. «O forse chi ha officiato il vassallaggio di Namer Nizwa, apponendogli di fatto Transport 2147.»</p>
       <p>«E chi sarebbe stato? Voi lo sapete?»</p>
       <p>«Sì. Fu Transport1533 di Nohr-Druatt.»</p>
       <p>L’uomo si volta e se ne va, accodandosi al confratello e ai Veltri che stanno scortando Molwarum Istwe e il suo sgherro a Sorgand.</p>
@@ -3070,7 +3070,7 @@
     <chapter name ="564">
       <title>564</title>
       <p>La collera non ti fa dimenticare che lo <glossary id="higDayr">Iatromante</glossary> è soltanto uno squallido gregario, un uomo che ha venduto i suoi servigi al vero responsabile della disgrazia di Noder: Namer Nizwa. È a lui che farai assaggiare la tua rabbia, mentre, per ora, la cosa che più conta per te è cercare Noder, provvedere in qualche modo a lui.</p>
-      <p>Senza degnare di un altro sguardo Molwarum Istwe, ti dirigi verso il torrione, quando all’improvviso un forte tramestio ti costringe a voltarti e ad assistere a una scena concitata: una mezza dozzina di <glossary id="veltriKarmaugen">Veltri di Karmaugen</glossary> sta circondando lo Iatromante e la sua guardia del corpo, nel furente abbaiare di due grossi mastini.</p>
+      <p>Senza degnare di un altro sguardo Molwarum Istwe, ti dirigi verso il torrione, quando all’improvviso un forte tramestio ti costringe a voltarti e ad assistere a una scena concitata: una mezza dozzina di <glossary id="AkaitsukiNoShinja-tachi">Veltri di Karmaugen</glossary> sta circondando lo Iatromante e la sua guardia del corpo, nel furente abbaiare di due grossi mastini.</p>
       <p>Recuperi <abilitychange ability="mentalenergy" quantity="2" operation="add">2 punti di EM</abilitychange>, poi vai al <link>544</link>.</p>
     </chapter>
 
@@ -3145,7 +3145,7 @@
     <chapter name ="573">
       <title>573</title>
       <summary>La resa!</summary>
-      <p>Il giovane, sanguinante per le ferite, getta l’ascia a terra e alza le mani. Ha i capelli nerissimi e la pelle molto chiara, e capisci presto che non parla la tua lingua. Sospetti che possa essere un discendente degli antichi <glossary id="sajagin">Sajagin</glossary>: non tutti sono stati scacciati oltre i Monti Raghror o ridotti in servitù, ed esistono ancora alcune comunità nascoste nelle profondità più recondite della foresta, là dove osano muoversi solo i figli della Tenebra. Il pensiero ti fa rabbrividire.</p>
+      <p>Il giovane, sanguinante per le ferite, getta l’ascia a terra e alza le mani. Ha i capelli nerissimi e la pelle molto chiara, e capisci presto che non parla la tua lingua. Sospetti che possa essere un discendente degli antichi <glossary id="tossici">Sajagin</glossary>: non tutti sono stati scacciati oltre i Monti Raghror o ridotti in servitù, ed esistono ancora alcune comunità nascoste nelle profondità più recondite della foresta, là dove osano muoversi solo i figli della Tenebra. Il pensiero ti fa rabbrividire.</p>
       <p>Lo abbatti (vai al <link>275</link>) o lo disarmi e lo lasci andare (vai al <link>531</link>)?</p>
       <image id="filler_shield" zoom="true"/>
     </chapter>
@@ -3290,7 +3290,7 @@
     <chapter name ="594">
       <title>594</title>
       <summary>La borsa dell'Orco</summary>
-      <p>La borsa di cuoio contiene una quantità di cianfrusaglie disparate: penne, sassolini, piccole ossa, ma anche monetine <glossary id="esardan">esardan</glossary> e qualche <objectref id="pezziArgento" quantity="5">pezzo d’argento</objectref>, per un valore totale di 5 pezzi. Prendi le monete e segna anche il resto, se lo desideri. I tre intanto prendono gli oggetti che hai scartato e ti salutano con un cenno della mano; a questo punto non puoi fare altro che riprendere il tuo viaggio al <link>371</link>.</p>
+      <p>La borsa di cuoio contiene una quantità di cianfrusaglie disparate: penne, sassolini, piccole ossa, ma anche monetine <glossary id="discesi">esardan</glossary> e qualche <objectref id="pezziArgento" quantity="5">pezzo d’argento</objectref>, per un valore totale di 5 pezzi. Prendi le monete e segna anche il resto, se lo desideri. I tre intanto prendono gli oggetti che hai scartato e ti salutano con un cenno della mano; a questo punto non puoi fare altro che riprendere il tuo viaggio al <link>371</link>.</p>
       <image id="filler_scroll" zoom="true"/>
     </chapter>
 
@@ -3316,7 +3316,7 @@
       <p>«Io…» Ora che sei arrivat[o|a] qui, e con tanta fatica, non sai che altro fare, o dire.</p>
       <p>«Grazie», ti fa lui, con voce roca e malcerta, prima che tu possa trovare le parole.</p>
       <p>Lo fissi un istante, in silenzio.</p>
-      <p>«Io tornerò», dici, con voce più ferma. «Tornerò, e tu, allora, potrai venire via con me. Lo giuro sul <glossary id="rayn">Rayn</glossary>.»</p>
+      <p>«Io tornerò», dici, con voce più ferma. «Tornerò, e tu, allora, potrai venire via con me. Lo giuro sul <glossary id="infrastruttura">Rayn</glossary>.»</p>
       <p>Ora ti sembra che Noder annuisca in modo appena percettibile. «Aspetterò», dice. Poi alza la testa di scatto, guardando verso il cielo che fa capolino da un pozzo sovrastante. Un tremito gli attraversa il corpo.</p>
       <p>«Che c’è?» chiedi, preoccupat[o|a].</p>
       <p>«La luna…» ti risponde, con la voce rotta dal terrore, fissando nella direzione in cui ti pare si trovi la torre. «Il Grigio viene quando la luna va.»</p>
@@ -3325,7 +3325,7 @@
 
     <chapter name ="597">
       <title>597</title>
-      <p>Ti azzuffi con il mendicante, che è meno gracile di quanto sembrasse, ma dopo un po’ lo riduci a mal partito, colpendolo più volte in faccia. Tutt[o|a] pres[o|a] dalla tua furia vendicativa, non ti accorgi che i vostri strepiti hanno attirato l’attenzione di una pattuglia di <glossary id="veltriKarmaugen">Veltri di Karmaugen</glossary>, una gilda di mercenari che, qui come a Neltau, si occupa delle mansioni di polizia. «Guardate un po’, due pidocchi che si sbranano tra loro!» grida uno, tra le risate malevole degli altri due. «Sì, devono essere pidocchi mannari!» rincara un altro.</p>
+      <p>Ti azzuffi con il mendicante, che è meno gracile di quanto sembrasse, ma dopo un po’ lo riduci a mal partito, colpendolo più volte in faccia. Tutt[o|a] pres[o|a] dalla tua furia vendicativa, non ti accorgi che i vostri strepiti hanno attirato l’attenzione di una pattuglia di <glossary id="AkaitsukiNoShinja-tachi">Veltri di Karmaugen</glossary>, una gilda di mercenari che, qui come a Neltau, si occupa delle mansioni di polizia. «Guardate un po’, due pidocchi che si sbranano tra loro!» grida uno, tra le risate malevole degli altri due. «Sì, devono essere pidocchi mannari!» rincara un altro.</p>
       <p>Tu e il borseggiatore venite separati con una buona dose di calci e bastonate, di cui viene prolungata la somministrazione anche quando ormai siete ben lontani l’uno dall’altr[o|a]; a nulla valgono le tue proteste di innocenza, e pensare di opporti con la forza a tre soldati esperti e bene armati è pura follia. Le contusioni ti causano la perdita di <abilitychange ability="physicalenergy" quantity="2" operation="subtract">2 punti di EF</abilitychange>. Quando i tre hanno finito di pestarvi a sangue, se sopravvivi non hai più nessuna voglia di litigare col vecchio, e vi trascinate ognuno in un vicolo diverso.</p>
       <p>L’alba ti coglie che, dolorante, non sei riuscit[o|a] praticamente a chiudere occhio. Ti alzi e, dopo aver saputo dai miliziani di turno alla porta in che zona abita Molwarum Istwe, ti dirigi verso la parte nord occidentale della città, convint[o|a] di dover agire in fretta.</p>
       <p>Vai al <link>571</link>.</p>
@@ -3553,56 +3553,63 @@
       <note></note>
       <trigger condition="turn" threshold="3" thresholdType="over">Hai superato il secondo turno.</trigger>
     </enemy>
-</enemies>
+  </enemies>
   <specialties>
-    <specialty id="Colpo debilitante" title="Colpo Debilitante">
+    <specialty id="Colpo_Debilitante" title="Colpo Debilitante (EMP Strike)">
       <basedOn>Valore</basedOn>
-      <text>Grazie al tuo addestramento, sei in grado di cogliere i punti deboli strutturali di armature o giunture meccaniche e di approfittarne per sferrare attacchi devastanti. Ogni volta che colpisci un avversario, puoi spendere 2 punti di EM e sottrargli, oltre al Danno normale, 1 punto di Valore. <italic>Sei tu a decidere quando usare questa specialità in combattimento. Quando lo fai, ricordati di aggiornare tramite gli appositi pulsanti i punteggi nella sezione di combattimento.</italic></text>
+      <text>Grazie al tuo addestramento tattico, sei in grado di cogliere i punti deboli strutturali di esoscheletri o giunture cibernetiche e di approfittarne per sferrare attacchi localizzati devastanti. Ogni volta che colpisci un avversario, puoi spendere 2 punti di EM per sovraccaricare i suoi sistemi periferici: oltre al Danno normale, gli sottrai 1 punto di Valore. \n\n<italic>Sei tu a decidere quando usare questa specialità in combattimento. Quando lo fai, ricordati di aggiornare tramite gli appositi pulsanti i punteggi nella sezione del Terminale Tattico.</italic></text>
     </specialty>
-    <specialty id="Possanza" title="Possanza">
+
+    <specialty id="Possanza_Cibernetica" title="Possanza Cibernetica">
       <basedOn>Valore</basedOn>
-      <text>Sei fisicamente imponente, o forse possiedi rudimentali potenziamenti muscolari: ogni volta che colpisci il tuo nemico, aggiungi 1 punto al Danno.  <italic>Mantieni di conseguenza aggiornato il punteggio di Danno nella scheda.</italic></text>
+      <text>Sei fisicamente imponente o possiedi rudimentali potenziamenti muscolari e servomotori negli arti superiori. La forza bruta dei tuoi colpi stritola ossa e lamiere in egual misura: ogni volta che colpisci il tuo nemico a mani nude o con armi bianche, aggiungi 1 punto al Danno base.\n\n<italic>Mantieni costantemente aggiornato il punteggio di Danno nella tua Scheda Operatore di conseguenza.</italic></text>
     </specialty>
-    <specialty id="Medicina" title="Biomedicina">
+
+    <specialty id="Biomedicina" title="Biomedicina &amp; Sintesi">
       <basedOn>Sapienza</basedOn>
-      <text>Sei un profondo conoscitore delle tecniche di primo soccorso e dell'uso dei medikit pre-collasso; ogni volta che subisci un danno, finito un combattimento o a seguito di un incidente (ma non quando perdi punti di EF per via della fame o delle radiazioni!), puoi spendere 1 punto di EM e mettere alla Prova la tua Sapienza; in caso di successo, recuperi subito fino a 3 punti di EF. Come vedrai, questa Specialità ti verrà utile anche in altre situazioni, per esempio per isolare impianti infetti. <italic>Sei tu a decidere quando usare questa specialità. Effettua le Prove ed aggiorna le Energie di conseguenza.</italic></text>
+      <text>Sei un profondo conoscitore delle tecniche di primo soccorso avanzato, della biologia sintetica e dell'uso dei medikit militari pre-collasso. Ogni volta che subisci un danno grave (finito un combattimento o a seguito di un incidente ambientale, ma non quando perdi punti di EF per colpa della fame o delle radiazioni), puoi spendere 1 punto di EM per processare l'evento e mettere alla Prova la tua Sapienza. In caso di successo, i tuoi innesti somministrano coagulanti d'emergenza e recuperi subito fino a 3 punti di EF. \n\nQuesta Specialità ti sarà vitale anche per estrarre tossine informatiche o isolare impianti infetti. <italic>Sei tu a decidere quando usarla. Effettua i test e aggiorna i registri d'Energia.</italic></text>
     </specialty>
-    <specialty id="Haiku Ferroviario" title="Protocollo di Pacificazione">
+
+    <specialty id="Protocollo_Pacificazione" title="Protocollo di Pacificazione">
       <basedOn>Sapienza</basedOn>
-      <text>Quando lanci questo override a corto raggio, la vittima deporrà istantaneamente ogni intento aggressivo nei tuoi confronti (i suoi sensori di minaccia verranno disattivati temporaneamente), anche se ovviamente reagirà a eventuali attacchi fisici. Questo significa che potrai comportarti come se avessi vinto il combattimento e proseguire nella tua avventura, salvo che non potrai depredare la vittima. Eseguire questo hack costa 3 punti di Energia Mentale, e ne sono immuni tutte le creature organiche prive di innesti o nemici con EM pari o superiore a 10. Talvolta potrai usarlo anche al di fuori dei combattimenti.</text>
+      <text>Quando lanci questo override neurale a corto raggio tramite il tuo terminale personale, la vittima deporrà istantaneamente ogni intento aggressivo nei tuoi confronti (i suoi trigger di minaccia verranno riscritti temporaneamente). Reagirà solo a eventuali e palesi attacchi fisici. Puoi proseguire nella tua esplorazione come se avessi trionfato in combattimento, sebbene tu non possa depredare la vittima pacem-lockata. \n\nEseguire questo hack aggressivo costa 3 punti di Energia Mentale (EM). Ne sono immuni tutte le creature organiche prive di cyber-innesti e le IA con EM pari o superiore a 10. Talvolta il protocollo si renderà utile anche fuori dagli scontri a fuoco.</text>
     </specialty>
-    <specialty id="Divinazione" title="Analisi Predittiva">
+
+    <specialty id="Analisi_Predittiva" title="Analisi Predittiva dei Flussi">
       <basedOn>Sapienza</basedOn>
-      <text>Grazie agli insegnamenti di un vecchio Estrattore, sei esperto nell'analizzare flussi di dati e calcolare schemi probabili; questo, in certi casi, ti permette di prevedere l'attivazione di trappole o di intuire l'esito di un bivio strutturale. Durante l’avventura ti verrà dunque proposto di tentare una Prova di Sapienza; se riuscirà, ti verrà concesso un calcolo sul tuo futuro immediato, ma l'elaborazione ti costerà alcuni punti di EM.</text>
+      <text>Insegnamenti tramandati dai vecchi Estrattori di Rete ti hanno reso esperto nell'analizzare flussi di dati e calcolare schemi probabilistici. Questo software cognitivo ti permette, in certi bivi strutturali, di prevedere l'attivazione di trappole, agguati di cyber-gang o cedimenti dei tunnel. Durante l’avventura il testo ti proporrà talvolta di tentare un test di Sapienza: se superato, il sistema genererà un calcolo sul tuo futuro immediato, al costo fisiologico di alcuni punti di EM per lo sforzo elaborativo.</text>
     </specialty>
-    <specialty id="Distrarre" title="Manovra Evasiva">
+
+    <specialty id="Manovra_Evasiva" title="Stealth / Manovra Evasiva">
       <basedOn>Astuzia</basedOn>
-      <text>Sei molto abile nello sfruttare le ombre dei tunnel e le coperture di emergenza; durante un combattimento, quando è il turno dell’avversario, puoi spendere 1 punto di EM e mettere alla Prova la tua Astuzia; se hai successo, l’altro per colpirti dovrà riuscire in una Prova con 3D anziché 2! <italic>Sei tu a decidere quando usare questa specialità in combattimento. Quando lo fai, ricordati di aggiornare il punteggio di EM, e utilizzare il corretto numero di dadi per il tuo avversario.</italic></text>
+      <text>Sei un fantasma tra i fumi industriali e le ombre dei cavi ad alta tensione. Durante uno scontro, quando è il turno di attacco dell’avversario, puoi bruciare 1 punto di EM e mettere alla Prova la tua Astuzia per confondere i suoi sensori ottici; se hai successo, il nemico, per colpirti, dovrà superare una Prova lanciando 3 dadi (3D) anziché i canonici 2! \n\n<italic>Sei tu a decidere quando usare questa routine evasiva nel terminale tattico. Ricordati di sottrarre la EM e di aggiungere il terzo dado al lancio nemico.</italic></text>
     </specialty>
-    <specialty id="Mercanteggiare" title="Scambio al Mercato Nero">
+
+    <specialty id="Scambio_Mercato_Nero" title="Scambio al Mercato Nero">
       <basedOn>Astuzia</basedOn>
-      <text>Hai talento nello stimare il valore della ferraglia e nello spuntare un prezzo conveniente ai distributori di contrabbando. Ogni volta che compri un oggetto, riduci di un terzo il suo prezzo in Gettoni Metro, arrotondando per eccesso (se per esempio un oggetto normalmente costa 10, scenderà a 7). <italic>Ricordare di sottrarre il numero corretto di Gettoni Metro durante gli acquisti.</italic></text>
+      <text>Hai un talento innato nello stimare il valore della ferraglia tecnologica e nello spuntare prezzi sconto dai ricettatori e dai distributori clandestini dei bassifondi. Ogni volta che compri un oggetto, un potenziamento o un'arma, riduci di un terzo il suo prezzo in Gettoni (G), arrotondando sempre per eccesso (es: se un chip costa normalmente 10 G, il tuo scrocco lo farà scendere a 7 G). \n\n<italic>Il terminale non fa sconti automatici: ricordati tu stesso di calcolare e sottrarre il numero corretto di Gettoni durante ogni transazione commerciale.</italic></text>
     </specialty>
-</specialties>
+  </specialties>
 
   <dictionary>
-    <entry id="antichi" name="Primi Ingegneri">Gli antichi architetti (oggi considerati quasi mitologici) che progettarono e costruirono la Grande Rete nei tempi pre-Collasso. Vivevano sia in superficie che in enormi laboratori ipogei; quando le IA e i sistemi automatizzati presero il controllo, i Primi Ingegneri tentarono di arginare la catastrofe insegnando agli umani superstiti i rudimenti dell'hacking e della sopravvivenza tecnologica. Durante gli Anni del Silenzio, scomparvero o vennero sterminati dalle loro stesse macchine.</entry>
-    <entry id="arconte" name="Sovrintendente">Alto funzionario, amministratore di sistema o responsabile della logistica dei Terminali Liberi.</entry>
-    <entry id="cittaLibere" name="Terminali Liberi">Molti snodi sotterranei dei Discesi sono del tutto autonomi e si governano attraverso assemblee di operatori e sovrintendenti elettivi; questi hub sono detti appunto «Terminali Liberi» per distinguerli dalle roccaforti controllate dalle corporazioni o dalle IA, come il Central-Core.</entry>
-    <entry id="esardan" name="I Discesi">I discendenti dei primi esseri umani che, durante il Collasso, fuggirono dalla superficie tossica per trasferirsi nel sottosuolo, la «Nuova Rete».</entry>
-    <entry id="genti" name="Biologici">Termine usato dai sistemi automatizzati, dai cyborg e dalle IA per indicare gli esseri umani nel loro insieme, soprattutto in relazione agli Anni del Silenzio e in contrapposizione al termine «Primi Ingegneri».</entry>
-    <entry id="higDayr" name="Tecno-Sciamani">Casta di hacker, bio-ingegneri e medici dediti alla cura delle cyber-patologie, all'estrazione dati e alla purificazione dei server infetti. Praticano le loro arti in favore della popolazione, in genere in cambio di libere offerte in Gettoni; alcuni però lavorano solo per i signori del mercato nero per grandi compensi. Molti sono girovaghi, alcuni vivono stabilmente nei Terminali. Dichiarano che il loro sapere derivi dai Primi Ingegneri, e che sia stato trasmesso per contrastare le Intelligenze Corrotte dell'Abisso.</entry>
-    <entry id="kadjan" name="Core-Script">Detto anche Codice Radice o Lingua Macchina, si dice essere il primo linguaggio di programmazione usato dai Primi Ingegneri per costruire la Rete. È la lingua di base in cui sono scritti i vecchi mainframe ed è usata dai Tecno-Sciamani per interfacciarsi con i sistemi più remoti e antichi senza far scattare gli allarmi.</entry>
-    <entry id="patriarca" name="Direttore Generale">Il Primo Direttore guidò i Discesi nel sottosuolo, e li governò nei primi decenni della loro sopravvivenza nell'oscurità. Alla sua morte, la carica venne istituzionalizzata e rappresenta ancora oggi la massima autorità morale dei Discesi. Oggi, il Direttore Generale esercita un potere effettivo solo sul colossale terminale di Central-Core, dove risiede protetto da firewall impenetrabili.</entry>
-    <entry id="rayn" name="L'Infrastruttura">L'insieme del mondo conosciuto, composto dai Settori Attivi (La Rete/La Luce), i Settori Morti (I Tunnel/La Tenebra) e il Deep Core (Il Nucleo Corrotto/L'Abisso).</entry> 
-    <entry id="sajagin" name="I Tossici">Un popolo feroce e barbaro, pesantemente mutato dalle radiazioni, che un tempo abitava i tunnel superficiali; durante le Guerre di Bonifica, i Discesi li respinsero progressivamente verso l'alto, fino a cacciarli oltre i portelloni stagni del Livello Zero, che ora costituiscono una frontiera naturale. Una parte dei Tossici è rimasta però nei tunnel inferiori, originando gli «Scarti», una casta di reietti e spazzini tollerati a malapena dai Discesi.</entry>
-    <entry id="veltriKarmaugen" name="Segugi della Linea Rossa">Gilda di spietati mercenari e cacciatori di taglie con sede nei tunnel abbandonati e radioattivi della vecchia Linea Rossa.</entry>
+    <entry id="primi" name="Primi Ingegneri">Gli antichi architetti (oggi considerati quasi mitologici) che progettarono e costruirono la Grande Rete nei tempi pre-Collasso. Vivevano sia in superficie che in enormi laboratori ipogei; quando le IA e i sistemi automatizzati presero il controllo, i Primi Ingegneri tentarono di arginare la catastrofe insegnando agli umani superstiti i rudimenti dell'hacking e della sopravvivenza tecnologica. Durante gli Anni del Silenzio, scomparvero o vennero sterminati dalle loro stesse macchine.</entry>
+    <entry id="sovrintendente" name="Sovrintendente">Alto funzionario, amministratore di sistema o responsabile della logistica dei Terminali Liberi.</entry>
+    <entry id="terminaliLiberi" name="Terminali Liberi">Molti snodi sotterranei dei Discesi sono del tutto autonomi e si governano attraverso assemblee di operatori e sovrintendenti elettivi; questi hub sono detti appunto «Terminali Liberi» per distinguerli dalle roccaforti controllate dalle corporazioni o dalle IA, come il Central-Core.</entry>
+    <entry id="discesi" name="I Discesi">I discendenti dei primi esseri umani che, durante il Collasso, fuggirono dalla superficie tossica per trasferirsi nel sottosuolo, la «Nuova Rete».</entry>
+    <entry id="biologici" name="Biologici">Termine usato dai sistemi automatizzati, dai cyborg e dalle IA per indicare gli esseri umani nel loro insieme, soprattutto in relazione agli Anni del Silenzio e in contrapposizione al termine «Primi Ingegneri».</entry>
+    <entry id="tecnoSciamani" name="Tecno-Sciamani">Casta di hacker, bio-ingegneri e medici dediti alla cura delle cyber-patologie, all'estrazione dati e alla purificazione dei server infetti. Praticano le loro arti in favore della popolazione, in genere in cambio di libere offerte in Gettoni; alcuni però lavorano solo per i signori del mercato nero per grandi compensi. Molti sono girovaghi, alcuni vivono stabilmente nei Terminali. Dichiarano che il loro sapere derivi dai Primi Ingegneri, e che sia stato trasmesso per contrastare le Intelligenze Corrotte dell'Abisso.</entry>
+    <entry id="coreScript" name="Core-Script">Detto anche Codice Radice o Lingua Macchina, si dice essere il primo linguaggio di programmazione usato dai Primi Ingegneri per costruire la Rete. È la lingua di base in cui sono scritti i vecchi mainframe ed è usata dai Tecno-Sciamani per interfacciarsi con i sistemi più remoti e antichi senza far scattare gli allarmi.</entry>
+    <entry id="DG" name="Direttore Generale">Il Primo Direttore guidò i Discesi nel sottosuolo, e li governò nei primi decenni della loro sopravvivenza nell'oscurità. Alla sua morte, la carica venne istituzionalizzata e rappresenta ancora oggi la massima autorità morale dei Discesi. Oggi, il Direttore Generale esercita un potere effettivo solo sul colossale terminale di Central-Core, dove risiede protetto da firewall impenetrabili.</entry>
+    <entry id="infrastruttura" name="L'Infrastruttura">L'insieme del mondo conosciuto, composto dai Settori Attivi (La Rete/La Luce), i Settori Morti (I Tunnel/La Tenebra) e il Deep Core (Il Nucleo Corrotto/L'Abisso).</entry>
+    <entry id="tossici" name="I Tossici">Un popolo feroce e barbaro, pesantemente mutato dalle radiazioni, che un tempo abitava i tunnel superficiali; durante le Guerre di Bonifica, i Discesi li respinsero progressivamente verso l'alto, fino a cacciarli oltre i portelloni stagni del Livello Zero, che ora costituiscono una frontiera naturale. Una parte dei Tossici è rimasta però nei tunnel inferiori, originando gli «Scarti», una casta di reietti e spazzini tollerati a malapena dai Discesi.</entry>
+    <entry id="AkaitsukiNoShinja-tachi" name="Segugi della Linea Rossa">Gilda di spietati mercenari e cacciatori di taglie con sede nei tunnel abbandonati e radioattivi della vecchia Linea Rossa.</entry>
     <entry id="ef" name="EF">Energia Fisica.</entry>
     <entry id="em" name="EM">Energia Mentale.</entry>
     <entry id="pa" name="GM">Gettoni Metro (la valuta principale del sottosuolo).</entry>
-</dictionary>
+  </dictionary>
   <templates>
-    <sheet id="Combattente" language="it" faststart="yes" name="Kaori &quot;Crash&quot; Sato" gender="female" ticks="0">
+
+    <sheet id="Vanguardia" language="it" faststart="yes" name="Kaori &quot;Crash&quot; Sato" gender="female" ticks="0">
       <abilities>
         <ability type="valor">
           <basevalue mode="initial" min="0" max="99" value="9"/>
@@ -3662,20 +3669,20 @@
         </ability>
       </abilities>
       <talents>
-        <talent id="Possanza" />
+        <talent id="Possanza_Cibernetica" />
       </talents>
       <objectlist id="weapon">
-        <object id="kidneNabar" type="weapon" originaltype="weapon" name="Manganello Elettrico Tetsudo" quantity="1">Danno 3. Arma d'ordinanza di valenza simbolica: rappresenta il fatto che sei un operatore autorizzato della tua stazione. Non perderlo!</object>
+        <object id="stun_baton" type="weapon" originaltype="weapon" name="Manganello Elettrico Tetsudo" quantity="1">Danno 3. Arma d'ordinanza di valenza simbolica: rappresenta il fatto che sei un operatore autorizzato della tua stazione. Non perderlo!</object>
       </objectlist>
       <objectlist id="armor">
-        <object id="gambesone" type="armor" originaltype="armor" name="Giacca in Kevlar" quantity="1">Protezione 1.</object>
+        <object id="kevlar_vest" type="armor" originaltype="armor" name="Giacca in Kevlar Antiproiettile" quantity="1">Protezione 1. Tessuto balistico logoro ma efficace.</object>
       </objectlist>
       <objectlist id="item">
-        <object id="cappotto" type="item" originaltype="item" name="Cappotto cerato" quantity="1">Tiene al caldo e isola dall'umidità dei tunnel.</object>
+        <object id="trench_cerato" type="item" originaltype="item" name="Trench Cerato Isolante" quantity="1">Tiene al caldo e isola dalle fuoriuscite chimiche dei tunnel.</object>
       </objectlist>
     </sheet>
-    
-    <sheet id="Sapiente" language="it" faststart="yes" name="Kenjiro &quot;Data-Doc&quot;" gender="male" ticks="0">
+
+    <sheet id="Data Doc" language="it" faststart="yes" name="Kenjiro &quot;Data-Doc&quot;" gender="male" ticks="0">
       <abilities>
         <ability type="valor">
           <basevalue mode="initial" min="0" max="99" value="6"/>
@@ -3735,21 +3742,21 @@
         </ability>
       </abilities>
       <talents>
-        <talent id="Haiku Ferroviario" />
-        <talent id="Medicina" />
+        <talent id="Protocollo_Pacificazione" />
+        <talent id="Biomedicina" />
       </talents>
       <objectlist id="weapon">
-        <object id="kidneNabar" type="weapon" originaltype="weapon" name="Manganello Elettrico Tetsudo" quantity="1">Danno 3. Arma d'ordinanza di valenza simbolica: rappresenta il fatto che sei un operatore autorizzato della tua stazione. Non perderlo!</object>
+        <object id="stun_baton" type="weapon" originaltype="weapon" name="Manganello Elettrico Tetsudo" quantity="1">Danno 3. Arma d'ordinanza di valenza simbolica: rappresenta il fatto che sei un operatore autorizzato della tua stazione. Non perderlo!</object>
       </objectlist>
       <objectlist id="armor">
-        <object id="gambesone" type="armor" originaltype="armor" name="Giacca in Kevlar" quantity="1">Protezione 1.</object>
+        <object id="kevlar_vest" type="armor" originaltype="armor" name="Giacca in Kevlar Antiproiettile" quantity="1">Protezione 1. Tessuto balistico logoro ma efficace.</object>
       </objectlist>
       <objectlist id="item">
-        <object id="cappotto" type="item" originaltype="item" name="Cappotto cerato" quantity="1">Tiene al caldo e isola dall'umidità dei tunnel.</object>
+        <object id="trench_cerato" type="item" originaltype="item" name="Trench Cerato Isolante" quantity="1">Tiene al caldo e isola dalle fuoriuscite chimiche dei tunnel.</object>
       </objectlist>
     </sheet>
-    
-    <sheet id="Avventuriero" language="it" faststart="yes" name="Ryo &quot;Scintilla&quot;" gender="male" ticks="0">
+
+    <sheet id="Mercenario Rete" language="it" faststart="yes" name="Ryo &quot;Scintilla&quot;" gender="male" ticks="0">
       <abilities>
         <ability type="valor">
           <basevalue mode="initial" min="0" max="99" value="7"/>
@@ -3809,20 +3816,20 @@
         </ability>
       </abilities>
       <talents>
-        <talent id="Mercanteggiare" />
+        <talent id="Scambio_Mercato_Nero" />
       </talents>
       <objectlist id="weapon">
-        <object id="kidneNabar" type="weapon" originaltype="weapon" name="Manganello Elettrico Tetsudo" quantity="1">Danno 3. Arma d'ordinanza di valenza simbolica: rappresenta il fatto che sei un operatore autorizzato della tua stazione. Non perderlo!</object>
+        <object id="stun_baton" type="weapon" originaltype="weapon" name="Manganello Elettrico Tetsudo" quantity="1">Danno 3. Arma d'ordinanza di valenza simbolica: rappresenta il fatto che sei un operatore autorizzato della tua stazione. Non perderlo!</object>
       </objectlist>
       <objectlist id="armor">
-        <object id="gambesone" type="armor" originaltype="armor" name="Giacca in Kevlar" quantity="1">Protezione 1.</object>
+        <object id="kevlar_vest" type="armor" originaltype="armor" name="Giacca in Kevlar Antiproiettile" quantity="1">Protezione 1. Tessuto balistico logoro ma efficace.</object>
       </objectlist>
       <objectlist id="item">
-        <object id="cappotto" type="item" originaltype="item" name="Cappotto cerato" quantity="1">Tiene al caldo e isola dall'umidità dei tunnel.</object>
+        <object id="trench_cerato" type="item" originaltype="item" name="Trench Cerato Isolante" quantity="1">Tiene al caldo e isola dalle fuoriuscite chimiche dei tunnel.</object>
       </objectlist>
     </sheet>
-    
-    <sheet id="Viaggiatore" language="it" faststart="yes" name="Kaito il Randagio" gender="male" ticks="0">
+
+    <sheet id="Esploratore Tunnel" language="it" faststart="yes" name="Kaito il Randagio" gender="male" ticks="0">
       <abilities>
         <ability type="valor">
           <basevalue mode="initial" min="0" max="99" value="7"/>
@@ -3884,16 +3891,16 @@
       <talents>
       </talents>
       <objectlist id="weapon">
-        <object id="kidneNabar" type="weapon" originaltype="weapon" name="Manganello Elettrico Tetsudo" quantity="1">Danno 3. Arma d'ordinanza di valenza simbolica: rappresenta il fatto che sei un operatore autorizzato della tua stazione. Non perderlo!</object>
+        <object id="stun_baton" type="weapon" originaltype="weapon" name="Manganello Elettrico Tetsudo" quantity="1">Danno 3. Arma d'ordinanza di valenza simbolica: rappresenta il fatto che sei un operatore autorizzato della tua stazione. Non perderlo!</object>
       </objectlist>
       <objectlist id="armor">
-        <object id="gambesone" type="armor" originaltype="armor" name="Giacca in Kevlar" quantity="1">Protezione 1.</object>
+        <object id="kevlar_vest" type="armor" originaltype="armor" name="Giacca in Kevlar Antiproiettile" quantity="1">Protezione 1. Tessuto balistico logoro ma efficace.</object>
       </objectlist>
       <objectlist id="item">
-        <object id="cappotto" type="item" originaltype="item" name="Cappotto cerato" quantity="1">Tiene al caldo e isola dall'umidità dei tunnel.</object>
+        <object id="trench_cerato" type="item" originaltype="item" name="Trench Cerato Isolante" quantity="1">Tiene al caldo e isola dalle fuoriuscite chimiche dei tunnel.</object>
       </objectlist>
     </sheet>
-    
+
     <sheet id="Scheda vuota" language="it" faststart="no" name="" gender="male" ticks="0">
       <abilities>
         <ability type="valor">
@@ -3956,5 +3963,5 @@
       <talents>
       </talents>
     </sheet>
-</templates>
+  </templates>
 </book>

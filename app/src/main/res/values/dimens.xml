@@ -11,7 +11,7 @@
     <dimen name="actMain_profile_marginRight">3dp</dimen>
     <dimen name="actMain_profile_textSize">14sp</dimen>
     <dimen name="actMain_title_marginBottom">10dp</dimen>
-    <dimen name="actMain_title_marginTop">10dp</dimen>
+    <dimen name="actMain_title_marginTop">24dp</dimen>
     <dimen name="actMain_title_maxWidht">180dp</dimen>
     <dimen name="actMain_version_textSize">10sp</dimen>
     <dimen name="actTutorial_dotLayout_paddingBottom">0dp</dimen>

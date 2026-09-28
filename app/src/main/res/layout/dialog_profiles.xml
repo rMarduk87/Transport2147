@@ -1,35 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/dlg.mainLayout">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/dlg.mainLayout"
+    android:background="@drawable/bg_cyber_dialog"
+    android:theme="@style/Theme.CyberpunkDialog">
+
     <include layout="@layout/include_dialogtitle"/>
+
     <ScrollView style="@style/dlg.scrollLayout">
-        <LinearLayout style="@style/dlg.innerLayout.padding">
+        <LinearLayout style="@style/dlg.innerLayout.padding"
+            android:orientation="vertical">
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/dlgProfiles_lblName"
                 android:text="@string/dialog_lblProfileName"
+                android:textColor="#A0A0A0"
                 style="@style/dlg.subtitleText"/>
+
             <rpt.games.transport2147.utils.view.edit.RPEditText
                 android:id="@+id/dlgProfiles_txtName"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#555555"
+                android:backgroundTint="@color/dlg_button_text"
                 style="@style/dlg.editText"/>
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/dlgProfiles_lblTemplate"
                 android:text="@string/dialog_lblProfileTemplate"
+                android:textColor="#A0A0A0"
+                android:layout_marginTop="16dp"
                 style="@style/dlg.subtitleText"/>
+
             <RadioGroup
                 android:id="@+id/dlgProfiles_rdgTemplates"
+                android:theme="@style/Theme.CyberpunkDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 style="@style/dlg.radioGroup"/>
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/dlgProfiles_btnAddProfile"
                 android:text="@string/dialog_lblProfileAdd"
+                android:background="@drawable/main_btn_generic"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
                 style="@style/dlg.button"/>
+
             <rpt.games.transport2147.utils.view.text.RPTextView
                 android:id="@+id/dlgProfiles_lblProfiles"
                 android:text="@string/dialog_lblProfileList"
+                android:textColor="#A0A0A0"
                 style="@style/dlg.sectionTitleText"/>
+
             <LinearLayout
                 android:id="@+id/dlgProfiles_layProfiles"
                 style="@style/dlg.innerLayout.margin.list"
-                android:orientation="horizontal" />
+                android:orientation="vertical" />
+
             <include layout="@layout/include_dialogbuttonok"/>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

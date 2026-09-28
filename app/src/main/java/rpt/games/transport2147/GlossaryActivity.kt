@@ -35,7 +35,6 @@ class GlossaryActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    // android.app.Activity
     override fun onResume() {
         try {
             super.onResume()
@@ -45,7 +44,6 @@ class GlossaryActivity : AppCompatActivity() {
         }
     }
 
-    // android.app.Activity
     override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
         if (menuItem.itemId == 16908332) {
             val intent = Intent(

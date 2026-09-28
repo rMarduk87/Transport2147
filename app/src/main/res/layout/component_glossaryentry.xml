@@ -6,7 +6,7 @@
     <rpt.games.transport2147.utils.view.text.RPTextView
         android:textSize="@dimen/dlg_subtitleTextSize"
         android:textStyle="bold"
-        android:textColor="@color/paragraph_text"
+        android:textColor="@color/white"
         android:id="@+id/dlgGlossaryEntry_txtTitle"
         android:paddingStart="@dimen/dlg_subtitlePaddingLeft"
         android:paddingTop="@dimen/dlg_subtitlePaddingTop"
@@ -17,7 +17,7 @@
         custom:font="@string/fnt_FontCore"/>
     <rpt.games.transport2147.utils.view.text.RPTextView
         android:textSize="@dimen/dlg_textTextSize"
-        android:textColor="@color/paragraph_text"
+        android:textColor="@color/white"
         android:id="@+id/dlgGlossaryEntry_txtDescription"
         android:paddingStart="@dimen/dlg_textPaddingLeft"
         android:paddingEnd="@dimen/dlg_textPaddingRight"

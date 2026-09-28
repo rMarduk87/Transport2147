@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/actionbar_background">
+
     <rpt.games.transport2147.utils.view.image.TouchImageView
         android:id="@+id/dlgZoom_imgDisplay"
-        android:background="@color/white"
+        android:background="@color/actionbar_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
     <ImageView
         android:contentDescription="@string/img"
         android:id="@+id/dlgZoom_btnClose"
-        android:src="@drawable/ico_gallery_back"
+        android:src="@drawable/ico_cyber_arrow_back"
+        app:tint="@color/dlg_button_text"
         style="@style/dlgZoom_btnClose"/>
+
 </FrameLayout>

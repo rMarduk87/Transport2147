@@ -41,6 +41,7 @@ import kotlin.Int
 import kotlin.arrayOfNulls
 import kotlin.text.equals
 import kotlin.text.format
+import androidx.core.graphics.toColorInt
 
 
 object DialogManager {
@@ -490,46 +491,50 @@ object DialogManager {
             radioGroup.addView(view)
         }
     }
-
     fun showProfilesInterface(context: Context) {
         try {
             val builder = AlertDialog.Builder(context)
             val layoutInflater = context.getSystemService("layout_inflater") as LayoutInflater
-            val linearLayout =
-                layoutInflater.inflate(R.layout.dialog_profiles, null as ViewGroup?) as LinearLayout
+
+            // Costruisce la vista principale
+            val linearLayout = layoutInflater.inflate(R.layout.dialog_profiles,
+                null as ViewGroup?) as LinearLayout
             builder.setView(linearLayout)
             setCustomDialogTitle(context, linearLayout, R.string.dialog_profilesTitle)
-            val radioGroup =
-                linearLayout.findViewById<View?>(R.id.dlgProfiles_rdgTemplates) as RadioGroup
+
+            // Popola i RadioButton. Grazie al tema XML, ora saranno chiari!
+            val radioGroup = linearLayout.findViewById<View?>(R.id.dlgProfiles_rdgTemplates) as
+                    RadioGroup
             getSheetTemplateList(context, radioGroup, layoutInflater, false)
+
             val alertDialogCreate = builder.create()
-            val linearLayout2 =
-                linearLayout.findViewById<View?>(R.id.dlgProfiles_layProfiles) as LinearLayout
+
+            // Gestione Lista Profili Salvati
+            val linearLayout2 = linearLayout.findViewById<View?>(R.id.dlgProfiles_layProfiles) as
+                    LinearLayout
             linearLayout2.removeAllViews()
             val profiles: ArrayList<Profile> = BookManager.getProfiles() as ArrayList<Profile>
+
             for (i in profiles.indices) {
                 val profile: Profile = profiles[i]
                 val linearLayout3 = layoutInflater.inflate(
-                    R.layout.component_listelementprofile,
-                    null as ViewGroup?
-                ) as LinearLayout
-                val textView =
-                    linearLayout3.findViewById<View?>(R.id.cmpListElementProfile_txtProfile) as TextView
+                    R.layout.component_listelementprofile, null as ViewGroup?)
+                        as LinearLayout
+
+                val textView = linearLayout3.findViewById<View?>(
+                    R.id.cmpListElementProfile_txtProfile) as TextView
                 textView.text = profile.name
                 textView.tag = profile
-                (linearLayout3.findViewById<View?>(R.id.cmpListElementProfile_btnDelete) as ImageView).setOnClickListener {
-                    confirmProfileRemove(
-                        context,
-                        profile,
-                        linearLayout3
-                    )
+
+                textView.setTextColor("#E0E0E0".toColorInt())
+
+                (linearLayout3.findViewById<View?>(R.id.cmpListElementProfile_btnDelete)
+                        as ImageView).setOnClickListener {
+                    confirmProfileRemove(context, profile, linearLayout3)
                 }
-                (linearLayout3.findViewById<View?>(R.id.cmpListElementProfile_btnRename) as ImageView).setOnClickListener {
-                    profileRename(
-                        context,
-                        profile,
-                        textView
-                    )
+                (linearLayout3.findViewById<View?>(R.id.cmpListElementProfile_btnRename)
+                        as ImageView).setOnClickListener {
+                    profileRename(context, profile, textView)
                 }
                 textView.setOnClickListener {
                     ProfileManager.loadProfile(context as Activity, profile)
@@ -537,49 +542,49 @@ object DialogManager {
                 }
                 linearLayout2.addView(linearLayout3)
             }
-            val editText = linearLayout.findViewById<View?>(R.id.dlgProfiles_txtName) as EditText
-            (linearLayout.findViewById<View?>(R.id.dlgProfiles_btnAddProfile) as TextView).setOnClickListener(
-                object : View.OnClickListener {
 
-                    override fun onClick(view: View?) {
-                        val checkedRadioButtonId = radioGroup.checkedRadioButtonId
-                        if (editText.text.toString() == "") {
-                            ToastManager.showGenericToast(
-                                context,
-                                context.getString(R.string.toast_profileNotEmpty)
-                            )
-                            return
-                        }
-                        if (checkedRadioButtonId == -1) {
-                            ToastManager.showGenericToast(
-                                context,
-                                context.getString(R.string.toast_selectTemplate)
-                            )
-                            return
-                        }
-                        var radioButton: RadioButton? = null
-                        for (i2 in 0..<radioGroup.childCount) {
-                            radioButton = radioGroup.getChildAt(i2) as RadioButton?
-                            if (radioButton!!.isChecked) {
-                                break
-                            }
-                        }
-                        ProfileManager.addProfile(
-                            context,
-                            editText.text.toString(),
-                            radioButton!!.tag.toString()
-                        )
-                        alertDialogCreate.dismiss()
+            val editText = linearLayout.findViewById<View?>(R.id.dlgProfiles_txtName) as EditText
+            (linearLayout.findViewById<View?>(R.id.dlgProfiles_btnAddProfile)
+                    as TextView).setOnClickListener {
+                val checkedRadioButtonId = radioGroup.checkedRadioButtonId
+
+                if (editText.text.toString().trim() == "") {
+                    ToastManager.showGenericToast(context,
+                        context.getString(R.string.toast_profileNotEmpty))
+                    return@setOnClickListener
+                }
+                if (checkedRadioButtonId == -1) {
+                    ToastManager.showGenericToast(context,
+                        context.getString(R.string.toast_selectTemplate))
+                    return@setOnClickListener
+                }
+
+                var radioButton: RadioButton? = null
+                for (i2 in 0 until radioGroup.childCount) {
+                    val child = radioGroup.getChildAt(i2) as? RadioButton
+                    if (child?.isChecked == true) {
+                        radioButton = child
+                        break
                     }
-                })
+                }
+
+                radioButton?.let {
+                    ProfileManager.addProfile(context, editText.text.toString(),
+                        it.tag.toString())
+                    alertDialogCreate.dismiss()
+                }
+            }
+
             alertDialogCreate.show()
-            setCustomOkButton(
-                context,
-                alertDialogCreate,
-                R.string.dialog_buttonCancel
-            ) { alertDialogCreate.dismiss() }
+
+            alertDialogCreate.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+            setCustomOkButton(context, alertDialogCreate, R.string.dialog_buttonCancel) {
+                alertDialogCreate.dismiss()
+            }
+
         } catch (e: Exception) {
-            e.message?.let { e(Throwable(e),it) }
+            e(Throwable(e),e.message.toString())
         }
     }
 

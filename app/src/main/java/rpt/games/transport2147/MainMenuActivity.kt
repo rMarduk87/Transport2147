@@ -152,11 +152,10 @@ class MainMenuActivity : AppCompatActivity() {
         try {
             when (view.id) {
                 R.id.actMain_btnIntro -> {
-                    SharedPreferencesManager.showIntro = true
                     startActivity(
                         Intent(
                             this,
-                            MainActivity::class.java as Class<*>
+                            IntroActivity::class.java as Class<*>
                         )
                     )
                 }

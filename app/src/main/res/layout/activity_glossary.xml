@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/bkg_chapter_body"
+    android:id="@+id/frgChapter_scvScroll"
+    android:background="@color/actionbar_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <include layout="@layout/include_fontsizechanger"/>
+
+        <include
+            layout="@layout/include_fontsizechanger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <LinearLayout
             android:orientation="vertical"
             android:id="@+id/actGlossary_mainLayout"
-            android:paddingLeft="@dimen/activity_paddingHorizontal"
-            android:paddingRight="@dimen/activity_paddingHorizontal"
-            android:paddingBottom="@dimen/activity_paddingVertical"
-            android:scrollbars="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </ScrollView>

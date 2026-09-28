@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="actMain_item_PaddingLeft">60dp</dimen>
+    <dimen name="actMain_item_height">54dp</dimen>
+    <dimen name="actMain_item_marginBottom">14dp</dimen>
+    <dimen name="actMain_item_textSize">18sp</dimen>
+    <dimen name="actMain_item_widht">380dp</dimen>
+    <dimen name="actMain_layout_paddingHorizontal">24dp</dimen>
+    <dimen name="actMain_layout_paddingVertical">24dp</dimen>
+    <dimen name="actMain_profile_layoutWidth">380dp</dimen>
+    <dimen name="actMain_profile_marginRight">4dp</dimen>
+    <dimen name="actMain_profile_textSize">16sp</dimen>
+    <dimen name="actMain_title_marginBottom">16dp</dimen>
+    <dimen name="actMain_title_marginTop">32dp</dimen>
+    <dimen name="actMain_title_maxWidht">240dp</dimen>
+    <dimen name="actMain_version_textSize">12sp</dimen>
+</resources>

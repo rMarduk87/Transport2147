@@ -6,9 +6,8 @@ import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import rpt.com.base.log.e
-import rpt.games.transport2147.databinding.ActivityHistoryBinding
+import rpt.games.transport2147.databinding.FragmentChapterBinding
 import rpt.games.transport2147.utils.LocaleHelper
-import rpt.games.transport2147.utils.data.appmodels.complex.History
 import rpt.games.transport2147.utils.data.appmodels.complex.History.historyEnabled
 import rpt.games.transport2147.utils.managers.ToastManager
 import rpt.games.transport2147.utils.view.chapter.ChapterFormatter
@@ -17,14 +16,14 @@ import rpt.games.transport2147.utils.view.game.GameLogic
 
 class HistoryActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityHistoryBinding
+    private lateinit var binding : FragmentChapterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTitle(R.string.title_activityHistory);
         GameLogic.checkForAppRecovery(this, true);
         GameLogic.history = this;
-        binding = ActivityHistoryBinding.inflate(layoutInflater)
+        binding = FragmentChapterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
