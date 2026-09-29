@@ -56,8 +56,9 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".SettingsActivity"
+            android:theme="@style/Theme.CyberpunkDialog"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".TutorialActivity"
             android:exported="false"

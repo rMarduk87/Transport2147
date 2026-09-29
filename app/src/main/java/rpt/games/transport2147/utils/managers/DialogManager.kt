@@ -537,7 +537,7 @@ object DialogManager {
                     profileRename(context, profile, textView)
                 }
                 textView.setOnClickListener {
-                    ProfileManager.loadProfile(context as Activity, profile)
+                    ProfileManager.loadProfile(context, profile)
                     alertDialogCreate.cancel()
                 }
                 linearLayout2.addView(linearLayout3)

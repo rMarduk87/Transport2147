@@ -53,7 +53,11 @@ class HistoryActivity : AppCompatActivity() {
 
 
     override fun attachBaseContext(context: Context?) {
-        super.attachBaseContext(LocaleHelper.onAttach(context!!))
+        if (context != null) {
+            super.attachBaseContext(LocaleHelper.onAttach(context))
+        } else {
+            super.attachBaseContext(null)
+        }
     }
 
     fun onChangeFontSize(view: View?) {

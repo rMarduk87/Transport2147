@@ -1,41 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListPreference
-        android:entries="@array/font_names"
-        android:title="@string/pref_fontName"
-        android:key="pref_fontName"
-        android:order="10"
-        android:defaultValue="0"
-        android:dialogTitle="@string/pref_fontName"
-        android:entryValues="@array/font_ttf"/>
-    <ListPreference
-        android:entries="@array/font_dimensionText"
-        android:title="@string/pref_textSizeTitle"
-        android:key="pref_textSize"
-        android:order="20"
-        android:defaultValue="3"
-        android:dialogTitle="@string/pref_textSizeTitle"
-        android:entryValues="@array/font_dimension"/>
-    <CheckBoxPreference
-        android:title="@string/pref_textJustifiedTitle"
-        android:key="pref_textJustified"
-        android:order="30"
-        android:defaultValue="false"
-        android:summaryOn="@string/pref_textJustifiedSummaryOn"
-        android:summaryOff="@string/pref_textJustifiedSummaryOff"/>
-    <CheckBoxPreference
-        android:title="@string/pref_errorEmailTitle"
-        android:key="pref_errorEmail"
-        android:order="40"
-        android:defaultValue="false"
-        android:summaryOn="@string/pref_errorEmailSummaryOn"
-        android:summaryOff="@string/pref_errorEmailSummaryOff"/>
-    <ListPreference
-        android:entries="@array/languages_texts"
-        android:title="@string/pref_language"
-        android:key="pref_language"
-        android:order="50"
-        android:defaultValue="0"
-        android:dialogTitle="@string/pref_language"
-        android:entryValues="@array/languages_codes"/>
-</PreferenceScreen>
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.preference.PreferenceCategory
+        app:title="CALIBRAZIONE DISPLAY">
+
+        <androidx.preference.ListPreference
+            app:key="pref_fontName"
+            app:title="Interfaccia di Testo (Font)"
+            app:summary="Seleziona il font del terminale"
+            app:entries="@array/font_names"
+            app:entryValues="@array/font_ttf"
+            app:defaultValue="@string/fnt_font00"
+            app:icon="@drawable/ico_cyber_font_larger"/>
+
+        <androidx.preference.ListPreference
+            app:key="pref_textSize"
+            app:title="Dimensione Output"
+            app:summary="Regola la grandezza dei caratteri"
+            app:entries="@array/font_dimensionText"
+            app:entryValues="@array/font_dimension"
+            app:defaultValue="3"
+            app:icon="@drawable/ico_cyber_font_smaller"/>
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:key="pref_textJustified"
+            app:title="Allineamento di Rete (Giustificato)"
+            app:summaryOn="Testo formattato a blocco rigido"
+            app:summaryOff="Testo formattato a scorrimento libero"
+            app:defaultValue="false"
+            app:icon="@drawable/ico_cyber_justifier"/>
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        app:title="PROTOCOLLI DI SISTEMA">
+
+        <androidx.preference.ListPreference
+            app:key="pref_language"
+            app:title="Pacchetto Linguistico"
+            app:summary="Modifica la lingua dell'interfaccia"
+            app:entries="@array/languages_texts"
+            app:entryValues="@array/languages_codes"
+            app:defaultValue="@string/language_codeIT"
+            app:icon="@drawable/ico_cyber_chat"/>
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:key="pref_errorEmail"
+            app:title="Telemetria Crash (Log via Email)"
+            app:summaryOn="Trasmissione automatica log di errore attiva"
+            app:summaryOff="Trasmissione bloccata (Modalità Furtiva)"
+            app:defaultValue="false"
+            app:icon="@drawable/ico_cyber_cloud"/>
+
+    </androidx.preference.PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

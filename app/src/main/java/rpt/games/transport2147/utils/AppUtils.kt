@@ -108,18 +108,18 @@ class AppUtils {
         }
 
         @SuppressLint("SoonBlockedPrivateApi")
-        @Throws(java.lang.Exception::class)
         fun makeActionOverflowMenuShown(context: Context) {
-            var declaredField: Field? = null
-            val viewConfiguration: ViewConfiguration = ViewConfiguration.get(context)
-            if (!viewConfiguration.hasPermanentMenuKey() || (ViewConfiguration::class.java.getDeclaredField(
-                    "sHasPermanentMenuKey"
-                ).also { declaredField = it }) == null
-            ) {
-                return
+            try {
+                val viewConfiguration: ViewConfiguration = ViewConfiguration.get(context)
+                if (!viewConfiguration.hasPermanentMenuKey()) {
+                    return
+                }
+                val declaredField = ViewConfiguration::class.java.getDeclaredField("sHasPermanentMenuKey")
+                declaredField.isAccessible = true
+                declaredField.setBoolean(viewConfiguration, false)
+            } catch (e: Exception) {
+                e.message?.let { e(Throwable(e), it) }
             }
-            declaredField!!.isAccessible = true
-            declaredField.setBoolean(viewConfiguration, false)
         }
 
         fun random(i: Int, i2: Int): Int {

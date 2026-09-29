@@ -47,7 +47,7 @@
         <item>@id/frgCombat_txtNotes</item>
         <item>@id/frgCombat_txtRound</item>
     </array>
-    <array name="font_dimension">
+    <string-array name="font_dimension">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -61,8 +61,8 @@
         <item>10</item>
         <item>11</item>
         <item>12</item>
-    </array>
-    <array name="font_dimensionText">
+    </string-array>
+    <string-array name="font_dimensionText">
         <item>@string/pref_textSizeValue0</item>
         <item>@string/pref_textSizeValue1</item>
         <item>@string/pref_textSizeValue2</item>
@@ -76,15 +76,15 @@
         <item>@string/pref_textSizeValue10</item>
         <item>@string/pref_textSizeValue11</item>
         <item>@string/pref_textSizeValue12</item>
-    </array>
-    <array name="font_names">
+    </string-array>
+    <string-array name="font_names">
         <item>@string/fnt_fontName00</item>
         <item>@string/fnt_fontName01</item>
         <item>@string/fnt_fontName02</item>
         <item>@string/fnt_fontName03</item>
         <item>@string/fnt_fontName04</item>
         <item>@string/fnt_fontName05</item>
-    </array>
+    </string-array>
     <array name="font_points">
         <item>@dimen/font_dimen0</item>
         <item>@dimen/font_dimen1</item>
@@ -100,20 +100,20 @@
         <item>@dimen/font_dimen11</item>
         <item>@dimen/font_dimen12</item>
     </array>
-    <array name="font_ttf">
+    <string-array name="font_ttf">
         <item>@string/fnt_font00</item>
         <item>@string/fnt_font01</item>
         <item>@string/fnt_font02</item>
         <item>@string/fnt_font03</item>
         <item>@string/fnt_font04</item>
         <item>@string/fnt_font05</item>
-    </array>
-    <array name="languages_codes">
+    </string-array>
+    <string-array name="languages_codes">
         <item>@string/language_codeIT</item>
         <item>@string/language_codeEN</item>
-    </array>
-    <array name="languages_texts">
+    </string-array>
+    <string-array name="languages_texts">
         <item>@string/language_it</item>
         <item>@string/language_en</item>
-    </array>
+    </string-array>
 </resources>

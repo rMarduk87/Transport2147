@@ -110,7 +110,7 @@ dependencies {
     implementation libs.rptbase
     //SplashScreen
     implementation libs.androidx.splashscreen
-    // Compose
+    //Compose
     implementation platform(libs.androidx.compose.bom)
     implementation libs.androidx.compose.ui
     implementation libs.androidx.compose.ui.graphics

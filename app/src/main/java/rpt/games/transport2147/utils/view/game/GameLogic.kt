@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.view.View
 import android.widget.ImageView
+import androidx.preference.Preference // FIX: Importazione AndroidX Preference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -16,6 +17,7 @@ import rpt.games.transport2147.MainMenuActivity
 import rpt.games.transport2147.NavigatorActivity
 import rpt.games.transport2147.R
 import rpt.games.transport2147.SettingsActivity
+import rpt.games.transport2147.TransportApplication
 import rpt.games.transport2147.utils.AppUtils
 import rpt.games.transport2147.utils.GameConstants
 import rpt.games.transport2147.utils.data.appmodels.complex.Enemy
@@ -26,12 +28,13 @@ import rpt.games.transport2147.utils.managers.BookManager
 import rpt.games.transport2147.utils.managers.DiceRollerManager
 import rpt.games.transport2147.utils.managers.ProfileManager
 import rpt.games.transport2147.utils.managers.SharedPreferencesManager
+import rpt.games.transport2147.utils.view.game.PlayerSheet // Assunto che PlayerSheet sia qui
 import java.util.Locale
-
 
 class GameLogic {
 
-    companion object{
+    companion object {
+        // FIX: Riferimento al nuovo PreferenceFragmentCompat
         private lateinit var _pf: SettingsActivity.SettingsFragment
         var appContext: Context? = null
         var chapterFragment: NavigatorActivity.ChapterFragment? = null
@@ -85,7 +88,7 @@ class GameLogic {
                     }
                 }
             } catch (e: Exception) {
-                e.message?.let { e(Throwable(e),it) }
+                e.message?.let { e(Throwable(e), it) }
             }
         }
 
@@ -107,12 +110,13 @@ class GameLogic {
             if (i != -1) {
                 return i
             }
-            when (AppUtils.getDeviceType(this.appContext!!)) {
+            val ctx = appContext ?: TransportApplication.instance
+            when (AppUtils.getDeviceType(ctx)) {
                 0 -> i2 = R.string.param_initialFontSizeSmartphone
                 1 -> i2 = R.string.param_initialFontSizeTablet7
                 2 -> i2 = R.string.param_initialFontSizeTablet10
             }
-            val i3 = this.appContext!!.getString(i2).toInt()
+            val i3 = ctx.getString(i2).toInt()
             setFontSize(i3)
             return i3
         }
@@ -154,78 +158,95 @@ class GameLogic {
         }
 
         fun addTakenObject(playerObject: PlayerObject?) {
+            if (_TookObjects == null) {
+                _TookObjects = HashMap<PlayerObject?, PlayerObject?>()
+            }
             _TookObjects!![playerObject] = playerObject
         }
 
         fun isObjectTaken(playerObject: PlayerObject?): Boolean {
-            return _TookObjects!!.containsKey(playerObject)
+            return _TookObjects?.containsKey(playerObject) ?: false
         }
 
-        fun getLanguage(): String {
+        fun getLanguage(context: Context? = null): String {
             var string: String? = SharedPreferencesManager.language
-            if (string == null) {
+            if (string.isNullOrEmpty()) {
+                val ctx = context ?: appContext ?: TransportApplication.instance
                 string = Locale.getDefault().language
-                if (string != this.appContext!!.getString(R.string.language_codeEN) &&
-                    string != this.appContext!!.getString(
-                        R.string.language_codeIT
-                    )
+                if (string != ctx.getString(R.string.language_codeEN) &&
+                    string != ctx.getString(R.string.language_codeIT)
                 ) {
-                    string = this.appContext!!.getString(R.string.language_codeIT)
+                    string = ctx.getString(R.string.language_codeIT)
                 }
                 setLanguage(string)
+                SharedPreferencesManager.language = string
             }
             language = string
             return string
         }
 
         fun setLanguageLabel(str: String?) {
-            var str = str
-            if (str == null) {
-                str = getLanguage()
+            var langStr = str
+            if (langStr == null) {
+                langStr = getLanguage()
             }
-            val string: String? = when (str) {
-                this.appContext!!.getString(R.string.language_codeIT) -> {
-                    this.appContext!!.getString(R.string.language_it)
+            val ctx = appContext ?: TransportApplication.instance
+            val string: String? = when (langStr) {
+                ctx.getString(R.string.language_codeIT) -> {
+                    ctx.getString(R.string.language_it)
                 }
+                ctx.getString(R.string.language_codeEN) -> {
+                    ctx.getString(R.string.language_en)
+                }
+                else -> null
+            }
 
-                else -> {
-                    if (str == this.appContext!!.getString(R.string.language_codeEN))
-                        this.appContext!!.getString(
-                        R.string.language_en
-                    ) else null
-                }
+            // FIX: Uso sicuro di findPreference per AndroidX
+            if (::_pf.isInitialized) {
+                val pref = this._pf.findPreference<Preference>(GameConstants.PREFERENCE_LANGUAGE)
+                pref?.summary = string
             }
-            this._pf.findPreference(GameConstants.PREFERENCE_LANGUAGE).summary = string
         }
+
         fun setFontNameLabel() {
-            val string: String?
-            if (_fontName.equals(this.appContext!!.getString(R.string.fnt_font00))) {
-                string = this.appContext!!.getString(R.string.fnt_fontName00)
-            } else if (_fontName.equals(this.appContext!!.getString(R.string.fnt_font01))) {
-                string = this.appContext!!.getString(R.string.fnt_fontName01)
-            } else if (_fontName.equals(this.appContext!!.getString(R.string.fnt_font02))) {
-                string = this.appContext!!.getString(R.string.fnt_fontName02)
-            } else if (_fontName.equals(this.appContext!!.getString(R.string.fnt_font03))) {
-                string = this.appContext!!.getString(R.string.fnt_fontName03)
-            } else if (_fontName.equals(this.appContext!!.getString(R.string.fnt_font04))) {
-                string = this.appContext!!.getString(R.string.fnt_fontName04)
-            } else {
-                string =
-                    if (_fontName.equals(
-                            this.appContext!!.getString(R.string.fnt_font05)))
-                        this.appContext!!.getString(
-                        R.string.fnt_fontName05
-                    ) else null
+            val ctx = appContext ?: TransportApplication.instance
+            if (_fontName.isNullOrEmpty()) {
+                _fontName = ctx.getString(R.string.fnt_font00)
             }
-            this._pf.findPreference(GameConstants.PREFERENCE_FONT_NAME).summary = string
+
+            val string: String? = when (_fontName) {
+                ctx.getString(R.string.fnt_font00) -> ctx.getString(R.string.fnt_fontName00)
+                ctx.getString(R.string.fnt_font01) -> ctx.getString(R.string.fnt_fontName01)
+                ctx.getString(R.string.fnt_font02) -> ctx.getString(R.string.fnt_fontName02)
+                ctx.getString(R.string.fnt_font03) -> ctx.getString(R.string.fnt_fontName03)
+                ctx.getString(R.string.fnt_font04) -> ctx.getString(R.string.fnt_fontName04)
+                ctx.getString(R.string.fnt_font05) -> ctx.getString(R.string.fnt_fontName05)
+                else -> null
+            }
+
+            // FIX: Uso sicuro di findPreference per AndroidX
+            if (::_pf.isInitialized) {
+                val pref = this._pf.findPreference<Preference>(GameConstants.PREFERENCE_FONT_NAME)
+                pref?.summary = string
+            }
         }
 
         fun setFontSizeLabel() {
             val fontSize: Int = getFontSize()
+            val ctx = appContext ?: TransportApplication.instance
             val typedArrayObtainTypedArray: TypedArray =
-                this.appContext!!.resources.obtainTypedArray(R.array.font_dimensionText)
-            this._pf.findPreference(GameConstants.PREFERENCE_TEXT_SIZE)
-                .setSummary(typedArrayObtainTypedArray.getResourceId(fontSize, 0))
+                ctx.resources.obtainTypedArray(R.array.font_dimensionText)
+
+            val summaryResId = typedArrayObtainTypedArray.getResourceId(fontSize, 0)
+
+            // FIX: Uso sicuro di findPreference per AndroidX e assegnazione testuale corretta
+            if (::_pf.isInitialized) {
+                val pref = this._pf.findPreference<Preference>(GameConstants.PREFERENCE_TEXT_SIZE)
+                if (summaryResId != 0) {
+                    pref?.summary = ctx.getString(summaryResId)
+                }
+            }
+
             typedArrayObtainTypedArray.recycle()
         }
 
@@ -233,5 +254,4 @@ class GameLogic {
             this._pf = fragment
         }
     }
-
 }

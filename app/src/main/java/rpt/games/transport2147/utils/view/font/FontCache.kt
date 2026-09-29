@@ -20,7 +20,9 @@ object FontCache {
         if (typefaceCreateFromAsset == null) {
             try {
                 typefaceCreateFromAsset = Typeface.createFromAsset(context?.assets, str)
-                fontCache[str] = typefaceCreateFromAsset
+                if (typefaceCreateFromAsset != null) {
+                    fontCache[str] = typefaceCreateFromAsset
+                }
             } catch (e: Exception) {
                 e.message?.let { e(Throwable(e),it) }
                 return null
