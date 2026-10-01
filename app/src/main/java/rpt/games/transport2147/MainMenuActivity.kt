@@ -60,7 +60,7 @@ class MainMenuActivity : AppCompatActivity() {
             }
         }
 
-        if (SharedPreferencesManager.language
+        /*if (SharedPreferencesManager.language
                 .equals(getString(R.string.language_codeIT)) &&
             !SharedPreferencesManager.initialPopUpShow
                 .equals(getString(R.string.transport1533islive))
@@ -82,7 +82,7 @@ class MainMenuActivity : AppCompatActivity() {
                     )
                 )
             }
-        }
+        }*/
         AppUtils.makeActionOverflowMenuShown(this@MainMenuActivity)
     }
     

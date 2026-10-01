@@ -23,7 +23,6 @@ class CreditsActivity : AppCompatActivity() {
         GameLogic.checkForAppRecovery(this, true)
         binding = FragmentChapterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onResume() {

@@ -97,7 +97,7 @@
       <p><italic>Architettura Testi e Narrazione:</italic> RP Technologies</p>
       <p><italic>Core Coding e Protocolli Logici:</italic> RP Technologies</p>
       <p><italic>Program Management e UI Design:</italic> RP Technologies</p>
-      <p><italic>Asset Grafici e Concept Art:</italic> RP Technologies</p>
+      <p><italic>Asset Grafici e Concept Art:</italic> RP Technologies E Sistemi Intelligenti Automatici</p>
       <p><italic>Localizzazione e Compilazione Core-Script (EN):</italic> RP Technologies</p>
     </chapter>
 
@@ -3600,7 +3600,7 @@
     <entry id="tecnoSciamani" name="Tecno-Sciamani">Casta di hacker, bio-ingegneri e medici dediti alla cura delle cyber-patologie, all'estrazione dati e alla purificazione dei server infetti. Praticano le loro arti in favore della popolazione, in genere in cambio di libere offerte in Gettoni; alcuni però lavorano solo per i signori del mercato nero per grandi compensi. Molti sono girovaghi, alcuni vivono stabilmente nei Terminali. Dichiarano che il loro sapere derivi dai Primi Ingegneri, e che sia stato trasmesso per contrastare le Intelligenze Corrotte dell'Abisso.</entry>
     <entry id="coreScript" name="Core-Script">Detto anche Codice Radice o Lingua Macchina, si dice essere il primo linguaggio di programmazione usato dai Primi Ingegneri per costruire la Rete. È la lingua di base in cui sono scritti i vecchi mainframe ed è usata dai Tecno-Sciamani per interfacciarsi con i sistemi più remoti e antichi senza far scattare gli allarmi.</entry>
     <entry id="DG" name="Direttore Generale">Il Primo Direttore guidò i Discesi nel sottosuolo, e li governò nei primi decenni della loro sopravvivenza nell'oscurità. Alla sua morte, la carica venne istituzionalizzata e rappresenta ancora oggi la massima autorità morale dei Discesi. Oggi, il Direttore Generale esercita un potere effettivo solo sul colossale terminale di Central-Core, dove risiede protetto da firewall impenetrabili.</entry>
-    <entry id="infrastruttura" name="L'Infrastruttura">L'insieme del mondo conosciuto, composto dai Settori Attivi (La Rete/La Luce), i Settori Morti (I Tunnel/La Tenebra) e il Deep Core (Il Nucleo Corrotto/L'Abisso).</entry>
+    <entry id="infrastruttura" name="L'Infrastruttura">L'insieme del mondo conosciuto, composto dai Settori Attivi (La Rete), i Settori Morti (I Tunnel) e il Deep Core (Il Nucleo Corrotto).</entry>
     <entry id="tossici" name="I Tossici">Un popolo feroce e barbaro, pesantemente mutato dalle radiazioni, che un tempo abitava i tunnel superficiali; durante le Guerre di Bonifica, i Discesi li respinsero progressivamente verso l'alto, fino a cacciarli oltre i portelloni stagni del Livello Zero, che ora costituiscono una frontiera naturale. Una parte dei Tossici è rimasta però nei tunnel inferiori, originando gli «Scarti», una casta di reietti e spazzini tollerati a malapena dai Discesi.</entry>
     <entry id="AkaitsukiNoShinja-tachi" name="Segugi della Linea Rossa">Gilda di spietati mercenari e cacciatori di taglie con sede nei tunnel abbandonati e radioattivi della vecchia Linea Rossa.</entry>
     <entry id="grande-rete" name="Grande Rete">

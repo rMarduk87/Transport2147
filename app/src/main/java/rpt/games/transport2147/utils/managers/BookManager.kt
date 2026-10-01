@@ -144,13 +144,14 @@ class BookManager {
         fun getMostRecentProfile() : rpt.games.transport2147.utils.data.appmodels.complex.Profile? =
             runBlocking(Dispatchers.IO) {
                 val profile =
-                    RepositoryManager.bookRepository.getMostRecentProfile()?.map<Profile>()
+                    RepositoryManager.bookRepository.getMostRecentProfile()
                         ?: return@runBlocking null
                 val profileComplex = rpt.games.transport2147.utils.data.appmodels.complex.Profile(
-                profile.id, profile.name, profile.sheet,
-                profile.history, profile.used)
-            return@runBlocking profileComplex
-        }
+                    profile.id, profile.name, profile.used,
+                    profile.sheet, profile.history
+                )
+                return@runBlocking profileComplex
+            }
 
         fun getTalents(): ArrayList<String?> = runBlocking(Dispatchers.IO) {
             val talents = RepositoryManager.bookRepository.getAllTalents()

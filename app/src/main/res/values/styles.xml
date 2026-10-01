@@ -217,16 +217,18 @@
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:background">@drawable/btn_dialog</item>
         <item name="android:paddingLeft">@dimen/dlg_buttonPaddingLeft</item>
-        <item name="android:paddingTop">@dimen/dlg_buttonPaddingTop</item>
+        <item name="android:paddingTop">12dp</item>
         <item name="android:paddingRight">@dimen/dlg_buttonPaddingRight</item>
-        <item name="android:paddingBottom">@dimen/dlg_buttonPaddingBottom</item>
+        <item name="android:paddingBottom">12dp</item>
         <item name="android:clickable">true</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">@dimen/dlg_buttonMarginLeft</item>
         <item name="android:layout_marginRight">@dimen/dlg_buttonMarginRight</item>
         <item name="android:layout_marginBottom">@dimen/dlg_buttonMarginBottom</item>
-        <item name="customFont">@string/fnt_FontCore</item>
+        <item name="customFont">@string/fnt_FontCore</item>>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.1</item>
     </style>
     <style name="dlg.editText" parent="@style/dlg">
         <item name="android:textColor">@color/white</item>
